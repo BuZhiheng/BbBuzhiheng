@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">掌上兰考</string>
+    <string name="main_index">首页</string>
+    <string name="main_lbs">商圈</string>
+    <string name="main_talk">社区</string>
+    <string name="main_mine">我的</string>
+    <string name="text_mainfrm_meishi">美食</string>
+    <string name="text_mainfrm_gouwu">购物</string>
+    <string name="text_mainfrm_jiudian">酒店</string>
+    <string name="text_mainfrm_xiuxian">休闲娱乐</string>
+    <string name="text_mainfrm_liren">丽人</string>
+
+    <string name="text_mainfrm_hunqing">婚庆</string>
+    <string name="text_mainfrm_xiyu">洗浴</string>
+    <string name="text_mainfrm_meijia">美甲</string>
+    <string name="text_mainfrm_ktv">KTV</string>
+    <string name="text_mainfrm_other">其他</string>
+</resources>
