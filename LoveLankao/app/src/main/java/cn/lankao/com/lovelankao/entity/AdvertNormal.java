@@ -17,6 +17,7 @@ public class AdvertNormal extends BmobObject implements Serializable{
     private String advAddress;
     private String advActivity;
     private String advRemark;
+    private String advNewPinglun;
     private Float advLat;
     private Float advLng;
     private Integer advClicked;
@@ -189,5 +190,13 @@ public class AdvertNormal extends BmobObject implements Serializable{
 
     public void setAdvPhoto5(BmobFile advPhoto5) {
         this.advPhoto5 = advPhoto5;
+    }
+
+    public String getAdvNewPinglun() {
+        return advNewPinglun;
+    }
+
+    public void setAdvNewPinglun(String advNewPinglun) {
+        this.advNewPinglun = advNewPinglun;
     }
 }

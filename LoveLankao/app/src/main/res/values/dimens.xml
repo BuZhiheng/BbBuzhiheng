@@ -4,5 +4,6 @@
     <dimen name="text_main_title">21sp</dimen>
     <dimen name="text_common_item_title">16sp</dimen>
     <dimen name="text_common_item_content">12sp</dimen>
+    <dimen name="text_common_large">36sp</dimen>
     <dimen name="ic_mainfrm_title">42dp</dimen>
 </resources>

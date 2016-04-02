@@ -51,21 +51,37 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, final int position) {
-        AdvertNormal advert = data.get(position);
+    public void onBindViewHolder(final MyViewHolder holder, final int position) {
+        final AdvertNormal advert = data.get(position);
         if (advert.getAdvPhoto() != null){
             x.image().bind(holder.photo, advert.getAdvPhoto().getFileUrl(context));
         }
+        if (advert.getAdvClicked() == null){
+            holder.tvPoints.setText("点击量:0");
+        } else {
+            holder.tvPoints.setText("点击量:" + advert.getAdvClicked());
+        }
+        if (advert.getAdvPrice() != null){
+            holder.tvAverage.setText("¥"+advert.getAdvPrice());
+        }
+        holder.tvTitle.setText(advert.getTitle());
+        holder.tvTitleContent.setText(advert.getTitleContent());
         holder.frameLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                AdvertNormal advertNormal = data.get(position);
+                if(advertNormal.getAdvClicked() != null){
+                    advertNormal.setAdvClicked(advertNormal.getAdvClicked() + 1);
+                } else {
+                    advertNormal.setAdvClicked(1);
+                }
+                advertNormal.update(context);
                 Intent intent = new Intent(context, AdvertMsgActivity.class);
                 intent.putExtra("data",data.get(position));
                 context.startActivity(intent);
+                holder.tvPoints.setText("点击量:" + advertNormal.getAdvClicked());
             }
         });
-        holder.tvTitle.setText(advert.getTitle());
-        holder.tvTitleContent.setText(advert.getTitleContent());
     }
 
     @Override
@@ -77,6 +93,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         FrameLayout frameLayout;
         ImageView photo;
         TextView tvTitle;
+        TextView tvAverage;
+        TextView tvPoints;
         TextView tvTitleContent;
 
         public MyViewHolder(View view) {
@@ -85,6 +103,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             photo = (ImageView) view.findViewById(R.id.iv_mainfrm_item_photo);
             tvTitle = (TextView) view.findViewById(R.id.tv_mainfrm_item_title);
             tvTitleContent = (TextView) view.findViewById(R.id.tv_mainfrm_item_titlecontent);
+            tvPoints = (TextView) view.findViewById(R.id.tv_mainfrm_item_points);
+            tvAverage = (TextView) view.findViewById(R.id.tv_mainfrm_item_average);
         }
     }
 }

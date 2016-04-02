@@ -18,7 +18,6 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="119dp"
         android:layout_marginTop="10dp"
-        android:text="@string/app_name"
         android:textColor="@color/color_black_text"
         android:textSize="@dimen/text_common_item_title" />
 
@@ -41,18 +40,17 @@
         android:layout_marginLeft="119dp"
         android:layout_marginRight="50dp"
         android:layout_marginTop="30dp"
-        android:text="这里写的是商家额度描述信息，简短真实"
         android:textColor="@color/color_gray_deep"
         android:textSize="@dimen/text_common_item_content" />
 
     <TextView
-        android:id="@+id/tv_mainfrm_item_money"
+        android:id="@+id/tv_mainfrm_item_average"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="119dp"
-        android:text="$68"
+        android:text=""
         android:textColor="@color/color_green"
         android:textSize="@dimen/text_common_item_title" />
 
@@ -63,7 +61,6 @@
         android:layout_gravity="bottom|right"
         android:layout_marginBottom="10dp"
         android:layout_marginRight="10dp"
-        android:text="点击量100"
         android:textColor="@color/color_gray_deep"
         android:textSize="@dimen/text_common_item_content" />
 

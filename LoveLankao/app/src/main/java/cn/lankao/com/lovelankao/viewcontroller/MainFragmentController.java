@@ -13,6 +13,7 @@ import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.listener.FindListener;
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.ActiveActivity;
+import cn.lankao.com.lovelankao.activity.LoginActivity;
 import cn.lankao.com.lovelankao.adapter.MyAdapter;
 import cn.lankao.com.lovelankao.entity.AdvertNormal;
 /**
@@ -71,7 +72,7 @@ public class MainFragmentController implements View.OnClickListener{
             Intent intent = new Intent(context, ActiveActivity.class);
             context.startActivity(intent);
         } else if (v == tvTuijian){
-            Intent intent = new Intent(context, ActiveActivity.class);
+            Intent intent = new Intent(context, LoginActivity.class);
             context.startActivity(intent);
         }
     }

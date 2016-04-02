@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_title_height"
+        android:background="@color/color_green">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="商家详情"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/text_main_title" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/common_margin"
+            android:src="@drawable/ic_common_back_white" />
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/iv_advertdetail_photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:background="@color/color_black_text"
+                    android:src="@drawable/ic_common_defult" />
+
+                <TextView
+                    android:id="@+id/tv_advertdetail_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|bottom"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginLeft="@dimen/common_margin"
+                    android:text="@string/app_name"
+                    android:textColor="@color/color_white"
+                    android:textSize="@dimen/text_common_item_title" />
+
+                <TextView
+                    android:id="@+id/tv_advertdetail_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|bottom"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="@dimen/common_margin"
+                    android:text="@string/app_name"
+                    android:textColor="@color/color_white"
+                    android:textSize="@dimen/text_common_item_content" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/common_margin"
+                    android:text="¥"
+                    android:textColor="@color/color_green"
+                    android:textSize="@dimen/text_common_item_title" />
+
+                <TextView
+                    android:id="@+id/tv_advertdetail_average"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="68"
+                    android:textColor="@color/color_green"
+                    android:textSize="@dimen/text_common_large" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="人均"
+                    android:textColor="@color/color_gray_deep"
+                    android:textSize="@dimen/text_common_item_title" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right">
+
+                    <Button
+                        android:id="@+id/btn_advertdetail_call"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|right"
+                        android:layout_marginRight="@dimen/common_margin"
+                        android:text="立即抢购" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <include layout="@layout/include_slid_img"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_advertdetail_activite"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/common_margin"
+                    android:text="买一送一"
+                    android:textColor="@color/color_green"
+                    android:textSize="@dimen/text_common_item_content" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/ic_login_username" />
+
+                <TextView
+                    android:id="@+id/tv_advertdetail_points"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/common_margin"
+                    android:text="已查看0"
+                    android:textColor="@color/color_gray_deep"
+                    android:textSize="@dimen/text_common_item_content" />
+            </LinearLayout>
+
+            <include layout="@layout/include_slid_img_height10" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="39dp"
+                android:layout_marginLeft="@dimen/common_margin"
+                android:gravity="center_vertical"
+                android:text="商家信息" />
+
+            <include layout="@layout/include_slid_img_marginleft" />
+
+            <LinearLayout
+                android:id="@+id/ll_advertdetail_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:background="@drawable/common_ll_bg"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_advertdetail_title_center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/common_margin"
+                        android:text="@string/app_name"
+                        android:textColor="@color/color_black_text"
+                        android:textSize="@dimen/text_common_item_title" />
+
+                    <TextView
+                        android:id="@+id/tv_advertdetail_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/common_margin"
+                        android:text="兰考县建设路东段"
+                        android:textColor="@color/color_gray_deep"
+                        android:textSize="@dimen/text_common_item_content" />
+
+                    <TextView
+                        android:id="@+id/tv_advertdetail_distance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/common_margin"
+                        android:text="1.8km"
+                        android:textColor="@color/color_gray_deep"
+                        android:textSize="@dimen/text_common_item_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center|right">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="@dimen/common_margin"
+                        android:src="@drawable/ic_common_right_green" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <include layout="@layout/include_slid_img_height10" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="39dp"
+                android:layout_marginLeft="@dimen/common_margin"
+                android:gravity="center_vertical"
+                android:text="商家留言" />
+
+            <include layout="@layout/include_slid_img_marginleft" />
+
+            <TextView
+                android:id="@+id/tv_advertdetail_content_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/common_margin"
+                android:text="哦傻莱斯莉萨哦撒旦；撒娇大家脾气【额【完全开放式的肌肤接收的皮；是浪费了就ask的就撒娇的萨克就考虑呢雷克萨斯的紧迫恶鸡婆栏目分类代码v；老师的课颇为哦 吗；第三名；粮食店街 iopewir发射点；看方式地方 "
+                android:textColor="@color/color_black_text"
+                android:textSize="@dimen/text_common_item_content" />
+
+            <include layout="@layout/include_slid_img_height10" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="39dp"
+                android:layout_marginLeft="@dimen/common_margin"
+                android:gravity="center_vertical"
+                android:text="最新评论" />
+
+            <include layout="@layout/include_slid_img_marginleft" />
+
+            <TextView
+                android:id="@+id/tv_advertdetail_new_pinglun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/common_margin"
+                android:text="(Carry爸爸 2016-4-2):味道其实还是不错的，推荐！！！！！！！"
+                android:textColor="@color/color_black_text"
+                android:textSize="@dimen/text_common_item_content" />
+
+            <include layout="@layout/include_slid_img_height10" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="39dp"
+                android:layout_marginLeft="@dimen/common_margin"
+                android:gravity="center_vertical"
+                android:text="用户还看了" />
+
+            <include layout="@layout/include_slid_img_marginleft" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@color/color_bg"></LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
