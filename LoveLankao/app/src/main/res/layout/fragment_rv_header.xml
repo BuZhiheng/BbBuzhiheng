@@ -12,6 +12,7 @@
         android:layout_marginRight="@dimen/common_margin"
         >
         <LinearLayout
+            android:id="@+id/ll_mainfrm_header_meishi"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
@@ -32,6 +33,7 @@
                 />
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/ll_mainfrm_header_gouwu"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
@@ -52,6 +54,7 @@
                 />
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/ll_mainfrm_header_jiudian"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
@@ -72,6 +75,7 @@
                 />
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/ll_mainfrm_header_xiuxian"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
@@ -92,6 +96,7 @@
                 />
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/ll_mainfrm_header_liren"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
@@ -120,6 +125,7 @@
         android:orientation="horizontal"
         >
         <LinearLayout
+            android:id="@+id/ll_mainfrm_header_hunqing"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
@@ -140,6 +146,7 @@
                 />
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/ll_mainfrm_header_xiyu"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
@@ -160,6 +167,7 @@
                 />
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/ll_mainfrm_header_meijia"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
@@ -180,6 +188,7 @@
                 />
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/ll_mainfrm_header_ktv"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
@@ -200,6 +209,7 @@
                 />
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/ll_mainfrm_header_other"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
@@ -285,7 +295,7 @@
             android:gravity="center"
             >
             <TextView
-                android:id="@+id/tv_minfrm_open"
+                android:id="@+id/tv_mainfrm_open"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
@@ -301,7 +311,7 @@
                 android:layout_height="1dp"
                 android:background="@color/color_bg"/>
             <TextView
-                android:id="@+id/tv_minfrm_tuiian"
+                android:id="@+id/tv_mainfrm_tuiian"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"

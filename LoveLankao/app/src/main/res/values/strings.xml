@@ -14,5 +14,5 @@
     <string name="text_mainfrm_xiyu">洗浴</string>
     <string name="text_mainfrm_meijia">美甲</string>
     <string name="text_mainfrm_ktv">KTV</string>
-    <string name="text_mainfrm_other">其他</string>
+    <string name="text_mainfrm_other">全部</string>
 </resources>

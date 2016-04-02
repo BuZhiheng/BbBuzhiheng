@@ -10,6 +10,7 @@
         android:background="@color/color_green">
 
         <TextView
+            android:id="@+id/tv_advertlist_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -24,4 +25,8 @@
             android:layout_marginLeft="@dimen/common_margin"
             android:src="@drawable/ic_common_back_white" />
     </FrameLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_advert_act"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </LinearLayout>
