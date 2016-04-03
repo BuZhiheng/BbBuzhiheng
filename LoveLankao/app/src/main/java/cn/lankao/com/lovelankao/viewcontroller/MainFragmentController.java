@@ -16,6 +16,7 @@ import cn.bmob.v3.listener.FindListener;
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.ActiveActivity;
 import cn.lankao.com.lovelankao.activity.AdvertDetailActivity;
+import cn.lankao.com.lovelankao.activity.ChatRoomActivity;
 import cn.lankao.com.lovelankao.activity.LoginActivity;
 import cn.lankao.com.lovelankao.adapter.MyAdapter;
 import cn.lankao.com.lovelankao.entity.AdvertNormal;
@@ -90,7 +91,7 @@ public class MainFragmentController implements View.OnClickListener {
                 context.startActivity(intent);
                 break;
             case R.id.ll_mainfrm_header_conpon:
-                intent = new Intent(context, ActiveActivity.class);
+                intent = new Intent(context, ChatRoomActivity.class);
                 context.startActivity(intent);
                 break;
             case R.id.ll_mainfrm_header_meishi:

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_gravity="top"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_title_height"
+        android:background="@color/color_green">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="聊天室"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/text_main_title" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/common_margin"
+            android:src="@drawable/ic_common_back_white" />
+    </FrameLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_chat_room"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/common_margin"
+        android:layout_marginBottom="60dp"
+        android:layout_marginTop="@dimen/common_title_height"
+        />
+
+    <LinearLayout
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@color/color_bg"
+        >
+        <EditText
+            android:id="@+id/et_chat_content"
+            android:layout_width="0dp"
+            android:layout_weight="5"
+            android:layout_height="39dp"
+            android:layout_margin="5dp"
+            android:paddingLeft="5dp"
+            android:hint="输入"
+            android:background="@color/color_white"
+            android:textColorHint="@color/color_gray"
+            />
+        <Button
+            android:id="@+id/btn_chat_send"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="发送"/>
+    </LinearLayout>
+</FrameLayout>

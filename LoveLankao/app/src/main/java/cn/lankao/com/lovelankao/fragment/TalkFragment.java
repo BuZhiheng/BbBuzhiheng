@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import cn.lankao.com.lovelankao.R;
+import cn.lankao.com.lovelankao.viewcontroller.TalkController;
 
 /**
  * Created by BuZhiheng on 2016/3/30.
@@ -18,6 +19,7 @@ public class TalkFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_talk,container,false);
+        new TalkController(getActivity(),view);
         return view;
     }
 }

@@ -1,5 +1,6 @@
 <resources>
     <dimen name="common_margin">10dp</dimen>
+    <dimen name="common_margin_large">20dp</dimen>
     <dimen name="common_title_height">50dp</dimen>
     <dimen name="text_main_title">21sp</dimen>
     <dimen name="text_common_item_title">16sp</dimen>

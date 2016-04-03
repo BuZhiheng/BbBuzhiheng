@@ -28,11 +28,12 @@
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="Wwp1M6nGWdquEAzDs8bHx19qGrSOToGc" />
-        <activity android:name=".activity.LBSActivity" />
-        <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.AdvertMsgActivity" />
         <activity android:name=".activity.AdvertDetailActivity" />
         <activity android:name=".activity.ActiveActivity" />
+        <activity android:name=".activity.ChatRoomActivity" />
+        <activity android:name=".activity.LBSActivity" />
+        <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.RegisterActivity" />
     </application>
 </manifest>
