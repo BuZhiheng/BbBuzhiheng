@@ -35,5 +35,7 @@
         <activity android:name=".activity.LBSActivity" />
         <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.RegisterActivity" />
+        <activity android:name=".activity.SquareActivity" />
+        <activity android:name=".activity.SquareSendActivity" />
     </application>
 </manifest>

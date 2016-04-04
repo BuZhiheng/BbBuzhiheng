@@ -18,10 +18,9 @@ import cn.lankao.com.lovelankao.entity.ChatRoom;
  */
 public class ChatRoomAdapter extends RecyclerView.Adapter<ChatRoomAdapter.MyViewHolder>{
     private Context context;
-    private List<ChatRoom> data;
+    public static List<ChatRoom> data = new ArrayList<>();
     public ChatRoomAdapter(Context context){
         this.context = context;
-        data = new ArrayList<>();
     }
     public void addData(ChatRoom data){
         this.data.add(data);

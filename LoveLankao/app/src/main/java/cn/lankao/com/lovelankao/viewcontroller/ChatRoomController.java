@@ -9,6 +9,8 @@ import com.google.gson.Gson;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.List;
+
+import cn.bmob.v3.BmobObject;
 import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.BmobRealTimeData;
 import cn.bmob.v3.listener.FindListener;
@@ -47,7 +49,7 @@ public class ChatRoomController implements ChatRoomActivity.ChatRoomHolder, View
             @Override
             public void onConnectCompleted() {
                 realTimeData.subTableUpdate("ChatRoom");
-                getChat();
+                sendMsg(1);
             }
 
             @Override
@@ -62,24 +64,6 @@ public class ChatRoomController implements ChatRoomActivity.ChatRoomHolder, View
                 adapter.addData(chatRoom);
                 adapter.notifyDataSetChanged();
                 rvChat.smoothScrollToPosition(adapter.getItemCount());
-                ToastUtil.show(chatRoom.getChatContent());
-            }
-        });
-    }
-
-    private void getChat() {
-        BmobQuery<ChatRoom> query = new BmobQuery<>();
-        query.findObjects(context, new FindListener<ChatRoom>() {
-            @Override
-            public void onSuccess(List<ChatRoom> list) {
-                adapter.setData(list);
-                adapter.notifyDataSetChanged();
-                rvChat.smoothScrollToPosition(adapter.getItemCount());
-            }
-
-            @Override
-            public void onError(int i, String s) {
-
             }
         });
     }
@@ -96,15 +80,19 @@ public class ChatRoomController implements ChatRoomActivity.ChatRoomHolder, View
         int id = v.getId();
         switch (id){
             case R.id.btn_chat_send:
-                sendMsg();
+                sendMsg(0);
                 break;
             default:break;
         }
     }
 
-    private void sendMsg() {
+    private void sendMsg(int isFirst) {
         ChatRoom chatRoom = new ChatRoom();
-        chatRoom.setChatContent(etContent.getText().toString());
+        if(isFirst == 1){
+            chatRoom.setChatContent("Carry  加入房间");
+        }else{
+            chatRoom.setChatContent(etContent.getText().toString());
+        }
         chatRoom.save(context, new SaveListener() {
             @Override
             public void onSuccess() {

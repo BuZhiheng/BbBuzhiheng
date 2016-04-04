@@ -6,6 +6,7 @@ import android.view.View;
 
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.ChatRoomActivity;
+import cn.lankao.com.lovelankao.activity.SquareActivity;
 
 /**
  * Created by dell on 2016/4/3.
@@ -21,6 +22,7 @@ public class TalkController implements View.OnClickListener {
 
     private void initView() {
         view.findViewById(R.id.fl_talkfrm_chatroom).setOnClickListener(this);
+        view.findViewById(R.id.fl_talkfrm_square).setOnClickListener(this);
     }
 
     @Override
@@ -28,8 +30,12 @@ public class TalkController implements View.OnClickListener {
         int id = v.getId();
         switch (id){
             case R.id.fl_talkfrm_chatroom:
-                Intent intent = new Intent(context, ChatRoomActivity.class);
-                context.startActivity(intent);
+                Intent intentTalk = new Intent(context, ChatRoomActivity.class);
+                context.startActivity(intentTalk);
+                break;
+            case R.id.fl_talkfrm_square:
+                Intent intentSquare = new Intent(context, SquareActivity.class);
+                context.startActivity(intentSquare);
                 break;
         }
     }
