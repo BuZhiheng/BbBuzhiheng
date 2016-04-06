@@ -1,6 +1,5 @@
 package cn.lankao.com.lovelankao.adapter;
 
-import android.app.Activity;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,13 +8,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.xutils.x;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import cn.lankao.com.lovelankao.R;
-import cn.lankao.com.lovelankao.entity.ChatRoom;
 import cn.lankao.com.lovelankao.entity.Square;
 
 /**
@@ -26,7 +25,7 @@ public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.MyViewHold
     private List<Square> data;
     public SquareAdapter(Context context){
         this.context = context;
-        x.view().inject((Activity) context);
+        ImageLoader.getInstance().init(ImageLoaderConfiguration.createDefault(context));
         data = new ArrayList<>();
     }
     public void addData(Square data){
@@ -45,13 +44,11 @@ public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.MyViewHold
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        Square square = data.get(position);
+        final Square square = data.get(position);
+        ImageLoader.getInstance().displayImage(square.getSquarePhoto(), holder.ivPhoto);
         holder.tvNickname.setText(square.getNickName());
         holder.tvContent.setText(square.getSquareContent());
         holder.tvTime.setText(square.getCreatedAt());
-        if (square.getSquarePhoto() != null){
-            x.image().bind(holder.ivPhoto,square.getSquarePhoto().getFileUrl(context));
-        }
     }
 
     @Override

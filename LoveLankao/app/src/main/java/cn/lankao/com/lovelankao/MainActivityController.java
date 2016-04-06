@@ -17,6 +17,7 @@ import cn.lankao.com.lovelankao.fragment.LbsFragment;
 import cn.lankao.com.lovelankao.fragment.MainFragment;
 import cn.lankao.com.lovelankao.fragment.MineFragment;
 import cn.lankao.com.lovelankao.fragment.TalkFragment;
+import cn.lankao.com.lovelankao.utils.MyLocationClient;
 
 /**
  * Created by 卜智衡 on 2016/3/18.

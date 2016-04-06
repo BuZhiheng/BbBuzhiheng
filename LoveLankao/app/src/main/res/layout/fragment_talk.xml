@@ -54,7 +54,7 @@
             android:layout_gravity="center_vertical|right"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:layout_marginRight="@dimen/common_margin_large"
+            android:layout_marginRight="@dimen/common_margin"
             android:src="@drawable/ic_common_right_green"/>
     </FrameLayout>
     <include layout="@layout/include_slid_img_marginleft"/>
@@ -94,7 +94,7 @@
             android:layout_gravity="center_vertical|right"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:layout_marginRight="@dimen/common_margin_large"
+            android:layout_marginRight="@dimen/common_margin"
             android:src="@drawable/ic_common_right_green"/>
     </FrameLayout>
     <include layout="@layout/include_slid_img_height10"/>

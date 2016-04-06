@@ -4,9 +4,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.widget.Toast;
-
-import cn.bmob.v3.Bmob;
-
 public class MainActivity extends AppCompatActivity {
     private boolean canExit = false;
 
@@ -14,7 +11,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Bmob.initialize(this, "fe7893d2bc42ed427a178367a0e1d6b6");
         new MainActivityController(this);
     }
 

@@ -9,13 +9,13 @@ import cn.bmob.v3.datatype.BmobFile;
 public class Square extends BmobObject{
     private String nickName;
     private String squareContent;
-    private BmobFile squarePhoto;
+    private String squarePhoto;
 
-    public BmobFile getSquarePhoto() {
+    public String getSquarePhoto() {
         return squarePhoto;
     }
 
-    public void setSquarePhoto(BmobFile squarePhoto) {
+    public void setSquarePhoto(String squarePhoto) {
         this.squarePhoto = squarePhoto;
     }
 

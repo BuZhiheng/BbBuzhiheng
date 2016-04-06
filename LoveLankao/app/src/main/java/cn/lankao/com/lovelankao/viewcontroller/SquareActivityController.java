@@ -1,5 +1,6 @@
 package cn.lankao.com.lovelankao.viewcontroller;
 import android.content.Intent;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -32,6 +33,7 @@ public class SquareActivityController implements View.OnClickListener {
         rvSquare = (RecyclerView) context.findViewById(R.id.rv_square_room);
         rvSquare.setLayoutManager(new LinearLayoutManager(context));
         rvSquare.setAdapter(adapter);
+        rvSquare.setItemAnimator(new DefaultItemAnimator());
         context.findViewById(R.id.iv_square_send).setOnClickListener(this);
     }
     private void initData() {

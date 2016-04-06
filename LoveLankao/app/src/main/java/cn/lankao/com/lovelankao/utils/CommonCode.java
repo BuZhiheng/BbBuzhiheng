@@ -13,4 +13,11 @@ public class CommonCode {
     public static int ADVERT_XIYU = 6;
     public static int ADVERT_MEIJIA = 7;
     public static int ADVERT_KTV = 8;
+    public static int ADVERT_TEHUI = 9;
+    public static int ADVERT_OPEN = 10;
+    public static int ADVERT_TUIJIAN = 11;
+
+    public static final String SP_ADDRESS = "SP_LOCATION_ADDRESS";
+    public static final String SP_LAT = "SP_LOCATION_LAT";
+    public static final String SP_LNG = "SP_LOCATION_LNG";
 }

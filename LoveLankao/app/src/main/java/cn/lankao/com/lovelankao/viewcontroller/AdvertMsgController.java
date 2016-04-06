@@ -14,6 +14,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.baidu.mapapi.model.LatLng;
+
 import org.xutils.x;
 
 import java.util.List;
@@ -22,7 +24,11 @@ import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.listener.FindListener;
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.AdvertMsgActivity;
+import cn.lankao.com.lovelankao.activity.ShopLocationActivity;
 import cn.lankao.com.lovelankao.entity.AdvertNormal;
+import cn.lankao.com.lovelankao.utils.CommonCode;
+import cn.lankao.com.lovelankao.utils.MapUtil;
+import cn.lankao.com.lovelankao.utils.PrefUtil;
 
 /**
  * Created by BuZhiheng on 2016/4/2.
@@ -39,15 +45,16 @@ public class AdvertMsgController implements View.OnClickListener {
     private TextView tvPoints;
     private TextView tvTitleCenter;
     private TextView tvAddress;
+    private TextView tvDistance;
     private TextView tvContentMsg;
     private TextView tvPinglun;
     private LinearLayout layoutBottom;
     private LinearLayout layoutAddress;
-
+    private Intent intent;
     public AdvertMsgController(AdvertMsgActivity context) {
         this.context = context;
         x.view().inject(context);
-        Intent intent = context.getIntent();
+        intent = context.getIntent();
         if (intent != null) {
             advertNormal = (AdvertNormal) intent.getSerializableExtra("data");
         }
@@ -65,6 +72,7 @@ public class AdvertMsgController implements View.OnClickListener {
         tvPoints = (TextView) context.findViewById(R.id.tv_advertdetail_points);
         tvTitleCenter = (TextView) context.findViewById(R.id.tv_advertdetail_title_center);
         tvAddress = (TextView) context.findViewById(R.id.tv_advertdetail_address);
+        tvDistance = (TextView) context.findViewById(R.id.tv_advertdetail_distance);
         tvContentMsg = (TextView) context.findViewById(R.id.tv_advertdetail_content_msg);
         tvPinglun = (TextView) context.findViewById(R.id.tv_advertdetail_new_pinglun);
         layoutBottom = (LinearLayout) context.findViewById(R.id.ll_advertmsg_bottom);
@@ -82,6 +90,9 @@ public class AdvertMsgController implements View.OnClickListener {
         } else {
             tvPoints.setText("已点击:" + advertNormal.getAdvClicked() + "次");
         }
+        LatLng latLng1 = new LatLng(advertNormal.getAdvLat(),advertNormal.getAdvLng());
+        LatLng latLng2 = new LatLng(PrefUtil.getFloat(CommonCode.SP_LAT, 0),PrefUtil.getFloat(CommonCode.SP_LNG,0));
+        tvDistance.setText(MapUtil.getDistance(latLng1, latLng2));
         tvTitle.setText(advertNormal.getTitle());
         tvContent.setText(advertNormal.getTitleContent());
         tvAverge.setText(advertNormal.getAdvPrice());
@@ -151,7 +162,11 @@ public class AdvertMsgController implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         if (v == layoutAddress) {
-
+            Intent intent = new Intent(context, ShopLocationActivity.class);
+            intent.putExtra("title",advertNormal.getTitle());
+            intent.putExtra("lat",advertNormal.getAdvLat());
+            intent.putExtra("lng",advertNormal.getAdvLng());
+            context.startActivity(intent);
         } else if (v == ivCall) {
             Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + advertNormal.getAdvPhoneNumber()));
             if (ActivityCompat.checkSelfPermission(context, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {

@@ -80,19 +80,15 @@ public class MainFragmentController implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         int id = v.getId();
-        Intent intent;
         switch (id) {
             case R.id.tv_mainfrm_open:
-                intent = new Intent(context, ActiveActivity.class);
-                context.startActivity(intent);
+                toAdvert(CommonCode.ADVERT_OPEN, "开业大酬宾");
                 break;
             case R.id.tv_mainfrm_tuiian:
-                intent = new Intent(context, LoginActivity.class);
-                context.startActivity(intent);
+                toAdvert(CommonCode.ADVERT_TUIJIAN, "精品推荐");
                 break;
             case R.id.ll_mainfrm_header_conpon:
-                intent = new Intent(context, ChatRoomActivity.class);
-                context.startActivity(intent);
+                toAdvert(CommonCode.ADVERT_TEHUI, "今日特惠");
                 break;
             case R.id.ll_mainfrm_header_meishi:
                 toAdvert(CommonCode.ADVERT_MEISHI,"美食");

@@ -12,6 +12,8 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.baidu.mapapi.model.LatLng;
+
 import org.xutils.common.util.DensityUtil;
 import org.xutils.image.ImageOptions;
 import org.xutils.x;
@@ -22,6 +24,9 @@ import java.util.List;
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.AdvertMsgActivity;
 import cn.lankao.com.lovelankao.entity.AdvertNormal;
+import cn.lankao.com.lovelankao.utils.CommonCode;
+import cn.lankao.com.lovelankao.utils.MapUtil;
+import cn.lankao.com.lovelankao.utils.PrefUtil;
 
 /**
  * Created by BuZhiheng on 2016/3/31.
@@ -53,7 +58,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
         final AdvertNormal advert = data.get(position);
-        if (advert.getAdvPhoto() != null){
+        if (advert.getAdvPhoto() == null){
+        }else{
             x.image().bind(holder.photo, advert.getAdvPhoto().getFileUrl(context));
         }
         if (advert.getAdvClicked() == null){
@@ -64,6 +70,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         if (advert.getAdvPrice() != null){
             holder.tvAverage.setText("¥"+advert.getAdvPrice());
         }
+        LatLng latLng1 = new LatLng(advert.getAdvLat(),advert.getAdvLng());
+        LatLng latLng2 = new LatLng(PrefUtil.getFloat(CommonCode.SP_LAT,0),PrefUtil.getFloat(CommonCode.SP_LNG,0));
+        holder.tvDistance.setText(MapUtil.getDistance(latLng1,latLng2));
         holder.tvTitle.setText(advert.getTitle());
         holder.tvTitleContent.setText(advert.getTitleContent());
         holder.frameLayout.setOnClickListener(new View.OnClickListener() {
@@ -95,6 +104,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         TextView tvTitle;
         TextView tvAverage;
         TextView tvPoints;
+        TextView tvDistance;
         TextView tvTitleContent;
 
         public MyViewHolder(View view) {
@@ -104,8 +114,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             tvTitle = (TextView) view.findViewById(R.id.tv_mainfrm_item_title);
             tvTitleContent = (TextView) view.findViewById(R.id.tv_mainfrm_item_titlecontent);
             tvPoints = (TextView) view.findViewById(R.id.tv_mainfrm_item_points);
+            tvDistance = (TextView) view.findViewById(R.id.tv_mainfrm_item_distance);
             tvAverage = (TextView) view.findViewById(R.id.tv_mainfrm_item_average);
         }
     }
 }
-

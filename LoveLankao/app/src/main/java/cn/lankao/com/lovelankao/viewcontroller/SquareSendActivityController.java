@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -22,9 +23,11 @@ import java.util.Date;
 
 import cn.bmob.v3.datatype.BmobFile;
 import cn.bmob.v3.listener.SaveListener;
+import cn.bmob.v3.listener.UploadFileListener;
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.SquareSendActivity;
 import cn.lankao.com.lovelankao.entity.Square;
+import cn.lankao.com.lovelankao.utils.BitmapUtil;
 import cn.lankao.com.lovelankao.utils.ToastUtil;
 
 /**
@@ -34,7 +37,7 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
     private SquareSendActivity context;
     private EditText etContent;
     private ImageView ivChoose;
-    private String path = "";
+    private String path;
     public SquareSendActivityController(SquareSendActivity context) {
         this.context = context;
         x.view().inject(context);
@@ -72,22 +75,54 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
                         .create().show();
                 break;
             case R.id.btn_square_send:
-                Square square = new Square();
+                final Square square = new Square();
                 square.setNickName("Carry");
                 square.setSquareContent(etContent.getText().toString());
-//                square.setSquarePhoto(new BmobFile(new File(path)));
-                square.save(context, new SaveListener() {
-                    @Override
-                    public void onSuccess() {
-                        ToastUtil.show("发表成功");
-                        context.finish();
-                    }
+                if (path == null){
+                    square.save(context, new SaveListener() {
+                        @Override
+                        public void onSuccess() {
+                            ToastUtil.show("发表成功");
+                            context.finish();
+                        }
+                        @Override
+                        public void onFailure(int i, String s) {
+                            ToastUtil.show(s);
+                        }
+                    });
+                } else {
+                    final BmobFile bmobFile = new BmobFile(new File(path));
+                    bmobFile.upload(context, new UploadFileListener() {
+                        @Override
+                        public void onSuccess() {
+                            //bmobFile.getUrl()---返回的上传文件的地址（不带域名）
+                            //bmobFile.getFileUrl(context)--返回的上传文件的完整地址（带域名）
+                            //ToastUtil.show("上传文件成功:" + bmobFile.getFileUrl(context));
+                            square.setSquarePhoto(bmobFile.getFileUrl(context));
+                            square.save(context, new SaveListener() {
+                                @Override
+                                public void onSuccess() {
+                                    ToastUtil.show("发表成功");
+                                    context.finish();
+                                }
 
-                    @Override
-                    public void onFailure(int i, String s) {
-                        ToastUtil.show(s);
-                    }
-                });
+                                @Override
+                                public void onFailure(int i, String s) {
+                                    ToastUtil.show(s);
+                                }
+                            });
+                        }
+
+                        @Override
+                        public void onProgress(Integer value) {
+                        }
+
+                        @Override
+                        public void onFailure(int code, String msg) {
+                            ToastUtil.show("上传文件失败：" + msg);
+                        }
+                    });
+                }
                 break;
             default:
                 break;
@@ -106,7 +141,9 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
                 path = c.getString(c.getColumnIndex("_data"));
                 if (path != null){
                     x.image().bind(ivChoose,path);
+                    ToastUtil.show(path);
                 }
+                path = BitmapUtil.saveBitmapFile(BitmapFactory.decodeFile(path));
             }else{
                 Bundle extras = data.getExtras();
                 Bitmap b = (Bitmap) extras.get("data");
