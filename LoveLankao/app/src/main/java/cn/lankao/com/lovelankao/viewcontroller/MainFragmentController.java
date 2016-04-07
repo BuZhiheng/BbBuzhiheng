@@ -63,6 +63,7 @@ public class MainFragmentController implements View.OnClickListener {
 
     private void initData() {
         BmobQuery<AdvertNormal> query = new BmobQuery<>();
+        query.addWhereEqualTo("advIndex",CommonCode.ADVERT_INDEX);
         query.findObjects(context, new FindListener<AdvertNormal>() {
             @Override
             public void onSuccess(List<AdvertNormal> list) {
@@ -118,6 +119,7 @@ public class MainFragmentController implements View.OnClickListener {
                 toAdvert(CommonCode.ADVERT_KTV,"KTV");
                 break;
             case R.id.ll_mainfrm_header_other:
+                toAdvert(CommonCode.ADVERT_OTHER,"其他");
                 break;
             default:
                 break;
@@ -125,8 +127,8 @@ public class MainFragmentController implements View.OnClickListener {
     }
     private void toAdvert(int code,String title){
         Intent intent = new Intent(context, AdvertDetailActivity.class);
-        intent.putExtra("type", code);
-        intent.putExtra("title", title);
+        intent.putExtra(CommonCode.INTENT_ADVERT_TITLE, title);
+        intent.putExtra(CommonCode.INTENT_ADVERT_TYPE, code);
         context.startActivity(intent);
     }
 }

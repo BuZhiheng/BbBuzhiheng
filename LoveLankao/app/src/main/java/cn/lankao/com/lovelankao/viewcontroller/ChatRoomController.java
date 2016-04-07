@@ -20,6 +20,8 @@ import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.ChatRoomActivity;
 import cn.lankao.com.lovelankao.adapter.ChatRoomAdapter;
 import cn.lankao.com.lovelankao.entity.ChatRoom;
+import cn.lankao.com.lovelankao.utils.CommonCode;
+import cn.lankao.com.lovelankao.utils.PrefUtil;
 import cn.lankao.com.lovelankao.utils.ToastUtil;
 /**
  * Created by BuZhiheng on 2016/4/3.
@@ -88,10 +90,26 @@ public class ChatRoomController implements ChatRoomActivity.ChatRoomHolder, View
 
     private void sendMsg(int isFirst) {
         ChatRoom chatRoom = new ChatRoom();
+        String nickname = PrefUtil.getString(CommonCode.SP_USER_NICKNAME, "游客");
         if(isFirst == 1){
-            chatRoom.setChatContent("Carry  加入房间");
+            chatRoom.setNickName(nickname);
+            chatRoom.setChatContent(nickname + "  加入聊天室!");
         }else{
-            chatRoom.setChatContent(etContent.getText().toString());
+            String content = etContent.getText().toString();
+            if (content == null || "".equals(content)){
+                ToastUtil.show("请输入内容");
+                return;
+            }
+            chatRoom.setNickName(nickname);
+            chatRoom.setChatContent(content);
+        }
+        String type = PrefUtil.getString(CommonCode.SP_USER_USERTYPE,"");
+        if ("1000".equals(type)){
+            chatRoom.setChatUserType("管理员");
+        }else if ("1001".equals(type)){
+            chatRoom.setChatUserType("VIP用户");
+        } else{
+            chatRoom.setChatUserType("");
         }
         chatRoom.save(context, new SaveListener() {
             @Override

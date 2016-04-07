@@ -8,8 +8,14 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.baidu.location.BDLocation;
 
+import java.util.List;
+
+import cn.bmob.v3.BmobObject;
+import cn.bmob.v3.BmobQuery;
+import cn.bmob.v3.listener.FindListener;
 import cn.lankao.com.lovelankao.MainActivity;
 import cn.lankao.com.lovelankao.R;
+import cn.lankao.com.lovelankao.entity.Setting;
 import cn.lankao.com.lovelankao.utils.CommonCode;
 import cn.lankao.com.lovelankao.utils.MyLocationClient;
 import cn.lankao.com.lovelankao.utils.PrefUtil;
@@ -31,19 +37,41 @@ public class SplashActivity extends AppCompatActivity{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        MyLocationClient.locSingle(new MyLocationClient.MyLocationListener() {
-            @Override
-            public void onLocSuccess(BDLocation bdLocation) {
-                PrefUtil.putString(CommonCode.SP_ADDRESS,bdLocation.getAddrStr());
-                PrefUtil.putFloat(CommonCode.SP_LAT, (float) bdLocation.getLatitude());
-                PrefUtil.putFloat(CommonCode.SP_LNG, (float) bdLocation.getLongitude());
-            }
-        });
+        initLocation();
+        initSetting();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 handler.sendEmptyMessage(0x001);
             }
-        },2000);
+        }, 2000);
+    }
+
+    private void initSetting() {
+        BmobQuery<Setting> query = new BmobQuery<>();
+        query.addWhereEqualTo("setType",1);
+        query.findObjects(this, new FindListener<Setting>() {
+            @Override
+            public void onSuccess(List<Setting> list) {
+                if (list != null && list.size() > 0){
+                    PrefUtil.putString(CommonCode.SP_SET_PARTNERURL,list.get(0).getSetPartnerUrl());
+                    PrefUtil.putString(CommonCode.SP_SET_ABOUTUSURL,list.get(0).getSetAboutusUrl());
+                }
+            }
+            @Override
+            public void onError(int i, String s) {
+            }
+        });
+    }
+
+    private void initLocation() {
+        MyLocationClient.locSingle(new MyLocationClient.MyLocationListener() {
+            @Override
+            public void onLocSuccess(BDLocation bdLocation) {
+                PrefUtil.putString(CommonCode.SP_LOCATION_ADDRESS,bdLocation.getAddrStr());
+                PrefUtil.putFloat(CommonCode.SP_LOCATION_LAT, (float) bdLocation.getLatitude());
+                PrefUtil.putFloat(CommonCode.SP_LOCATION_LNG, (float) bdLocation.getLongitude());
+            }
+        });
     }
 }

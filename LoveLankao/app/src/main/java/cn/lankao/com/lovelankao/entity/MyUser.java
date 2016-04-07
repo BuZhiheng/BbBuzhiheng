@@ -8,7 +8,7 @@ import cn.bmob.v3.BmobUser;
 public class MyUser extends BmobUser{
     private Integer point;//
     private String nickName;
-
+    private String userType;
     public Integer getPoint() {
         return point;
     }
@@ -23,5 +23,13 @@ public class MyUser extends BmobUser{
 
     public void setNickName(String nickName) {
         this.nickName = nickName;
+    }
+
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
     }
 }

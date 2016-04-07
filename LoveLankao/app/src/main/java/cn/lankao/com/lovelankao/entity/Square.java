@@ -10,6 +10,15 @@ public class Square extends BmobObject{
     private String nickName;
     private String squareContent;
     private String squarePhoto;
+    private String squareUserType;
+
+    public String getSquareUserType() {
+        return squareUserType;
+    }
+
+    public void setSquareUserType(String squareUserType) {
+        this.squareUserType = squareUserType;
+    }
 
     public String getSquarePhoto() {
         return squarePhoto;

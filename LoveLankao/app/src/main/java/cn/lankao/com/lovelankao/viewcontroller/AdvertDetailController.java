@@ -15,6 +15,7 @@ import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.AdvertDetailActivity;
 import cn.lankao.com.lovelankao.adapter.MyAdapter;
 import cn.lankao.com.lovelankao.entity.AdvertNormal;
+import cn.lankao.com.lovelankao.utils.CommonCode;
 
 /**
  * Created by BuZhiheng on 2016/4/2.
@@ -40,13 +41,19 @@ public class AdvertDetailController{
     private void initData() {
         Intent intent = context.getIntent();
         if(intent != null){
-            tvTitle.setText(intent.getStringExtra("title"));
-            getAdvert(intent.getIntExtra("type",0));
+            tvTitle.setText(intent.getStringExtra(CommonCode.INTENT_ADVERT_TITLE));
+            getAdvert(intent.getIntExtra(CommonCode.INTENT_ADVERT_TYPE,0));
         }
     }
     private void getAdvert(int type){
         BmobQuery<AdvertNormal> query = new BmobQuery<>();
-        query.addWhereEqualTo("advType",type);
+        if (type < 100){
+            query.addWhereEqualTo("advType",type);
+        } else if (type == 100){
+            query.addWhereEqualTo("advIndex",type);
+        } else if (type >= 1000){
+            query.addWhereEqualTo("advVipType",type);
+        }
         query.findObjects(context, new FindListener<AdvertNormal>() {
             @Override
             public void onSuccess(List<AdvertNormal> list) {

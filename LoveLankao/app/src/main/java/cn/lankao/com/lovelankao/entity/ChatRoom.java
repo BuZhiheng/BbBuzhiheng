@@ -10,7 +10,7 @@ public class ChatRoom extends BmobObject{
     private String nickName;
     private String chatContent;
     private BmobFile chatUserPhoto;
-    private Integer chatUserType;
+    private String chatUserType;
 
     public String getNickName() {
         return nickName;
@@ -36,11 +36,11 @@ public class ChatRoom extends BmobObject{
         this.chatUserPhoto = chatUserPhoto;
     }
 
-    public Integer getChatUserType() {
+    public String getChatUserType() {
         return chatUserType;
     }
 
-    public void setChatUserType(Integer chatUserType) {
+    public void setChatUserType(String chatUserType) {
         this.chatUserType = chatUserType;
     }
 }

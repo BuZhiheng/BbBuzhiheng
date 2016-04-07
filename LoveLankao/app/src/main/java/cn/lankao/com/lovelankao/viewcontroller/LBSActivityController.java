@@ -2,6 +2,7 @@ package cn.lankao.com.lovelankao.viewcontroller;
 
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.baidu.mapapi.map.BaiduMap;
@@ -23,6 +24,7 @@ import cn.bmob.v3.listener.FindListener;
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.LBSActivity;
 import cn.lankao.com.lovelankao.entity.AdvertNormal;
+import cn.lankao.com.lovelankao.utils.CommonCode;
 import cn.lankao.com.lovelankao.utils.ToastUtil;
 
 /**
@@ -32,23 +34,29 @@ public class LBSActivityController implements View.OnClickListener {
     private LBSActivity context;
     private MapView mapView;
     private BaiduMap map;
+    private TextView tvTitle;
     private SubActionButton btn1, btn2, btn3, btn4, btn5;
+    private FloatingActionMenu menu;
     private List<AdvertNormal> data;
     public LBSActivityController(LBSActivity context) {
         this.context = context;
         initView();
-        initData();
+        initData(CommonCode.ADVERT_OTHER);
     }
 
-    private void initData() {
+    private void initData(int type) {
         map.clear();
         data = new ArrayList<>();
         BmobQuery<AdvertNormal> query = new BmobQuery<>();
+        if (type != CommonCode.ADVERT_OTHER){
+            query.addWhereEqualTo("advType",type);
+        }
         query.findObjects(context, new FindListener<AdvertNormal>() {
             @Override
             public void onSuccess(List<AdvertNormal> list) {
                 data = list;
                 setMapMarker();
+                menu.close(true);
             }
 
             @Override
@@ -81,6 +89,7 @@ public class LBSActivityController implements View.OnClickListener {
         mapView.showZoomControls(false);
         mapView.showScaleControl(false);
         mapView.setLogoPosition(LogoPosition.logoPostionleftTop);
+        tvTitle = (TextView) context.findViewById(R.id.tv_lbsact_title);
         ImageView icon = new ImageView(context);
         icon.setImageResource(R.drawable.ic_common_add);
         FloatingActionButton actionButton = new FloatingActionButton
@@ -103,7 +112,7 @@ public class LBSActivityController implements View.OnClickListener {
         btn3 = itemBuilder.setContentView(icon3).build();
         btn4 = itemBuilder.setContentView(icon4).build();
         btn5 = itemBuilder.setContentView(icon5).build();
-        new FloatingActionMenu
+        menu = new FloatingActionMenu
                 .Builder(context)
                 .addSubActionView(btn1)
                 .addSubActionView(btn2)
@@ -122,15 +131,20 @@ public class LBSActivityController implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         if (v == btn1) {
-            initData();
+            tvTitle.setText("美食");
+            initData(CommonCode.ADVERT_MEISHI);
         } else if (v == btn2) {
-            ToastUtil.show("btn2");
+            tvTitle.setText("酒店");
+            initData(CommonCode.ADVERT_JIUDIAN);
         } else if (v == btn3) {
-            ToastUtil.show("btn3");
+            tvTitle.setText("休闲");
+            initData(CommonCode.ADVERT_XIUXIAN);
         } else if (v == btn4) {
-            ToastUtil.show("btn4");
+            tvTitle.setText("丽人");
+            initData(CommonCode.ADVERT_LIREN);
         } else if (v == btn5) {
-            ToastUtil.show("btn5");
+            tvTitle.setText("全部商家");
+            initData(CommonCode.ADVERT_OTHER);
         }
     }
 }

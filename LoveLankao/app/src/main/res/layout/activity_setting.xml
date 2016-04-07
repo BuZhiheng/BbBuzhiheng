@@ -13,7 +13,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="发表说说"
+            android:text="设置"
             android:textColor="@color/color_white"
             android:textSize="@dimen/text_main_title" />
 
@@ -29,30 +29,24 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="@dimen/common_margin"
+        android:gravity="center"
         android:orientation="vertical">
-
-        <EditText
-            android:id="@+id/et_square_send_content"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:padding="5dp"
-            android:background="@drawable/common_tv_chat"
-            android:gravity="top" />
-
-        <ImageView
-            android:id="@+id/iv_square_choose_photo"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/ic_square_camera_c"
-            android:visibility="gone"/>
-
         <Button
-            android:id="@+id/btn_square_send"
+            android:id="@+id/btn_setting_zhuxiao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:background="@drawable/common_tv_chat"
-            android:text="发表"
+            android:text="注销"
+            android:textColor="@color/color_green"
+            />
+        <Button
+            android:id="@+id/btn_setting_exit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/common_tv_chat"
+            android:text="退出"
             android:textColor="@color/color_green"
             />
     </LinearLayout>

@@ -9,7 +9,7 @@ import cn.lankao.com.lovelankao.activity.ChatRoomActivity;
 import cn.lankao.com.lovelankao.activity.SquareActivity;
 
 /**
- * Created by dell on 2016/4/3.
+ * Created by BuZhiheng on 2016/4/3.
  */
 public class TalkController implements View.OnClickListener {
     private Context context;

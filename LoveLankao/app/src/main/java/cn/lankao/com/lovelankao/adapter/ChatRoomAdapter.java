@@ -16,18 +16,22 @@ import cn.lankao.com.lovelankao.entity.ChatRoom;
 /**
  * Created by BuZhiheng on 2016/4/3.
  */
-public class ChatRoomAdapter extends RecyclerView.Adapter<ChatRoomAdapter.MyViewHolder>{
+public class ChatRoomAdapter extends RecyclerView.Adapter<ChatRoomAdapter.MyViewHolder> {
     private Context context;
     public static List<ChatRoom> data = new ArrayList<>();
-    public ChatRoomAdapter(Context context){
+
+    public ChatRoomAdapter(Context context) {
         this.context = context;
     }
-    public void addData(ChatRoom data){
+
+    public void addData(ChatRoom data) {
         this.data.add(data);
     }
-    public void setData(List<ChatRoom> data){
+
+    public void setData(List<ChatRoom> data) {
         this.data = data;
     }
+
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         MyViewHolder holder = new MyViewHolder(LayoutInflater
@@ -37,25 +41,30 @@ public class ChatRoomAdapter extends RecyclerView.Adapter<ChatRoomAdapter.MyView
     }
 
     @Override
+    public int getItemCount() {
+        return data.size();
+    }
+
+    @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         ChatRoom chat = data.get(position);
         holder.tvNickname.setText(chat.getNickName());
         holder.tvContent.setText(chat.getChatContent());
         holder.tvTime.setText(chat.getCreatedAt());
+        holder.tvUserType.setText(chat.getChatUserType());
     }
 
-    @Override
-    public int getItemCount() {
-        return data.size();
-    }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
         TextView tvNickname;
+        TextView tvUserType;
         TextView tvContent;
         TextView tvTime;
+
         public MyViewHolder(View view) {
             super(view);
             tvNickname = (TextView) view.findViewById(R.id.tv_chat_item_nickname);
+            tvUserType = (TextView) view.findViewById(R.id.tv_chat_item_usertype);
             tvContent = (TextView) view.findViewById(R.id.tv_chat_item_content);
             tvTime = (TextView) view.findViewById(R.id.tv_chat_item_time);
         }

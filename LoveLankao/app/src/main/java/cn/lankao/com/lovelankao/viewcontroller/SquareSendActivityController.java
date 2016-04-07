@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import org.greenrobot.eventbus.EventBus;
 import org.xutils.x;
 
 import java.io.File;
@@ -25,9 +26,12 @@ import cn.bmob.v3.datatype.BmobFile;
 import cn.bmob.v3.listener.SaveListener;
 import cn.bmob.v3.listener.UploadFileListener;
 import cn.lankao.com.lovelankao.R;
+import cn.lankao.com.lovelankao.activity.LoginActivity;
 import cn.lankao.com.lovelankao.activity.SquareSendActivity;
 import cn.lankao.com.lovelankao.entity.Square;
 import cn.lankao.com.lovelankao.utils.BitmapUtil;
+import cn.lankao.com.lovelankao.utils.CommonCode;
+import cn.lankao.com.lovelankao.utils.PrefUtil;
 import cn.lankao.com.lovelankao.utils.ToastUtil;
 
 /**
@@ -75,8 +79,26 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
                         .create().show();
                 break;
             case R.id.btn_square_send:
+                if ("".equals(PrefUtil.getString(CommonCode.SP_USER_USERID, ""))){
+                    Intent intent = new Intent(context, LoginActivity.class);
+                    context.startActivity(intent);
+                    return;
+                }
+                if(etContent.getText().toString() == null ||  etContent.getText().toString().length() < 20){
+                    ToastUtil.show("至少输入20个字");
+                    return;
+                }
                 final Square square = new Square();
-                square.setNickName("Carry");
+                square.setNickName(PrefUtil.getString(CommonCode.SP_USER_NICKNAME, "游客"));
+                String type = PrefUtil.getString(CommonCode.SP_USER_USERTYPE, "");
+                if ("1000".equals(type)){
+                    square.setSquareUserType("管理员");
+                }else if ("1001".equals(type)){
+                    square.setSquareUserType("VIP用户");
+                } else{
+                    square.setSquareUserType("");
+                }
+
                 square.setSquareContent(etContent.getText().toString());
                 if (path == null){
                     square.save(context, new SaveListener() {
@@ -84,6 +106,7 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
                         public void onSuccess() {
                             ToastUtil.show("发表成功");
                             context.finish();
+                            EventBus.getDefault().post(square);
                         }
                         @Override
                         public void onFailure(int i, String s) {

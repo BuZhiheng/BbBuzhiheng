@@ -16,6 +16,7 @@ import cn.lankao.com.lovelankao.utils.ToastUtil;
  */
 public class RegisterController implements View.OnClickListener {
     private RegisterActivity context;
+    private EditText nickname;
     private EditText username;
     private EditText password;
     private EditText passwordSure;
@@ -27,6 +28,7 @@ public class RegisterController implements View.OnClickListener {
     }
 
     private void initView() {
+        nickname = (EditText) context.findViewById(R.id.et_register_nickname);
         username = (EditText) context.findViewById(R.id.et_register_username);
         password = (EditText) context.findViewById(R.id.et_register_password);
         passwordSure = (EditText) context.findViewById(R.id.et_register_password_sure);
@@ -39,6 +41,7 @@ public class RegisterController implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         if (v == btnRegister){
+            String nn = nickname.getText().toString();
             String un = username.getText().toString();
             String pwd = password.getText().toString();
             String pwds = passwordSure.getText().toString();
@@ -54,8 +57,12 @@ public class RegisterController implements View.OnClickListener {
             }else if(!pwd.equals(pwds)){
                 ToastUtil.show("两次输入密码不一致");
                 return;
+            }else if("".equals(nn)) {
+                ToastUtil.show("请输入昵称");
+                return;
             }
             MyUser user = new MyUser();
+            user.setNickName(nn);
             user.setUsername(un);
             user.setPassword(pwd);
             user.signUp(context, new SaveListener() {

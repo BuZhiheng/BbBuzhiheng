@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.support.v4.app.ActivityCompat;
-import android.telecom.Call;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -22,6 +21,7 @@ import java.util.List;
 
 import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.listener.FindListener;
+import cn.bmob.v3.listener.GetListener;
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.AdvertMsgActivity;
 import cn.lankao.com.lovelankao.activity.ShopLocationActivity;
@@ -54,14 +54,27 @@ public class AdvertMsgController implements View.OnClickListener {
     public AdvertMsgController(AdvertMsgActivity context) {
         this.context = context;
         x.view().inject(context);
+        initView();
         intent = context.getIntent();
         if (intent != null) {
             advertNormal = (AdvertNormal) intent.getSerializableExtra("data");
+            initData();
         }
-        initView();
-        initData();
     }
+    private void initData(){
+        BmobQuery<AdvertNormal> query = new BmobQuery<>();
+        query.getObject(context, advertNormal.getObjectId(), new GetListener<AdvertNormal>() {
+            @Override
+            public void onSuccess(AdvertNormal advert) {
+                advertNormal = advert;
+                refreshData();
+            }
+            @Override
+            public void onFailure(int i, String s) {
 
+            }
+        });
+    }
     private void initView() {
         ivPhoto = (ImageView) context.findViewById(R.id.iv_advertdetail_photo);
         ivCall = (ImageView) context.findViewById(R.id.iv_advertdetail_call);
@@ -81,7 +94,7 @@ public class AdvertMsgController implements View.OnClickListener {
         ivCall.setOnClickListener(this);
     }
 
-    private void initData() {
+    private void refreshData() {
         if (advertNormal.getAdvPhoto() != null) {
             x.image().bind(ivPhoto, advertNormal.getAdvPhoto().getFileUrl(context));
         }
@@ -90,8 +103,11 @@ public class AdvertMsgController implements View.OnClickListener {
         } else {
             tvPoints.setText("已点击:" + advertNormal.getAdvClicked() + "次");
         }
+        if(advertNormal.getAdvPhoneNumber() == null ||  "".equals(advertNormal.getAdvPhoneNumber())){
+            ivCall.setVisibility(View.GONE);
+        }
         LatLng latLng1 = new LatLng(advertNormal.getAdvLat(),advertNormal.getAdvLng());
-        LatLng latLng2 = new LatLng(PrefUtil.getFloat(CommonCode.SP_LAT, 0),PrefUtil.getFloat(CommonCode.SP_LNG,0));
+        LatLng latLng2 = new LatLng(PrefUtil.getFloat(CommonCode.SP_LOCATION_LAT, 0),PrefUtil.getFloat(CommonCode.SP_LOCATION_LNG,0));
         tvDistance.setText(MapUtil.getDistance(latLng1, latLng2));
         tvTitle.setText(advertNormal.getTitle());
         tvContent.setText(advertNormal.getTitleContent());
@@ -102,7 +118,7 @@ public class AdvertMsgController implements View.OnClickListener {
         tvContentMsg.setText(advertNormal.getAdvContent());
         tvPinglun.setText(advertNormal.getAdvNewPinglun());
         BmobQuery<AdvertNormal> query = new BmobQuery<>();
-        query.addWhereEqualTo("advVipType", 1008);
+        query.addWhereEqualTo("advVipType", CommonCode.ADVERT_TUIJIAN);
         query.findObjects(context, new FindListener<AdvertNormal>() {
             @Override
             public void onSuccess(List<AdvertNormal> list) {

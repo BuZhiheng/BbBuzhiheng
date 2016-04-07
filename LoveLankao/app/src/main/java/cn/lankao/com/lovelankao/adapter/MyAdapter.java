@@ -3,7 +3,6 @@ package cn.lankao.com.lovelankao.adapter;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,8 +13,6 @@ import android.widget.TextView;
 
 import com.baidu.mapapi.model.LatLng;
 
-import org.xutils.common.util.DensityUtil;
-import org.xutils.image.ImageOptions;
 import org.xutils.x;
 
 import java.util.ArrayList;
@@ -71,7 +68,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             holder.tvAverage.setText("¥"+advert.getAdvPrice());
         }
         LatLng latLng1 = new LatLng(advert.getAdvLat(),advert.getAdvLng());
-        LatLng latLng2 = new LatLng(PrefUtil.getFloat(CommonCode.SP_LAT,0),PrefUtil.getFloat(CommonCode.SP_LNG,0));
+        LatLng latLng2 = new LatLng(PrefUtil.getFloat(CommonCode.SP_LOCATION_LAT,0),PrefUtil.getFloat(CommonCode.SP_LOCATION_LNG,0));
         holder.tvDistance.setText(MapUtil.getDistance(latLng1,latLng2));
         holder.tvTitle.setText(advert.getTitle());
         holder.tvTitleContent.setText(advert.getTitleContent());

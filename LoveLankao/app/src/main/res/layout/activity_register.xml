@@ -90,6 +90,33 @@
             android:layout_height="0.5dp"
             android:layout_marginTop="5dp"
             android:background="@color/color_green"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            >
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/ic_register_nickname"
+                />
+            <EditText
+                android:id="@+id/et_register_nickname"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@null"
+                android:layout_marginLeft="30dp"
+                android:hint="请输入昵称"
+                android:textColorHint="@color/color_gray"
+                />
+        </LinearLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/color_green"/>
         <Button
             android:id="@+id/btn_register_register"
             android:layout_width="match_parent"
@@ -112,5 +139,6 @@
             android:textSize="@dimen/text_common_item_title"
             android:textColor="@color/color_gray_deep"
             />
+
     </LinearLayout>
 </LinearLayout>

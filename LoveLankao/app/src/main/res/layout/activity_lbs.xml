@@ -14,10 +14,11 @@
         android:background="@color/color_green">
 
         <TextView
+            android:id="@+id/tv_lbsact_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="商圈"
+            android:text="全部商家"
             android:textColor="@color/color_white"
             android:textSize="@dimen/text_main_title" />
 
@@ -28,4 +29,12 @@
             android:layout_marginLeft="@dimen/common_margin"
             android:src="@drawable/ic_common_back_white" />
     </FrameLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_title_height"
+        android:paddingLeft="@dimen/common_margin"
+        android:background="#88cccccc"
+        android:text="点击地图中红色标记查看详情"
+        />
 </FrameLayout>

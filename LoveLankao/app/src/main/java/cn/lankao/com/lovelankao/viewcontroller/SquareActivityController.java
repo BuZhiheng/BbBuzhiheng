@@ -6,6 +6,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Toast;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+
 import java.util.List;
 
 import cn.bmob.v3.BmobQuery;
@@ -25,6 +28,7 @@ public class SquareActivityController implements View.OnClickListener {
     private SquareAdapter adapter;
     public SquareActivityController(SquareActivity context){
         this.context = context;
+        EventBus.getDefault().register(this);
         initView();
         initData();
     }
@@ -61,5 +65,14 @@ public class SquareActivityController implements View.OnClickListener {
                 context.startActivity(intent);
                 break;
         }
+    }
+    @Subscribe
+    public void onEventMainThread(Square square){
+        adapter.addData(square);
+        adapter.notifyDataSetChanged();
+        rvSquare.smoothScrollToPosition(adapter.getItemCount());
+    }
+    public void onDestroy(){
+        EventBus.getDefault().unregister(this);
     }
 }

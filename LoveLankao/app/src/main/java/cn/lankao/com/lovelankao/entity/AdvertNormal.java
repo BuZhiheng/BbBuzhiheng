@@ -22,6 +22,25 @@ public class AdvertNormal extends BmobObject implements Serializable{
     private Float advLng;
     private Integer advClicked;
     private Integer advType;
+    private Integer advVipType;
+    private Integer advIndex;
+
+    public Integer getAdvVipType() {
+        return advVipType;
+    }
+
+    public void setAdvVipType(Integer advVipType) {
+        this.advVipType = advVipType;
+    }
+
+    public Integer getAdvIndex() {
+        return advIndex;
+    }
+
+    public void setAdvIndex(Integer advIndex) {
+        this.advIndex = advIndex;
+    }
+
     private Boolean avdCanTakeOut;
     private Boolean avdCanShow;
 
