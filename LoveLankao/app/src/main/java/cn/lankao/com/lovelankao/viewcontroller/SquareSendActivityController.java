@@ -52,6 +52,7 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
         etContent = (EditText) context.findViewById(R.id.et_square_send_content);
         ivChoose = (ImageView) context.findViewById(R.id.iv_square_choose_photo);
         context.findViewById(R.id.btn_square_send).setOnClickListener(this);
+        context.findViewById(R.id.iv_squaresend_back).setOnClickListener(this);
         ivChoose.setOnClickListener(this);
     }
 
@@ -146,6 +147,9 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
                         }
                     });
                 }
+                break;
+            case R.id.iv_squaresend_back:
+                context.finish();
                 break;
             default:
                 break;

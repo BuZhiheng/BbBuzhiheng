@@ -25,7 +25,6 @@
         android:name="getui.permission.GetuiService.cn.lankao.com.lovelankao"
         android:protectionLevel="normal" >
     </permission>
-
     <application
         android:name=".LApplication"
         android:allowBackup="true"
@@ -43,7 +42,8 @@
         <!--百度地图配置-->
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="Wwp1M6nGWdquEAzDs8bHx19qGrSOToGc" />
+            android:value="RBzZyrCY0SoyR7EG5X3rI2oPkGarMLPf" />
+        <service android:name="com.baidu.location.f" android:enabled="true" android:process=":remote"/>
         <!--个推SDK配置开始-->
         <!-- 配置的第三方参数属性 -->
         <meta-data
@@ -77,7 +77,15 @@
                 <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
             </intent-filter>
         </receiver>
-
+        <!-- 配置第三方Receiver -->
+        <receiver
+            android:name=".receiver.PushReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <!-- APPID需要替换为相应的个推应用ID -->
+                <action android:name="com.igexin.sdk.action.hmSx9Jbeqa8mMcny5nDsV6" />
+            </intent-filter>
+        </receiver>
         <receiver
             android:name="com.igexin.sdk.PushManagerReceiver"
             android:exported="false" >
@@ -99,23 +107,19 @@
             android:process=":pushservice"
             android:taskAffinity="com.igexin.sdk.PushActivityTask"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
-
         <service
             android:name="com.igexin.download.DownloadService"
             android:process=":pushservice" />
-
         <receiver android:name="com.igexin.download.DownloadReceiver" >
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
         </receiver>
-
         <provider
             android:name="com.igexin.download.DownloadProvider"
             android:exported="true"
             android:authorities="downloads.cn.lankao.com.lovelankao"
             android:process=":pushservice" /><!--替换为第三方应用的包名-->
-
         <activity
             android:name="com.igexin.getuiext.activity.GetuiExtActivity"
             android:configChanges="orientation|keyboard|keyboardHidden"
@@ -124,7 +128,6 @@
             android:process=":pushservice"
             android:taskAffinity="android.task.myServicetask"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-
         <receiver
             android:name="com.igexin.getuiext.service.PayloadReceiver"
             android:exported="false" >
@@ -136,13 +139,14 @@
         <service
             android:name="com.igexin.getuiext.service.GetuiExtService"
             android:process=":pushservice" />
-
         <!-- 个推SDK配置结束 -->
-        <service android:name="com.baidu.location.f" android:enabled="true" android:process=":remote">
-        </service>
+        <!--Bmob自動更新功能-->
+        <activity
+            android:name="cn.bmob.v3.update.UpdateDialogActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
         <activity android:name=".activity.AdvertMsgActivity" />
         <activity android:name=".activity.AdvertDetailActivity" />
-        <activity android:name=".activity.ActiveActivity" />
         <activity android:name=".activity.ChatRoomActivity" />
         <activity android:name=".activity.LBSActivity" />
         <activity android:name=".activity.LoginActivity" />

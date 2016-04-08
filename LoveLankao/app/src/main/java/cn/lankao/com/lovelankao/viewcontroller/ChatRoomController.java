@@ -42,6 +42,7 @@ public class ChatRoomController implements ChatRoomActivity.ChatRoomHolder, View
         realTimeData = new BmobRealTimeData();
         adapter = new ChatRoomAdapter(context);
         context.findViewById(R.id.btn_chat_send).setOnClickListener(this);
+        context.findViewById(R.id.iv_chatroom_back).setOnClickListener(this);
         etContent = (EditText) context.findViewById(R.id.et_chat_content);
         rvChat = (RecyclerView) context.findViewById(R.id.rv_chat_room);
         rvChat.setLayoutManager(new LinearLayoutManager(context));
@@ -83,6 +84,9 @@ public class ChatRoomController implements ChatRoomActivity.ChatRoomHolder, View
         switch (id){
             case R.id.btn_chat_send:
                 sendMsg(0);
+                break;
+            case R.id.iv_chatroom_back:
+                context.finish();
                 break;
             default:break;
         }

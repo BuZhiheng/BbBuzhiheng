@@ -2,6 +2,7 @@ package cn.lankao.com.lovelankao.viewcontroller;
 import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,7 +21,7 @@ import cn.lankao.com.lovelankao.utils.CommonCode;
 /**
  * Created by BuZhiheng on 2016/4/2.
  */
-public class AdvertDetailController{
+public class AdvertDetailController implements View.OnClickListener {
     private AdvertDetailActivity context;
     private RecyclerView recyclerView;
     private MyAdapter adapter;
@@ -37,6 +38,7 @@ public class AdvertDetailController{
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.setAdapter(adapter);
         tvTitle = (TextView) context.findViewById(R.id.tv_advertlist_title);
+        context.findViewById(R.id.iv_advertdetail_back).setOnClickListener(this);
     }
     private void initData() {
         Intent intent = context.getIntent();
@@ -47,11 +49,11 @@ public class AdvertDetailController{
     }
     private void getAdvert(int type){
         BmobQuery<AdvertNormal> query = new BmobQuery<>();
-        if (type < 100){
+        if (type < 100){//一般广告
             query.addWhereEqualTo("advType",type);
-        } else if (type == 100){
+        } else if (type == 100){//主页20条
             query.addWhereEqualTo("advIndex",type);
-        } else if (type >= 1000){
+        } else if (type >= 1000){//vip广告或者推送（1005）
             query.addWhereEqualTo("advVipType",type);
         }
         query.findObjects(context, new FindListener<AdvertNormal>() {
@@ -65,5 +67,15 @@ public class AdvertDetailController{
                 Toast.makeText(context, s, Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    public void onClick(View v) {
+        int id = v.getId();
+        switch (id){
+            case R.id.iv_advertdetail_back:
+                context.finish();
+                break;
+        }
     }
 }

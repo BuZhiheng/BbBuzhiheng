@@ -21,6 +21,7 @@ public class CommonCode {
     public static int ADVERT_OPEN = 1001;//开业
     public static int ADVERT_TEHUI = 1002;//特惠
     public static int ADVERT_HEZUO = 1003;//合作商家
+    public static int ADVERT_TUISONG = 1005;//推送的消息
 
     public static final String SP_SET_PARTNERURL = "SP_SET_PARTNERURL";
     public static final String SP_SET_ABOUTUSURL = "SP_SET_ABOUTUSURL";

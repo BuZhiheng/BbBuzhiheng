@@ -3,6 +3,7 @@ package cn.lankao.com.lovelankao.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.TextView;
@@ -13,7 +14,7 @@ import cn.lankao.com.lovelankao.utils.CommonCode;
 /**
  * Created by BuZhiheng on 2016/4/7.
  */
-public class WebViewActivity extends AppCompatActivity {
+public class WebViewActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView title;
     private WebView webView;
     @Override
@@ -39,5 +40,11 @@ public class WebViewActivity extends AppCompatActivity {
                 }
             });
         }
+        findViewById(R.id.iv_webview_back).setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        finish();
     }
 }

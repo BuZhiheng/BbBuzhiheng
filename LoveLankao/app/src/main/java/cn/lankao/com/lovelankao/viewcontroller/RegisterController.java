@@ -45,8 +45,8 @@ public class RegisterController implements View.OnClickListener {
             String un = username.getText().toString();
             String pwd = password.getText().toString();
             String pwds = passwordSure.getText().toString();
-            if ("".equals(un)){
-                ToastUtil.show("请输入账号");
+            if (checkPhone(un) == false){
+                ToastUtil.show("请正确输入手机号");
                 return;
             }else if("".equals(pwd)){
                 ToastUtil.show("请输入密码");
@@ -80,5 +80,13 @@ public class RegisterController implements View.OnClickListener {
         } else if (v == tvCancle){
             context.finish();
         }
+    }
+    private boolean checkPhone(String phone){
+        if (phone == null || "".equals(phone)){
+            return false;
+        }else if (phone.length() != 11 || phone.contains(" ")){
+            return false;
+        }
+        return true;
     }
 }

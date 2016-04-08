@@ -24,7 +24,7 @@ public class MyLocationClient {
                 if (locationListener != null){
                     locationListener.onLocSuccess(bdLocation);
                 }
-                ToastUtil.show(bdLocation.getAddrStr());
+//                ToastUtil.show(bdLocation.getAddrStr());
             }
         });
     }

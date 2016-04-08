@@ -23,6 +23,7 @@
             android:textSize="@dimen/text_main_title" />
 
         <ImageView
+            android:id="@+id/iv_lbsact_back"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_gravity="center_vertical"

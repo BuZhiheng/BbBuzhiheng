@@ -58,7 +58,9 @@ public class AdvertMsgController implements View.OnClickListener {
         intent = context.getIntent();
         if (intent != null) {
             advertNormal = (AdvertNormal) intent.getSerializableExtra("data");
-            initData();
+            if(advertNormal != null){
+                initData();
+            }
         }
     }
     private void initData(){
@@ -76,6 +78,7 @@ public class AdvertMsgController implements View.OnClickListener {
         });
     }
     private void initView() {
+        context.findViewById(R.id.iv_advertmsg_back).setOnClickListener(this);
         ivPhoto = (ImageView) context.findViewById(R.id.iv_advertdetail_photo);
         ivCall = (ImageView) context.findViewById(R.id.iv_advertdetail_call);
         tvTitle = (TextView) context.findViewById(R.id.tv_advertdetail_title);
@@ -189,6 +192,8 @@ public class AdvertMsgController implements View.OnClickListener {
                 return;
             }
             context.startActivity(intent);
+        } else if(v.getId() == R.id.iv_advertmsg_back){
+            context.finish();
         }
     }
 

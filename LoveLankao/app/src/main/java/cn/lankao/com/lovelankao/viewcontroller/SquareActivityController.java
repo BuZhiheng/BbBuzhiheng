@@ -39,6 +39,7 @@ public class SquareActivityController implements View.OnClickListener {
         rvSquare.setAdapter(adapter);
         rvSquare.setItemAnimator(new DefaultItemAnimator());
         context.findViewById(R.id.iv_square_send).setOnClickListener(this);
+        context.findViewById(R.id.iv_square_back).setOnClickListener(this);
     }
     private void initData() {
         BmobQuery<Square> query = new BmobQuery<>();
@@ -63,6 +64,9 @@ public class SquareActivityController implements View.OnClickListener {
             case R.id.iv_square_send:
                 Intent intent = new Intent(context, SquareSendActivity.class);
                 context.startActivity(intent);
+                break;
+            case R.id.iv_square_back:
+                context.finish();
                 break;
         }
     }

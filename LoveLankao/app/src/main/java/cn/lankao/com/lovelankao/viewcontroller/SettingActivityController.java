@@ -22,6 +22,7 @@ public class SettingActivityController implements View.OnClickListener {
     private void initView() {
         context.findViewById(R.id.btn_setting_zhuxiao).setOnClickListener(this);
         context.findViewById(R.id.btn_setting_exit).setOnClickListener(this);
+        context.findViewById(R.id.iv_setting_back).setOnClickListener(this);
     }
 
     @Override
@@ -40,6 +41,9 @@ public class SettingActivityController implements View.OnClickListener {
                 userExit.setNickName(context.getPackageName());
                 context.finish();
                 EventBus.getDefault().post(userExit);
+                break;
+            case R.id.iv_setting_back:
+                context.finish();
                 break;
         }
     }

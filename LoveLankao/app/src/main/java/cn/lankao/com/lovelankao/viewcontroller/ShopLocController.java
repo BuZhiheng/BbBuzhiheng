@@ -1,6 +1,7 @@
 package cn.lankao.com.lovelankao.viewcontroller;
 
 import android.content.Intent;
+import android.view.View;
 import android.widget.TextView;
 
 import com.baidu.mapapi.map.BaiduMap;
@@ -20,7 +21,7 @@ import cn.lankao.com.lovelankao.activity.ShopLocationActivity;
 /**
  * Created by BuZhiheng on 2016/4/6.
  */
-public class ShopLocController {
+public class ShopLocController implements View.OnClickListener {
     private ShopLocationActivity context;
     private TextView tvTitle;
     private MapView mapView;
@@ -33,6 +34,7 @@ public class ShopLocController {
     }
 
     private void initView() {
+        context.findViewById(R.id.iv_shoploc_back).setOnClickListener(this);
         tvTitle = (TextView) context.findViewById(R.id.tv_shoploc_title);
         mapView = (MapView) context.findViewById(R.id.map_activity_shoploc);
         map = mapView.getMap();
@@ -58,5 +60,14 @@ public class ShopLocController {
         MarkerOptions option = new MarkerOptions().position(ll).icon(bitmap).zIndex(0).period(10);
                 option.animateType(MarkerOptions.MarkerAnimateType.drop);
                 map.addOverlay(option);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.iv_shoploc_back:
+                context.finish();
+                break;
+        }
     }
 }

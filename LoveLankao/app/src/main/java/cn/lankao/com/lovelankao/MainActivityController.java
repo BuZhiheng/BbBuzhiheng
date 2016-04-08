@@ -15,6 +15,7 @@ import com.igexin.sdk.PushManager;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.bmob.v3.update.BmobUpdateAgent;
 import cn.lankao.com.lovelankao.fragment.LbsFragment;
 import cn.lankao.com.lovelankao.fragment.MainFragment;
 import cn.lankao.com.lovelankao.fragment.MineFragment;
@@ -45,6 +46,7 @@ public class MainActivityController implements View.OnClickListener{
 
     public MainActivityController(MainActivity context) {
         this.context = context;
+        BmobUpdateAgent.forceUpdate(context);
         PushManager.getInstance().initialize(context.getApplicationContext());
         llIndex = (LinearLayout) context.findViewById(R.id.ll_main_index);
         llLbs = (LinearLayout) context.findViewById(R.id.ll_main_lbs);
