@@ -148,16 +148,20 @@
         <activity android:name=".activity.AdvertMsgActivity" />
         <activity android:name=".activity.AdvertDetailActivity" />
         <activity android:name=".activity.ChatRoomActivity" />
+        <activity android:name=".activity.JockActivity" />
+
         <activity android:name=".activity.LBSActivity" />
         <activity android:name=".activity.LoginActivity" />
         <activity android:name=".MainActivity"
             android:launchMode="singleTask"
             />
         <activity android:name=".activity.RegisterActivity" />
+        <activity android:name=".activity.ReadWeixinActivity" />
         <activity android:name=".activity.SettingActivity" />
         <activity android:name=".activity.SquareActivity" />
         <activity android:name=".activity.SquareSendActivity" />
         <activity android:name=".activity.ShopLocationActivity" />
+        <activity android:name=".activity.TopActivity" />
         <activity android:name=".activity.WebViewActivity" />
     </application>
 </manifest>

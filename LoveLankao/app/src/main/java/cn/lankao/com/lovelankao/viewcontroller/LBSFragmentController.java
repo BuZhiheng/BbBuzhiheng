@@ -38,6 +38,12 @@ public class LBSFragmentController implements View.OnClickListener{
         recyclerView = (RecyclerView) view.findViewById(R.id.rv_lbs_frm);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.setAdapter(adapter);
+//        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+//            @Override
+//            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+//                super.onScrollStateChanged(recyclerView, newState);
+//            }
+//        });
         imageView.setOnClickListener(this);
     }
     private void initData() {

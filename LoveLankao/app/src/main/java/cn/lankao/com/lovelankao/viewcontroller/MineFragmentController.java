@@ -16,7 +16,9 @@ import cn.lankao.com.lovelankao.activity.SettingActivity;
 import cn.lankao.com.lovelankao.activity.WebViewActivity;
 import cn.lankao.com.lovelankao.entity.MyUser;
 import cn.lankao.com.lovelankao.utils.CommonCode;
+import cn.lankao.com.lovelankao.utils.OkHttpUtil;
 import cn.lankao.com.lovelankao.utils.PrefUtil;
+import cn.lankao.com.lovelankao.utils.ToastUtil;
 
 /**
  * Created by BuZhiheng on 2016/4/6.
