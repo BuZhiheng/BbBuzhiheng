@@ -26,8 +26,15 @@
             android:layout_marginLeft="@dimen/common_margin"
             android:src="@drawable/ic_common_back_white" />
     </FrameLayout>
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/srl_advertdetail_activity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_advert_act"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"/>
+    </android.support.v4.widget.SwipeRefreshLayout>
 </LinearLayout>

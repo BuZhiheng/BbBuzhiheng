@@ -1,5 +1,6 @@
 package cn.lankao.com.lovelankao.viewcontroller;
 
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -21,9 +22,10 @@ import rx.schedulers.Schedulers;
 /**
  * Created by BuZhiheng on 2016/4/18.
  */
-public class JockActivityController {
+public class JockActivityController implements SwipeRefreshLayout.OnRefreshListener {
     private JockActivity context;
     private RecyclerView rv;
+    private SwipeRefreshLayout refresh;
     private JockAdapter adapter;
     private List<Jock> data;
     public JockActivityController(JockActivity context){
@@ -56,6 +58,7 @@ public class JockActivityController {
                         List<Jock> data = GsonUtil.jsonToList(list,Jock.class);
                         adapter.setData(data);
                         adapter.notifyDataSetChanged();
+                        refresh.setRefreshing(false);
                     }catch (Exception e){
                     }
                 }
@@ -66,8 +69,16 @@ public class JockActivityController {
     private void initView() {
         adapter = new JockAdapter(context);
         context.setContentView(R.layout.activity_jock);
+        refresh = (SwipeRefreshLayout)context.findViewById(R.id.srl_jock_activity);
+        refresh.setOnRefreshListener(this);
+        refresh.setRefreshing(true);
         rv = (RecyclerView) context.findViewById(R.id.rv_activity_jock);
         rv.setLayoutManager(new LinearLayoutManager(context));
         rv.setAdapter(adapter);
+    }
+
+    @Override
+    public void onRefresh() {
+        initData();
     }
 }

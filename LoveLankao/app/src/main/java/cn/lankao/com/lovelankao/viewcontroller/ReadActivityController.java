@@ -1,5 +1,6 @@
 package cn.lankao.com.lovelankao.viewcontroller;
 
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -22,9 +23,10 @@ import rx.schedulers.Schedulers;
 /**
  * Created by BuZhiheng on 2016/4/18.
  */
-public class ReadActivityController {
+public class ReadActivityController implements SwipeRefreshLayout.OnRefreshListener {
     private ReadWeixinActivity context;
     private RecyclerView rv;
+    private SwipeRefreshLayout refresh;
     private ReadAdapter adapter;
     public ReadActivityController(ReadWeixinActivity context){
         this.context = context;
@@ -56,6 +58,7 @@ public class ReadActivityController {
                                 List<ReadNews> data = GsonUtil.jsonToList(list,ReadNews.class);
                                 adapter.setData(data);
                                 adapter.notifyDataSetChanged();
+                                refresh.setRefreshing(false);
                             }catch (Exception e){
                             }
                         }
@@ -66,8 +69,16 @@ public class ReadActivityController {
     private void initView() {
         context.setContentView(R.layout.activity_read_weixin);
         adapter = new ReadAdapter(context);
+        refresh = (SwipeRefreshLayout)context.findViewById(R.id.srl_read_activity);
+        refresh.setOnRefreshListener(this);
+        refresh.setRefreshing(true);
         rv = (RecyclerView) context.findViewById(R.id.rv_read_activity);
         rv.setLayoutManager(new LinearLayoutManager(context));
         rv.setAdapter(adapter);
+    }
+
+    @Override
+    public void onRefresh() {
+        initData();
     }
 }

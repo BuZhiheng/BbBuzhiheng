@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.xutils.x;
@@ -18,51 +19,54 @@ import java.util.List;
 
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.WebViewActivity;
-import cn.lankao.com.lovelankao.entity.Top;
+import cn.lankao.com.lovelankao.entity.Cook;
+import cn.lankao.com.lovelankao.entity.LanKaoNews;
 import cn.lankao.com.lovelankao.utils.CommonCode;
 
 /**
  * Created by BuZhiheng on 2016/3/31.
  */
-public class TopAdapter extends RecyclerView.Adapter<TopAdapter.MyViewHolder> {
+public class LKNewsAdapter extends RecyclerView.Adapter<LKNewsAdapter.MyViewHolder> {
     private Context context;
-    private List<Top> data;
-    public TopAdapter(Context context) {
+    private List<LanKaoNews> data;
+    public LKNewsAdapter(Context context) {
         this.context = context;
         data = new ArrayList<>();
         x.view().inject((Activity) context);
     }
 
-    public void setData(List<Top> data) {
+    public void setData(List<LanKaoNews> data) {
         this.data = data;
     }
-    public void addData(List<Top> data) {
+    public void addData(List<LanKaoNews> data) {
         if (this.data == null){
             data = new ArrayList<>();
         }
         this.data = data;
     }
+
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         MyViewHolder holder = new MyViewHolder(LayoutInflater.from(context)
-                .inflate(R.layout.activity_top_item, parent, false));
+                .inflate(R.layout.activity_lknews_item, parent, false));
         return holder;
     }
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
-        final Top news = data.get(position);
-        if (news.getImg() != null){
-            x.image().bind(holder.photo, "http://tnfs.tngou.net/image"+news.getImg());
+        final LanKaoNews news = data.get(position);
+        if (news.getNewsImg() != null){
+            x.image().bind(holder.photo,news.getNewsImg());
         }
-        holder.tvTitle.setText(news.getTitle());
-        holder.tvFrom.setText("文章来自:" + news.getFromname());
-        holder.fl.setOnClickListener(new View.OnClickListener() {
+        holder.tvTitle.setText(news.getNewsTitle());
+        holder.tvTime.setText(news.getNewsTime());
+        holder.tvFrom.setText("文章来自:"+news.getNewsFrom());
+        holder.ll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, WebViewActivity.class);
-                intent.putExtra(CommonCode.INTENT_ADVERT_TITLE, "文章详情");
-                intent.putExtra(CommonCode.INTENT_SETTING_URL, news.getFromurl());
+                intent.putExtra(CommonCode.INTENT_ADVERT_TITLE, "新闻详情");
+                intent.putExtra(CommonCode.INTENT_SETTING_URL, news.getNewsFromUrl());
                 context.startActivity(intent);
             }
         });
@@ -74,16 +78,18 @@ public class TopAdapter extends RecyclerView.Adapter<TopAdapter.MyViewHolder> {
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
-        FrameLayout fl;
+        FrameLayout ll;
         ImageView photo;
         TextView tvTitle;
+        TextView tvTime;
         TextView tvFrom;
         public MyViewHolder(View view) {
             super(view);
-            fl = (FrameLayout) view.findViewById(R.id.fl_top_content);
-            photo = (ImageView) view.findViewById(R.id.iv_top_item_photo);
-            tvTitle = (TextView) view.findViewById(R.id.tv_top_item_title);
-            tvFrom = (TextView) view.findViewById(R.id.tv_top_item_from);
+            ll = (FrameLayout) view.findViewById(R.id.fl_lknews_content);
+            photo = (ImageView) view.findViewById(R.id.iv_lknews_item_photo);
+            tvTitle = (TextView) view.findViewById(R.id.tv_lknews_item_title);
+            tvTime = (TextView) view.findViewById(R.id.tv_lknews_item_time);
+            tvFrom = (TextView) view.findViewById(R.id.tv_lknews_item_from);
         }
     }
 }

@@ -1,45 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/common_title_height"
         android:background="@color/color_green"
         >
         <TextView
+            android:id="@+id/tv_cookact_title"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="兰考圈"
-            android:textColor="@color/color_white"
+            android:text="小吃菜谱"
             android:textSize="@dimen/text_main_title"
+            android:textColor="@color/color_white"
             />
         <ImageView
-            android:id="@+id/iv_square_back"
+            android:id="@+id/iv_top_back"
             android:layout_gravity="center_vertical"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_marginLeft="@dimen/common_margin"
             android:src="@drawable/ic_common_back_white"/>
-        <ImageView
-            android:id="@+id/iv_square_send"
-            android:layout_gravity="center_vertical|right"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginRight="@dimen/common_margin"
-            android:src="@drawable/ic_quan_camera"/>
     </FrameLayout>
     <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/srl_square_activity"
+        android:id="@+id/srl_cook_activity"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/rv_square_room"
+            android:id="@+id/rv_cook_activity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            />
+            android:scrollbars="vertical"/>
     </android.support.v4.widget.SwipeRefreshLayout>
 </LinearLayout>

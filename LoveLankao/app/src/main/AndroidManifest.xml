@@ -148,8 +148,10 @@
         <activity android:name=".activity.AdvertMsgActivity" />
         <activity android:name=".activity.AdvertDetailActivity" />
         <activity android:name=".activity.ChatRoomActivity" />
+        <activity android:name=".activity.CookActivity" />
         <activity android:name=".activity.JockActivity" />
 
+        <activity android:name=".activity.LKNewsActivity" />
         <activity android:name=".activity.LBSActivity" />
         <activity android:name=".activity.LoginActivity" />
         <activity android:name=".MainActivity"

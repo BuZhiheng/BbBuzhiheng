@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -33,9 +34,10 @@ import cn.lankao.com.lovelankao.utils.PrefUtil;
 /**
  * Created by BuZhiheng on 2016/4/2.
  */
-public class AdvertMsgController implements View.OnClickListener {
+public class AdvertMsgController implements View.OnClickListener, SwipeRefreshLayout.OnRefreshListener {
     private AdvertMsgActivity context;
     private AdvertNormal advertNormal;
+    private SwipeRefreshLayout refresh;
     private ImageView ivPhoto;
     private ImageView ivCall;
     private TextView tvTitle;
@@ -70,6 +72,7 @@ public class AdvertMsgController implements View.OnClickListener {
             public void onSuccess(AdvertNormal advert) {
                 advertNormal = advert;
                 refreshData();
+                refresh.setRefreshing(false);
             }
             @Override
             public void onFailure(int i, String s) {
@@ -79,6 +82,9 @@ public class AdvertMsgController implements View.OnClickListener {
     }
     private void initView() {
         context.findViewById(R.id.iv_advertmsg_back).setOnClickListener(this);
+        refresh = (SwipeRefreshLayout)context.findViewById(R.id.srl_advertmsg_activity);
+        refresh.setOnRefreshListener(this);
+        refresh.setRefreshing(true);
         ivPhoto = (ImageView) context.findViewById(R.id.iv_advertdetail_photo);
         ivCall = (ImageView) context.findViewById(R.id.iv_advertdetail_call);
         tvTitle = (TextView) context.findViewById(R.id.tv_advertdetail_title);
@@ -136,6 +142,7 @@ public class AdvertMsgController implements View.OnClickListener {
     }
 
     private void setBottom(List<AdvertNormal> list) {
+        layoutBottom.removeAllViews();
         for (int i = 0; i < list.size(); i++) {
             final ViewHolder holder = new ViewHolder();
             final AdvertNormal advert = list.get(i);
@@ -195,6 +202,11 @@ public class AdvertMsgController implements View.OnClickListener {
         } else if(v.getId() == R.id.iv_advertmsg_back){
             context.finish();
         }
+    }
+
+    @Override
+    public void onRefresh() {
+        initData();
     }
 
     class ViewHolder{

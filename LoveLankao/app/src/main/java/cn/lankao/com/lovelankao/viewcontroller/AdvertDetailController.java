@@ -1,5 +1,6 @@
 package cn.lankao.com.lovelankao.viewcontroller;
 import android.content.Intent;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -17,15 +18,21 @@ import cn.lankao.com.lovelankao.activity.AdvertDetailActivity;
 import cn.lankao.com.lovelankao.adapter.MyAdapter;
 import cn.lankao.com.lovelankao.entity.AdvertNormal;
 import cn.lankao.com.lovelankao.utils.CommonCode;
+import cn.lankao.com.lovelankao.utils.ToastUtil;
+import cn.lankao.com.lovelankao.widget.OnRvScrollListener;
 
 /**
  * Created by BuZhiheng on 2016/4/2.
  */
-public class AdvertDetailController implements View.OnClickListener {
+public class AdvertDetailController implements View.OnClickListener, SwipeRefreshLayout.OnRefreshListener {
     private AdvertDetailActivity context;
     private RecyclerView recyclerView;
+    private SwipeRefreshLayout refresh;
     private MyAdapter adapter;
     private TextView tvTitle;
+    private int cout = CommonCode.RV_ITEMS_COUT;
+    private boolean isRefresh = true;
+    private boolean canLoadMore = true;
     public AdvertDetailController(AdvertDetailActivity context){
         this.context = context;
         initView();
@@ -34,9 +41,23 @@ public class AdvertDetailController implements View.OnClickListener {
 
     private void initView() {
         adapter = new MyAdapter(context);
+        refresh = (SwipeRefreshLayout)context.findViewById(R.id.srl_advertdetail_activity);
+        refresh.setOnRefreshListener(this);
+        refresh.setRefreshing(true);
         recyclerView = (RecyclerView) context.findViewById(R.id.rv_advert_act);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.setAdapter(adapter);
+        recyclerView.addOnScrollListener(new OnRvScrollListener() {
+            @Override
+            public void toBottom() {
+                if (canLoadMore) {
+                    isRefresh = false;
+                    canLoadMore = false;
+                    cout += CommonCode.RV_ITEMS_COUT;
+                    initData();
+                }
+            }
+        });
         tvTitle = (TextView) context.findViewById(R.id.tv_advertlist_title);
         context.findViewById(R.id.iv_advertdetail_back).setOnClickListener(this);
     }
@@ -56,11 +77,29 @@ public class AdvertDetailController implements View.OnClickListener {
         } else if (type >= 1000){//vip广告或者推送（1005）
             query.addWhereEqualTo("advVipType",type);
         }
+        if (isRefresh){
+            query.setLimit(CommonCode.RV_ITEMS_COUT);
+            query.setSkip(0);
+        }else{
+            query.setLimit(cout);
+            query.setSkip(0);
+        }
+        query.order("-advClicked");//按点击次数倒序排序
         query.findObjects(context, new FindListener<AdvertNormal>() {
             @Override
             public void onSuccess(List<AdvertNormal> list) {
                 adapter.setData(list);
+                if (list == null || list.size() == 0){
+                    ToastUtil.show("空空如也!");//佳丽
+                }else{
+                    if (cout > list.size()){//请求个数大于返回个数,加载完毕,不能加载更多了
+                        canLoadMore = false;
+                    }else{
+                        canLoadMore = true;
+                    }
+                }
                 adapter.notifyDataSetChanged();
+                refresh.setRefreshing(false);
             }
             @Override
             public void onError(int i, String s) {
@@ -77,5 +116,12 @@ public class AdvertDetailController implements View.OnClickListener {
                 context.finish();
                 break;
         }
+    }
+
+    @Override
+    public void onRefresh() {
+        isRefresh = true;
+        cout = CommonCode.RV_ITEMS_COUT;
+        initData();
     }
 }

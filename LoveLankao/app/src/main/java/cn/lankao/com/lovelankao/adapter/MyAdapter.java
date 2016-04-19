@@ -44,7 +44,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public void setData(List<AdvertNormal> data) {
         this.data = data;
     }
-
+    public void addData(List<AdvertNormal> data) {
+        if (this.data == null){
+            data = new ArrayList<>();
+        }
+        this.data = data;
+    }
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         MyViewHolder holder = new MyViewHolder(LayoutInflater.from(context)
@@ -67,9 +72,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         if (advert.getAdvPrice() != null){
             holder.tvAverage.setText("¥"+advert.getAdvPrice());
         }
-        LatLng latLng1 = new LatLng(advert.getAdvLat(),advert.getAdvLng());
-        LatLng latLng2 = new LatLng(PrefUtil.getFloat(CommonCode.SP_LOCATION_LAT,0),PrefUtil.getFloat(CommonCode.SP_LOCATION_LNG,0));
-        holder.tvDistance.setText(MapUtil.getDistance(latLng1,latLng2));
+        if (advert.getAdvLat() != null && advert.getAdvLng() != null){
+            LatLng latLng1 = new LatLng(advert.getAdvLat(),advert.getAdvLng());
+            LatLng latLng2 = new LatLng(PrefUtil.getFloat(CommonCode.SP_LOCATION_LAT,0),PrefUtil.getFloat(CommonCode.SP_LOCATION_LNG,0));
+            holder.tvDistance.setText(MapUtil.getDistance(latLng1,latLng2));
+        }
         holder.tvTitle.setText(advert.getTitle());
         holder.tvTitleContent.setText(advert.getTitleContent());
         holder.frameLayout.setOnClickListener(new View.OnClickListener() {

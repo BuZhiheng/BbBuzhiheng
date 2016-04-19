@@ -1,5 +1,6 @@
 package cn.lankao.com.lovelankao.viewcontroller;
 
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -24,9 +25,10 @@ import rx.schedulers.Schedulers;
 /**
  * Created by BuZhiheng on 2016/4/18.
  */
-public class TopActivityController {
+public class TopActivityController implements SwipeRefreshLayout.OnRefreshListener {
     private TopActivity context;
     private RecyclerView rv;
+    private SwipeRefreshLayout refresh;
     private TopAdapter adapter;
     public TopActivityController(TopActivity context){
         this.context = context;
@@ -54,10 +56,11 @@ public class TopActivityController {
                         JuheApiResult res = GsonUtil.jsonToObject(s, JuheApiResult.class);
                         if (res != null) {
                             try {
-                                JsonElement list = res.getTngou();
-                                List<Top> data = GsonUtil.jsonToList(list, Top.class);
+                                JsonElement tngou = res.getTngou();
+                                List<Top> data = GsonUtil.jsonToList(tngou, Top.class);
                                 adapter.setData(data);
                                 adapter.notifyDataSetChanged();
+                                refresh.setRefreshing(false);
                             } catch (Exception e) {
                             }
                         }
@@ -68,8 +71,16 @@ public class TopActivityController {
     private void initView() {
         context.setContentView(R.layout.activity_top);
         adapter = new TopAdapter(context);
+        refresh = (SwipeRefreshLayout)context.findViewById(R.id.srl_top_activity);
+        refresh.setOnRefreshListener(this);
+        refresh.setRefreshing(true);
         rv = (RecyclerView) context.findViewById(R.id.rv_top_activity);
         rv.setLayoutManager(new LinearLayoutManager(context));
         rv.setAdapter(adapter);
+    }
+
+    @Override
+    public void onRefresh() {
+        initData();
     }
 }

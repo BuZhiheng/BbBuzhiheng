@@ -1,5 +1,6 @@
 package cn.lankao.com.lovelankao.viewcontroller;
 import android.content.Intent;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -22,9 +23,10 @@ import cn.lankao.com.lovelankao.entity.Square;
 /**
  * Created by BuZhiheng on 2016/4/4.
  */
-public class SquareActivityController implements View.OnClickListener {
+public class SquareActivityController implements View.OnClickListener, SwipeRefreshLayout.OnRefreshListener {
     private SquareActivity context;
     private RecyclerView rvSquare;
+    private SwipeRefreshLayout refresh;
     private SquareAdapter adapter;
     public SquareActivityController(SquareActivity context){
         this.context = context;
@@ -34,6 +36,9 @@ public class SquareActivityController implements View.OnClickListener {
     }
     private void initView() {
         adapter = new SquareAdapter(context);
+        refresh = (SwipeRefreshLayout)context.findViewById(R.id.srl_square_activity);
+        refresh.setOnRefreshListener(this);
+        refresh.setRefreshing(true);
         rvSquare = (RecyclerView) context.findViewById(R.id.rv_square_room);
         rvSquare.setLayoutManager(new LinearLayoutManager(context));
         rvSquare.setAdapter(adapter);
@@ -48,6 +53,7 @@ public class SquareActivityController implements View.OnClickListener {
             public void onSuccess(List<Square> list) {
                 adapter.setData(list);
                 adapter.notifyDataSetChanged();
+                refresh.setRefreshing(false);
             }
 
             @Override
@@ -78,5 +84,10 @@ public class SquareActivityController implements View.OnClickListener {
     }
     public void onDestroy(){
         EventBus.getDefault().unregister(this);
+    }
+
+    @Override
+    public void onRefresh() {
+        initData();
     }
 }

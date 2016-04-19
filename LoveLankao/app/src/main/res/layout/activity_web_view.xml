@@ -25,8 +25,14 @@
             android:layout_marginLeft="@dimen/common_margin"
             android:src="@drawable/ic_common_back_white"/>
     </FrameLayout>
-    <WebView
-        android:id="@+id/web_webview_content"
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/srl_web_activity"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        >
+        <WebView
+            android:id="@+id/web_webview_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </android.support.v4.widget.SwipeRefreshLayout>
 </LinearLayout>

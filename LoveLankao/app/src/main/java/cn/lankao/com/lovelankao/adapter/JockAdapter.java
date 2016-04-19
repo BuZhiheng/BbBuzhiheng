@@ -27,7 +27,12 @@ public class JockAdapter extends RecyclerView.Adapter<JockAdapter.MyViewHolder> 
     public void setData(List<Jock> data) {
         this.data = data;
     }
-
+    public void addData(List<Jock> data) {
+        if (this.data == null){
+            data = new ArrayList<>();
+        }
+        this.data = data;
+    }
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         MyViewHolder holder = new MyViewHolder(LayoutInflater.from(context)

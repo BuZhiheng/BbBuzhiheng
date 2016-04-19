@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import org.xutils.x;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 import cn.lankao.com.lovelankao.R;
@@ -28,14 +28,19 @@ public class ReadAdapter extends RecyclerView.Adapter<ReadAdapter.MyViewHolder> 
     private List<ReadNews> data;
     public ReadAdapter(Context context) {
         this.context = context;
-        data = new LinkedList<>();
+        data = new ArrayList<>();
         x.view().inject((Activity) context);
     }
 
     public void setData(List<ReadNews> data) {
         this.data = data;
     }
-
+    public void addData(List<ReadNews> data) {
+        if (this.data == null){
+            data = new ArrayList<>();
+        }
+        this.data = data;
+    }
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         MyViewHolder holder = new MyViewHolder(LayoutInflater.from(context)
