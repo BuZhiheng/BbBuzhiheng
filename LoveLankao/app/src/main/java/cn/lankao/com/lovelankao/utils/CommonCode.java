@@ -13,7 +13,7 @@ public class CommonCode {
     public static int ADVERT_HUNQING = 5;//婚庆
     public static int ADVERT_FANGCHAN = 6;//房产
     public static int ADVERT_SERVICE = 7;//惠民服务
-    public static int ADVERT_JINGCAILANKAO = 8;//精彩兰考
+//    public static int ADVERT_JINGCAILANKAO = 8;//精彩兰考
     public static int ADVERT_OTHER = 9;//其他
     public static int ADVERT_INDEX = 100;//主页20条VIP广告
 

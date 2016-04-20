@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.lankao.com.lovelankao.R;
+import cn.lankao.com.lovelankao.activity.LKNewsMsgActivity;
 import cn.lankao.com.lovelankao.activity.WebViewActivity;
 import cn.lankao.com.lovelankao.entity.Cook;
 import cn.lankao.com.lovelankao.entity.LanKaoNews;
@@ -60,13 +61,12 @@ public class LKNewsAdapter extends RecyclerView.Adapter<LKNewsAdapter.MyViewHold
         }
         holder.tvTitle.setText(news.getNewsTitle());
         holder.tvTime.setText(news.getNewsTime());
-        holder.tvFrom.setText("文章来自:"+news.getNewsFrom());
+        holder.tvFrom.setText("来自:"+news.getNewsFrom());
         holder.ll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, WebViewActivity.class);
-                intent.putExtra(CommonCode.INTENT_ADVERT_TITLE, "新闻详情");
-                intent.putExtra(CommonCode.INTENT_SETTING_URL, news.getNewsFromUrl());
+                Intent intent = new Intent(context, LKNewsMsgActivity.class);
+                intent.putExtra(CommonCode.INTENT_ADVERT_TYPE, news);
                 context.startActivity(intent);
             }
         });

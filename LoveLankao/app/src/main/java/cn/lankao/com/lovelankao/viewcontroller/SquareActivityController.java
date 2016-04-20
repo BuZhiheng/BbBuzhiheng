@@ -2,11 +2,9 @@ package cn.lankao.com.lovelankao.viewcontroller;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Toast;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -97,7 +95,8 @@ public class SquareActivityController implements View.OnClickListener, SwipeRefr
 
             @Override
             public void onError(int i, String s) {
-                Toast.makeText(context, s, Toast.LENGTH_SHORT).show();
+                ToastUtil.show(s);
+                refresh.setRefreshing(false);
             }
         });
     }

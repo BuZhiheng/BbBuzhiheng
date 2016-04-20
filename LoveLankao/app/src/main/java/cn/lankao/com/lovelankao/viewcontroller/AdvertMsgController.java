@@ -32,6 +32,7 @@ import cn.lankao.com.lovelankao.entity.AdvertNormal;
 import cn.lankao.com.lovelankao.utils.CommonCode;
 import cn.lankao.com.lovelankao.utils.MapUtil;
 import cn.lankao.com.lovelankao.utils.PrefUtil;
+import cn.lankao.com.lovelankao.utils.ToastUtil;
 import cn.lankao.com.lovelankao.widget.ProDialog;
 
 /**
@@ -81,7 +82,8 @@ public class AdvertMsgController implements View.OnClickListener, SwipeRefreshLa
             }
             @Override
             public void onFailure(int i, String s) {
-
+                ToastUtil.show(s);
+                refresh.setRefreshing(false);
             }
         });
     }
@@ -120,20 +122,23 @@ public class AdvertMsgController implements View.OnClickListener, SwipeRefreshLa
         } else {
             tvPoints.setText("已点击:" + advertNormal.getAdvClicked() + "次");
         }
-        if(advertNormal.getAdvPhoneNumber() == null ||  "".equals(advertNormal.getAdvPhoneNumber())){
+        if(advertNormal.getAdvPhoneNumber() == null){
             ivCall.setVisibility(View.GONE);
         }
-        LatLng latLng1 = new LatLng(advertNormal.getAdvLat(),advertNormal.getAdvLng());
-        LatLng latLng2 = new LatLng(PrefUtil.getFloat(CommonCode.SP_LOCATION_LAT, 0),PrefUtil.getFloat(CommonCode.SP_LOCATION_LNG,0));
-        tvDistance.setText(MapUtil.getDistance(latLng1, latLng2));
+        if (advertNormal.getAdvLat() != null && advertNormal.getAdvLng() != null){
+            LatLng latLng1 = new LatLng(advertNormal.getAdvLat(),advertNormal.getAdvLng());
+            LatLng latLng2 = new LatLng(PrefUtil.getFloat(CommonCode.SP_LOCATION_LAT, 0),PrefUtil.getFloat(CommonCode.SP_LOCATION_LNG,0));
+            tvDistance.setText(MapUtil.getDistance(latLng1, latLng2));
+        }
         tvTitle.setText(advertNormal.getTitle());
         tvContent.setText(advertNormal.getTitleContent());
         tvAverge.setText(advertNormal.getAdvPrice());
+
         tvActivite.setText(advertNormal.getAdvActivity());
         tvTitleCenter.setText(advertNormal.getTitle());
         tvAddress.setText(advertNormal.getAdvAddress());
         tvContentMsg.setText(advertNormal.getAdvContent());
-        tvPinglun.setText(advertNormal.getAdvNewPinglun());
+        tvPinglun.setText(advertNormal.getAdvRemark());
         BmobQuery<AdvertNormal> query = new BmobQuery<>();
         query.addWhereEqualTo("advVipType", CommonCode.ADVERT_TUIJIAN);
         query.findObjects(context, new FindListener<AdvertNormal>() {

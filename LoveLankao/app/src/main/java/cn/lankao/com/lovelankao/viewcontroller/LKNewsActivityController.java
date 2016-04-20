@@ -66,7 +66,8 @@ public class LKNewsActivityController implements SwipeRefreshLayout.OnRefreshLis
 
             @Override
             public void onError(int i, String s) {
-
+                ToastUtil.show(s);
+                refresh.setRefreshing(false);
             }
         });
     }

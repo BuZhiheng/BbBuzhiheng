@@ -8,6 +8,7 @@ import cn.bmob.v3.BmobObject;
 public class LanKaoNews extends BmobObject{
     private String newsImg;
     private String newsTitle;
+    private String newsContent;
     private String newsFrom;
     private String newsFromUrl;
     private String newsTime;
@@ -50,5 +51,13 @@ public class LanKaoNews extends BmobObject{
 
     public void setNewsTime(String newsTime) {
         this.newsTime = newsTime;
+    }
+
+    public String getNewsContent() {
+        return newsContent;
+    }
+
+    public void setNewsContent(String newsContent) {
+        this.newsContent = newsContent;
     }
 }

@@ -75,6 +75,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         if (advert.getAdvLat() != null && advert.getAdvLng() != null){
             LatLng latLng1 = new LatLng(advert.getAdvLat(),advert.getAdvLng());
             LatLng latLng2 = new LatLng(PrefUtil.getFloat(CommonCode.SP_LOCATION_LAT,0),PrefUtil.getFloat(CommonCode.SP_LOCATION_LNG,0));
+
             holder.tvDistance.setText(MapUtil.getDistance(latLng1,latLng2));
         }
         holder.tvTitle.setText(advert.getTitle());

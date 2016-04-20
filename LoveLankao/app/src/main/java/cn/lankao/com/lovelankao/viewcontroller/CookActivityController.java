@@ -71,12 +71,12 @@ public class CookActivityController implements SwipeRefreshLayout.OnRefreshListe
                 .subscribe(new Subscriber<String>() {
                     @Override
                     public void onCompleted() {
-
+                        refresh.setRefreshing(false);
                     }
 
                     @Override
                     public void onError(Throwable e) {
-
+                        refresh.setRefreshing(false);
                     }
 
                     @Override
@@ -96,6 +96,7 @@ public class CookActivityController implements SwipeRefreshLayout.OnRefreshListe
                                 refresh.setRefreshing(false);
                                 dialog.dismiss();
                             } catch (Exception e) {
+                                refresh.setRefreshing(false);
                             }
                         }
                     }

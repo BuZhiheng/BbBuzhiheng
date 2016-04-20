@@ -6,14 +6,13 @@ import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.TextView;
-
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.utils.CommonCode;
 import cn.lankao.com.lovelankao.widget.ProDialog;
-
 /**
  * Created by BuZhiheng on 2016/4/7.
  */
@@ -36,15 +35,19 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
             title.setText(intent.getStringExtra(CommonCode.INTENT_ADVERT_TITLE));
             String webUrl = intent.getStringExtra(CommonCode.INTENT_SETTING_URL);
             webView.getSettings().setJavaScriptEnabled(true);
+            webView.setWebChromeClient(new WebChromeClient() {
+
+            });//播放视频
             webView.loadUrl(webUrl);
-            webView.setWebViewClient(new WebViewClient(){
+            webView.setWebViewClient(new WebViewClient() {
                 @Override
                 public boolean shouldOverrideUrlLoading(WebView view, String url) {
                     view.loadUrl(url);
                     return true;
                 }
+
                 @Override
-                public void onPageFinished(WebView view, String url){
+                public void onPageFinished(WebView view, String url) {
                     super.onPageFinished(view, url);
                     refresh.setRefreshing(false);
                     dialog.dismiss();
@@ -62,6 +65,17 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
         refresh = (SwipeRefreshLayout)findViewById(R.id.srl_web_activity);
         refresh.setOnRefreshListener(this);
         refresh.setRefreshing(true);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        try {
+            webView.getClass().getMethod("onPause").invoke(webView, (Object[]) null);
+            webView.destroy();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

@@ -2,12 +2,15 @@ package cn.lankao.com.lovelankao.viewcontroller;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Toast;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
-import com.bartoszlipinski.recyclerviewheader.RecyclerViewHeader;
+import org.xutils.x;
 
 import java.util.List;
 
@@ -15,22 +18,21 @@ import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.listener.FindListener;
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.AdvertDetailActivity;
+import cn.lankao.com.lovelankao.activity.AdvertMsgActivity;
 import cn.lankao.com.lovelankao.activity.WebViewActivity;
-import cn.lankao.com.lovelankao.adapter.MyAdapter;
 import cn.lankao.com.lovelankao.entity.AdvertNormal;
 import cn.lankao.com.lovelankao.utils.CommonCode;
 import cn.lankao.com.lovelankao.utils.PrefUtil;
+import cn.lankao.com.lovelankao.utils.ToastUtil;
 
 /**
  * Created by BuZhiheng on 2016/3/31.
  */
-public class MainFragmentController implements View.OnClickListener {
+public class MainFragmentController implements View.OnClickListener, SwipeRefreshLayout.OnRefreshListener {
     private Context context;
     private View view;
-    private RecyclerView recyclerView;
-    private RecyclerViewHeader header;
-    private MyAdapter adapter;
-
+    private SwipeRefreshLayout refresh;
+    private LinearLayout layoutBottom;
     public MainFragmentController(Context context, View view) {
         this.context = context;
         this.view = view;
@@ -39,12 +41,11 @@ public class MainFragmentController implements View.OnClickListener {
     }
 
     private void initView() {
-        adapter = new MyAdapter(context);
-        header = RecyclerViewHeader.fromXml(context, R.layout.fragment_rv_header);
-        recyclerView = (RecyclerView) view.findViewById(R.id.rv_main_frm);
-        recyclerView.setLayoutManager(new LinearLayoutManager(context));
-        recyclerView.setAdapter(adapter);
-        header.attachTo(recyclerView);
+        layoutBottom = (LinearLayout) view.findViewById(R.id.ll_mainfrm_bottom);
+        refresh = (SwipeRefreshLayout)view.findViewById(R.id.srl_main_frm);
+        refresh.setOnRefreshListener(this);
+        refresh.setRefreshing(true);
+
         view.findViewById(R.id.ll_mainfrm_header_chihewanle).setOnClickListener(this);
         view.findViewById(R.id.ll_mainfrm_header_women).setOnClickListener(this);
         view.findViewById(R.id.ll_mainfrm_header_offer).setOnClickListener(this);
@@ -63,17 +64,19 @@ public class MainFragmentController implements View.OnClickListener {
 
     private void initData() {
         BmobQuery<AdvertNormal> query = new BmobQuery<>();
+        query.order("-advClicked");
         query.addWhereEqualTo("advIndex",CommonCode.ADVERT_INDEX);
         query.findObjects(context, new FindListener<AdvertNormal>() {
             @Override
             public void onSuccess(List<AdvertNormal> list) {
-                adapter.setData(list);
-                adapter.notifyDataSetChanged();
+                refresh.setRefreshing(false);
+                setBottom(list);
             }
 
             @Override
             public void onError(int i, String s) {
-                Toast.makeText(context, s, Toast.LENGTH_SHORT).show();
+                ToastUtil.show(s);
+                refresh.setRefreshing(false);
             }
         });
     }
@@ -133,5 +136,63 @@ public class MainFragmentController implements View.OnClickListener {
         intent.putExtra(CommonCode.INTENT_ADVERT_TITLE, title);
         intent.putExtra(CommonCode.INTENT_ADVERT_TYPE, code);
         context.startActivity(intent);
+    }
+    private void setBottom(List<AdvertNormal> list) {
+        if (list == null){
+            return;
+        }
+        layoutBottom.removeAllViews();
+        for (int i = 0; i < list.size(); i++) {
+            final ViewHolder holder = new ViewHolder();
+            final AdvertNormal advert = list.get(i);
+            View view = LayoutInflater.from(context).inflate(R.layout.fragment_main_items, null);
+            holder.photo = (ImageView) view.findViewById(R.id.iv_mainfrm_item_photo);
+            holder.tvTitle = (TextView) view.findViewById(R.id.tv_mainfrm_item_title);
+            holder.tvTitleContent = (TextView) view.findViewById(R.id.tv_mainfrm_item_titlecontent);
+            holder.tvPoints = (TextView) view.findViewById(R.id.tv_mainfrm_item_points);
+            holder.tvAverage = (TextView) view.findViewById(R.id.tv_mainfrm_item_average);
+            holder.frameLayout = (FrameLayout) view.findViewById(R.id.fl_mainfrm_content);
+            if (advert.getAdvPhoto() != null) {
+                x.image().bind(holder.photo, advert.getAdvPhoto().getFileUrl(context));
+            }
+            if (advert.getAdvClicked() == null) {
+                holder.tvPoints.setText("点击量:0");
+            } else {
+                holder.tvPoints.setText("点击量:" + advert.getAdvClicked());
+            }
+            if (advert.getAdvPrice() != null) {
+                holder.tvAverage.setText("¥" + advert.getAdvPrice());
+            }
+            holder.tvTitle.setText(advert.getTitle());
+            holder.tvTitleContent.setText(advert.getTitleContent());
+            holder.frameLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (advert.getAdvClicked() != null) {
+                        advert.setAdvClicked(advert.getAdvClicked() + 1);
+                    } else {
+                        advert.setAdvClicked(1);
+                    }
+                    advert.update(context);
+                    Intent intent = new Intent(context, AdvertMsgActivity.class);
+                    intent.putExtra("data", advert);
+                    context.startActivity(intent);
+                    holder.tvPoints.setText("点击量:" + advert.getAdvClicked());
+                }
+            });
+            layoutBottom.addView(view);
+        }
+    }
+    @Override
+    public void onRefresh() {
+        initData();
+    }
+    class ViewHolder{
+        FrameLayout frameLayout;
+        ImageView photo;
+        TextView tvTitle;
+        TextView tvAverage;
+        TextView tvPoints;
+        TextView tvTitleContent;
     }
 }

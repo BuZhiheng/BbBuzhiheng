@@ -6,10 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import java.util.List;
-
 import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.listener.FindListener;
 import cn.lankao.com.lovelankao.R;
@@ -109,7 +106,8 @@ public class AdvertDetailController implements View.OnClickListener, SwipeRefres
             }
             @Override
             public void onError(int i, String s) {
-                Toast.makeText(context, s, Toast.LENGTH_SHORT).show();
+                ToastUtil.show(s);
+                refresh.setRefreshing(false);
             }
         });
     }

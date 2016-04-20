@@ -19,7 +19,11 @@ public class MapUtil {
                 return df.format(dis)+"m";
             }else{
                 float d = (float) (dis/1000);
-                return df.format(d) + "km";
+                if (d > 10000){
+                    return "";
+                }else{
+                    return df.format(d) + "km";
+                }
             }
         }
     }

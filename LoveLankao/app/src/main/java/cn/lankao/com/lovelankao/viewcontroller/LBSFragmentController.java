@@ -6,10 +6,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
-
-import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.listener.FindListener;
@@ -91,7 +87,8 @@ public class LBSFragmentController implements View.OnClickListener, SwipeRefresh
             }
             @Override
             public void onError(int i, String s) {
-                Toast.makeText(context, s, Toast.LENGTH_SHORT).show();
+                ToastUtil.show(s);
+                refresh.setRefreshing(false);
             }
         });
     }

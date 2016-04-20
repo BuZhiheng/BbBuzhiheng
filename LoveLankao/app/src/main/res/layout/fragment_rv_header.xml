@@ -335,4 +335,13 @@
         android:layout_marginLeft="@dimen/common_margin"
         android:text="猜你喜欢"
         />
+    <LinearLayout
+        android:id="@+id/ll_mainfrm_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/common_margin"
+        android:background="@color/color_bg"
+        android:orientation="vertical">
+
+    </LinearLayout>
 </LinearLayout>

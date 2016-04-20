@@ -45,9 +45,12 @@ public class OkHttpUtil {
                             if (resp.isSuccessful()){
                                 subscriber.onNext(resp.body().string());
                                 subscriber.onCompleted();
+                            }else{
+                                subscriber.onError(null);
                             }
                         } catch (IOException e) {
                             e.printStackTrace();
+                            subscriber.onError(e);
                         }
                     }
                 }.start();
