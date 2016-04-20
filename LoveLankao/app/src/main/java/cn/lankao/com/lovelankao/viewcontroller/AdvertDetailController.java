@@ -1,4 +1,5 @@
 package cn.lankao.com.lovelankao.viewcontroller;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
@@ -6,8 +7,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -20,6 +19,7 @@ import cn.lankao.com.lovelankao.entity.AdvertNormal;
 import cn.lankao.com.lovelankao.utils.CommonCode;
 import cn.lankao.com.lovelankao.utils.ToastUtil;
 import cn.lankao.com.lovelankao.widget.OnRvScrollListener;
+import cn.lankao.com.lovelankao.widget.ProDialog;
 
 /**
  * Created by BuZhiheng on 2016/4/2.
@@ -30,6 +30,9 @@ public class AdvertDetailController implements View.OnClickListener, SwipeRefres
     private SwipeRefreshLayout refresh;
     private MyAdapter adapter;
     private TextView tvTitle;
+
+    private ProgressDialog dialog;
+
     private int cout = CommonCode.RV_ITEMS_COUT;
     private boolean isRefresh = true;
     private boolean canLoadMore = true;
@@ -40,6 +43,8 @@ public class AdvertDetailController implements View.OnClickListener, SwipeRefres
     }
 
     private void initView() {
+        dialog = ProDialog.getProDialog(context);
+        dialog.show();
         adapter = new MyAdapter(context);
         refresh = (SwipeRefreshLayout)context.findViewById(R.id.srl_advertdetail_activity);
         refresh.setOnRefreshListener(this);
@@ -90,7 +95,7 @@ public class AdvertDetailController implements View.OnClickListener, SwipeRefres
             public void onSuccess(List<AdvertNormal> list) {
                 adapter.setData(list);
                 if (list == null || list.size() == 0){
-                    ToastUtil.show("空空如也!");//佳丽
+                    ToastUtil.show("空空如也!");
                 }else{
                     if (cout > list.size()){//请求个数大于返回个数,加载完毕,不能加载更多了
                         canLoadMore = false;
@@ -100,6 +105,7 @@ public class AdvertDetailController implements View.OnClickListener, SwipeRefres
                 }
                 adapter.notifyDataSetChanged();
                 refresh.setRefreshing(false);
+                dialog.dismiss();
             }
             @Override
             public void onError(int i, String s) {

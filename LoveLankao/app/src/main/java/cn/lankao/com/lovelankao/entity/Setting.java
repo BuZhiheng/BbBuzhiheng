@@ -9,6 +9,15 @@ public class Setting extends BmobObject{
     private Integer setType;
     private String setPartnerUrl;
     private String setAboutusUrl;
+    private String setJCLKUrl;
+
+    public String getSetJCLKUrl() {
+        return setJCLKUrl;
+    }
+
+    public void setSetJCLKUrl(String setJCLKUrl) {
+        this.setJCLKUrl = setJCLKUrl;
+    }
 
     public Integer getSetType() {
         return setType;

@@ -1,9 +1,11 @@
 package cn.lankao.com.lovelankao.viewcontroller;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.TextView;
 
 import com.google.gson.JsonElement;
@@ -20,6 +22,7 @@ import cn.lankao.com.lovelankao.utils.GsonUtil;
 import cn.lankao.com.lovelankao.utils.OkHttpUtil;
 import cn.lankao.com.lovelankao.utils.ToastUtil;
 import cn.lankao.com.lovelankao.widget.OnRvScrollListener;
+import cn.lankao.com.lovelankao.widget.ProDialog;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -27,7 +30,7 @@ import rx.schedulers.Schedulers;
 /**
  * Created by BuZhiheng on 2016/4/18.
  */
-public class CookActivityController implements SwipeRefreshLayout.OnRefreshListener {
+public class CookActivityController implements SwipeRefreshLayout.OnRefreshListener, View.OnClickListener {
     /**
      * 小吃菜谱,健康食物公用此类
      * */
@@ -41,6 +44,7 @@ public class CookActivityController implements SwipeRefreshLayout.OnRefreshListe
     private SwipeRefreshLayout refresh;
     private TextView tvTitle;
     private CookAdapter adapter;
+    private ProgressDialog dialog;
     private String url = URL_COOK;
     private String toUrl = TO_URL_COOK;
     private int page = 1;
@@ -90,6 +94,7 @@ public class CookActivityController implements SwipeRefreshLayout.OnRefreshListe
                                 canLoadMore = true;
                                 adapter.notifyDataSetChanged();
                                 refresh.setRefreshing(false);
+                                dialog.dismiss();
                             } catch (Exception e) {
                             }
                         }
@@ -98,7 +103,10 @@ public class CookActivityController implements SwipeRefreshLayout.OnRefreshListe
     }
 
     private void initView() {
+        dialog = ProDialog.getProDialog(context);
+        dialog.show();
         context.setContentView(R.layout.activity_cook);
+        context.findViewById(R.id.iv_cook_back).setOnClickListener(this);
         tvTitle = (TextView) context.findViewById(R.id.tv_cookact_title);
         Intent intent = context.getIntent();
         if (intent != null){
@@ -137,6 +145,15 @@ public class CookActivityController implements SwipeRefreshLayout.OnRefreshListe
         isRefresh = true;
         page = 1;
         initData();
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.iv_cook_back:
+                context.finish();
+                break;
+        }
     }
 }
 

@@ -38,9 +38,9 @@ public class TopAdapter extends RecyclerView.Adapter<TopAdapter.MyViewHolder> {
     }
     public void addData(List<Top> data) {
         if (this.data == null){
-            data = new ArrayList<>();
+            this.data = new ArrayList<>();
         }
-        this.data = data;
+        this.data.addAll(data);
     }
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {

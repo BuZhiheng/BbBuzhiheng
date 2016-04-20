@@ -1,4 +1,5 @@
 package cn.lankao.com.lovelankao.viewcontroller;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -19,6 +20,10 @@ import cn.lankao.com.lovelankao.activity.SquareActivity;
 import cn.lankao.com.lovelankao.activity.SquareSendActivity;
 import cn.lankao.com.lovelankao.adapter.SquareAdapter;
 import cn.lankao.com.lovelankao.entity.Square;
+import cn.lankao.com.lovelankao.utils.CommonCode;
+import cn.lankao.com.lovelankao.utils.ToastUtil;
+import cn.lankao.com.lovelankao.widget.OnRvScrollListener;
+import cn.lankao.com.lovelankao.widget.ProDialog;
 
 /**
  * Created by BuZhiheng on 2016/4/4.
@@ -28,6 +33,10 @@ public class SquareActivityController implements View.OnClickListener, SwipeRefr
     private RecyclerView rvSquare;
     private SwipeRefreshLayout refresh;
     private SquareAdapter adapter;
+    private ProgressDialog dialog;
+    private int cout = CommonCode.RV_ITEMS_COUT;
+    private boolean isRefresh = true;
+    private boolean canLoadMore = true;
     public SquareActivityController(SquareActivity context){
         this.context = context;
         EventBus.getDefault().register(this);
@@ -35,6 +44,8 @@ public class SquareActivityController implements View.OnClickListener, SwipeRefr
         initData();
     }
     private void initView() {
+        dialog = ProDialog.getProDialog(context);
+        dialog.show();
         adapter = new SquareAdapter(context);
         refresh = (SwipeRefreshLayout)context.findViewById(R.id.srl_square_activity);
         refresh.setOnRefreshListener(this);
@@ -42,18 +53,46 @@ public class SquareActivityController implements View.OnClickListener, SwipeRefr
         rvSquare = (RecyclerView) context.findViewById(R.id.rv_square_room);
         rvSquare.setLayoutManager(new LinearLayoutManager(context));
         rvSquare.setAdapter(adapter);
-        rvSquare.setItemAnimator(new DefaultItemAnimator());
+        rvSquare.addOnScrollListener(new OnRvScrollListener(){
+            @Override
+            public void toBottom() {
+                if (canLoadMore){
+                    isRefresh = false;
+                    canLoadMore = false;
+                    cout += CommonCode.RV_ITEMS_COUT;
+                    initData();
+                }
+            }
+        });
         context.findViewById(R.id.iv_square_send).setOnClickListener(this);
         context.findViewById(R.id.iv_square_back).setOnClickListener(this);
     }
     private void initData() {
         BmobQuery<Square> query = new BmobQuery<>();
+        if (isRefresh){
+            query.setLimit(CommonCode.RV_ITEMS_COUT);
+            query.setSkip(0);
+        }else{
+            query.setLimit(cout);
+            query.setSkip(0);
+        }
+        query.order("-createdAt");
         query.findObjects(context, new FindListener<Square>() {
             @Override
             public void onSuccess(List<Square> list) {
                 adapter.setData(list);
+                if (list == null || list.size() == 0){
+                    ToastUtil.show("空空如也!");
+                }else{
+                    if (cout > list.size()){//请求个数大于返回个数,加载完毕,不能加载更多了
+                        canLoadMore = false;
+                    }else{
+                        canLoadMore = true;
+                    }
+                }
                 adapter.notifyDataSetChanged();
                 refresh.setRefreshing(false);
+                dialog.dismiss();
             }
 
             @Override
@@ -78,9 +117,7 @@ public class SquareActivityController implements View.OnClickListener, SwipeRefr
     }
     @Subscribe
     public void onEventMainThread(Square square){
-        adapter.addData(square);
-        adapter.notifyDataSetChanged();
-        rvSquare.smoothScrollToPosition(adapter.getItemCount());
+        onRefresh();
     }
     public void onDestroy(){
         EventBus.getDefault().unregister(this);
@@ -88,6 +125,8 @@ public class SquareActivityController implements View.OnClickListener, SwipeRefr
 
     @Override
     public void onRefresh() {
+        isRefresh = true;
+        cout = CommonCode.RV_ITEMS_COUT;
         initData();
     }
 }

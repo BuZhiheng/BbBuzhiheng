@@ -5,16 +5,16 @@
     <string name="main_lbs">商圈</string>
     <string name="main_talk">社区</string>
     <string name="main_mine">我的</string>
-    <string name="text_mainfrm_meishi">美食</string>
-    <string name="text_mainfrm_gouwu">购物</string>
-    <string name="text_mainfrm_jiudian">酒店</string>
-    <string name="text_mainfrm_xiuxian">休闲娱乐</string>
-    <string name="text_mainfrm_liren">丽人</string>
-
+    <string name="text_mainfrm_chihewanle">吃喝玩乐</string>
+    <string name="text_mainfrm_women">佳丽专区</string>
     <string name="text_mainfrm_hunqing">婚庆</string>
-    <string name="text_mainfrm_xiyu">洗浴</string>
-    <string name="text_mainfrm_meijia">美甲</string>
-    <string name="text_mainfrm_ktv">KTV</string>
+    <string name="text_mainfrm_offer">招聘</string>
+    <string name="text_mainfrm_zulin">租赁</string>
+    <string name="text_mainfrm_friend">征婚交友</string>
+
+    <string name="text_mainfrm_fangchan">房产楼盘</string>
+    <string name="text_mainfrm_service">惠民服务</string>
+    <string name="text_mainfrm_jingcai">精彩兰考</string>
     <string name="text_mainfrm_other">其他</string>
     <string name="bmob_common_action_info_exist">正在下载中.</string>
 

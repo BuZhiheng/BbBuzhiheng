@@ -77,11 +77,14 @@ public class LBSFragmentController implements View.OnClickListener, SwipeRefresh
             @Override
             public void onSuccess(List<AdvertNormal> list) {
                 adapter.setData(list);
-                if (cout > list.size()){//请求个数大于返回个数,加载完毕,不能加载更多了
-                    canLoadMore = false;
-                    ToastUtil.show("加载完毕!");
+                if (list == null || list.size() == 0){
+                    ToastUtil.show("空空如也!");
                 }else{
-                    canLoadMore = true;
+                    if (cout > list.size()){//请求个数大于返回个数,加载完毕,不能加载更多了
+                        canLoadMore = false;
+                    }else{
+                        canLoadMore = true;
+                    }
                 }
                 adapter.notifyDataSetChanged();
                 refresh.setRefreshing(false);

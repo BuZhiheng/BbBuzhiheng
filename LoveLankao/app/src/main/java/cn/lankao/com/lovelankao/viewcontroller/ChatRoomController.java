@@ -1,4 +1,5 @@
 package cn.lankao.com.lovelankao.viewcontroller;
+import android.app.ProgressDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -23,6 +24,8 @@ import cn.lankao.com.lovelankao.entity.ChatRoom;
 import cn.lankao.com.lovelankao.utils.CommonCode;
 import cn.lankao.com.lovelankao.utils.PrefUtil;
 import cn.lankao.com.lovelankao.utils.ToastUtil;
+import cn.lankao.com.lovelankao.widget.ProDialog;
+
 /**
  * Created by BuZhiheng on 2016/4/3.
  */
@@ -32,13 +35,15 @@ public class ChatRoomController implements ChatRoomActivity.ChatRoomHolder, View
     private BmobRealTimeData realTimeData;
     private ChatRoomAdapter adapter;
     private EditText etContent;
-
+    private ProgressDialog dialog;
     public ChatRoomController(ChatRoomActivity context){
         this.context = context;
         initView();
     }
 
     private void initView() {
+        dialog = ProDialog.getProDialog(context);
+        dialog.show();
         realTimeData = new BmobRealTimeData();
         adapter = new ChatRoomAdapter(context);
         context.findViewById(R.id.btn_chat_send).setOnClickListener(this);
@@ -67,6 +72,7 @@ public class ChatRoomController implements ChatRoomActivity.ChatRoomHolder, View
                 adapter.addData(chatRoom);
                 adapter.notifyDataSetChanged();
                 rvChat.smoothScrollToPosition(adapter.getItemCount());
+                dialog.dismiss();
             }
         });
     }

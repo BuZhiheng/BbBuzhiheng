@@ -34,7 +34,6 @@ import cn.lankao.com.lovelankao.activity.AdvertMsgActivity;
 import cn.lankao.com.lovelankao.activity.LBSActivity;
 import cn.lankao.com.lovelankao.entity.AdvertNormal;
 import cn.lankao.com.lovelankao.utils.CommonCode;
-import cn.lankao.com.lovelankao.utils.ToastUtil;
 
 /**
  * Created by BuZhiheng on 2016/4/1.
@@ -125,9 +124,9 @@ public class LBSActivityController implements View.OnClickListener {
         ImageView icon4 = new ImageView(context);
         ImageView icon5 = new ImageView(context);
         icon1.setImageResource(R.drawable.ic_mainfrm_meishi);
-        icon2.setImageResource(R.drawable.ic_mainfrm_jiudian);
-        icon3.setImageResource(R.drawable.ic_mainfrm_xiuxian);
-        icon4.setImageResource(R.drawable.ic_mainfrm_liren);
+        icon2.setImageResource(R.drawable.ic_mainfrm_fangchan);
+        icon3.setImageResource(R.drawable.ic_mainfrm_chihewanle);
+        icon4.setImageResource(R.drawable.ic_mainfrm_women);
         icon5.setImageResource(R.drawable.ic_mainfrm_other);
         btn1 = itemBuilder.setContentView(icon1).build();
         btn2 = itemBuilder.setContentView(icon2).build();
@@ -183,16 +182,16 @@ public class LBSActivityController implements View.OnClickListener {
     public void onClick(View v) {
         if (v == btn1) {
             tvTitle.setText("美食");
-            initData(CommonCode.ADVERT_MEISHI);
+            initData(CommonCode.ADVERT_CHIHEWANLE);
         } else if (v == btn2) {
             tvTitle.setText("酒店");
-            initData(CommonCode.ADVERT_JIUDIAN);
+            initData(CommonCode.ADVERT_OFFER);
         } else if (v == btn3) {
             tvTitle.setText("休闲");
-            initData(CommonCode.ADVERT_XIUXIAN);
+            initData(CommonCode.ADVERT_ZULIN);
         } else if (v == btn4) {
             tvTitle.setText("丽人");
-            initData(CommonCode.ADVERT_LIREN);
+            initData(CommonCode.ADVERT_FRIEND);
         } else if (v == btn5) {
             tvTitle.setText("全部商家");
             initData(CommonCode.ADVERT_OTHER);

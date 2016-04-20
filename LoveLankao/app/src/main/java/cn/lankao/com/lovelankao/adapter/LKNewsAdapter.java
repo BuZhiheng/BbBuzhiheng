@@ -40,9 +40,9 @@ public class LKNewsAdapter extends RecyclerView.Adapter<LKNewsAdapter.MyViewHold
     }
     public void addData(List<LanKaoNews> data) {
         if (this.data == null){
-            data = new ArrayList<>();
+            this.data = new ArrayList<>();
         }
-        this.data = data;
+        this.data.addAll(data);
     }
 
     @Override

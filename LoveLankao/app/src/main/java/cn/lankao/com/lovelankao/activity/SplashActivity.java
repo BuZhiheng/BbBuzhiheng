@@ -56,6 +56,7 @@ public class SplashActivity extends AppCompatActivity{
                 if (list != null && list.size() > 0){
                     PrefUtil.putString(CommonCode.SP_SET_PARTNERURL,list.get(0).getSetPartnerUrl());
                     PrefUtil.putString(CommonCode.SP_SET_ABOUTUSURL,list.get(0).getSetAboutusUrl());
+                    PrefUtil.putString(CommonCode.SP_SET_JCLKURL,list.get(0).getSetJCLKUrl());
                 }
             }
             @Override

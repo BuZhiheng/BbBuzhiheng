@@ -46,9 +46,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     }
     public void addData(List<AdvertNormal> data) {
         if (this.data == null){
-            data = new ArrayList<>();
+            this.data = new ArrayList<>();
         }
-        this.data = data;
+        this.data.addAll(data);
     }
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {

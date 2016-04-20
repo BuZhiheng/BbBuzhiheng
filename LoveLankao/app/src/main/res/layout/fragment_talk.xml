@@ -117,7 +117,7 @@
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_marginLeft="@dimen/common_margin"
-                    android:src="@drawable/ic_talk_quan"
+                    android:src="@drawable/ic_talk_news"
                     />
                 <TextView
                     android:layout_gravity="center_vertical"
@@ -156,7 +156,7 @@
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_marginLeft="@dimen/common_margin"
-                    android:src="@drawable/ic_talk_quan"
+                    android:src="@drawable/ic_talk_top"
                     />
                 <TextView
                     android:layout_gravity="center_vertical"
@@ -195,7 +195,7 @@
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_marginLeft="@dimen/common_margin"
-                    android:src="@drawable/ic_talk_quan"
+                    android:src="@drawable/ic_talk_read"
                     />
                 <TextView
                     android:layout_gravity="center_vertical"
@@ -234,7 +234,7 @@
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_marginLeft="@dimen/common_margin"
-                    android:src="@drawable/ic_talk_quan"
+                    android:src="@drawable/ic_talk_menu"
                     />
                 <TextView
                     android:layout_gravity="center_vertical"
@@ -273,7 +273,7 @@
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_marginLeft="@dimen/common_margin"
-                    android:src="@drawable/ic_talk_quan"
+                    android:src="@drawable/ic_talk_food"
                     />
                 <TextView
                     android:layout_gravity="center_vertical"
@@ -312,7 +312,7 @@
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_marginLeft="@dimen/common_margin"
-                    android:src="@drawable/ic_talk_quan"
+                    android:src="@drawable/ic_talk_jock"
                     />
                 <TextView
                     android:layout_gravity="center_vertical"

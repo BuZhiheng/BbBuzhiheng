@@ -15,9 +15,11 @@ import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.listener.FindListener;
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.AdvertDetailActivity;
+import cn.lankao.com.lovelankao.activity.WebViewActivity;
 import cn.lankao.com.lovelankao.adapter.MyAdapter;
 import cn.lankao.com.lovelankao.entity.AdvertNormal;
 import cn.lankao.com.lovelankao.utils.CommonCode;
+import cn.lankao.com.lovelankao.utils.PrefUtil;
 
 /**
  * Created by BuZhiheng on 2016/3/31.
@@ -43,18 +45,19 @@ public class MainFragmentController implements View.OnClickListener {
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.setAdapter(adapter);
         header.attachTo(recyclerView);
-        view.findViewById(R.id.ll_mainfrm_header_conpon).setOnClickListener(this);
-        view.findViewById(R.id.ll_mainfrm_header_meishi).setOnClickListener(this);
-        view.findViewById(R.id.ll_mainfrm_header_gouwu).setOnClickListener(this);
-        view.findViewById(R.id.ll_mainfrm_header_jiudian).setOnClickListener(this);
-        view.findViewById(R.id.ll_mainfrm_header_xiuxian).setOnClickListener(this);
-        view.findViewById(R.id.ll_mainfrm_header_liren).setOnClickListener(this);
+        view.findViewById(R.id.ll_mainfrm_header_chihewanle).setOnClickListener(this);
+        view.findViewById(R.id.ll_mainfrm_header_women).setOnClickListener(this);
+        view.findViewById(R.id.ll_mainfrm_header_offer).setOnClickListener(this);
+        view.findViewById(R.id.ll_mainfrm_header_zulin).setOnClickListener(this);
+        view.findViewById(R.id.ll_mainfrm_header_friend).setOnClickListener(this);
         view.findViewById(R.id.ll_mainfrm_header_hunqing).setOnClickListener(this);
-        view.findViewById(R.id.ll_mainfrm_header_xiyu).setOnClickListener(this);
-        view.findViewById(R.id.ll_mainfrm_header_meijia).setOnClickListener(this);
-        view.findViewById(R.id.ll_mainfrm_header_ktv).setOnClickListener(this);
+        view.findViewById(R.id.ll_mainfrm_header_fangchan).setOnClickListener(this);
+        view.findViewById(R.id.ll_mainfrm_header_service).setOnClickListener(this);
+        view.findViewById(R.id.ll_mainfrm_header_jingcailankao).setOnClickListener(this);
         view.findViewById(R.id.ll_mainfrm_header_other).setOnClickListener(this);
-        view.findViewById(R.id.tv_mainfrm_open).setOnClickListener(this);
+
+        view.findViewById(R.id.ll_mainfrm_header_mingqi).setOnClickListener(this);
+        view.findViewById(R.id.tv_mainfrm_tehui).setOnClickListener(this);
         view.findViewById(R.id.tv_mainfrm_tuiian).setOnClickListener(this);
     }
 
@@ -79,44 +82,47 @@ public class MainFragmentController implements View.OnClickListener {
     public void onClick(View v) {
         int id = v.getId();
         switch (id) {
-            case R.id.tv_mainfrm_open:
-                toAdvert(CommonCode.ADVERT_OPEN, "开业大酬宾");
+            case R.id.ll_mainfrm_header_mingqi:
+                toAdvert(CommonCode.ADVERT_MINGQI, "名企名商");
+                break;
+            case R.id.tv_mainfrm_tehui:
+                toAdvert(CommonCode.ADVERT_TEHUI, "特惠不打烊");
                 break;
             case R.id.tv_mainfrm_tuiian:
                 toAdvert(CommonCode.ADVERT_TUIJIAN, "精品推荐");
                 break;
-            case R.id.ll_mainfrm_header_conpon:
-                toAdvert(CommonCode.ADVERT_TEHUI, "今日特惠");
+            case R.id.ll_mainfrm_header_chihewanle:
+                toAdvert(CommonCode.ADVERT_CHIHEWANLE,context.getString(R.string.text_mainfrm_chihewanle));
                 break;
-            case R.id.ll_mainfrm_header_meishi:
-                toAdvert(CommonCode.ADVERT_MEISHI,"美食");
+            case R.id.ll_mainfrm_header_women:
+                toAdvert(CommonCode.ADVERT_WOMEN,context.getString(R.string.text_mainfrm_women));
                 break;
-            case R.id.ll_mainfrm_header_gouwu:
-                toAdvert(CommonCode.ADVERT_GOUWU,"购物");
+            case R.id.ll_mainfrm_header_offer:
+                toAdvert(CommonCode.ADVERT_OFFER,context.getString(R.string.text_mainfrm_offer));
                 break;
-            case R.id.ll_mainfrm_header_jiudian:
-                toAdvert(CommonCode.ADVERT_JIUDIAN,"酒店");
+            case R.id.ll_mainfrm_header_zulin:
+                toAdvert(CommonCode.ADVERT_ZULIN,context.getString(R.string.text_mainfrm_zulin));
                 break;
-            case R.id.ll_mainfrm_header_xiuxian:
-                toAdvert(CommonCode.ADVERT_XIUXIAN,"休闲娱乐");
-                break;
-            case R.id.ll_mainfrm_header_liren:
-                toAdvert(CommonCode.ADVERT_LIREN,"丽人");
+            case R.id.ll_mainfrm_header_friend:
+                toAdvert(CommonCode.ADVERT_FRIEND,context.getString(R.string.text_mainfrm_friend));
                 break;
             case R.id.ll_mainfrm_header_hunqing:
-                toAdvert(CommonCode.ADVERT_HUNQING,"婚庆");
+                toAdvert(CommonCode.ADVERT_HUNQING,context.getString(R.string.text_mainfrm_hunqing));
                 break;
-            case R.id.ll_mainfrm_header_xiyu:
-                toAdvert(CommonCode.ADVERT_XIYU,"洗浴");
+            case R.id.ll_mainfrm_header_fangchan:
+                toAdvert(CommonCode.ADVERT_FANGCHAN,context.getString(R.string.text_mainfrm_fangchan));
                 break;
-            case R.id.ll_mainfrm_header_meijia:
-                toAdvert(CommonCode.ADVERT_MEIJIA,"美甲");
+            case R.id.ll_mainfrm_header_service:
+                toAdvert(CommonCode.ADVERT_SERVICE,context.getString(R.string.text_mainfrm_service));
                 break;
-            case R.id.ll_mainfrm_header_ktv:
-                toAdvert(CommonCode.ADVERT_KTV,"KTV");
+            case R.id.ll_mainfrm_header_jingcailankao:
+                Intent intent = new Intent(context, WebViewActivity.class);
+                intent.putExtra(CommonCode.INTENT_ADVERT_TITLE, "精彩兰考");
+                intent.putExtra(CommonCode.INTENT_SETTING_URL, PrefUtil.getString(CommonCode.SP_SET_JCLKURL,""));
+                context.startActivity(intent);
                 break;
             case R.id.ll_mainfrm_header_other:
-                toAdvert(CommonCode.ADVERT_OTHER,"其他");
+                toAdvert(CommonCode.ADVERT_OTHER,context.getString(R.string.text_mainfrm_other));
                 break;
             default:
                 break;

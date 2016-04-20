@@ -1,6 +1,7 @@
 package cn.lankao.com.lovelankao.viewcontroller;
 
 import android.Manifest;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -25,11 +26,13 @@ import cn.bmob.v3.listener.FindListener;
 import cn.bmob.v3.listener.GetListener;
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.AdvertMsgActivity;
+import cn.lankao.com.lovelankao.activity.PicShowActivity;
 import cn.lankao.com.lovelankao.activity.ShopLocationActivity;
 import cn.lankao.com.lovelankao.entity.AdvertNormal;
 import cn.lankao.com.lovelankao.utils.CommonCode;
 import cn.lankao.com.lovelankao.utils.MapUtil;
 import cn.lankao.com.lovelankao.utils.PrefUtil;
+import cn.lankao.com.lovelankao.widget.ProDialog;
 
 /**
  * Created by BuZhiheng on 2016/4/2.
@@ -53,6 +56,7 @@ public class AdvertMsgController implements View.OnClickListener, SwipeRefreshLa
     private LinearLayout layoutBottom;
     private LinearLayout layoutAddress;
     private Intent intent;
+    private ProgressDialog dialog;
     public AdvertMsgController(AdvertMsgActivity context) {
         this.context = context;
         x.view().inject(context);
@@ -73,6 +77,7 @@ public class AdvertMsgController implements View.OnClickListener, SwipeRefreshLa
                 advertNormal = advert;
                 refreshData();
                 refresh.setRefreshing(false);
+                dialog.dismiss();
             }
             @Override
             public void onFailure(int i, String s) {
@@ -81,6 +86,8 @@ public class AdvertMsgController implements View.OnClickListener, SwipeRefreshLa
         });
     }
     private void initView() {
+        dialog = ProDialog.getProDialog(context);
+        dialog.show();
         context.findViewById(R.id.iv_advertmsg_back).setOnClickListener(this);
         refresh = (SwipeRefreshLayout)context.findViewById(R.id.srl_advertmsg_activity);
         refresh.setOnRefreshListener(this);
@@ -101,6 +108,7 @@ public class AdvertMsgController implements View.OnClickListener, SwipeRefreshLa
         layoutAddress = (LinearLayout) context.findViewById(R.id.ll_advertdetail_address);
         layoutAddress.setOnClickListener(this);
         ivCall.setOnClickListener(this);
+        ivPhoto.setOnClickListener(this);
     }
 
     private void refreshData() {
@@ -201,6 +209,13 @@ public class AdvertMsgController implements View.OnClickListener, SwipeRefreshLa
             context.startActivity(intent);
         } else if(v.getId() == R.id.iv_advertmsg_back){
             context.finish();
+        } else if(v.getId() == R.id.iv_advertdetail_photo){
+            if (advertNormal == null){
+                return;
+            }
+            Intent intent = new Intent(context, PicShowActivity.class);
+            intent.putExtra(CommonCode.INTENT_ADVERT_TYPE,advertNormal);
+            context.startActivity(intent);
         }
     }
 

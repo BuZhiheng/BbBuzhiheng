@@ -18,7 +18,7 @@
             android:textColor="@color/color_white"
             />
         <ImageView
-            android:id="@+id/iv_top_back"
+            android:id="@+id/iv_cook_back"
             android:layout_gravity="center_vertical"
             android:layout_width="25dp"
             android:layout_height="25dp"

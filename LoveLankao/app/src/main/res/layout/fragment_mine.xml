@@ -62,7 +62,7 @@
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_marginLeft="@dimen/common_margin"
-                    android:src="@drawable/ic_talk_chatroom"
+                    android:src="@drawable/ic_minefrm_jifen"
                     />
                 <TextView
                     android:layout_gravity="center_vertical"
@@ -88,7 +88,9 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_marginRight="@dimen/common_margin"
-                    android:src="@drawable/ic_common_right_green"/>
+                    android:src="@drawable/ic_common_right_green"
+                    android:visibility="gone"
+                    />
             </FrameLayout>
             <include layout="@layout/include_slid_img_marginleft"/>
             <FrameLayout
@@ -103,7 +105,7 @@
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_marginLeft="@dimen/common_margin"
-                    android:src="@drawable/ic_talk_quan"
+                    android:src="@drawable/ic_minefrm_needpartner"
                     />
                 <TextView
                     android:layout_gravity="center_vertical"
@@ -134,7 +136,7 @@
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_marginLeft="@dimen/common_margin"
-                    android:src="@drawable/ic_talk_chatroom"
+                    android:src="@drawable/ic_minefrm_tuijian"
                     />
                 <TextView
                     android:layout_gravity="center_vertical"
@@ -165,7 +167,7 @@
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_marginLeft="@dimen/common_margin"
-                    android:src="@drawable/ic_talk_quan"
+                    android:src="@drawable/ic_minefrm_mypartner"
                     />
                 <TextView
                     android:layout_gravity="center_vertical"
@@ -196,7 +198,7 @@
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_marginLeft="@dimen/common_margin"
-                    android:src="@drawable/ic_talk_chatroom"
+                    android:src="@drawable/ic_minefrm_aboutas"
                     />
                 <TextView
                     android:layout_gravity="center_vertical"
@@ -227,7 +229,7 @@
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_marginLeft="@dimen/common_margin"
-                    android:src="@drawable/ic_talk_quan"
+                    android:src="@drawable/ic_minefrm_setting"
                     />
                 <TextView
                     android:layout_gravity="center_vertical"
