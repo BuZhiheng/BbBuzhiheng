@@ -123,10 +123,10 @@ public class LBSActivityController implements View.OnClickListener {
         ImageView icon3 = new ImageView(context);
         ImageView icon4 = new ImageView(context);
         ImageView icon5 = new ImageView(context);
-        icon1.setImageResource(R.drawable.ic_mainfrm_meishi);
-        icon2.setImageResource(R.drawable.ic_mainfrm_fangchan);
-        icon3.setImageResource(R.drawable.ic_mainfrm_chihewanle);
-        icon4.setImageResource(R.drawable.ic_mainfrm_women);
+        icon1.setImageResource(R.drawable.ic_mainfrm_chihewanle);
+        icon2.setImageResource(R.drawable.ic_mainfrm_women);
+        icon3.setImageResource(R.drawable.ic_mainfrm_offer);
+        icon4.setImageResource(R.drawable.ic_mainfrm_zu);
         icon5.setImageResource(R.drawable.ic_mainfrm_other);
         btn1 = itemBuilder.setContentView(icon1).build();
         btn2 = itemBuilder.setContentView(icon2).build();
@@ -181,17 +181,17 @@ public class LBSActivityController implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         if (v == btn1) {
-            tvTitle.setText("美食");
+            tvTitle.setText("吃喝玩乐");
             initData(CommonCode.ADVERT_CHIHEWANLE);
         } else if (v == btn2) {
-            tvTitle.setText("酒店");
-            initData(CommonCode.ADVERT_OFFER);
+            tvTitle.setText("佳丽专区");
+            initData(CommonCode.ADVERT_WOMEN);
         } else if (v == btn3) {
-            tvTitle.setText("休闲");
-            initData(CommonCode.ADVERT_ZULIN);
+            tvTitle.setText("招聘");
+            initData(CommonCode.ADVERT_OFFER);
         } else if (v == btn4) {
-            tvTitle.setText("丽人");
-            initData(CommonCode.ADVERT_FRIEND);
+            tvTitle.setText("租赁");
+            initData(CommonCode.ADVERT_ZULIN);
         } else if (v == btn5) {
             tvTitle.setText("全部商家");
             initData(CommonCode.ADVERT_OTHER);
