@@ -32,6 +32,7 @@
         android:layout_marginLeft="@dimen/common_margin"
         android:layout_marginBottom="60dp"
         android:layout_marginTop="@dimen/common_title_height"
+        android:scrollbars="vertical"
         />
 
     <LinearLayout

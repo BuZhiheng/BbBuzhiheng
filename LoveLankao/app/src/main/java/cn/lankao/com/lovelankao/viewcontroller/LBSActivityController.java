@@ -187,10 +187,10 @@ public class LBSActivityController implements View.OnClickListener {
             tvTitle.setText("佳丽专区");
             initData(CommonCode.ADVERT_WOMEN);
         } else if (v == btn3) {
-            tvTitle.setText("招聘");
+            tvTitle.setText("招聘租赁");
             initData(CommonCode.ADVERT_OFFER);
         } else if (v == btn4) {
-            tvTitle.setText("租赁");
+            tvTitle.setText("爱家");
             initData(CommonCode.ADVERT_ZULIN);
         } else if (v == btn5) {
             tvTitle.setText("全部商家");

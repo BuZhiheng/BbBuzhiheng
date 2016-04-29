@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
 
+import org.xutils.common.util.DensityUtil;
+import org.xutils.image.ImageOptions;
 import org.xutils.x;
 
 import cn.lankao.com.lovelankao.R;
@@ -28,33 +30,38 @@ public class PicShowActivityController implements View.OnClickListener {
         if (intent != null){
             AdvertNormal advert = (AdvertNormal) intent.getSerializableExtra(CommonCode.INTENT_ADVERT_TYPE);
             if (advert != null){
+                ImageOptions imageOptions =new ImageOptions.Builder()
+                        .setCrop(false)// 如果ImageView的大小不是定义为wrap_content, 不要crop.
+                        .setImageScaleType(ImageView.ScaleType.CENTER_CROP)
+                        .setLoadingDrawableId(R.drawable.ic_common_defult)//加载中默认显示图片
+                        .build();
                 if (advert.getAdvPhoto() != null){
-                    x.image().bind(iv0,advert.getAdvPhoto().getFileUrl(context));
+                    x.image().bind(iv0,advert.getAdvPhoto().getFileUrl(context),imageOptions);
                 }else{
                     iv0.setVisibility(View.GONE);
                 }
                 if (advert.getAdvPhoto1() != null){
-                    x.image().bind(iv1,advert.getAdvPhoto1().getFileUrl(context));
+                    x.image().bind(iv1,advert.getAdvPhoto1().getFileUrl(context),imageOptions);
                 }else{
                     iv1.setVisibility(View.GONE);
                 }
                 if (advert.getAdvPhoto2() != null){
-                    x.image().bind(iv2,advert.getAdvPhoto2().getFileUrl(context));
+                    x.image().bind(iv2,advert.getAdvPhoto2().getFileUrl(context),imageOptions);
                 }else{
                     iv2.setVisibility(View.GONE);
                 }
                 if (advert.getAdvPhoto3() != null){
-                    x.image().bind(iv3,advert.getAdvPhoto3().getFileUrl(context));
+                    x.image().bind(iv3,advert.getAdvPhoto3().getFileUrl(context),imageOptions);
                 }else{
                     iv3.setVisibility(View.GONE);
                 }
                 if (advert.getAdvPhoto4() != null){
-                    x.image().bind(iv4,advert.getAdvPhoto4().getFileUrl(context));
+                    x.image().bind(iv4,advert.getAdvPhoto4().getFileUrl(context),imageOptions);
                 }else{
                     iv4.setVisibility(View.GONE);
                 }
                 if (advert.getAdvPhoto5() != null){
-                    x.image().bind(iv5,advert.getAdvPhoto5().getFileUrl(context));
+                    x.image().bind(iv5,advert.getAdvPhoto5().getFileUrl(context),imageOptions);
                 }else{
                     iv5.setVisibility(View.GONE);
                 }

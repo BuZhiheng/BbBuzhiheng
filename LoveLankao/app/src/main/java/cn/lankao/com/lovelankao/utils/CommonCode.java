@@ -8,13 +8,13 @@ public class CommonCode {
     public static int ADVERT_CHIHEWANLE = 0;//吃喝玩乐
     public static int ADVERT_WOMEN = 1;//佳丽专区
     public static int ADVERT_OFFER = 2;//招聘
-    public static int ADVERT_ZULIN = 3;//租赁
+    public static int ADVERT_ZULIN = 3;//爱家
     public static int ADVERT_FRIEND = 4;//征婚
     public static int ADVERT_HUNQING = 5;//婚庆
     public static int ADVERT_FANGCHAN = 6;//房产
     public static int ADVERT_SERVICE = 7;//惠民服务
-//    public static int ADVERT_JINGCAILANKAO = 8;//精彩兰考
-    public static int ADVERT_OTHER = 9;//其他
+    public static int ADVERT_JINGCAILANKAO = 8;//外卖
+    public static int ADVERT_OTHER = 9;//更多
     public static int ADVERT_INDEX = 100;//主页20条VIP广告
 
     public static int ADVERT_TUIJIAN = 1000;//精品推荐&&今日推荐&&大家都在看

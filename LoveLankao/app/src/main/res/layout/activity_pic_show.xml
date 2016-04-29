@@ -36,37 +36,37 @@
             <ImageView
                 android:id="@+id/iv_picshow_0"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/ic_picshow_height"
+                android:layout_height="wrap_content"
                 android:scaleType="fitXY"
                 />
             <ImageView
                 android:id="@+id/iv_picshow_1"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/ic_picshow_height"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/common_title_height"
                 />
             <ImageView
                 android:id="@+id/iv_picshow_2"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/ic_picshow_height"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/common_title_height"
                 android:scaleType="fitCenter"/>
             <ImageView
                 android:id="@+id/iv_picshow_3"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/ic_picshow_height"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/common_title_height"
                 />
             <ImageView
                 android:id="@+id/iv_picshow_4"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/ic_picshow_height"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/common_title_height"
                 android:scaleType="fitCenter"/>
             <ImageView
                 android:id="@+id/iv_picshow_5"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/ic_picshow_height"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/common_title_height"
                 android:scaleType="fitCenter"/>
         </LinearLayout>

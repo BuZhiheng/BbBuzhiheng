@@ -119,10 +119,7 @@ public class MainFragmentController implements View.OnClickListener, SwipeRefres
                 toAdvert(CommonCode.ADVERT_SERVICE,context.getString(R.string.text_mainfrm_service));
                 break;
             case R.id.ll_mainfrm_header_jingcailankao:
-                Intent intent = new Intent(context, WebViewActivity.class);
-                intent.putExtra(CommonCode.INTENT_ADVERT_TITLE, "精彩兰考");
-                intent.putExtra(CommonCode.INTENT_SETTING_URL, PrefUtil.getString(CommonCode.SP_SET_JCLKURL,""));
-                context.startActivity(intent);
+                toAdvert(CommonCode.ADVERT_JINGCAILANKAO, context.getString(R.string.text_mainfrm_jingcai));
                 break;
             case R.id.ll_mainfrm_header_other:
                 toAdvert(CommonCode.ADVERT_OTHER,context.getString(R.string.text_mainfrm_other));

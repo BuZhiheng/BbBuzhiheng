@@ -19,8 +19,10 @@ public class MyLocationClient {
         locationClient.registerLocationListener(new BDLocationListener() {
             @Override
             public void onReceiveLocation(BDLocation bdLocation) {
-                locationClient.stop();
-                locationClient = null;
+                if (locationClient != null){
+                    locationClient.stop();
+                    locationClient = null;
+                }
                 if (locationListener != null){
                     locationListener.onLocSuccess(bdLocation);
                 }

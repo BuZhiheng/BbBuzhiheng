@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.xutils.image.ImageOptions;
 import org.xutils.x;
 
 import cn.lankao.com.lovelankao.R;
@@ -45,7 +46,11 @@ public class LKNewsMsgActivityController implements View.OnClickListener {
                 tvFromTime.setText(news.getNewsFrom()+"   "+news.getNewsTime());
                 tvContent.setText(news.getNewsContent());
                 if (news.getNewsImg() != null){
-                    x.image().bind(ivPhoto,news.getNewsImg());
+                    ImageOptions imageOptions =new ImageOptions.Builder()
+                            .setCrop(false)// 如果ImageView的大小不是定义为wrap_content, 不要crop.
+                            .setImageScaleType(ImageView.ScaleType.CENTER_CROP)
+                            .build();
+                    x.image().bind(ivPhoto,news.getNewsImg(),imageOptions);
                 } else {
                     ivPhoto.setVisibility(View.GONE);
                 }

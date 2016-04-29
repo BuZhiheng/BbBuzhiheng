@@ -239,6 +239,24 @@
                     android:layout_margin="@dimen/common_margin"
                     android:textColor="@color/color_black_text"
                     android:textSize="@dimen/text_common_item_content" />
+                <include layout="@layout/include_slid_img_height10" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="39dp"
+                    android:layout_marginLeft="@dimen/common_margin"
+                    android:gravity="center_vertical"
+                    android:text="评论" />
+
+                <include layout="@layout/include_slid_img_marginleft" />
+
+            <LinearLayout
+                android:id="@+id/ll_advertmsg_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/common_margin"
+                android:background="@color/color_bg"
+                android:orientation="vertical"/>
 
                 <include layout="@layout/include_slid_img_height10" />
 

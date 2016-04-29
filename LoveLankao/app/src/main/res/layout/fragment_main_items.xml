@@ -9,7 +9,7 @@
         android:layout_width="100dp"
         android:layout_height="80dp"
         android:layout_gravity="center_vertical"
-        android:layout_marginLeft="@dimen/common_margin"
+        android:layout_margin="@dimen/common_margin"
         android:src="@drawable/ic_common_defult" />
 
     <TextView

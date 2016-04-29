@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.baidu.mapapi.model.LatLng;
 
+import org.xutils.image.ImageOptions;
 import org.xutils.x;
 
 import java.util.List;
@@ -29,6 +30,7 @@ import cn.lankao.com.lovelankao.activity.AdvertMsgActivity;
 import cn.lankao.com.lovelankao.activity.PicShowActivity;
 import cn.lankao.com.lovelankao.activity.ShopLocationActivity;
 import cn.lankao.com.lovelankao.entity.AdvertNormal;
+import cn.lankao.com.lovelankao.entity.Comment;
 import cn.lankao.com.lovelankao.utils.CommonCode;
 import cn.lankao.com.lovelankao.utils.MapUtil;
 import cn.lankao.com.lovelankao.utils.PrefUtil;
@@ -55,6 +57,7 @@ public class AdvertMsgController implements View.OnClickListener, SwipeRefreshLa
     private TextView tvContentMsg;
     private TextView tvPinglun;
     private LinearLayout layoutBottom;
+    private LinearLayout layoutComment;
     private LinearLayout layoutAddress;
     private Intent intent;
     private ProgressDialog dialog;
@@ -71,6 +74,7 @@ public class AdvertMsgController implements View.OnClickListener, SwipeRefreshLa
         }
     }
     private void initData(){
+        initComment();
         BmobQuery<AdvertNormal> query = new BmobQuery<>();
         query.getObject(context, advertNormal.getObjectId(), new GetListener<AdvertNormal>() {
             @Override
@@ -107,6 +111,8 @@ public class AdvertMsgController implements View.OnClickListener, SwipeRefreshLa
         tvContentMsg = (TextView) context.findViewById(R.id.tv_advertdetail_content_msg);
         tvPinglun = (TextView) context.findViewById(R.id.tv_advertdetail_new_pinglun);
         layoutBottom = (LinearLayout) context.findViewById(R.id.ll_advertmsg_bottom);
+        layoutComment = (LinearLayout) context.findViewById(R.id.ll_advertmsg_comment);
+
         layoutAddress = (LinearLayout) context.findViewById(R.id.ll_advertdetail_address);
         layoutAddress.setOnClickListener(this);
         ivCall.setOnClickListener(this);
@@ -115,7 +121,12 @@ public class AdvertMsgController implements View.OnClickListener, SwipeRefreshLa
 
     private void refreshData() {
         if (advertNormal.getAdvPhoto() != null) {
-            x.image().bind(ivPhoto, advertNormal.getAdvPhoto().getFileUrl(context));
+            ImageOptions imageOptions =new ImageOptions.Builder()
+                    .setCrop(false)// 如果ImageView的大小不是定义为wrap_content, 不要crop.
+                    .setImageScaleType(ImageView.ScaleType.CENTER_CROP)
+                    .setLoadingDrawableId(R.drawable.ic_common_defult)//加载中默认显示图片
+                    .build();
+            x.image().bind(ivPhoto, advertNormal.getAdvPhoto().getFileUrl(context),imageOptions);
         }
         if (advertNormal.getAdvClicked() == null) {
             tvPoints.setText("已点击:0次");
@@ -153,7 +164,38 @@ public class AdvertMsgController implements View.OnClickListener, SwipeRefreshLa
             }
         });
     }
+    private void initComment(){
+        BmobQuery<Comment> query = new BmobQuery<>();
+        query.addWhereEqualTo("postId",advertNormal.getObjectId());
+        query.findObjects(context, new FindListener<Comment>() {
 
+            @Override
+            public void onSuccess(List<Comment> list) {
+                setComment(list);
+            }
+
+            @Override
+            public void onError(int i, String s) {
+
+            }
+        });
+    }
+    private void setComment(List<Comment> list){
+        if (list == null || list.size() == 0){
+            return;
+        }
+        layoutComment.removeAllViews();
+        for (int i=0;i<list.size();i++){
+            ViewHolderComment holder = new ViewHolderComment();
+            Comment comm = list.get(i);
+            View view = LayoutInflater.from(context).inflate(R.layout.activity_advertmsg_comment_item,null);
+            holder.tvUsername = (TextView) view.findViewById(R.id.tv_advert_comment_username);
+            holder.tvContent = (TextView) view.findViewById(R.id.tv_advert_comment_content);
+            holder.tvUsername.setText(comm.getUsername());
+            holder.tvContent.setText(comm.getContent());
+            layoutComment.addView(view);
+        }
+    }
     private void setBottom(List<AdvertNormal> list) {
         layoutBottom.removeAllViews();
         for (int i = 0; i < list.size(); i++) {
@@ -236,5 +278,9 @@ public class AdvertMsgController implements View.OnClickListener, SwipeRefreshLa
         TextView tvAverage;
         TextView tvPoints;
         TextView tvTitleContent;
+    }
+    class ViewHolderComment{
+        TextView tvUsername;
+        TextView tvContent;
     }
 }
