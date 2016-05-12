@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.bmob.v3.update.BmobUpdateAgent;
+import cn.lankao.com.lovelankao.fragment.IndexFragment;
 import cn.lankao.com.lovelankao.fragment.LbsFragment;
 import cn.lankao.com.lovelankao.fragment.MainFragment;
 import cn.lankao.com.lovelankao.fragment.MineFragment;
@@ -69,9 +70,9 @@ public class MainActivityController implements View.OnClickListener{
         llTalk.setOnClickListener(this);
         llUser.setOnClickListener(this);
         fragments = new ArrayList<>();
-        fragments.add(new MainFragment());
-        fragments.add(new LbsFragment());
+        fragments.add(new IndexFragment());
         fragments.add(new TalkFragment());
+        fragments.add(new MainFragment());
         fragments.add(new MineFragment());
         viewPager.setAdapter(new MyFragmentAdapter(context.getFragmentManager()));
         viewPager.addOnPageChangeListener(new MyFragmentListener());

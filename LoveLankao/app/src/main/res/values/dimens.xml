@@ -8,5 +8,5 @@
     <dimen name="text_common_large">36sp</dimen>
     <dimen name="ic_mainfrm_title">42dp</dimen>
     <dimen name="ic_picshow_height">390dp</dimen>
-
+    <dimen name="indexfrm_item_height">60dp</dimen>
 </resources>

@@ -2,19 +2,19 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/fl_read_content"
     android:layout_width="match_parent"
-    android:layout_height="80dp">
+    android:layout_height="100dp">
     <ImageView
         android:id="@+id/iv_readact_item_photo"
-        android:layout_width="80dp"
-        android:layout_height="60dp"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
         android:layout_gravity="center_vertical"
-        android:layout_marginLeft="@dimen/common_margin"
+        android:layout_margin="@dimen/common_margin"
         android:src="@drawable/ic_common_defult" />
     <TextView
         android:id="@+id/tv_readact_item_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="100dp"
+        android:layout_marginLeft="119dp"
         android:layout_marginTop="10dp"
         android:text="@string/app_test"
         android:textColor="@color/color_black_text"
@@ -22,19 +22,13 @@
 
     <TextView
         android:id="@+id/tv_readact_item_source"
-        android:layout_gravity="bottom"
+        android:layout_gravity="bottom|right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginRight="10dp"
         android:text="@string/app_test"
         android:textColor="@color/color_gray_deep"
         android:textSize="@dimen/text_common_item_content" />
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:layout_gravity="bottom"
-        android:background="@color/color_gray" />
+    <include layout="@layout/include_slid_img"/>
 </FrameLayout>
