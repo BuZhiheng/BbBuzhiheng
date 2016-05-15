@@ -8,6 +8,7 @@
     <color name="color_gray">#cccccc</color>
     <color name="color_gray_deep">#B2B2B2</color>
     <color name="color_bg">#F2F3F5</color>
+    <color name="color_alpha_black">#cc404040</color>
 
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>

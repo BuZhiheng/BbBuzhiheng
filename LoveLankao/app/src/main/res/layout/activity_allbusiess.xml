@@ -8,29 +8,36 @@
         android:layout_height="@dimen/common_title_height"
         android:background="@color/color_green"
         >
+        <ImageView
+            android:id="@+id/iv_allact_back"
+            android:layout_gravity="center_vertical"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="@dimen/common_margin"
+            android:src="@drawable/ic_common_back_white"/>
         <TextView
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/main_lbs"
+            android:text="全部商家"
             android:textSize="@dimen/text_main_title"
             android:textColor="@color/color_white"
             />
     </FrameLayout>
     <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/srl_lbs_fragment"
+        android:id="@+id/srl_allact"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="@dimen/common_title_height"
         >
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/rv_lbs_frm"
+            android:id="@+id/rv_allact"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scrollbars="vertical"/>
     </android.support.v4.widget.SwipeRefreshLayout>
     <ImageView
-        android:id="@+id/iv_lbsfrm_map"
+        android:id="@+id/iv_allact_tomap"
         android:layout_gravity="right|bottom"
         android:layout_width="39dp"
         android:layout_height="39dp"

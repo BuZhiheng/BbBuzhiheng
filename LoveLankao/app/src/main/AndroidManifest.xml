@@ -21,10 +21,6 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="getui.permission.GetuiService.cn.lankao.com.lovelankao" /><!--替换为第三方应用的包名-->
-    <permission
-        android:name="getui.permission.GetuiService.cn.lankao.com.lovelankao"
-        android:protectionLevel="normal" >
-    </permission>
     <application
         android:name=".LApplication"
         android:allowBackup="true"
@@ -145,8 +141,26 @@
             android:name="cn.bmob.v3.update.UpdateDialogActivity"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" >
         </activity>
+        //QQ分享
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:noHistory="true"
+            android:launchMode="singleTask" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="1105245681" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.tencent.connect.common.AssistActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            />
+
         <activity android:name=".activity.AdvertMsgActivity" />
         <activity android:name=".activity.AdvertDetailActivity" />
+        <activity android:name=".activity.AllBusinessActivity" />
         <activity android:name=".activity.ChatRoomActivity" />
         <activity android:name=".activity.CookActivity" />
         <activity android:name=".activity.JockActivity" />
@@ -168,4 +182,8 @@
         <activity android:name=".activity.TopActivity" />
         <activity android:name=".activity.WebViewActivity" />
     </application>
+    <permission
+        android:name="getui.permission.GetuiService.cn.lankao.com.lovelankao"
+        android:protectionLevel="normal" >
+    </permission>
 </manifest>

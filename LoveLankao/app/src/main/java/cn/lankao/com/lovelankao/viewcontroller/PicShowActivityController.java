@@ -1,18 +1,13 @@
 package cn.lankao.com.lovelankao.viewcontroller;
-
 import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
-
-import org.xutils.common.util.DensityUtil;
 import org.xutils.image.ImageOptions;
 import org.xutils.x;
-
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.PicShowActivity;
 import cn.lankao.com.lovelankao.entity.AdvertNormal;
 import cn.lankao.com.lovelankao.utils.CommonCode;
-
 /**
  * Created by BuZhiheng on 2016/4/20.
  */
@@ -68,7 +63,6 @@ public class PicShowActivityController implements View.OnClickListener {
             }
         }
     }
-
     private void initView() {
         context.setContentView(R.layout.activity_pic_show);
         x.view().inject(context);
@@ -80,7 +74,6 @@ public class PicShowActivityController implements View.OnClickListener {
         iv5 = (ImageView) context.findViewById(R.id.iv_picshow_5);
         context.findViewById(R.id.iv_picshow_back).setOnClickListener(this);
     }
-
     @Override
     public void onClick(View v) {
         switch (v.getId()){

@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">掌上兰考</string>
     <string name="app_test"></string>
+    <string name="app_keystore_alias">lk</string>
     <string name="main_index">首页</string>
     <string name="main_lbs">商圈</string>
     <string name="main_talk">社区</string>
@@ -15,7 +16,7 @@
     <string name="text_mainfrm_fangchan">房产楼盘</string>
     <string name="text_mainfrm_service">惠民服务</string>
     <string name="text_mainfrm_jingcai">外卖</string>
-    <string name="text_mainfrm_other">更多</string>
+    <string name="text_mainfrm_other">其他</string>
     <string name="bmob_common_action_info_exist">正在下载中.</string>
 
     <string name="bmob_common_info_interrupt">下载出错啦，请检查网络后继续。</string>

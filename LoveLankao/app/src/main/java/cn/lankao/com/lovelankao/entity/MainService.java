@@ -8,9 +8,8 @@ import cn.bmob.v3.datatype.BmobFile;
  */
 public class MainService extends BmobObject {
     private String title;
-    private BmobFile file;
+    private BmobFile titlePhoto;
     private String url;
-
     public String getTitle() {
         return title;
     }
@@ -20,11 +19,11 @@ public class MainService extends BmobObject {
     }
 
     public BmobFile getFile() {
-        return file;
+        return titlePhoto;
     }
 
     public void setFile(BmobFile file) {
-        this.file = file;
+        this.titlePhoto = file;
     }
 
     public String getUrl() {

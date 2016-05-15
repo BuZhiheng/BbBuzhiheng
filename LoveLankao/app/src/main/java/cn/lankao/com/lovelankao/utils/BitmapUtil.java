@@ -27,7 +27,7 @@ public class BitmapUtil {
         try {
             ops = new FileOutputStream(file);
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 20, baos);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 50, baos);
             baos.writeTo(ops);
             baos.flush();
             baos.close();

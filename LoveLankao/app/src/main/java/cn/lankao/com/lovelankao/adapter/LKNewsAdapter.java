@@ -3,6 +3,7 @@ package cn.lankao.com.lovelankao.adapter;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -50,12 +51,14 @@ public class LKNewsAdapter extends RecyclerView.Adapter<LKNewsAdapter.MyViewHold
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         MyViewHolder holder = new MyViewHolder(LayoutInflater.from(context)
                 .inflate(R.layout.activity_lknews_item, parent, false));
+
         return holder;
     }
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
         final LanKaoNews news = data.get(position);
+        holder.photo.setImageDrawable(ContextCompat.getDrawable(context,R.drawable.ic_common_defult));
         if (news.getNewsImg() != null){
             x.image().bind(holder.photo,news.getNewsImg());
         }

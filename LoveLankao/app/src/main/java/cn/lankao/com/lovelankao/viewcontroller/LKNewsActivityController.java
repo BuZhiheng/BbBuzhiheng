@@ -47,6 +47,7 @@ public class LKNewsActivityController implements SwipeRefreshLayout.OnRefreshLis
             query.setSkip(0);
         }
         query.order("-createdAt");
+        query.addWhereNotEqualTo("newsType","1");
         query.findObjects(context, new FindListener<LanKaoNews>() {
             @Override
             public void onSuccess(List<LanKaoNews> list) {

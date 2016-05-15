@@ -17,11 +17,9 @@ import java.util.List;
 
 import cn.bmob.v3.update.BmobUpdateAgent;
 import cn.lankao.com.lovelankao.fragment.IndexFragment;
-import cn.lankao.com.lovelankao.fragment.LbsFragment;
 import cn.lankao.com.lovelankao.fragment.MainFragment;
 import cn.lankao.com.lovelankao.fragment.MineFragment;
 import cn.lankao.com.lovelankao.fragment.TalkFragment;
-import cn.lankao.com.lovelankao.utils.MyLocationClient;
 
 /**
  * Created by 卜智衡 on 2016/3/18.
@@ -85,10 +83,10 @@ public class MainActivityController implements View.OnClickListener{
             case R.id.ll_main_index:
                 viewPager.setCurrentItem(0);
                 break;
-            case R.id.ll_main_lbs:
+            case R.id.ll_main_talk:
                 viewPager.setCurrentItem(1);
                 break;
-            case R.id.ll_main_talk:
+            case R.id.ll_main_lbs:
                 viewPager.setCurrentItem(2);
                 break;
             case R.id.ll_main_user:
@@ -143,13 +141,13 @@ public class MainActivityController implements View.OnClickListener{
                 break;
             case 1:
                 initBottom();
-                ivLbs.setImageResource(R.drawable.ic_main_lbsc);
-                tvLbs.setTextColor(ContextCompat.getColor(context, R.color.color_green));
+                ivTalk.setImageResource(R.drawable.ic_main_talkc);
+                tvTalk.setTextColor(ContextCompat.getColor(context, R.color.color_green));
                 break;
             case 2:
                 initBottom();
-                ivTalk.setImageResource(R.drawable.ic_main_talkc);
-                tvTalk.setTextColor(ContextCompat.getColor(context, R.color.color_green));
+                ivLbs.setImageResource(R.drawable.ic_main_lbsc);
+                tvLbs.setTextColor(ContextCompat.getColor(context, R.color.color_green));
                 break;
             case 3:
                 initBottom();

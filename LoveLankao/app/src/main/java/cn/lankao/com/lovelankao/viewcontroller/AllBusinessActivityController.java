@@ -1,5 +1,4 @@
 package cn.lankao.com.lovelankao.viewcontroller;
-import android.content.Context;
 import android.content.Intent;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,46 +9,44 @@ import java.util.List;
 import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.listener.FindListener;
 import cn.lankao.com.lovelankao.R;
+import cn.lankao.com.lovelankao.activity.AllBusinessActivity;
 import cn.lankao.com.lovelankao.activity.LBSActivity;
 import cn.lankao.com.lovelankao.adapter.MyAdapter;
 import cn.lankao.com.lovelankao.entity.AdvertNormal;
 import cn.lankao.com.lovelankao.utils.CommonCode;
 import cn.lankao.com.lovelankao.utils.ToastUtil;
 import cn.lankao.com.lovelankao.widget.OnRvScrollListener;
-
 /**
  * Created by BuZhiheng on 2016/3/31.
  */
-public class LBSFragmentController implements View.OnClickListener, SwipeRefreshLayout.OnRefreshListener {
-    private Context context;
-    private View view;
+public class AllBusinessActivityController implements View.OnClickListener, SwipeRefreshLayout.OnRefreshListener {
+    private AllBusinessActivity context;
     private RecyclerView recyclerView;
     private SwipeRefreshLayout refresh;
     private MyAdapter adapter;
-    private ImageView imageView;
-
     private int cout = CommonCode.RV_ITEMS_COUT;
     private boolean isRefresh = true;
     private boolean canLoadMore = true;
-    public LBSFragmentController(Context context,View view){
+    public AllBusinessActivityController(AllBusinessActivity context){
         this.context = context;
-        this.view = view;
         initView();
         initData();
     }
     private void initView() {
         adapter = new MyAdapter(context);
-        imageView = (ImageView) view.findViewById(R.id.iv_lbsfrm_map);
-        refresh = (SwipeRefreshLayout)view.findViewById(R.id.srl_lbs_fragment);
+        context.setContentView(R.layout.activity_allbusiess);
+        context.findViewById(R.id.iv_allact_tomap).setOnClickListener(this);
+        context.findViewById(R.id.iv_allact_back).setOnClickListener(this);
+        refresh = (SwipeRefreshLayout)context.findViewById(R.id.srl_allact);
         refresh.setOnRefreshListener(this);
         refresh.setRefreshing(true);
-        recyclerView = (RecyclerView) view.findViewById(R.id.rv_lbs_frm);
+        recyclerView = (RecyclerView) context.findViewById(R.id.rv_allact);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.setAdapter(adapter);
         recyclerView.addOnScrollListener(new OnRvScrollListener() {
             @Override
             public void toBottom() {
-                if (canLoadMore){
+                if (canLoadMore) {
                     isRefresh = false;
                     canLoadMore = false;
                     cout += CommonCode.RV_ITEMS_COUT;
@@ -57,7 +54,6 @@ public class LBSFragmentController implements View.OnClickListener, SwipeRefresh
                 }
             }
         });
-        imageView.setOnClickListener(this);
     }
     private void initData() {
         BmobQuery<AdvertNormal> query = new BmobQuery<>();
@@ -95,9 +91,15 @@ public class LBSFragmentController implements View.OnClickListener, SwipeRefresh
 
     @Override
     public void onClick(View v) {
-        if(v == imageView){
-            Intent intent = new Intent(context, LBSActivity.class);
-            context.startActivity(intent);
+        switch (v.getId()){
+            case R.id.iv_allact_tomap:
+                Intent intent = new Intent(context, LBSActivity.class);
+                context.startActivity(intent);
+                break;
+            case R.id.iv_allact_back:
+                context.finish();
+                break;
+
         }
     }
 

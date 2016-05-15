@@ -85,10 +85,10 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
                     context.startActivity(intent);
                     return;
                 }
-                if(etContent.getText().toString() == null ||  etContent.getText().toString().length() < 20){
-                    ToastUtil.show("至少输入20个字");
-                    return;
-                }
+//                if(etContent.getText().toString() == null ||  etContent.getText().toString().length() < 20){
+//                    ToastUtil.show("至少输入20个字");
+//                    return;
+//                }
                 final Square square = new Square();
                 square.setNickName(PrefUtil.getString(CommonCode.SP_USER_NICKNAME, "游客"));
                 String type = PrefUtil.getString(CommonCode.SP_USER_USERTYPE, "");

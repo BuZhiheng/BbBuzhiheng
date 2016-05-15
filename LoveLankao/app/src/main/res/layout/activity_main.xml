@@ -49,31 +49,6 @@
                 />
         </LinearLayout>
         <LinearLayout
-            android:id="@+id/ll_main_lbs"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:clickable="true"
-            >
-            <ImageView
-                android:id="@+id/iv_main_lbs"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:src="@drawable/ic_main_lbs"
-                />
-            <TextView
-                android:id="@+id/tv_main_lbs"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="@string/main_lbs"
-                android:textSize="26px"
-                android:textColor="@color/color_black_text"
-                />
-        </LinearLayout>
-        <LinearLayout
             android:id="@+id/ll_main_talk"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -94,6 +69,31 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:text="@string/main_talk"
+                android:textSize="26px"
+                android:textColor="@color/color_black_text"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_main_lbs"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:clickable="true"
+            >
+            <ImageView
+                android:id="@+id/iv_main_lbs"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_main_lbs"
+                />
+            <TextView
+                android:id="@+id/tv_main_lbs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/main_lbs"
                 android:textSize="26px"
                 android:textColor="@color/color_black_text"
                 />

@@ -4,6 +4,7 @@ package cn.lankao.com.lovelankao.utils;
  * Created by BuZhiheng on 2016/4/2.
  */
 public class CommonCode {
+    public static final String APP_ICON = "http://pp.myapp.com/ma_icon/0/icon_42267135_1461206561/96";
     //广告类型。Bmob后台根据这里设置advType
     public static int ADVERT_CHIHEWANLE = 0;//吃喝玩乐
     public static int ADVERT_WOMEN = 1;//佳丽专区
@@ -25,6 +26,8 @@ public class CommonCode {
     public static int RV_ITEMS_COUT = 10;
     public static final String INTENT_ADVERT_TITLE = "ADVERT_TITLE";
     public static final String INTENT_ADVERT_TYPE = "ADVERT_TYPE";
+    public static final String INTENT_SHARED_DESC = "INTENT_SHARED_DESC";
+    public static final String INTENT_SHARED_IMG = "INTENT_SHARED_IMG";
     public static final String INTENT_SETTING_URL = "INTENT_SETTING_URL";
     public static final String INTENT_COOK_OR_FOOD = "INTENT_COOK_OR_FOOD";
     public static final String INTENT_COOK = "INTENT_COOK";

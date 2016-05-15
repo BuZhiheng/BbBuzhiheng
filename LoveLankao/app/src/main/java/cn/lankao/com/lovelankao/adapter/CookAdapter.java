@@ -69,6 +69,12 @@ public class CookAdapter extends RecyclerView.Adapter<CookAdapter.MyViewHolder> 
                 Intent intent = new Intent(context, WebViewActivity.class);
                 intent.putExtra(CommonCode.INTENT_ADVERT_TITLE, "菜谱详情");
                 intent.putExtra(CommonCode.INTENT_SETTING_URL, url+cook.getId());
+                intent.putExtra(CommonCode.INTENT_SHARED_DESC,cook.getDescription());
+                if (cook.getImg() != null){
+                    intent.putExtra(CommonCode.INTENT_SHARED_IMG,"http://tnfs.tngou.net/image"+cook.getImg());
+                } else {
+                    intent.putExtra(CommonCode.INTENT_SHARED_IMG, CommonCode.APP_ICON);
+                }
                 context.startActivity(intent);
             }
         });

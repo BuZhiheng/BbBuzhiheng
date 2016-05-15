@@ -19,6 +19,7 @@ import cn.bmob.v3.listener.FindListener;
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.AdvertDetailActivity;
 import cn.lankao.com.lovelankao.activity.AdvertMsgActivity;
+import cn.lankao.com.lovelankao.activity.AllBusinessActivity;
 import cn.lankao.com.lovelankao.activity.WebViewActivity;
 import cn.lankao.com.lovelankao.entity.AdvertNormal;
 import cn.lankao.com.lovelankao.utils.CommonCode;
@@ -60,6 +61,7 @@ public class MainFragmentController implements View.OnClickListener, SwipeRefres
         view.findViewById(R.id.ll_mainfrm_header_mingqi).setOnClickListener(this);
         view.findViewById(R.id.tv_mainfrm_tehui).setOnClickListener(this);
         view.findViewById(R.id.tv_mainfrm_tuiian).setOnClickListener(this);
+        view.findViewById(R.id.tv_mainfrm_toall).setOnClickListener(this);
     }
 
     private void initData() {
@@ -85,6 +87,10 @@ public class MainFragmentController implements View.OnClickListener, SwipeRefres
     public void onClick(View v) {
         int id = v.getId();
         switch (id) {
+            case R.id.tv_mainfrm_toall:
+                Intent intent = new Intent(context, AllBusinessActivity.class);
+                context.startActivity(intent);
+                break;
             case R.id.ll_mainfrm_header_mingqi:
                 toAdvert(CommonCode.ADVERT_MINGQI, "名企名商");
                 break;

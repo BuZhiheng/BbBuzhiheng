@@ -11,9 +11,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/main_index"
+            android:text="@string/main_lbs"
             android:textColor="@color/color_white"
             android:textSize="@dimen/text_main_title" />
+        <TextView
+            android:id="@+id/tv_mainfrm_toall"
+            android:layout_gravity="right"
+            android:layout_width="@dimen/common_title_height"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="更多"
+            android:textSize="@dimen/text_common_item_title"
+            android:textColor="@color/color_bg"
+            />
     </FrameLayout>
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/srl_main_frm"
