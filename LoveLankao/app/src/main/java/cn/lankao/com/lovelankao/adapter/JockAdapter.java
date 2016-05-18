@@ -12,14 +12,18 @@ import java.util.ArrayList;
 import java.util.List;
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.entity.Jock;
+import cn.lankao.com.lovelankao.viewcontroller.JockActivityController;
+
 /**
  * Created by BuZhiheng on 2016/3/31.
  */
 public class JockAdapter extends RecyclerView.Adapter<JockAdapter.MyViewHolder> {
     private Context context;
+    private JockActivityController jock;
     private List<Jock> data;
-    public JockAdapter(Context context) {
+    public JockAdapter(Context context,JockActivityController jock) {
         this.context = context;
+        this.jock = jock;
         data = new ArrayList<>();
         x.view().inject((Activity) context);
     }
@@ -43,8 +47,14 @@ public class JockAdapter extends RecyclerView.Adapter<JockAdapter.MyViewHolder> 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
         final Jock news = data.get(position);
-        holder.tvContent.setText("    "+news.getContent());
+        holder.tvContent.setText(news.getContent());
         holder.tvTime.setText(news.getUpdatetime());
+        holder.tvContent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                jock.onItemClick(news.getContent());
+            }
+        });
     }
 
     @Override

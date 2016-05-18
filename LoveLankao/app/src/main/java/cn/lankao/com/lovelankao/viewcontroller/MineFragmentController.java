@@ -112,7 +112,11 @@ public class MineFragmentController implements View.OnClickListener {
         }else{
             tvNickName.setText(user.getNickName());
             tvPhone.setText(user.getUsername());
-            tvJifen.setText(user.getPoint());
+            if (user.getPoint() != null){
+                tvJifen.setText(user.getPoint());
+            }else{
+                tvJifen.setText("0");
+            }
         }
     }
     public void onDestroy() {

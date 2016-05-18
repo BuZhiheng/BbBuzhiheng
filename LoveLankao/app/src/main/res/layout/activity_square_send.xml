@@ -13,7 +13,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="发表说说"
+            android:text="发帖"
             android:textColor="@color/color_white"
             android:textSize="@dimen/text_main_title" />
 
@@ -31,27 +31,94 @@
         android:layout_height="match_parent"
         android:layout_margin="@dimen/common_margin"
         android:orientation="vertical">
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_margin"
+            android:layout_marginLeft="@dimen/common_margin"
+            android:text="输入标题"
+            android:textSize="@dimen/text_common_item_title"
+            android:textColor="@color/color_black_text"/>
+        <EditText
+            android:id="@+id/et_square_send_title"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:padding="5dp"
+            android:layout_marginLeft="@dimen/common_margin"
+            android:layout_marginRight="@dimen/common_margin"
+            android:background="@drawable/common_tv_chat"
+            android:gravity="top" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_margin"
+            android:layout_marginLeft="@dimen/common_margin"
+            android:text="输入内容"
+            android:textSize="@dimen/text_common_item_title"
+            android:textColor="@color/color_black_text"/>
         <EditText
             android:id="@+id/et_square_send_content"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="100dp"
             android:padding="5dp"
+            android:layout_marginLeft="@dimen/common_margin"
+            android:layout_marginRight="@dimen/common_margin"
             android:background="@drawable/common_tv_chat"
             android:gravity="top" />
-
-        <ImageView
-            android:id="@+id/iv_square_choose_photo"
-            android:layout_width="50dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:src="@drawable/ic_square_camera_c"
-            />
-
+            android:layout_marginTop="@dimen/common_margin_large"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/iv_square_choose_photo1"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_common_addimg"
+                />
+            <ImageView
+                android:id="@+id/iv_square_choose_photo2"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_common_addimg"
+                />
+            <ImageView
+                android:id="@+id/iv_square_choose_photo3"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_common_addimg"
+                />
+            <ImageView
+                android:id="@+id/iv_square_choose_photo4"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_common_addimg"
+                />
+            <ImageView
+                android:id="@+id/iv_square_choose_photo5"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_common_addimg"
+                />
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/common_margin"
+            android:text="最多可以上传5张图片哦"
+            android:textSize="@dimen/text_common_item_content"
+            android:textColor="@color/color_gray_deep"/>
         <Button
             android:id="@+id/btn_square_send"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_margin="@dimen/common_margin"
             android:background="@drawable/common_tv_chat"
             android:text="发表"
             android:textColor="@color/color_green"

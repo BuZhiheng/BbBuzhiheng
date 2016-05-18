@@ -46,4 +46,5 @@ dependencies {
     compile 'com.bigkoo:convenientbanner:2.0.5'
     compile files('libs/GetuiExt-2.0.3.jar')
     compile files('libs/open_sdk_r5509.jar')
+    compile files('libs/libammsdk.jar')
 }

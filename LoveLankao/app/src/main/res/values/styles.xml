@@ -2,4 +2,8 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="windowNoTitle">true</item>
     </style>
+    <style name="PopwinTheme" parent="android:Animation">
+        <item name="@android:windowEnterAnimation">@anim/popwin_share_enter</item>//进入时的动画
+        <item name="@android:windowExitAnimation">@anim/popwin_share_exit</item>//退出时的动画
+    </style>
 </resources>

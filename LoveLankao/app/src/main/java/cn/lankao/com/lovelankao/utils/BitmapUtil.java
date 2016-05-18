@@ -2,38 +2,47 @@ package cn.lankao.com.lovelankao.utils;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.os.Environment;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
- * Created by dell on 2016/4/5.
+ * Created by BuZhiheng on 2016/4/5.
  */
 public class BitmapUtil {
-    public static String compressImage(Context context,Bitmap bm) throws FileNotFoundException {
-        return null;
-    }
-    public static String saveBitmapFile(Bitmap bitmap){
-        String name = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
-        String str = Environment.getExternalStorageDirectory().toString()+File.separator+"dong/image/"+name+".jpg";
-        File file=new File(str);//将要保存图片的路径
-        FileOutputStream ops;
+    public static void compressImage(Bitmap image,Context context) {
+        if(image == null){
+            return;
+        }
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        //质量压缩方法，这里100表示不压缩,把压缩后的数据存放到baos中
+        image.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        int option = 50;
+        //循环判断如果压缩后图片是否大于100kb,大于继续压缩
+        while (baos.toByteArray().length/1024 > 100) {
+            //重置baos即清空baos
+            baos.reset();
+            //这里压缩options%,把压缩后的数据存放到baos中
+            image.compress(Bitmap.CompressFormat.JPEG, option, baos);
+            if(option == 20){
+                break;
+            }
+            option --;
+        }
+        String path = context.getCacheDir().toString()+"/"+System.currentTimeMillis()+".jpg";
+        File file = new File(path);
         try {
-            ops = new FileOutputStream(file);
-            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 50, baos);
-            baos.writeTo(ops);
-            baos.flush();
+            file.createNewFile();
+            FileOutputStream fos = new FileOutputStream(file);
+            baos.writeTo(fos);
+            fos.close();
             baos.close();
         } catch (IOException e) {
             e.printStackTrace();
+            ToastUtil.show(e.getMessage());
         }
-        return str;
+        return;
     }
 }

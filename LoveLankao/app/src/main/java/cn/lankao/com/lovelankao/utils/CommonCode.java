@@ -5,6 +5,10 @@ package cn.lankao.com.lovelankao.utils;
  */
 public class CommonCode {
     public static final String APP_ICON = "http://pp.myapp.com/ma_icon/0/icon_42267135_1461206561/96";
+    public static final String APP_URL = "https://www.pgyer.com/IcDB";
+    public static final String APP_ID_TENCENT = "1105245681";
+    public static final String APP_ID_WX = "wxac9ca0bfd95ef04e";
+
     //广告类型。Bmob后台根据这里设置advType
     public static int ADVERT_CHIHEWANLE = 0;//吃喝玩乐
     public static int ADVERT_WOMEN = 1;//佳丽专区

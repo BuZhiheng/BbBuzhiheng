@@ -11,7 +11,7 @@ public class ProDialog {
     public static ProgressDialog getProDialog(Context context){
         dialog = new ProgressDialog(context);
         dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        dialog.setMessage("加载中...");
+        dialog.setMessage("请稍后...");
         dialog.setCancelable(true);
         return dialog;
     }

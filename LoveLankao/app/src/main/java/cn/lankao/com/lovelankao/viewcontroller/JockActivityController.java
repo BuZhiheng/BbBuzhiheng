@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 import android.view.View;
 
 import com.google.gson.JsonElement;
@@ -15,11 +16,14 @@ import cn.lankao.com.lovelankao.activity.JockActivity;
 import cn.lankao.com.lovelankao.adapter.JockAdapter;
 import cn.lankao.com.lovelankao.entity.Jock;
 import cn.lankao.com.lovelankao.entity.JuheApiResult;
+import cn.lankao.com.lovelankao.entity.Shared;
 import cn.lankao.com.lovelankao.utils.CommonCode;
 import cn.lankao.com.lovelankao.utils.GsonUtil;
 import cn.lankao.com.lovelankao.utils.OkHttpUtil;
+import cn.lankao.com.lovelankao.utils.ShareManager;
 import cn.lankao.com.lovelankao.widget.OnRvScrollListener;
 import cn.lankao.com.lovelankao.widget.ProDialog;
+import cn.lankao.com.lovelankao.widget.SharePopupWindow;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -34,6 +38,9 @@ public class JockActivityController implements SwipeRefreshLayout.OnRefreshListe
     private SwipeRefreshLayout refresh;
     private JockAdapter adapter;
     private ProgressDialog dialog;
+    private ShareManager manager;
+    private SharePopupWindow popWin;
+    private String shareString;
     private int page = 1;
     private boolean isRefresh = true;
     private boolean canLoadMore = true;
@@ -67,20 +74,20 @@ public class JockActivityController implements SwipeRefreshLayout.OnRefreshListe
             @Override
             public void onNext(String s) {
                 JuheApiResult res = GsonUtil.jsonToObject(s, JuheApiResult.class);
-                if (res.getError_code() == 0){
-                    try{
+                if (res.getError_code() == 0) {
+                    try {
                         JsonElement list = res.getResult().getAsJsonObject().getAsJsonArray("data");
-                        List<Jock> data = GsonUtil.jsonToList(list,Jock.class);
-                        if (isRefresh){
+                        List<Jock> data = GsonUtil.jsonToList(list, Jock.class);
+                        if (isRefresh) {
                             adapter.setData(data);
-                        }else{
+                        } else {
                             adapter.addData(data);
                         }
                         canLoadMore = true;
                         adapter.notifyDataSetChanged();
                         refresh.setRefreshing(false);
                         dialog.dismiss();
-                    }catch (Exception e){
+                    } catch (Exception e) {
                         refresh.setRefreshing(false);
                     }
                 }
@@ -89,9 +96,11 @@ public class JockActivityController implements SwipeRefreshLayout.OnRefreshListe
     }
 
     private void initView() {
+        manager = ShareManager.getInstance(context);
+        popWin = new SharePopupWindow(context,this);
         dialog = ProDialog.getProDialog(context);
         dialog.show();
-        adapter = new JockAdapter(context);
+        adapter = new JockAdapter(context,this);
         context.setContentView(R.layout.activity_jock);
         context.findViewById(R.id.iv_jock_back).setOnClickListener(this);
         refresh = (SwipeRefreshLayout)context.findViewById(R.id.srl_jock_activity);
@@ -112,19 +121,47 @@ public class JockActivityController implements SwipeRefreshLayout.OnRefreshListe
             }
         });
     }
-
+    private void shareQQ() {
+        Shared share = new Shared();
+        share.setDesc(shareString);
+        share.setImgUrl(CommonCode.APP_ICON);
+        share.setUrl(CommonCode.APP_URL);
+        manager.shareQQ(share);
+    }
+    private void shareWxText(int type){
+        Shared share = new Shared();
+        share.setDesc(shareString);
+        share.setWxType(type);
+        manager.shareWxText(share);
+    }
     @Override
     public void onRefresh() {
         isRefresh = true;
         page = 1;
         initData();
     }
-
+    public void onItemClick(String jock){
+        shareString = jock;
+        //设置layout在PopupWindow中显示的位置
+        popWin.showAtLocation(context.findViewById(R.id.srl_jock_activity), Gravity.BOTTOM , 0, 0);
+    }
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.iv_jock_back:
                 context.finish();
+                break;
+            case R.id.ll_popwinshare_qq:
+                shareQQ();
+                popWin.dismiss();
+                break;
+            case R.id.ll_popwinshare_wx:
+                shareWxText(ShareManager.WXTYPE_CHAT);
+                popWin.dismiss();
+                break;
+            case R.id.ll_popwinshare_wxsquare:
+                shareWxText(ShareManager.WXTYPE_SQUARE);
+                popWin.dismiss();
                 break;
         }
     }
