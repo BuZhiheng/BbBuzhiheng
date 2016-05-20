@@ -2,6 +2,7 @@ package cn.lankao.com.lovelankao.viewcontroller;
 
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -17,13 +18,13 @@ import android.widget.ImageView;
 
 
 import org.greenrobot.eventbus.EventBus;
-import org.xutils.x;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import cn.bmob.v3.Bmob;
@@ -34,6 +35,7 @@ import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.LoginActivity;
 import cn.lankao.com.lovelankao.activity.SquareSendActivity;
 import cn.lankao.com.lovelankao.entity.Square;
+import cn.lankao.com.lovelankao.utils.BitmapUtil;
 import cn.lankao.com.lovelankao.utils.CommonCode;
 import cn.lankao.com.lovelankao.utils.PrefUtil;
 import cn.lankao.com.lovelankao.utils.ToastUtil;
@@ -53,6 +55,7 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
     private ImageView ivChoose4;
     private ImageView ivChoose5;
     private int imgIndex;
+    private Uri imageFilePath;
     private String[] pathArr;
     private Bitmap bitmap1;
     private Bitmap bitmap2;
@@ -115,30 +118,29 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
     }
 
     private void sendMsg() {
-//        if ("".equals(PrefUtil.getString(CommonCode.SP_USER_USERID, ""))){
-//            Intent intent = new Intent(context, LoginActivity.class);
-//            context.startActivity(intent);
-//            return;
-//        }else if("".equals(etTitle.getText().toString())){
-//            ToastUtil.show("请输入标题");
-//            return;
-//        } else if("".equals(etContent.getText().toString()) ||  etContent.getText().toString().length() < 10){
-//            ToastUtil.show("内容至少输入10个字");
-//            return;
-//        }
+        if ("".equals(PrefUtil.getString(CommonCode.SP_USER_USERID, ""))){
+            Intent intent = new Intent(context, LoginActivity.class);
+            context.startActivity(intent);
+            return;
+        }else if("".equals(etTitle.getText().toString())){
+            ToastUtil.show("请输入标题");
+            return;
+        } else if("".equals(etContent.getText().toString()) ||  etContent.getText().toString().length() < 10){
+            ToastUtil.show("内容至少输入10个字");
+            return;
+        }
         dialog.show();
-        setPath();
+        new Thread(){
+            public void run(){
+                setPath();
+                upLoading();
+            }
+        }.start();
+    }
+    private void upLoading(){
         final Square square = new Square();
         square.setNickName(PrefUtil.getString(CommonCode.SP_USER_NICKNAME, "游客"));
-
-//        String type = PrefUtil.getString(CommonCode.SP_USER_USERTYPE, "");
-//        if ("1000".equals(type)){
-//            square.setSquareUserType("管理员");
-//        }else if ("1001".equals(type)){
-//            square.setSquareUserType("VIP用户");
-//        } else{
-//            square.setSquareUserType("");
-//        }
+        square.setUserPhoto(PrefUtil.getString(CommonCode.SP_USER_PHOTO,null));
         square.setSquareTitle(etTitle.getText().toString());
         square.setSquareContent(etContent.getText().toString());
         if (pathArr == null || pathArr.length == 0){
@@ -159,21 +161,17 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
             Bmob.uploadBatch(context, pathArr, new UploadBatchListener() {
                 @Override
                 public void onSuccess(List<BmobFile> list, List<String> strs) {
-                    if (strs.size() == pathArr.length){
-                        for (int i=0;i<list.size();i++){
-                            if (i == 0){
+                    if (strs.size() == pathArr.length) {
+                        for (int i = 0; i < list.size(); i++) {
+                            if (i == 0) {
                                 square.setSquarePhoto1(list.get(i));
-                            }
-                            else if (i == 1){
+                            } else if (i == 1) {
                                 square.setSquarePhoto2(list.get(i));
-                            }
-                            else if (i == 2){
+                            } else if (i == 2) {
                                 square.setSquarePhoto3(list.get(i));
-                            }
-                            else if (i == 3){
+                            } else if (i == 3) {
                                 square.setSquarePhoto4(list.get(i));
-                            }
-                            else if (i == 4){
+                            } else if (i == 4) {
                                 square.setSquarePhoto5(list.get(i));
                             }
                         }
@@ -185,6 +183,7 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
                                 EventBus.getDefault().post(square);
                                 context.finish();
                             }
+
                             @Override
                             public void onFailure(int i, String s) {
                                 ToastUtil.show(s);
@@ -205,7 +204,6 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
             });
         }
     }
-
     private void chooseImg(int i){
         imgIndex = i;
         CharSequence[] items = {"相册", "相机"};
@@ -214,13 +212,9 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
                 .setItems(items, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         if (which == 0) {
-                            Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-                            intent.addCategory(Intent.CATEGORY_OPENABLE);
-                            intent.setType("image/*");
-                            context.startActivityForResult(Intent.createChooser(intent, "选择图片"), 0);
+                            BitmapUtil.startPicture(context);
                         } else {
-                            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                            context.startActivityForResult(intent, 1);
+                            imageFilePath = BitmapUtil.startCamera(context);
                         }
                     }
                 })
@@ -229,25 +223,27 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
     private void setPath(){
         List<String> list = new ArrayList<>();
         if (bitmap1 != null){
-            String s = compressImage(bitmap1);
+            String s = BitmapUtil.compressImage(context,bitmap1);
             list.add(s);
         } if (bitmap2 != null){
-            String s = compressImage(bitmap2);
+            String s = BitmapUtil.compressImage(context,bitmap2);
             list.add(s);
         } if (bitmap3 != null){
-            String s = compressImage(bitmap3);
+            String s = BitmapUtil.compressImage(context,bitmap3);
             list.add(s);
         } if (bitmap4 != null){
-            String s = compressImage(bitmap4);
+            String s = BitmapUtil.compressImage(context,bitmap4);
             list.add(s);
         } if (bitmap5 != null){
-            String s = compressImage(bitmap5);
+            String s = BitmapUtil.compressImage(context,bitmap5);
             list.add(s);
         }
         if (list.size() > 0){
             pathArr = new String[list.size()];
             for (int i=0;i<list.size();i++){
-                pathArr[i] = list.get(i);
+                if (list.get(i) != null){
+                    pathArr[i] = list.get(i);
+                }
             }
         }
     }
@@ -275,58 +271,17 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
                 break;
         }
     }
-    private String compressImage(Bitmap image) {
-        if(image == null){
-            return null;
-        }
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        //质量压缩方法，这里100表示不压缩,把压缩后的数据存放到baos中
-        image.compress(Bitmap.CompressFormat.JPEG, 100, baos);
-        int option = 100;
-        //循环判断如果压缩后图片是否大于100kb,大于继续压缩
-        while (baos.toByteArray().length/1024 > 100) {
-            //重置baos即清空baos
-            baos.reset();
-            //这里压缩options%,把压缩后的数据存放到baos中
-            image.compress(Bitmap.CompressFormat.JPEG, option, baos);
-            if(option == 20){
-                break;
-            }
-            option -= 5;
-        }
-        String path = context.getCacheDir().toString()+"/"+System.currentTimeMillis()+".jpg";
-        File file = new File(path);
-        try {
-            file.createNewFile();
-            FileOutputStream fos = new FileOutputStream(file);
-            baos.writeTo(fos);
-            fos.close();
-            baos.close();
-            return path;
-        } catch (IOException e) {
-            e.printStackTrace();
-            ToastUtil.show(e.getMessage());
-        }
-        return null;
-    }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == context.RESULT_OK) {
-            if (requestCode == 0){
-                Uri uri = data.getData();
-                ContentResolver cr = context.getContentResolver();
-                Cursor c = cr.query(uri, null, null, null, null);
-                c.moveToFirst();
-                //这是获取的图片保存在sdcard中的位置
-                String tempPath = c.getString(c.getColumnIndex("_data"));
-                c.close();
-                if (tempPath != null){
-                    Bitmap b = BitmapFactory.decodeFile(tempPath);
-                    saveBitmap(b);
-                }
-            }else{
-                Bundle extras = data.getExtras();
-                Bitmap b = (Bitmap) extras.get("data");
+            if (requestCode == BitmapUtil.PIC_PICTURE){//相册
+                Bitmap b = BitmapUtil.getBitmapByPicture(context,data);
+                saveBitmap(b);
+            } else if (requestCode == BitmapUtil.PIC_CAMERA){//相机
+                int dp = BitmapUtil.px2dip(context, 1000);
+                BitmapUtil.cropImage(context, imageFilePath, dp, dp);
+            } else if (requestCode == BitmapUtil.PIC_CROP){//裁剪
+                Bitmap b = BitmapUtil.getBitmapByCameraOrCrop(data);
                 saveBitmap(b);
             }
         }

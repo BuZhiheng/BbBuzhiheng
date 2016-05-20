@@ -8,6 +8,7 @@ import cn.bmob.v3.datatype.BmobFile;
  */
 public class Square extends BmobObject{
     private String nickName;
+    private String userPhoto;
     private String squareTitle;
     private String squareContent;
     private BmobFile squarePhoto1;
@@ -16,6 +17,50 @@ public class Square extends BmobObject{
     private BmobFile squarePhoto4;
     private BmobFile squarePhoto5;
     private String squareUserType;
+    private String likeUsers;
+    private Integer likeTimes;
+    private Integer clickTimes;
+    private Integer commentTimes;
+
+    public String getUserPhoto() {
+        return userPhoto;
+    }
+
+    public void setUserPhoto(String userPhoto) {
+        this.userPhoto = userPhoto;
+    }
+
+    public String getLikeUsers() {
+        return likeUsers;
+    }
+
+    public void setLikeUsers(String likeUsers) {
+        this.likeUsers = likeUsers;
+    }
+
+    public Integer getLikeTimes() {
+        return likeTimes;
+    }
+
+    public void setLikeTimes(Integer likeTimes) {
+        this.likeTimes = likeTimes;
+    }
+
+    public Integer getClickTimes() {
+        return clickTimes;
+    }
+
+    public void setClickTimes(Integer clickTimes) {
+        this.clickTimes = clickTimes;
+    }
+
+    public Integer getCommentTimes() {
+        return commentTimes;
+    }
+
+    public void setCommentTimes(Integer commentTimes) {
+        this.commentTimes = commentTimes;
+    }
 
     public String getSquareTitle() {
         return squareTitle;

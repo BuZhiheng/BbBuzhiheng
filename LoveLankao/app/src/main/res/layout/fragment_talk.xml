@@ -16,6 +16,13 @@
             android:textSize="@dimen/text_main_title"
             android:textColor="@color/color_white"
             />
+        <ImageView
+            android:id="@+id/iv_talkfrm_send"
+            android:layout_gravity="center_vertical|right"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginRight="@dimen/common_margin"
+            android:src="@drawable/ic_quan_camera"/>
     </FrameLayout>
     <ScrollView
         android:layout_width="match_parent"

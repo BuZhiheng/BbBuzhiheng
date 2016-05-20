@@ -65,6 +65,9 @@ public class LoginController implements View.OnClickListener {
                         PrefUtil.putString(CommonCode.SP_USER_USERNAME, user.getUsername());
                         PrefUtil.putString(CommonCode.SP_USER_NICKNAME, user.getNickName());
                         PrefUtil.putString(CommonCode.SP_USER_USERTYPE, user.getUserType());
+                        if (user.getPhoto() != null){
+                            PrefUtil.putString(CommonCode.SP_USER_PHOTO, user.getPhoto().getFileUrl(context));
+                        }
                         Integer point = user.getPoint();
                         if (point == null){
                             PrefUtil.putInt(CommonCode.SP_USER_POINT, 0);

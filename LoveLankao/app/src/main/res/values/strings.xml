@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">掌上兰考</string>
-    <string name="app_test"></string>
+    <string name="app_test">掌上兰考掌上兰考</string>
     <string name="app_keystore_alias">lk</string>
     <string name="main_index">首页</string>
     <string name="main_lbs">商圈</string>

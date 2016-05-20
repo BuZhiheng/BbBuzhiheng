@@ -18,7 +18,7 @@ public class TalkFragment extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_talk,container,false);
+        view = inflater.inflate(R.layout.fragment_talknew,container,false);
         new TalkController(getActivity(),view);
         return view;
     }

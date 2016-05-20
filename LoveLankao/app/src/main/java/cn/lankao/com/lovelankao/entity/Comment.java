@@ -9,6 +9,51 @@ public class Comment extends BmobObject{
     private String content;
     private String postId;
     private String username;
+    private String userPhotoUrl;
+    private String likeUsers;
+    private String lastUserName;
+    private String lastUserContent;
+    private Integer likeTimes;
+
+    public String getUserPhotoUrl() {
+        return userPhotoUrl;
+    }
+
+    public void setUserPhotoUrl(String userPhotoUrl) {
+        this.userPhotoUrl = userPhotoUrl;
+    }
+
+    public String getLikeUsers() {
+        return likeUsers;
+    }
+
+    public void setLikeUsers(String likeUsers) {
+        this.likeUsers = likeUsers;
+    }
+
+    public String getLastUserName() {
+        return lastUserName;
+    }
+
+    public void setLastUserName(String lastUserName) {
+        this.lastUserName = lastUserName;
+    }
+
+    public String getLastUserContent() {
+        return lastUserContent;
+    }
+
+    public void setLastUserContent(String lastUserContent) {
+        this.lastUserContent = lastUserContent;
+    }
+
+    public Integer getLikeTimes() {
+        return likeTimes;
+    }
+
+    public void setLikeTimes(Integer likeTimes) {
+        this.likeTimes = likeTimes;
+    }
 
     public String getContent() {
         return content;

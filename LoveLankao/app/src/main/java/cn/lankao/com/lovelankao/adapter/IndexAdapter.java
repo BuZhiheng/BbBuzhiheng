@@ -30,6 +30,7 @@ import cn.lankao.com.lovelankao.entity.JuheApiResult;
 import cn.lankao.com.lovelankao.entity.LanKaoNews;
 import cn.lankao.com.lovelankao.entity.MainService;
 import cn.lankao.com.lovelankao.entity.ReadNews;
+import cn.lankao.com.lovelankao.utils.BitmapUtil;
 import cn.lankao.com.lovelankao.utils.CommonCode;
 import cn.lankao.com.lovelankao.utils.GsonUtil;
 import cn.lankao.com.lovelankao.utils.OkHttpUtil;
@@ -56,15 +57,8 @@ public class IndexAdapter {
         this.context = context;
         this.listener = listener;
         lkNews = new ArrayList<>();
-        optionService = new ImageOptions.Builder()
-                .setRadius(DensityUtil.dip2px(30))
-                .setCrop(true)
-                .setImageScaleType(ImageView.ScaleType.CENTER_CROP)
-                .build();
-        optionHead = new ImageOptions.Builder()
-                .setCrop(false)
-                .setImageScaleType(ImageView.ScaleType.FIT_XY)
-                .build();
+        optionService = BitmapUtil.getOptionRadius();
+        optionHead = BitmapUtil.getOptionCommon();
         llMenus = (LinearLayout) view.findViewById(R.id.ll_indexfrm_service);
         llNews = (LinearLayout) view.findViewById(R.id.ll_indexfrm_news);
         llRead = (LinearLayout) view.findViewById(R.id.ll_indexfrm_read);

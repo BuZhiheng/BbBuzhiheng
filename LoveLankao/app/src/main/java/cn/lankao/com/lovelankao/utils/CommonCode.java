@@ -47,6 +47,7 @@ public class CommonCode {
     public static final String SP_USER_USERNAME = "SP_USER_USERNAME";
     public static final String SP_USER_NICKNAME = "SP_USER_NICKNAME";
     public static final String SP_USER_POINT = "SP_USER_POINT";
+    public static final String SP_USER_PHOTO = "SP_USER_PHOTO";
     public static final String SP_USER_USERTYPE = "SP_USER_USERTYPE";
 
 }
