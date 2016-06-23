@@ -14,7 +14,7 @@ public class SquareActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_square);
+        setContentView(R.layout.activity_square_msg);
         controller = new SquareActivityController(this);
     }
 

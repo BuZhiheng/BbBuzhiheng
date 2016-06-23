@@ -37,9 +37,15 @@ public class BitmapUtil {
          * 在onActivityResult调用
          * 获取图片Bitmap
          * */
-        Bundle extras = data.getExtras();
-        Bitmap b = (Bitmap) extras.get("data");
-        return b;
+        Bitmap b;
+        if (data != null){
+            Bundle extras = data.getExtras();
+            if (extras != null){
+                b = (Bitmap) extras.get("data");
+                return b;
+            }
+        }
+        return null;
     }
     public static Bitmap getBitmapByPicture(AppCompatActivity context,Intent data){
         /**
@@ -100,13 +106,6 @@ public class BitmapUtil {
             ToastUtil.show(e.getMessage());
         }
         return null;
-    }
-    public static int px2dip(AppCompatActivity context,float pxValue) {
-        /**
-         * 根据手机的分辨率从 px(像素) 的单位 转成为 dp
-         */
-        float scale = context.getResources().getDisplayMetrics().density;
-        return (int) (pxValue / scale + 0.5f);
     }
     public static void startPicture(AppCompatActivity context){
         /**

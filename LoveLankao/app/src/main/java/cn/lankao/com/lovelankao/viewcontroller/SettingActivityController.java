@@ -25,6 +25,7 @@ import cn.lankao.com.lovelankao.utils.BitmapUtil;
 import cn.lankao.com.lovelankao.utils.CommonCode;
 import cn.lankao.com.lovelankao.utils.PrefUtil;
 import cn.lankao.com.lovelankao.utils.ToastUtil;
+import cn.lankao.com.lovelankao.utils.WindowUtils;
 import cn.lankao.com.lovelankao.widget.ProDialog;
 
 /**
@@ -134,7 +135,7 @@ public class SettingActivityController implements View.OnClickListener ,SettingA
                 Bitmap b = BitmapUtil.getBitmapByPicture(context,data);
                 saveBitmap(b);
             } else if (requestCode == BitmapUtil.PIC_CAMERA){//相机
-                int dp = BitmapUtil.px2dip(context, 1000);
+                int dp = WindowUtils.px2dip(context, 1000);
                 BitmapUtil.cropImage(context, imageFilePath, dp, dp);
             } else if (requestCode == BitmapUtil.PIC_CROP){//裁剪
                 Bitmap b = BitmapUtil.getBitmapByCameraOrCrop(data);

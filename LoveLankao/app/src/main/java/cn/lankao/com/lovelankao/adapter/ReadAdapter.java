@@ -55,7 +55,7 @@ public class ReadAdapter extends RecyclerView.Adapter<ReadAdapter.MyViewHolder> 
             x.image().bind(holder.photo, news.getFirstImg());
         }
         holder.tvTitle.setText(news.getTitle());
-        holder.tvSource.setText("文章来自:" + news.getSource());
+        holder.tvSource.setText(news.getSource());
         holder.fl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

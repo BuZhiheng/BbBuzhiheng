@@ -61,7 +61,13 @@ public class CookAdapter extends RecyclerView.Adapter<CookAdapter.MyViewHolder> 
             x.image().bind(holder.photo, "http://tnfs.tngou.net/image"+cook.getImg());
         }
         holder.tvTitle.setText(cook.getName());
-        holder.tvDesc.setText(cook.getDescription());
+        if (cook.getDescription() != null){
+            if (cook.getDescription().length() > 60){
+                holder.tvDesc.setText(cook.getDescription().substring(0,59)+"...");
+            } else {
+                holder.tvDesc.setText(cook.getDescription());
+            }
+        }
         holder.tvFood.setText(cook.getFood());
         holder.ll.setOnClickListener(new View.OnClickListener() {
             @Override

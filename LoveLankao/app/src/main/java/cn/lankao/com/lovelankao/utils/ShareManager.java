@@ -1,5 +1,4 @@
 package cn.lankao.com.lovelankao.utils;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import com.tencent.connect.share.QQShare;

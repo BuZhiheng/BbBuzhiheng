@@ -27,7 +27,8 @@ public class CommonCode {
     public static int ADVERT_MINGQI = 1002;//名企名商
     public static int ADVERT_HEZUO = 1003;//合作商家
     public static int ADVERT_TUISONG = 1005;//推送的消息
-    public static int RV_ITEMS_COUT = 10;
+    public static int RV_ITEMS_COUT = 10;//recycleView分页加载默认条数
+    public static final String INTENT_COMMON_OBJ = "INTENT_COMMON_OBJ";
     public static final String INTENT_ADVERT_TITLE = "ADVERT_TITLE";
     public static final String INTENT_ADVERT_TYPE = "ADVERT_TYPE";
     public static final String INTENT_SHARED_DESC = "INTENT_SHARED_DESC";

@@ -1,32 +1,16 @@
 package cn.lankao.com.lovelankao.viewcontroller;
-
 import android.app.ProgressDialog;
-import android.content.ContentResolver;
-import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.Cursor;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
-
-
 import org.greenrobot.eventbus.EventBus;
-
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-
 import cn.bmob.v3.Bmob;
 import cn.bmob.v3.datatype.BmobFile;
 import cn.bmob.v3.listener.SaveListener;
@@ -39,12 +23,12 @@ import cn.lankao.com.lovelankao.utils.BitmapUtil;
 import cn.lankao.com.lovelankao.utils.CommonCode;
 import cn.lankao.com.lovelankao.utils.PrefUtil;
 import cn.lankao.com.lovelankao.utils.ToastUtil;
+import cn.lankao.com.lovelankao.utils.WindowUtils;
 import cn.lankao.com.lovelankao.widget.ProDialog;
 
 /**
  * Created by BuZhiheng on 2016/4/4.
  */
-//拍照上传的图片太小,dialog显示延迟。。
 public class SquareSendActivityController implements View.OnClickListener, SquareSendActivity.SquareSendHolder {
     private SquareSendActivity context;
     private EditText etContent;
@@ -63,6 +47,12 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
     private Bitmap bitmap4;
     private Bitmap bitmap5;
     private ProgressDialog dialog;
+//    private final int REQUEST_EXTERNAL_STORAGE = 1;
+//    private String[] PERMISSIONS_STORAGE = {
+//            Manifest.permission.READ_EXTERNAL_STORAGE,
+//            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+//            Manifest.permission.MOUNT_UNMOUNT_FILESYSTEMS
+//    };
     public SquareSendActivityController(SquareSendActivity context) {
         this.context = context;
         initView();
@@ -220,6 +210,47 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
                 })
                 .create().show();
     }
+//    @TargetApi(Build.VERSION_CODES.M)
+//    public void verifyStoragePermissions() {
+//        if (Build.VERSION.SDK_INT >= 23) {
+//            // Marshmallow+
+//        } else {
+//            // Pre-Marshmallow
+//            ToastUtil.show("VERSION IS LOW");
+//            return;
+//        }
+//        // Check if we have write permission
+//        int permission = context.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+//        if (permission != PackageManager.PERMISSION_GRANTED) {
+//            if (!context.shouldShowRequestPermissionRationale(Manifest.permission.WRITE_CONTACTS)) {
+//                showMessageOKCancel("You need to allow access to Contacts",
+//                        new DialogInterface.OnClickListener() {
+//                            @Override
+//                            public void onClick(DialogInterface dialog, int which) {
+//                                context.requestPermissions(
+//                                        PERMISSIONS_STORAGE,
+//                                        REQUEST_EXTERNAL_STORAGE);
+//                            }
+//                        });
+//                return;
+//            }
+//            ToastUtil.show("no permission");
+//            context.requestPermissions(
+//                    PERMISSIONS_STORAGE,
+//                    REQUEST_EXTERNAL_STORAGE
+//            );
+//        } else {
+//            ToastUtil.show("have permission");
+//        }
+//    }
+    private void showMessageOKCancel(String message, DialogInterface.OnClickListener okListener) {
+        new AlertDialog.Builder(context)
+                .setMessage(message)
+                .setPositiveButton("OK", okListener)
+                .setNegativeButton("Cancel", null)
+                .create()
+                .show();
+    }
     private void setPath(){
         List<String> list = new ArrayList<>();
         if (bitmap1 != null){
@@ -278,7 +309,7 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
                 Bitmap b = BitmapUtil.getBitmapByPicture(context,data);
                 saveBitmap(b);
             } else if (requestCode == BitmapUtil.PIC_CAMERA){//相机
-                int dp = BitmapUtil.px2dip(context, 1000);
+                int dp = WindowUtils.px2dip(context, 1000);
                 BitmapUtil.cropImage(context, imageFilePath, dp, dp);
             } else if (requestCode == BitmapUtil.PIC_CROP){//裁剪
                 Bitmap b = BitmapUtil.getBitmapByCameraOrCrop(data);

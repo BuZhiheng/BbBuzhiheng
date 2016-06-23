@@ -64,7 +64,7 @@ public class LKNewsAdapter extends RecyclerView.Adapter<LKNewsAdapter.MyViewHold
         }
         holder.tvTitle.setText(news.getNewsTitle());
         holder.tvTime.setText(news.getNewsTime());
-        holder.tvFrom.setText("来自:"+news.getNewsFrom());
+        holder.tvFrom.setText(news.getNewsFrom());
         holder.ll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

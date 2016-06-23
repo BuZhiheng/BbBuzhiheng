@@ -1,11 +1,13 @@
 package cn.lankao.com.lovelankao.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -16,10 +18,13 @@ import java.util.List;
 
 import cn.bmob.v3.listener.UpdateListener;
 import cn.lankao.com.lovelankao.R;
+import cn.lankao.com.lovelankao.activity.SquareActivity;
 import cn.lankao.com.lovelankao.entity.Square;
 import cn.lankao.com.lovelankao.utils.BitmapUtil;
 import cn.lankao.com.lovelankao.utils.CommonCode;
+import cn.lankao.com.lovelankao.utils.IntegerUtils;
 import cn.lankao.com.lovelankao.utils.PrefUtil;
+import cn.lankao.com.lovelankao.utils.WindowUtils;
 
 /**
  * Created by BuZhiheng on 2016/4/3.
@@ -27,7 +32,7 @@ import cn.lankao.com.lovelankao.utils.PrefUtil;
 public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.MyViewHolder> {
     private Context context;
     private List<Square> data;
-
+    private int width = WindowUtils.getWindowWidth();
     public SquareAdapter(Context context) {
         this.context = context;
         data = new ArrayList<>();
@@ -58,6 +63,9 @@ public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.MyViewHold
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
         final Square square = data.get(position);
+        if (square.getObjectId() == null){
+            return;
+        }
         LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) holder.llPhoto.getLayoutParams();
         holder.tvNickname.setText(square.getNickName());
         holder.tvTime.setText(square.getCreatedAt());
@@ -80,7 +88,7 @@ public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.MyViewHold
             holder.llPhoto.setVisibility(View.GONE);
         } else {
             x.image().bind(holder.ivPhoto1, square.getSquarePhoto1().getFileUrl(context), BitmapUtil.getOptionCommon());
-            params.height = 500;
+            params.height = width;
             holder.llPhoto.setLayoutParams(params);
             holder.llPhoto.setVisibility(View.VISIBLE);
             holder.ivPhoto1.setVisibility(View.VISIBLE);
@@ -88,7 +96,7 @@ public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.MyViewHold
                 holder.ivPhoto2.setVisibility(View.GONE);
             } else {
                 x.image().bind(holder.ivPhoto2, square.getSquarePhoto2().getFileUrl(context), BitmapUtil.getOptionCommon());
-                params.height = 300;
+                params.height = width/2;
                 holder.llPhoto.setLayoutParams(params);
                 holder.ivPhoto2.setVisibility(View.VISIBLE);
             }
@@ -96,7 +104,7 @@ public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.MyViewHold
                 holder.ivPhoto3.setVisibility(View.GONE);
             } else {
                 x.image().bind(holder.ivPhoto3, square.getSquarePhoto3().getFileUrl(context), BitmapUtil.getOptionCommon());
-                params.height = 200;
+                params.height = width/3;
                 holder.llPhoto.setLayoutParams(params);
                 holder.ivPhoto3.setVisibility(View.VISIBLE);
             }
@@ -115,19 +123,25 @@ public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.MyViewHold
                     String likeUsers = square.getLikeUsers()==null?nickname:nickname+","+square.getLikeUsers();
                     square.setLikeTimes(like);
                     square.setLikeUsers(likeUsers);
-                    square.update(context, new UpdateListener() {
-                        @Override
-                        public void onSuccess() {
-                            holder.ivLikeTimes.setImageDrawable(ContextCompat.getDrawable(context,R.drawable.ic_square_liketimesc));
-                            holder.tvLikeTimes.setText(like+"");
-                        }
-
-                        @Override
-                        public void onFailure(int i, String s) {
-
-                        }
-                    });
+                    holder.ivLikeTimes.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_square_liketimesc));
+                    holder.tvLikeTimes.setText(like + "");
+                    square.update(context);
                 }
+            }
+        });
+        holder.llContent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (square.getClickTimes() == null){
+                    square.setClickTimes(IntegerUtils.random());
+                } else {
+                    int i = square.getClickTimes();
+                    square.setClickTimes(i + IntegerUtils.random());
+                }
+                square.update(context);
+                Intent intent = new Intent(context, SquareActivity.class);
+                intent.putExtra(CommonCode.INTENT_COMMON_OBJ,square);
+                context.startActivity(intent);
             }
         });
     }
@@ -146,6 +160,7 @@ public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.MyViewHold
         TextView tvClickTimes;
         LinearLayout llPhoto;
         LinearLayout llLikeTimes;
+        LinearLayout llContent;
         public MyViewHolder(View view) {
             super(view);
             ivPhoto = (ImageView) view.findViewById(R.id.iv_square_item_photo);
@@ -162,6 +177,7 @@ public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.MyViewHold
             tvClickTimes = (TextView) view.findViewById(R.id.tv_square_item_clicktimes);
             llPhoto = (LinearLayout) view.findViewById(R.id.ll_square_item_photo);
             llLikeTimes = (LinearLayout) view.findViewById(R.id.ll_square_item_liketimes);
+            llContent = (LinearLayout) view.findViewById(R.id.ll_square_item_content);
         }
     }
 }
