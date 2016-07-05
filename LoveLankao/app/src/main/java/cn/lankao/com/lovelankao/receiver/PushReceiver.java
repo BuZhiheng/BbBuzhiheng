@@ -1,11 +1,13 @@
 package cn.lankao.com.lovelankao.receiver;
 
+import android.app.DownloadManager;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -88,5 +90,7 @@ public class PushReceiver extends BroadcastReceiver {
         // 16及之后增加的，在API11中可以使用getNotificatin()来代替
         notify2.flags |= Notification.FLAG_AUTO_CANCEL;
         manager.notify(1, notify2);
+//        DownloadManager.Request request = new DownloadManager.Request(Uri.parse("http://"));
+//        request.setDestinationInExternalPublicDir("","");
     }
 }

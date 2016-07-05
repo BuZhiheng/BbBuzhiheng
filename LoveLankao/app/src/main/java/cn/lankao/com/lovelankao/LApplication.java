@@ -1,20 +1,15 @@
 package cn.lankao.com.lovelankao;
-
 import android.app.Application;
 import android.content.Context;
-
 import com.baidu.mapapi.SDKInitializer;
-
 import org.xutils.x;
-
 import cn.bmob.v3.Bmob;
-
 /**
  * Created by BuZhiheng on 2016/3/30.
+ * Dell/戴尔 灵越15(7559) Ins15P-2748
  */
 public class LApplication extends Application{
     private static Context context;
-
     @Override
     public void onCreate() {
         super.onCreate();
@@ -23,7 +18,6 @@ public class LApplication extends Application{
         x.Ext.init(this);
         SDKInitializer.initialize(this);
     }
-
     public static Context getCtx(){
         return context;
     }
