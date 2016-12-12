@@ -74,7 +74,6 @@ public class MainFragmentController implements View.OnClickListener, SwipeRefres
                 refresh.setRefreshing(false);
                 setBottom(list);
             }
-
             @Override
             public void onError(int i, String s) {
                 ToastUtil.show(s);
@@ -82,7 +81,6 @@ public class MainFragmentController implements View.OnClickListener, SwipeRefres
             }
         });
     }
-
     @Override
     public void onClick(View v) {
         int id = v.getId();

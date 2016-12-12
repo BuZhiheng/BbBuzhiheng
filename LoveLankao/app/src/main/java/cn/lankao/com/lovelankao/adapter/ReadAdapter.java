@@ -51,11 +51,11 @@ public class ReadAdapter extends RecyclerView.Adapter<ReadAdapter.MyViewHolder> 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
         final ReadNews news = data.get(position);
-        if (news.getFirstImg() != null){
-            x.image().bind(holder.photo, news.getFirstImg());
+        if (news.getThumbnail_pic_s() != null){
+            x.image().bind(holder.photo, news.getThumbnail_pic_s());
         }
         holder.tvTitle.setText(news.getTitle());
-        holder.tvSource.setText(news.getSource());
+        holder.tvSource.setText(news.getAuthor_name());
         holder.fl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

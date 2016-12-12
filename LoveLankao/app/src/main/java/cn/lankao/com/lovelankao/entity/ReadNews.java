@@ -1,14 +1,12 @@
 package cn.lankao.com.lovelankao.entity;
-
 /**
  * Created by BuZhiheng on 2016/4/18.
  */
 public class ReadNews {
     private String title;
-    private String source;
-    private String firstImg;
+    private String author_name;
+    private String thumbnail_pic_s;
     private String url;
-
     public String getTitle() {
         return title;
     }
@@ -17,20 +15,20 @@ public class ReadNews {
         this.title = title;
     }
 
-    public String getSource() {
-        return source;
+    public String getAuthor_name() {
+        return author_name;
     }
 
-    public void setSource(String source) {
-        this.source = source;
+    public void setAuthor_name(String author_name) {
+        this.author_name = author_name;
     }
 
-    public String getFirstImg() {
-        return firstImg;
+    public String getThumbnail_pic_s() {
+        return thumbnail_pic_s;
     }
 
-    public void setFirstImg(String firstImg) {
-        this.firstImg = firstImg;
+    public void setThumbnail_pic_s(String thumbnail_pic_s) {
+        this.thumbnail_pic_s = thumbnail_pic_s;
     }
 
     public String getUrl() {

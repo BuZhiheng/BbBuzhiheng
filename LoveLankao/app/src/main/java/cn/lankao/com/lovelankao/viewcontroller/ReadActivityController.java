@@ -29,7 +29,7 @@ import rx.schedulers.Schedulers;
  * Created by BuZhiheng on 2016/4/18.
  */
 public class ReadActivityController implements SwipeRefreshLayout.OnRefreshListener, View.OnClickListener {
-    private final String url = "http://v.juhe.cn/weixin/query?key=8853be3881b48cb96d20ba3c347640cd&ps=";
+    private final String url = "http://v.juhe.cn/toutiao/index?type=top&key=7a20bb53e95c5a8b6694109b65774692&ps=";
     private ReadWeixinActivity context;
     private RecyclerView rv;
     private SwipeRefreshLayout refresh;
@@ -59,18 +59,16 @@ public class ReadActivityController implements SwipeRefreshLayout.OnRefreshListe
                     public void onCompleted() {
                         refresh.setRefreshing(false);
                     }
-
                     @Override
                     public void onError(Throwable e) {
                         refresh.setRefreshing(false);
                     }
-
                     @Override
                     public void onNext(String s) {
                         JuheApiResult res = GsonUtil.jsonToObject(s,JuheApiResult.class);
                         if (res.getError_code() == 0){
                             try{
-                                JsonElement list = res.getResult().getAsJsonObject().getAsJsonArray("list");
+                                JsonElement list = res.getResult().getAsJsonObject().getAsJsonArray("data");
                                 List<ReadNews> data = GsonUtil.jsonToList(list,ReadNews.class);
                                 if (isRefresh){
                                     adapter.setData(data);
@@ -88,7 +86,6 @@ public class ReadActivityController implements SwipeRefreshLayout.OnRefreshListe
                     }
                 });
     }
-
     private void initView() {
         dialog = ProDialog.getProDialog(context);
         dialog.show();
@@ -101,19 +98,18 @@ public class ReadActivityController implements SwipeRefreshLayout.OnRefreshListe
         rv = (RecyclerView) context.findViewById(R.id.rv_read_activity);
         rv.setLayoutManager(new LinearLayoutManager(context));
         rv.setAdapter(adapter);
-        rv.addOnScrollListener(new OnRvScrollListener() {
-            @Override
-            public void toBottom() {
-                if (canLoadMore) {
-                    isRefresh = false;
-                    canLoadMore = false;
-                    page++;
-                    initData();
-                }
-            }
-        });
+//        rv.addOnScrollListener(new OnRvScrollListener() {
+//            @Override
+//            public void toBottom() {
+//                if (canLoadMore) {
+//                    isRefresh = false;
+//                    canLoadMore = false;
+//                    page++;
+//                    initData();
+//                }
+//            }
+//        });
     }
-
     @Override
     public void onRefresh() {
         isRefresh = true;

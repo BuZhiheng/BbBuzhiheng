@@ -1,5 +1,4 @@
 package cn.lankao.com.lovelankao.adapter;
-
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -8,19 +7,14 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
 import com.bigkoo.convenientbanner.holder.Holder;
 import com.google.gson.JsonElement;
-
-import org.xutils.common.util.DensityUtil;
 import org.xutils.image.ImageOptions;
 import org.xutils.x;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.listener.FindListener;
 import cn.lankao.com.lovelankao.R;
@@ -38,12 +32,11 @@ import cn.lankao.com.lovelankao.utils.ToastUtil;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
-
 /**
  * Created by BuZhiheng on 2016/5/13.
  */
 public class IndexAdapter {
-    private final String urlRead = "http://v.juhe.cn/weixin/query?key=8853be3881b48cb96d20ba3c347640cd&ps=" + CommonCode.RV_ITEMS_COUT+"&pno="+1;;
+    private final String urlRead = "http://v.juhe.cn/toutiao/index?type=top&key=7a20bb53e95c5a8b6694109b65774692&ps=" + CommonCode.RV_ITEMS_COUT+"&pno="+1;;
     private ConvenientBanner convenientBanner;//顶部广告栏控件
     private ImageOptions optionService;
     private ImageOptions optionHead;
@@ -126,17 +119,15 @@ public class IndexAdapter {
                     @Override
                     public void onCompleted() {
                     }
-
                     @Override
                     public void onError(Throwable e) {
                     }
-
                     @Override
                     public void onNext(String s) {
                         JuheApiResult res = GsonUtil.jsonToObject(s, JuheApiResult.class);
                         if (res.getError_code() == 0) {
                             try {
-                                JsonElement list = res.getResult().getAsJsonObject().getAsJsonArray("list");
+                                JsonElement list = res.getResult().getAsJsonObject().getAsJsonArray("data");
                                 List<ReadNews> data = GsonUtil.jsonToList(list, ReadNews.class);
                                 setRead(data);
                             } catch (Exception e) {
@@ -214,11 +205,11 @@ public class IndexAdapter {
             holder.photo = (ImageView) view.findViewById(R.id.iv_readact_item_photo);
             holder.tvTitle = (TextView) view.findViewById(R.id.tv_readact_item_title);
             holder.tvSource = (TextView) view.findViewById(R.id.tv_readact_item_source);
-            if (news.getFirstImg() != null){
-                x.image().bind(holder.photo, news.getFirstImg());
+            if (news.getThumbnail_pic_s() != null){
+                x.image().bind(holder.photo, news.getThumbnail_pic_s());
             }
             holder.tvTitle.setText(news.getTitle());
-            holder.tvSource.setText(news.getSource());
+            holder.tvSource.setText(news.getAuthor_name());
             holder.fl.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -226,8 +217,8 @@ public class IndexAdapter {
                     intent.putExtra(CommonCode.INTENT_ADVERT_TITLE, "文章详情");
                     intent.putExtra(CommonCode.INTENT_SETTING_URL, news.getUrl());
                     intent.putExtra(CommonCode.INTENT_SHARED_DESC,news.getTitle());
-                    if (news.getFirstImg() != null){
-                        intent.putExtra(CommonCode.INTENT_SHARED_IMG,news.getFirstImg());
+                    if (news.getThumbnail_pic_s() != null){
+                        intent.putExtra(CommonCode.INTENT_SHARED_IMG,news.getThumbnail_pic_s());
                     } else {
                         intent.putExtra(CommonCode.INTENT_SHARED_IMG, CommonCode.APP_ICON);
                     }

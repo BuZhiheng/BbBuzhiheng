@@ -49,7 +49,6 @@ public class JockActivityController implements SwipeRefreshLayout.OnRefreshListe
         initView();
         initData();
     }
-
     private void initData() {
         String finalUrl;
         if (isRefresh){
@@ -65,12 +64,10 @@ public class JockActivityController implements SwipeRefreshLayout.OnRefreshListe
             public void onCompleted() {
                 refresh.setRefreshing(false);
             }
-
             @Override
             public void onError(Throwable e) {
                 refresh.setRefreshing(false);
             }
-
             @Override
             public void onNext(String s) {
                 JuheApiResult res = GsonUtil.jsonToObject(s, JuheApiResult.class);
