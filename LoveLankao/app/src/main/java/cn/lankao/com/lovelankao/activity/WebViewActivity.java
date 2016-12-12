@@ -58,7 +58,6 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
                     view.loadUrl(url);
                     return true;
                 }
-
                 @Override
                 public void onPageFinished(WebView view, String url) {
                     dialog.dismiss();

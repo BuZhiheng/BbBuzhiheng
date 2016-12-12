@@ -21,7 +21,6 @@ import java.io.IOException;
 import java.util.Date;
 
 import cn.lankao.com.lovelankao.R;
-
 /**
  * Created by BuZhiheng on 2016/4/5.
  * Desc 相机,图片处理
