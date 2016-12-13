@@ -1,4 +1,4 @@
-package cn.lankao.com.lovelankao;
+package cn.lankao.com.lovelankao.viewcontroller;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -16,6 +16,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.bmob.v3.update.BmobUpdateAgent;
+import cn.lankao.com.lovelankao.R;
+import cn.lankao.com.lovelankao.activity.MainActivity;
 import cn.lankao.com.lovelankao.fragment.IndexFragment;
 import cn.lankao.com.lovelankao.fragment.MainFragment;
 import cn.lankao.com.lovelankao.fragment.MineFragment;

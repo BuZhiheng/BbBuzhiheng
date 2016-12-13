@@ -10,10 +10,8 @@ import com.baidu.location.BDLocation;
 
 import java.util.List;
 
-import cn.bmob.v3.BmobObject;
 import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.listener.FindListener;
-import cn.lankao.com.lovelankao.MainActivity;
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.entity.Setting;
 import cn.lankao.com.lovelankao.utils.CommonCode;

@@ -1,23 +1,27 @@
 package cn.lankao.com.lovelankao.utils;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import com.tencent.connect.share.QQShare;
+import com.tencent.mm.sdk.modelmsg.SendMessageToWX;
+import com.tencent.mm.sdk.modelmsg.WXMediaMessage;
+import com.tencent.mm.sdk.modelmsg.WXTextObject;
+import com.tencent.mm.sdk.modelmsg.WXWebpageObject;
 import com.tencent.mm.sdk.openapi.IWXAPI;
-import com.tencent.mm.sdk.openapi.SendMessageToWX;
 import com.tencent.mm.sdk.openapi.WXAPIFactory;
-import com.tencent.mm.sdk.openapi.WXMediaMessage;
-import com.tencent.mm.sdk.openapi.WXTextObject;
-import com.tencent.mm.sdk.openapi.WXWebpageObject;
 import com.tencent.tauth.IUiListener;
 import com.tencent.tauth.Tencent;
 import com.tencent.tauth.UiError;
+
+import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.entity.Shared;
 /**
  * Created by BuZhiheng on 2016/5/17.
  */
 public class ShareManager implements IUiListener {
-    public static int WXTYPE_SQUARE = SendMessageToWX.Req.WXSceneTimeline;//朋友圈
-    public static int WXTYPE_CHAT = SendMessageToWX.Req.WXSceneSession;//聊天
+    public static int SHARE_TYPE_CHAT = SendMessageToWX.Req.WXSceneSession;//聊天
+    public static int SHARE_TYPE_SQUARE = SendMessageToWX.Req.WXSceneTimeline;//朋友圈
     private static ShareManager manager;
     private AppCompatActivity context;
     private Tencent tencent;
@@ -32,13 +36,16 @@ public class ShareManager implements IUiListener {
         return manager;
     }
     public void shareQQ(Shared shared){
-        tencent = Tencent.createInstance(CommonCode.APP_ID_TENCENT, context);
+        tencent = Tencent.createInstance(CommonCode.APP_ID_QQ, context);
         Bundle params = new Bundle();
         params.putInt(QQShare.SHARE_TO_QQ_KEY_TYPE, QQShare.SHARE_TO_QQ_TYPE_DEFAULT);
-        params.putString(QQShare.SHARE_TO_QQ_TITLE, "掌上兰考APP");//分享标题
+        params.putString(QQShare.SHARE_TO_QQ_TITLE, shared.getTitle());//分享标题
         params.putString(QQShare.SHARE_TO_QQ_SUMMARY, shared.getDesc());//分享摘要
         params.putString(QQShare.SHARE_TO_QQ_TARGET_URL, shared.getUrl());//点击之后跳转的url
         params.putString(QQShare.SHARE_TO_QQ_IMAGE_URL, shared.getImgUrl());//图片
+        if (shared.getWxType() == SHARE_TYPE_SQUARE){
+            params.putInt(QQShare.SHARE_TO_QQ_EXT_INT, QQShare.SHARE_TO_QQ_FLAG_QZONE_AUTO_OPEN);
+        }
         tencent.shareToQQ(context, params, this);
     }
     public void shareWx(Shared shared){
@@ -51,13 +58,15 @@ public class ShareManager implements IUiListener {
         //点击跳转的网页
         WXWebpageObject webpage = new WXWebpageObject();
         WXMediaMessage msg = new WXMediaMessage(webpage);
-        if (shared.getWxType() == WXTYPE_SQUARE){
-            msg.title = "(掌上兰考)"+shared.getDesc();
-        }else{
-            msg.title = "掌上兰考APP";
+        if (shared.getWxType() == SHARE_TYPE_SQUARE){
+            msg.title = shared.getTitle()+shared.getDesc();
+        } else {
+            msg.title = shared.getTitle();
         }
+        Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_share_bmp);
         webpage.webpageUrl = shared.getUrl();
         msg.description = shared.getDesc();
+        msg.setThumbImage(bitmap);
         SendMessageToWX.Req req = new SendMessageToWX.Req();
         req.transaction = buildTransaction("webpage");
         req.message = msg;
@@ -78,7 +87,7 @@ public class ShareManager implements IUiListener {
         WXMediaMessage msg = new WXMediaMessage();
         msg.mediaObject = textObj;
         // 发送文本类型的消息时，title字段不起作用
-        msg.title = "掌上兰考笑话精选";
+        msg.title = "title";
         msg.description = shared.getDesc();
         // 构造一个Req
         SendMessageToWX.Req req = new SendMessageToWX.Req();
@@ -98,16 +107,11 @@ public class ShareManager implements IUiListener {
 //    }
     @Override
     public void onComplete(Object o) {
-
     }
-
     @Override
     public void onError(UiError uiError) {
-
     }
-
     @Override
     public void onCancel() {
-
     }
 }

@@ -118,15 +118,18 @@ public class JockActivityController implements SwipeRefreshLayout.OnRefreshListe
             }
         });
     }
-    private void shareQQ() {
+    private void shareQQ(int type) {
         Shared share = new Shared();
         share.setDesc(shareString);
+        share.setTitle("掌上兰考");
         share.setImgUrl(CommonCode.APP_ICON);
         share.setUrl(CommonCode.APP_URL);
+        share.setWxType(type);
         manager.shareQQ(share);
     }
     private void shareWxText(int type){
         Shared share = new Shared();
+        share.setTitle("掌上兰考");
         share.setDesc(shareString);
         share.setWxType(type);
         manager.shareWxText(share);
@@ -149,15 +152,19 @@ public class JockActivityController implements SwipeRefreshLayout.OnRefreshListe
                 context.finish();
                 break;
             case R.id.ll_popwinshare_qq:
-                shareQQ();
+                shareQQ(ShareManager.SHARE_TYPE_CHAT);
+                popWin.dismiss();
+                break;
+            case R.id.ll_popwinshare_qzone:
+                shareQQ(ShareManager.SHARE_TYPE_SQUARE);
                 popWin.dismiss();
                 break;
             case R.id.ll_popwinshare_wx:
-                shareWxText(ShareManager.WXTYPE_CHAT);
+                shareWxText(ShareManager.SHARE_TYPE_CHAT);
                 popWin.dismiss();
                 break;
             case R.id.ll_popwinshare_wxsquare:
-                shareWxText(ShareManager.WXTYPE_SQUARE);
+                shareWxText(ShareManager.SHARE_TYPE_SQUARE);
                 popWin.dismiss();
                 break;
         }

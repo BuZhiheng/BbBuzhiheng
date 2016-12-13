@@ -11,7 +11,7 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.xutils.x;
 
-import cn.lankao.com.lovelankao.MainActivity;
+import cn.lankao.com.lovelankao.activity.MainActivity;
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.AdvertDetailActivity;
 import cn.lankao.com.lovelankao.activity.LoginActivity;
@@ -20,9 +20,7 @@ import cn.lankao.com.lovelankao.activity.WebViewActivity;
 import cn.lankao.com.lovelankao.entity.MyUser;
 import cn.lankao.com.lovelankao.utils.BitmapUtil;
 import cn.lankao.com.lovelankao.utils.CommonCode;
-import cn.lankao.com.lovelankao.utils.OkHttpUtil;
 import cn.lankao.com.lovelankao.utils.PrefUtil;
-import cn.lankao.com.lovelankao.utils.ToastUtil;
 
 /**
  * Created by BuZhiheng on 2016/4/6.

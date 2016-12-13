@@ -20,7 +20,7 @@ import cn.lankao.com.lovelankao.widget.SharePopupWindow;
 /**
  * Created by BuZhiheng on 2016/4/7.
  */
-public class WebViewActivity extends AppCompatActivity implements View.OnClickListener{
+public class WebViewActivity extends AppCompatActivity implements View.OnClickListener {
     private LinearLayout layout;
     private TextView title;
     private WebView webView;
@@ -78,16 +78,18 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
         findViewById(R.id.iv_webview_back).setOnClickListener(this);
         findViewById(R.id.iv_webview_share).setOnClickListener(this);
     }
-    private void shareQQ() {
+    private void shareQQ(int type) {
         Shared share = new Shared();
         if (!webView.canGoBack()){
             share.setImgUrl(shareImg);
             share.setUrl(webUrl);
-        } else{
+        } else {
             share.setImgUrl(currentUrl);
             share.setUrl(CommonCode.APP_ICON);
         }
-        share.setDesc(webView.getTitle() == null ? "" : webView.getTitle());
+        share.setWxType(type);
+        share.setTitle("掌上兰考");
+        share.setDesc(webView.getTitle() == null ? "来自掌上兰考的分享" : webView.getTitle());
         manager.shareQQ(share);
     }
     private void shareWx(int type){
@@ -95,11 +97,12 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
         if (!webView.canGoBack()){
             share.setUrl(webUrl);
             share.setImgUrl(shareImg);
-        } else{
+        } else {
             share.setUrl(currentUrl);
             share.setImgUrl(CommonCode.APP_ICON);
         }
-        share.setDesc(webView.getTitle() == null ? "" : webView.getTitle());
+        share.setTitle("掌上兰考");
+        share.setDesc(webView.getTitle() == null ? "来自掌上兰考的分享" : webView.getTitle());
         share.setWxType(type);
         manager.shareWx(share);
     }
@@ -124,18 +127,30 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
                 break;
             case R.id.iv_webview_share:
                 //设置layout在PopupWindow中显示的位置
+//                share = new Shared();
+//                share.setTitle(info.share_title);
+//                share.setDesc(info.share_describe);
+//                share.setUrl(info.share_url);
+//                share.setImgUrl(CommonCode.APP_ICON);
                 popWin.showAtLocation(findViewById(R.id.ll_webview_content), Gravity.BOTTOM , 0, 0);
                 break;
             case R.id.ll_popwinshare_qq:
-                shareQQ();
+                shareQQ(manager.SHARE_TYPE_CHAT);
+                popWin.dismiss();
+                break;
+            case R.id.ll_popwinshare_qzone:
+                shareQQ(manager.SHARE_TYPE_SQUARE);
                 popWin.dismiss();
                 break;
             case R.id.ll_popwinshare_wx:
-                shareWx(ShareManager.WXTYPE_CHAT);
+                shareWx(manager.SHARE_TYPE_CHAT);
                 popWin.dismiss();
                 break;
             case R.id.ll_popwinshare_wxsquare:
-                shareWx(ShareManager.WXTYPE_SQUARE);
+                shareWx(manager.SHARE_TYPE_SQUARE);
+                popWin.dismiss();
+                break;
+            case R.id.tv_popwinshare_cancel:
                 popWin.dismiss();
                 break;
             default:break;

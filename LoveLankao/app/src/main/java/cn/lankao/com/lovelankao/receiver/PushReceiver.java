@@ -1,26 +1,21 @@
 package cn.lankao.com.lovelankao.receiver;
 
-import android.app.DownloadManager;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 
 import com.google.gson.Gson;
 import com.igexin.sdk.PushConsts;
 
-import cn.lankao.com.lovelankao.MainActivity;
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.AdvertDetailActivity;
-import cn.lankao.com.lovelankao.activity.AdvertMsgActivity;
 import cn.lankao.com.lovelankao.entity.PushData;
 import cn.lankao.com.lovelankao.utils.CommonCode;
-import cn.lankao.com.lovelankao.utils.ToastUtil;
 
 /**
  * Created by BuZhiheng on 2016/4/8.
