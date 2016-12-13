@@ -54,7 +54,6 @@ public class LKNewsAdapter extends RecyclerView.Adapter<LKNewsAdapter.MyViewHold
 
         return holder;
     }
-
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
         final LanKaoNews news = data.get(position);
@@ -74,12 +73,10 @@ public class LKNewsAdapter extends RecyclerView.Adapter<LKNewsAdapter.MyViewHold
             }
         });
     }
-
     @Override
     public int getItemCount() {
         return data.size();
     }
-
     class MyViewHolder extends RecyclerView.ViewHolder {
         FrameLayout ll;
         ImageView photo;

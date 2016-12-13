@@ -27,7 +27,6 @@ public class LKNewsMsgActivityController implements View.OnClickListener {
         initVeiw();
         initData();
     }
-
     private void initVeiw() {
         x.view().inject(context);
         context.setContentView(R.layout.activity_lknews_msg);
@@ -57,7 +56,6 @@ public class LKNewsMsgActivityController implements View.OnClickListener {
             }
         }
     }
-
     @Override
     public void onClick(View v) {
         switch (v.getId()){

@@ -58,7 +58,6 @@ public class IndexFragmentController implements SwipeRefreshLayout.OnRefreshList
     public void onRefresh() {
         adapter.reload();
     }
-
     @Override
     public void onClick(View v) {
         switch (v.getId()){

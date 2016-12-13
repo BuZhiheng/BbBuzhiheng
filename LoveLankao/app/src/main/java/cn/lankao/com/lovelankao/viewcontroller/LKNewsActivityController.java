@@ -1,13 +1,10 @@
 package cn.lankao.com.lovelankao.viewcontroller;
-
 import android.app.ProgressDialog;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-
 import java.util.List;
-
 import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.listener.FindListener;
 import cn.lankao.com.lovelankao.R;
@@ -18,7 +15,6 @@ import cn.lankao.com.lovelankao.utils.CommonCode;
 import cn.lankao.com.lovelankao.utils.ToastUtil;
 import cn.lankao.com.lovelankao.widget.OnRvScrollListener;
 import cn.lankao.com.lovelankao.widget.ProDialog;
-
 /**
  * Created by BuZhiheng on 2016/4/18.
  */
@@ -36,7 +32,6 @@ public class LKNewsActivityController implements SwipeRefreshLayout.OnRefreshLis
         initView();
         initData();
     }
-
     private void initData() {
         BmobQuery<LanKaoNews> query = new BmobQuery<>();
         if (isRefresh){

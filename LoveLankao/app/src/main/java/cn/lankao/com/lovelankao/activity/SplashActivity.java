@@ -1,15 +1,11 @@
 package cn.lankao.com.lovelankao.activity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
-
 import com.baidu.location.BDLocation;
-
 import java.util.List;
-
 import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.listener.FindListener;
 import cn.lankao.com.lovelankao.R;
