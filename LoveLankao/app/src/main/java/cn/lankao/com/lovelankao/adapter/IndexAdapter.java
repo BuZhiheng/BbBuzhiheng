@@ -28,6 +28,7 @@ import cn.lankao.com.lovelankao.utils.BitmapUtil;
 import cn.lankao.com.lovelankao.utils.CommonCode;
 import cn.lankao.com.lovelankao.utils.GsonUtil;
 import cn.lankao.com.lovelankao.utils.OkHttpUtil;
+import cn.lankao.com.lovelankao.utils.TextUtil;
 import cn.lankao.com.lovelankao.utils.ToastUtil;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
@@ -82,7 +83,7 @@ public class IndexAdapter {
             }
             @Override
             public void onError(int i, String s) {
-                ToastUtil.show(s);
+//                ToastUtil.show(s);
             }
         });
         //加载兰考新闻
@@ -103,12 +104,12 @@ public class IndexAdapter {
                     }
                 }
                 setNews(data);
+//                ToastUtil.show(lkNews.size()+"");
                 convenientBanner.notifyDataSetChanged();
             }
-
             @Override
             public void onError(int i, String s) {
-                ToastUtil.show(s);
+//                ToastUtil.show(s);
             }
         });
         //加载微信阅读
@@ -179,7 +180,7 @@ public class IndexAdapter {
             holder.tvTime = (TextView) view.findViewById(R.id.tv_lknews_item_time);
             holder.tvFrom = (TextView) view.findViewById(R.id.tv_lknews_item_from);
             if (news.getNewsImg() != null){
-                x.image().bind(holder.photo,news.getNewsImg());
+                x.image().bind(holder.photo,news.getNewsImg(),optionHead);
             }
             holder.tvTitle.setText(news.getNewsTitle());
             holder.tvTime.setText(news.getNewsTime());
@@ -187,9 +188,22 @@ public class IndexAdapter {
             holder.fl.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(context, LKNewsMsgActivity.class);
-                    intent.putExtra(CommonCode.INTENT_ADVERT_TYPE, news);
-                    context.startActivity(intent);
+                    if (TextUtil.isNull(news.getNewsFromUrl())){
+                        Intent intent = new Intent(context, LKNewsMsgActivity.class);
+                        intent.putExtra(CommonCode.INTENT_ADVERT_TYPE, news);
+                        context.startActivity(intent);
+                    } else {
+                        Intent intent = new Intent(context, WebViewActivity.class);
+                        intent.putExtra(CommonCode.INTENT_ADVERT_TITLE,"文章详情");
+                        intent.putExtra(CommonCode.INTENT_SETTING_URL,news.getNewsFromUrl());
+                        intent.putExtra(CommonCode.INTENT_SHARED_DESC,news.getNewsContent());
+                        if (news.getNewsPhoto() != null){
+                            intent.putExtra(CommonCode.INTENT_SHARED_IMG,news.getNewsPhoto().getFileUrl(context));
+                        } else {
+                            intent.putExtra(CommonCode.INTENT_SHARED_IMG, CommonCode.APP_ICON);
+                        }
+                        context.startActivity(intent);
+                    }
                 }
             });
             llNews.addView(view);

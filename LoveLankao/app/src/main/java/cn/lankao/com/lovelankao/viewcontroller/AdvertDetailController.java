@@ -17,7 +17,6 @@ import cn.lankao.com.lovelankao.utils.CommonCode;
 import cn.lankao.com.lovelankao.utils.ToastUtil;
 import cn.lankao.com.lovelankao.widget.OnRvScrollListener;
 import cn.lankao.com.lovelankao.widget.ProDialog;
-
 /**
  * Created by BuZhiheng on 2016/4/2.
  */

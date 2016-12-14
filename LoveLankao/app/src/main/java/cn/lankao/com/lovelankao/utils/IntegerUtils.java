@@ -1,7 +1,5 @@
 package cn.lankao.com.lovelankao.utils;
-
 import java.util.Random;
-
 /**
  * Created by BuZhiheng on 2016/5/26.
  */

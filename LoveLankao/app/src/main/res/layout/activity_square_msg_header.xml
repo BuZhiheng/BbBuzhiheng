@@ -68,35 +68,35 @@
             <ImageView
                 android:id="@+id/iv_square_item_photo1"
                 android:layout_width="match_parent"
-                android:layout_height="500dp"
+                android:layout_height="390dp"
                 android:layout_margin="@dimen/common_margin"
                 android:visibility="gone"
                 />
             <ImageView
                 android:id="@+id/iv_square_item_photo2"
                 android:layout_width="match_parent"
-                android:layout_height="500dp"
+                android:layout_height="390dp"
                 android:layout_margin="@dimen/common_margin"
                 android:visibility="gone"
                 />
             <ImageView
                 android:id="@+id/iv_square_item_photo3"
                 android:layout_width="match_parent"
-                android:layout_height="500dp"
+                android:layout_height="390dp"
                 android:layout_margin="@dimen/common_margin"
                 android:visibility="gone"
                 />
             <ImageView
                 android:id="@+id/iv_square_item_photo4"
                 android:layout_width="match_parent"
-                android:layout_height="500dp"
+                android:layout_height="390dp"
                 android:layout_margin="@dimen/common_margin"
                 android:visibility="gone"
                 />
             <ImageView
                 android:id="@+id/iv_square_item_photo5"
                 android:layout_width="match_parent"
-                android:layout_height="500dp"
+                android:layout_height="390dp"
                 android:layout_margin="@dimen/common_margin"
                 android:visibility="gone"
                 />

@@ -16,6 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="119dp"
         android:layout_marginTop="10dp"
+        android:layout_marginRight="@dimen/common_margin"
         android:text="@string/app_test"
         android:textColor="@color/color_black_text"
         android:textSize="@dimen/text_common_item_title" />

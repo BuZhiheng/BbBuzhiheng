@@ -1,19 +1,14 @@
 package cn.lankao.com.lovelankao.viewcontroller;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import org.xutils.image.ImageOptions;
 import org.xutils.x;
-
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.LKNewsMsgActivity;
 import cn.lankao.com.lovelankao.entity.LanKaoNews;
 import cn.lankao.com.lovelankao.utils.CommonCode;
-
 /**
  * Created by BuZhiheng on 2016/4/20.
  */
@@ -47,7 +42,7 @@ public class LKNewsMsgActivityController implements View.OnClickListener {
                 if (news.getNewsImg() != null){
                     ImageOptions imageOptions =new ImageOptions.Builder()
                             .setCrop(false)// 如果ImageView的大小不是定义为wrap_content, 不要crop.
-                            .setImageScaleType(ImageView.ScaleType.CENTER_CROP)
+                            .setImageScaleType(ImageView.ScaleType.FIT_XY)
                             .build();
                     x.image().bind(ivPhoto,news.getNewsImg(),imageOptions);
                 } else {

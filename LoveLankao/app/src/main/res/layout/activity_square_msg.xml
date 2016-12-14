@@ -22,7 +22,9 @@
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_marginLeft="@dimen/common_margin"
-            android:src="@drawable/ic_common_back_white"/>
+            android:src="@drawable/ic_common_back_white"
+            android:onClick="onClick"
+            />
     </FrameLayout>
     <ScrollView
         android:layout_width="match_parent"
@@ -35,7 +37,7 @@
             <LinearLayout
                 android:id="@+id/ll_square_item_comment"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"/>
         </LinearLayout>
     </ScrollView>

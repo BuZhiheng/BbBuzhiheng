@@ -2,7 +2,6 @@ package cn.lankao.com.lovelankao.utils;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Intent;
-import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -16,11 +15,13 @@ import org.xutils.image.ImageOptions;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Date;
 
 import cn.lankao.com.lovelankao.R;
+
 /**
  * Created by BuZhiheng on 2016/4/5.
  * Desc 相机,图片处理
@@ -52,21 +53,72 @@ public class BitmapUtil {
          * 在onActivityResult调用
          * 获取图片Bitmap
          * */
+//        Uri uri = data.getData();
+//        ContentResolver cr = context.getContentResolver();
+//        if (Build.VERSION.SDK_INT >= 19){
+//            String id = uri.getLastPathSegment().split(":")[1];
+//            final String[] imageColumns = {MediaStore.Images.Media.DATA};
+//            Cursor c = cr.query(uri, imageColumns,
+//                    MediaStore.Images.Media._ID + "=" + id, null, null);
+//            if (c != null && c.moveToFirst()){
+//                //这是获取的图片保存在sdcard中的位置
+//                String tempPath = c.getString(c.getColumnIndexOrThrow(MediaStore.Images.Media.DATA));
+//                c.close();
+//                if (tempPath != null){
+//                    Bitmap b = BitmapFactory.decodeFile(tempPath);
+//                    return b;
+//                }
+//            }
+//        } else {
+//            String[] projection = { MediaStore.MediaColumns.DATA };
+//            Cursor c = cr.query(uri, projection, null, null, null);
+//            if (c != null) {
+//                int column_index = c.getColumnIndexOrThrow(MediaStore.MediaColumns.DATA);
+//                c.moveToFirst();
+//                String tempPath = c.getString(column_index);
+//                c.close();
+//                if (tempPath != null){
+//                    Bitmap b = BitmapFactory.decodeFile(tempPath);
+//                    return b;
+//                }
+//            }
+//        }
+//        return null;
+        /**
+         * 调起选取图片之后
+         * 在onActivityResult调用
+         * 获取图片Bitmap
+         * */
         Uri uri = data.getData();
+//        String u = uri.getPath();
+//        u.replace("%3A",":");
+//        uri = Uri.parse(u);
         ContentResolver cr = context.getContentResolver();
-        Cursor c = cr.query(uri, null, null, null, null);
-        if (c == null){
-            ToastUtil.show("图片路径有误,请选取本地图片");
-            return null;
+        try {
+            Bitmap bitmap = BitmapFactory.decodeStream(cr.openInputStream(uri));
+            return bitmap;
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
-        c.moveToFirst();
-        //这是获取的图片保存在sdcard中的位置
-        String tempPath = c.getString(c.getColumnIndex("_data"));
-        c.close();
-        if (tempPath != null){
-            Bitmap b = BitmapFactory.decodeFile(tempPath);
-            return b;
-        }
+//        Cursor c = cr.query(uri, null, null, null, null);
+//        if (c == null){
+//            ToastUtil.show("图片路径有误,请选取本地图片");
+//            return null;
+//        }
+//        c.moveToFirst();
+//        //这是获取的图片保存在sdcard中的位置
+//        String tempPath;
+//        try{
+//            tempPath = c.getString(c.getColumnIndex("_data"));
+//        } catch (Exception e){
+//            c.close();
+//            return null;
+//        }
+//        if (tempPath != null){
+//            Bitmap b = BitmapFactory.decodeFile(tempPath);
+//            c.close();
+//            return b;
+//        }
         return null;
     }
     public static String compressImage(AppCompatActivity context,Bitmap image) {
@@ -110,10 +162,11 @@ public class BitmapUtil {
         /**
          * 调起手机选取图片功能
          * */
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+        Intent intent = new Intent();
         intent.addCategory(Intent.CATEGORY_OPENABLE);
         intent.setType("image/*");
-        context.startActivityForResult(Intent.createChooser(intent, "选择图片"), PIC_PICTURE);
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        context.startActivityForResult(intent, PIC_PICTURE);
     }
     public static Uri startCamera(AppCompatActivity context){
         /**
@@ -122,8 +175,8 @@ public class BitmapUtil {
         Intent camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         ContentValues values = new ContentValues(3);
         values.put(MediaStore.MediaColumns.DISPLAY_NAME,
-                "lankao" + new Date().toString());
-        values.put(MediaStore.Images.ImageColumns.DESCRIPTION, "this is a lankao picture");
+                "picture" + new Date().toString());
+        values.put(MediaStore.Images.ImageColumns.DESCRIPTION, "this is a picture");
         values.put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg");
         Uri imageFilePath = context.getContentResolver().insert(
                 MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
@@ -150,14 +203,14 @@ public class BitmapUtil {
     public static ImageOptions getOptionRadius(){
         /**
          * 联合xutils使用,设置图片圆角
-         *
+         * dip2px ImageView宽度的一半
          * */
         return new ImageOptions.Builder()
-                //如果ImageView宽高为60(设置ImageView一半)
+                //如果ImageView宽高为60(设置ImageView一半30)
                 .setRadius(DensityUtil.dip2px(30))
                 .setCrop(true)
-                .setImageScaleType(ImageView.ScaleType.CENTER_CROP)
-                .setFailureDrawableId(R.drawable.ic_launcher)
+                .setImageScaleType(ImageView.ScaleType.CENTER_INSIDE)
+                .setFailureDrawableId(R.drawable.ic_common_defult)
                 .build();
     }
     public static ImageOptions getOptionCommon(){
@@ -167,7 +220,19 @@ public class BitmapUtil {
          * */
         return new ImageOptions.Builder()
                 .setCrop(false)
-                .setImageScaleType(ImageView.ScaleType.CENTER_CROP)
+                .setImageScaleType(ImageView.ScaleType.FIT_XY)
                 .build();
+    }
+    public static byte[] bitmapToByte(Bitmap bmp){
+        ByteArrayOutputStream output = new ByteArrayOutputStream();//初始化一个流对象
+        bmp.compress(Bitmap.CompressFormat.PNG, 100, output);//把bitmap100%高质量压缩 到 output对象里
+        bmp.recycle();//自由选择是否进行回收
+        byte[] result = output.toByteArray();//转换成功了
+        try {
+            output.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
     }
 }

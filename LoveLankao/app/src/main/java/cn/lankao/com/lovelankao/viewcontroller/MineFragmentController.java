@@ -104,14 +104,12 @@ public class MineFragmentController implements View.OnClickListener {
         intent.putExtra(CommonCode.INTENT_ADVERT_TYPE, code);
         context.startActivity(intent);
     }
-
     private void toWebView(String url, String title) {
         Intent intent = new Intent(context, WebViewActivity.class);
         intent.putExtra(CommonCode.INTENT_ADVERT_TITLE, title);
         intent.putExtra(CommonCode.INTENT_SETTING_URL, url);
         context.startActivity(intent);
     }
-
     @Subscribe
     public void onEventMainThread(MyUser user) {
         if (user == null){
