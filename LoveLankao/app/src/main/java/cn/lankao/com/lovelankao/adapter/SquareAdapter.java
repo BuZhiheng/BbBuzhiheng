@@ -12,11 +12,14 @@ import android.widget.TextView;
 import org.xutils.x;
 import java.util.ArrayList;
 import java.util.List;
+
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.UpdateListener;
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.SquareActivity;
-import cn.lankao.com.lovelankao.entity.Square;
+import cn.lankao.com.lovelankao.model.Square;
 import cn.lankao.com.lovelankao.utils.BitmapUtil;
-import cn.lankao.com.lovelankao.utils.CommonCode;
+import cn.lankao.com.lovelankao.model.CommonCode;
 import cn.lankao.com.lovelankao.utils.PrefUtil;
 import cn.lankao.com.lovelankao.utils.WindowUtils;
 /**
@@ -67,14 +70,14 @@ public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.MyViewHold
             holder.tvTitle.setVisibility(View.VISIBLE);
         }
         if (square.getUserPhoto() != null){
-            x.image().bind(holder.ivPhoto, square.getUserPhoto(), BitmapUtil.getOptionRadius());
+            x.image().bind(holder.ivPhoto, square.getUserPhoto(), BitmapUtil.getOptionCommonRadius());
         } else {
-            x.image().bind(holder.ivPhoto, CommonCode.APP_ICON, BitmapUtil.getOptionRadius());
+            x.image().bind(holder.ivPhoto, CommonCode.APP_ICON, BitmapUtil.getOptionCommonRadius());
         }
         if (square.getSquarePhoto1() == null){
             holder.llPhoto.setVisibility(View.GONE);
         } else {
-            x.image().bind(holder.ivPhoto1, square.getSquarePhoto1().getFileUrl(context), BitmapUtil.getOptionCommon());
+            x.image().bind(holder.ivPhoto1, square.getSquarePhoto1().getFileUrl(), BitmapUtil.getOptionCommon());
             params.height = width;
             holder.llPhoto.setLayoutParams(params);
             holder.llPhoto.setVisibility(View.VISIBLE);
@@ -82,7 +85,7 @@ public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.MyViewHold
             if (square.getSquarePhoto2() == null){
                 holder.ivPhoto2.setVisibility(View.GONE);
             } else {
-                x.image().bind(holder.ivPhoto2, square.getSquarePhoto2().getFileUrl(context), BitmapUtil.getOptionCommon());
+                x.image().bind(holder.ivPhoto2, square.getSquarePhoto2().getFileUrl(), BitmapUtil.getOptionCommon());
                 params.height = width/2;
                 holder.llPhoto.setLayoutParams(params);
                 holder.ivPhoto2.setVisibility(View.VISIBLE);
@@ -90,7 +93,7 @@ public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.MyViewHold
             if (square.getSquarePhoto3() == null){
                 holder.ivPhoto3.setVisibility(View.GONE);
             } else {
-                x.image().bind(holder.ivPhoto3, square.getSquarePhoto3().getFileUrl(context), BitmapUtil.getOptionCommon());
+                x.image().bind(holder.ivPhoto3, square.getSquarePhoto3().getFileUrl(), BitmapUtil.getOptionCommon());
                 params.height = width/3;
                 holder.llPhoto.setLayoutParams(params);
                 holder.ivPhoto3.setVisibility(View.VISIBLE);
@@ -112,7 +115,7 @@ public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.MyViewHold
                     square.setLikeUsers(likeUsers);
                     holder.ivLikeTimes.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_square_liketimesc));
                     holder.tvLikeTimes.setText(like + "");
-                    square.update(context);
+                    square.update(null);
                 }
             }
         });
@@ -125,7 +128,12 @@ public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.MyViewHold
                     int i = square.getClickTimes();
                     square.setClickTimes(i+1);
                 }
-                square.update(context);
+                square.update(new UpdateListener() {
+                    @Override
+                    public void done(BmobException e) {
+
+                    }
+                });
                 Intent intent = new Intent(context, SquareActivity.class);
                 intent.putExtra(CommonCode.INTENT_COMMON_OBJ,square);
                 context.startActivity(intent);

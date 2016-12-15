@@ -3,6 +3,8 @@
     <dimen name="common_margin_large">20dp</dimen>
     <dimen name="common_margin_little">5dp</dimen>
     <dimen name="common_title_height">50dp</dimen>
+    <dimen name="common_title_height30">30dp</dimen>
+    <dimen name="common_title_height39">39dp</dimen>
     <dimen name="text_main_title">21sp</dimen>
     <dimen name="text_common_item_title">16sp</dimen>
     <dimen name="text_common_item_content">12sp</dimen>

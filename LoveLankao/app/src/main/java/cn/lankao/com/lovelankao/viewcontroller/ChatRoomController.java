@@ -3,25 +3,21 @@ import android.app.ProgressDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.gson.Gson;
 import org.json.JSONException;
 import org.json.JSONObject;
-import java.util.List;
 
-import cn.bmob.v3.BmobObject;
-import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.BmobRealTimeData;
-import cn.bmob.v3.listener.FindListener;
+import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
 import cn.bmob.v3.listener.ValueEventListener;
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.ChatRoomActivity;
 import cn.lankao.com.lovelankao.adapter.ChatRoomAdapter;
-import cn.lankao.com.lovelankao.entity.ChatRoom;
-import cn.lankao.com.lovelankao.utils.CommonCode;
+import cn.lankao.com.lovelankao.model.ChatRoom;
+import cn.lankao.com.lovelankao.model.CommonCode;
 import cn.lankao.com.lovelankao.utils.PrefUtil;
 import cn.lankao.com.lovelankao.utils.ToastUtil;
 import cn.lankao.com.lovelankao.widget.ProDialog;
@@ -53,13 +49,12 @@ public class ChatRoomController implements ChatRoomActivity.ChatRoomHolder, View
         rvChat.setLayoutManager(new LinearLayoutManager(context));
         rvChat.setAdapter(adapter);
 
-        realTimeData.start(context, new ValueEventListener() {
+        realTimeData.start(new ValueEventListener() {
             @Override
-            public void onConnectCompleted() {
+            public void onConnectCompleted(Exception e) {
                 realTimeData.subTableUpdate("ChatRoom");
                 sendMsg(1);
             }
-
             @Override
             public void onDataChange(JSONObject jsonObject) {
                 Gson gson = new Gson();
@@ -121,15 +116,12 @@ public class ChatRoomController implements ChatRoomActivity.ChatRoomHolder, View
         } else{
             chatRoom.setChatUserType("");
         }
-        chatRoom.save(context, new SaveListener() {
+        chatRoom.save(new SaveListener() {
             @Override
-            public void onSuccess() {
-                etContent.setText("");
-            }
-
-            @Override
-            public void onFailure(int i, String s) {
-                ToastUtil.show("发送失败");
+            public void done(Object o, BmobException e) {
+                if (e == null){
+                    etContent.setText("");
+                }
             }
         });
     }

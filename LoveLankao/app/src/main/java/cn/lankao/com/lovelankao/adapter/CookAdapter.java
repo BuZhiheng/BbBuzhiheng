@@ -7,7 +7,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -19,9 +18,8 @@ import java.util.List;
 
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.WebViewActivity;
-import cn.lankao.com.lovelankao.entity.Cook;
-import cn.lankao.com.lovelankao.entity.Top;
-import cn.lankao.com.lovelankao.utils.CommonCode;
+import cn.lankao.com.lovelankao.model.Cook;
+import cn.lankao.com.lovelankao.model.CommonCode;
 
 /**
  * Created by BuZhiheng on 2016/3/31.

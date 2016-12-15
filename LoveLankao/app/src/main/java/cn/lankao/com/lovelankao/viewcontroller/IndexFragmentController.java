@@ -5,20 +5,17 @@ import android.content.Intent;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 import android.widget.HorizontalScrollView;
-import android.widget.ImageView;
-import org.xutils.image.ImageOptions;
+
 import org.xutils.x;
-import java.util.ArrayList;
-import java.util.List;
+
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.ChatRoomActivity;
 import cn.lankao.com.lovelankao.activity.CookActivity;
 import cn.lankao.com.lovelankao.activity.JockActivity;
 import cn.lankao.com.lovelankao.activity.LKNewsActivity;
 import cn.lankao.com.lovelankao.activity.ReadWeixinActivity;
-import cn.lankao.com.lovelankao.activity.TopActivity;
 import cn.lankao.com.lovelankao.adapter.IndexAdapter;
-import cn.lankao.com.lovelankao.utils.CommonCode;
+import cn.lankao.com.lovelankao.model.CommonCode;
 /**
  * Created by BuZhiheng on 2016/5/11.
  */

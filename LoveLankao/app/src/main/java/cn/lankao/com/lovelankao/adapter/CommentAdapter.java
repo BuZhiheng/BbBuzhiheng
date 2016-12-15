@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
-import cn.lankao.com.lovelankao.entity.Comment;
+import cn.lankao.com.lovelankao.model.Comment;
 
 /**
  * Created by BuZhiheng on 2016/5/26.

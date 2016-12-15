@@ -7,8 +7,8 @@ import org.xutils.image.ImageOptions;
 import org.xutils.x;
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.LKNewsMsgActivity;
-import cn.lankao.com.lovelankao.entity.LanKaoNews;
-import cn.lankao.com.lovelankao.utils.CommonCode;
+import cn.lankao.com.lovelankao.model.LanKaoNews;
+import cn.lankao.com.lovelankao.model.CommonCode;
 /**
  * Created by BuZhiheng on 2016/4/20.
  */

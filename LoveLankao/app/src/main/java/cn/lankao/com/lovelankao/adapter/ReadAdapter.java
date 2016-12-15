@@ -18,8 +18,8 @@ import java.util.List;
 
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.WebViewActivity;
-import cn.lankao.com.lovelankao.entity.ReadNews;
-import cn.lankao.com.lovelankao.utils.CommonCode;
+import cn.lankao.com.lovelankao.model.ReadNews;
+import cn.lankao.com.lovelankao.model.CommonCode;
 /**
  * Created by BuZhiheng on 2016/3/31.
  */

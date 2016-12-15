@@ -1,4 +1,4 @@
-package cn.lankao.com.lovelankao.utils;
+package cn.lankao.com.lovelankao.model;
 /**
  * Created by BuZhiheng on 2016/4/2.
  */
@@ -26,6 +26,8 @@ public class CommonCode {
     public static int ADVERT_HEZUO = 1003;//合作商家
     public static int ADVERT_TUISONG = 1005;//推送的消息
     public static int RV_ITEMS_COUT = 10;//recycleView分页加载默认条数
+    public static int RV_ITEMS_COUT20 = 20;//recycleView分页加载默认条数
+    public static final int INTENT_COMMON_ACTIVITY_CODE = 10000;
     public static final String INTENT_COMMON_OBJ = "INTENT_COMMON_OBJ";
     public static final String INTENT_ADVERT_TITLE = "ADVERT_TITLE";
     public static final String INTENT_ADVERT_TYPE = "ADVERT_TYPE";
@@ -36,6 +38,8 @@ public class CommonCode {
     public static final String INTENT_COOK = "INTENT_COOK";
     public static final String INTENT_FOOD = "INTENT_FOOD";
 
+    public static final String INTENT_COMMENT_POSTID = "INTENT_COMMENT_POSTID";
+    public static final String INTENT_COMMENT_LASTCONTENT = "INTENT_COMMENT_LASTCONTENT";
     public static final String SP_SET_PARTNERURL = "SP_SET_PARTNERURL";
     public static final String SP_SET_ABOUTUSURL = "SP_SET_ABOUTUSURL";
     public static final String SP_SET_JCLKURL = "SP_SET_JCLKURL";

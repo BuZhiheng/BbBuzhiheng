@@ -11,7 +11,7 @@ import org.xutils.x;
 import java.util.ArrayList;
 import java.util.List;
 import cn.lankao.com.lovelankao.R;
-import cn.lankao.com.lovelankao.entity.Jock;
+import cn.lankao.com.lovelankao.model.Jock;
 import cn.lankao.com.lovelankao.viewcontroller.JockActivityController;
 
 /**

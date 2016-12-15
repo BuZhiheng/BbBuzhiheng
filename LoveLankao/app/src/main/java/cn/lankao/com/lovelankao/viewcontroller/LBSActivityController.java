@@ -28,12 +28,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.bmob.v3.BmobQuery;
+import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.AdvertMsgActivity;
 import cn.lankao.com.lovelankao.activity.LBSActivity;
-import cn.lankao.com.lovelankao.entity.AdvertNormal;
-import cn.lankao.com.lovelankao.utils.CommonCode;
+import cn.lankao.com.lovelankao.model.AdvertNormal;
+import cn.lankao.com.lovelankao.model.CommonCode;
 
 /**
  * Created by BuZhiheng on 2016/4/1.
@@ -59,21 +60,17 @@ public class LBSActivityController implements View.OnClickListener {
         if (type != CommonCode.ADVERT_OTHER){
             query.addWhereEqualTo("advType",type);
         }
-        query.findObjects(context, new FindListener<AdvertNormal>() {
+        query.findObjects(new FindListener<AdvertNormal>() {
             @Override
-            public void onSuccess(List<AdvertNormal> list) {
-                data = list;
-                setMapMarker();
-                menu.close(true);
-            }
-
-            @Override
-            public void onError(int i, String s) {
-                Toast.makeText(context, s, Toast.LENGTH_SHORT).show();
+            public void done(List<AdvertNormal> list, BmobException e) {
+                if (e == null){
+                    data = list;
+                    setMapMarker();
+                    menu.close(true);
+                }
             }
         });
     }
-
     private void setMapMarker() {
         AdvertNormal advert;
         LatLng ll;

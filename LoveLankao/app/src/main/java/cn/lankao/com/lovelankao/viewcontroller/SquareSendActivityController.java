@@ -1,9 +1,12 @@
 package cn.lankao.com.lovelankao.viewcontroller;
+import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.Build;
+import android.provider.Settings;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.EditText;
@@ -13,14 +16,16 @@ import java.util.ArrayList;
 import java.util.List;
 import cn.bmob.v3.Bmob;
 import cn.bmob.v3.datatype.BmobFile;
+import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
 import cn.bmob.v3.listener.UploadBatchListener;
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.LoginActivity;
 import cn.lankao.com.lovelankao.activity.SquareSendActivity;
-import cn.lankao.com.lovelankao.entity.Square;
+import cn.lankao.com.lovelankao.model.Square;
 import cn.lankao.com.lovelankao.utils.BitmapUtil;
-import cn.lankao.com.lovelankao.utils.CommonCode;
+import cn.lankao.com.lovelankao.model.CommonCode;
+import cn.lankao.com.lovelankao.utils.PermissionUtil;
 import cn.lankao.com.lovelankao.utils.PrefUtil;
 import cn.lankao.com.lovelankao.utils.ToastUtil;
 import cn.lankao.com.lovelankao.utils.WindowUtils;
@@ -95,7 +100,6 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
             case R.id.iv_square_choose_photo5:
                 chooseImg(R.id.iv_square_choose_photo5);
                 break;
-
             case R.id.btn_square_send:
                 sendMsg();
                 break;
@@ -134,64 +138,62 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
         square.setSquareTitle(etTitle.getText().toString());
         square.setSquareContent(etContent.getText().toString());
         if (pathArr == null || pathArr.length == 0){
-            square.save(context, new SaveListener() {
+            square.save(new SaveListener() {
                 @Override
-                public void onSuccess() {
-                    dialog.dismiss();
-                    ToastUtil.show("发表成功");
-                    EventBus.getDefault().post(square);
-                    context.finish();
+                public void done(Object o, Object o2) {
+
                 }
+
                 @Override
-                public void onFailure(int i, String s) {
-                    ToastUtil.show(s);
+                public void done(Object o, BmobException e) {
+                    if (e == null){
+                        dialog.dismiss();
+                        ToastUtil.show("发表成功");
+                        EventBus.getDefault().post(square);
+                        context.finish();
+                    } else {
+                        ToastUtil.show(e.getMessage());
+                    }
                 }
             });
         } else {
-            Bmob.uploadBatch(context, pathArr, new UploadBatchListener() {
-                @Override
-                public void onSuccess(List<BmobFile> list, List<String> strs) {
-                    if (strs.size() == pathArr.length) {
-                        for (int i = 0; i < list.size(); i++) {
-                            if (i == 0) {
-                                square.setSquarePhoto1(list.get(i));
-                            } else if (i == 1) {
-                                square.setSquarePhoto2(list.get(i));
-                            } else if (i == 2) {
-                                square.setSquarePhoto3(list.get(i));
-                            } else if (i == 3) {
-                                square.setSquarePhoto4(list.get(i));
-                            } else if (i == 4) {
-                                square.setSquarePhoto5(list.get(i));
-                            }
-                        }
-                        square.save(context, new SaveListener() {
-                            @Override
-                            public void onSuccess() {
-                                dialog.dismiss();
-                                ToastUtil.show("发表成功");
-                                EventBus.getDefault().post(square);
-                                context.finish();
-                            }
-
-                            @Override
-                            public void onFailure(int i, String s) {
-                                ToastUtil.show(s);
-                            }
-                        });
-                    }
-                }
-
-                @Override
-                public void onProgress(int i, int i1, int i2, int i3) {
-
-                }
-
-                @Override
-                public void onError(int i, String s) {
-                    ToastUtil.show(s);
-                }
-            });
+//            Bmob.uploadBatch(context, pathArr, new UploadBatchListener() {
+//                @Override
+//                public void onSuccess(List<BmobFile> list, List<String> strs) {
+//                    if (strs.size() == pathArr.length) {
+//                        for (int i = 0; i < list.size(); i++) {
+//                            if (i == 0) {
+//                                square.setSquarePhoto1(list.get(i));
+//                            } else if (i == 1) {
+//                                square.setSquarePhoto2(list.get(i));
+//                            } else if (i == 2) {
+//                                square.setSquarePhoto3(list.get(i));
+//                            } else if (i == 3) {
+//                                square.setSquarePhoto4(list.get(i));
+//                            } else if (i == 4) {
+//                                square.setSquarePhoto5(list.get(i));
+//                            }
+//                        }
+//                        square.save(new SaveListener() {
+//                            @Override
+//                            public void done(Object o, Object o2) {
+//                            }
+//                            @Override
+//                            public void done(Object o, BmobException e) {
+//                                if (e == null){
+//                                    dialog.dismiss();
+//                                    ToastUtil.show("发表成功");
+//                                    EventBus.getDefault().post(square);
+//                                    context.finish();
+//                                } else {
+//                                    ToastUtil.show("发表成功");
+//                                }
+//                            }
+//
+//                        });
+//                    }
+//                }
+//            });
         }
     }
     private void chooseImg(int i){
@@ -204,52 +206,32 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
                         if (which == 0) {
                             BitmapUtil.startPicture(context);
                         } else {
-                            imageFilePath = BitmapUtil.startCamera(context);
+                            checkCameraPermission();
                         }
                     }
                 })
                 .create().show();
     }
-//    @TargetApi(Build.VERSION_CODES.M)
-//    public void verifyStoragePermissions() {
-//        if (Build.VERSION.SDK_INT >= 23) {
-//            // Marshmallow+
-//        } else {
-//            // Pre-Marshmallow
-//            ToastUtil.show("VERSION IS LOW");
-//            return;
-//        }
-//        // Check if we have write permission
-//        int permission = context.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
-//        if (permission != PackageManager.PERMISSION_GRANTED) {
-//            if (!context.shouldShowRequestPermissionRationale(Manifest.permission.WRITE_CONTACTS)) {
-//                showMessageOKCancel("You need to allow access to Contacts",
-//                        new DialogInterface.OnClickListener() {
-//                            @Override
-//                            public void onClick(DialogInterface dialog, int which) {
-//                                context.requestPermissions(
-//                                        PERMISSIONS_STORAGE,
-//                                        REQUEST_EXTERNAL_STORAGE);
-//                            }
-//                        });
-//                return;
-//            }
-//            ToastUtil.show("no permission");
-//            context.requestPermissions(
-//                    PERMISSIONS_STORAGE,
-//                    REQUEST_EXTERNAL_STORAGE
-//            );
-//        } else {
-//            ToastUtil.show("have permission");
-//        }
-//    }
-    private void showMessageOKCancel(String message, DialogInterface.OnClickListener okListener) {
-        new AlertDialog.Builder(context)
-                .setMessage(message)
-                .setPositiveButton("OK", okListener)
-                .setNegativeButton("Cancel", null)
-                .create()
-                .show();
+    public void checkCameraPermission() {
+        String permission = Manifest.permission.CAMERA;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (PermissionUtil.checkNoPermission(context, permission)) {
+                if (PermissionUtil.checkDismissPermissionWindow(context,
+                        permission)) {
+                    ToastUtil.show("权限被关闭,请打开相机权限");
+                    Intent intentSet = new Intent();
+                    intentSet.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                    Uri uri = Uri.fromParts("package", context.getPackageName(), null);
+                    intentSet.setData(uri);
+                    context.startActivity(intentSet);
+                    return;
+                }
+            } else {
+                imageFilePath = BitmapUtil.startCamera(context);
+            }
+        } else {
+            imageFilePath = BitmapUtil.startCamera(context);
+        }
     }
     private void setPath(){
         List<String> list = new ArrayList<>();

@@ -1,4 +1,4 @@
-package cn.lankao.com.lovelankao.entity;
+package cn.lankao.com.lovelankao.model;
 
 /**
  * Created by BuZhiheng on 2016/4/18.

@@ -4,16 +4,17 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.ImageView;
+
 import java.util.List;
 import cn.bmob.v3.BmobQuery;
+import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.AllBusinessActivity;
 import cn.lankao.com.lovelankao.activity.LBSActivity;
 import cn.lankao.com.lovelankao.adapter.MyAdapter;
-import cn.lankao.com.lovelankao.entity.AdvertNormal;
-import cn.lankao.com.lovelankao.utils.CommonCode;
+import cn.lankao.com.lovelankao.model.AdvertNormal;
+import cn.lankao.com.lovelankao.model.CommonCode;
 import cn.lankao.com.lovelankao.utils.ToastUtil;
 import cn.lankao.com.lovelankao.widget.OnRvScrollListener;
 /**
@@ -65,26 +66,26 @@ public class AllBusinessActivityController implements View.OnClickListener, Swip
             query.setSkip(0);
         }
         query.order("-advClicked");//按点击次数倒序排序
-        query.findObjects(context, new FindListener<AdvertNormal>() {
+        query.findObjects(new FindListener<AdvertNormal>() {
             @Override
-            public void onSuccess(List<AdvertNormal> list) {
-                adapter.setData(list);
-                if (list == null || list.size() == 0){
-                    ToastUtil.show("空空如也!");
-                }else{
-                    if (cout > list.size()){//请求个数大于返回个数,加载完毕,不能加载更多了
-                        canLoadMore = false;
+            public void done(List<AdvertNormal> list, BmobException e) {
+                if (e == null){
+                    adapter.setData(list);
+                    if (list == null || list.size() == 0){
+                        ToastUtil.show("空空如也!");
                     }else{
-                        canLoadMore = true;
+                        if (cout > list.size()){//请求个数大于返回个数,加载完毕,不能加载更多了
+                            canLoadMore = false;
+                        }else{
+                            canLoadMore = true;
+                        }
                     }
+                    adapter.notifyDataSetChanged();
+                    refresh.setRefreshing(false);
+                } else {
+                    ToastUtil.show(e.getMessage());
+                    refresh.setRefreshing(false);
                 }
-                adapter.notifyDataSetChanged();
-                refresh.setRefreshing(false);
-            }
-            @Override
-            public void onError(int i, String s) {
-                ToastUtil.show(s);
-                refresh.setRefreshing(false);
             }
         });
     }

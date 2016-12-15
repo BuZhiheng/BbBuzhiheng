@@ -200,7 +200,7 @@ public class BitmapUtil {
         intent.putExtra("return-data", true);
         context.startActivityForResult(intent, BitmapUtil.PIC_CROP);
     }
-    public static ImageOptions getOptionRadius(){
+    public static ImageOptions getOptionCommonRadius(){
         /**
          * 联合xutils使用,设置图片圆角
          * dip2px ImageView宽度的一半
@@ -208,6 +208,18 @@ public class BitmapUtil {
         return new ImageOptions.Builder()
                 //如果ImageView宽高为60(设置ImageView一半30)
                 .setRadius(DensityUtil.dip2px(30))
+                .setCrop(true)
+                .setImageScaleType(ImageView.ScaleType.CENTER_INSIDE)
+                .setFailureDrawableId(R.drawable.ic_common_defult)
+                .build();
+    }
+    public static ImageOptions getOptionByRadius(int px){
+        /**
+         * 联合xutils使用,设置图片圆角
+         * dip2px ImageView宽度的一半
+         * */
+        return new ImageOptions.Builder()
+                .setRadius(DensityUtil.dip2px(px))
                 .setCrop(true)
                 .setImageScaleType(ImageView.ScaleType.CENTER_INSIDE)
                 .setFailureDrawableId(R.drawable.ic_common_defult)

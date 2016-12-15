@@ -18,10 +18,12 @@ import org.xutils.x;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.UpdateListener;
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.AdvertMsgActivity;
-import cn.lankao.com.lovelankao.entity.AdvertNormal;
-import cn.lankao.com.lovelankao.utils.CommonCode;
+import cn.lankao.com.lovelankao.model.AdvertNormal;
+import cn.lankao.com.lovelankao.model.CommonCode;
 import cn.lankao.com.lovelankao.utils.MapUtil;
 import cn.lankao.com.lovelankao.utils.PrefUtil;
 
@@ -62,7 +64,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         final AdvertNormal advert = data.get(position);
         if (advert.getAdvPhoto() == null){
         }else{
-            x.image().bind(holder.photo, advert.getAdvPhoto().getFileUrl(context));
+            x.image().bind(holder.photo, advert.getAdvPhoto().getFileUrl());
         }
         if (advert.getAdvClicked() == null){
             holder.tvPoints.setText("点击量:0");
@@ -89,7 +91,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 } else {
                     advertNormal.setAdvClicked(1);
                 }
-                advertNormal.update(context);
+                advertNormal.update(new UpdateListener() {
+                    @Override
+                    public void done(BmobException e) {
+
+                    }
+                });
                 Intent intent = new Intent(context, AdvertMsgActivity.class);
                 intent.putExtra("data",data.get(position));
                 context.startActivity(intent);
@@ -97,12 +104,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             }
         });
     }
-
     @Override
     public int getItemCount() {
         return data.size();
     }
-
     class MyViewHolder extends RecyclerView.ViewHolder {
         FrameLayout frameLayout;
         ImageView photo;
@@ -111,7 +116,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         TextView tvPoints;
         TextView tvDistance;
         TextView tvTitleContent;
-
         public MyViewHolder(View view) {
             super(view);
             frameLayout = (FrameLayout) view.findViewById(R.id.fl_mainfrm_content);

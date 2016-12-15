@@ -1,4 +1,4 @@
-package cn.lankao.com.lovelankao.entity;
+package cn.lankao.com.lovelankao.model;
 
 import cn.bmob.v3.BmobObject;
 

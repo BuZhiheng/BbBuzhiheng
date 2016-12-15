@@ -16,9 +16,9 @@ import java.util.List;
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.LKNewsMsgActivity;
 import cn.lankao.com.lovelankao.activity.WebViewActivity;
-import cn.lankao.com.lovelankao.entity.LanKaoNews;
+import cn.lankao.com.lovelankao.model.LanKaoNews;
 import cn.lankao.com.lovelankao.utils.BitmapUtil;
-import cn.lankao.com.lovelankao.utils.CommonCode;
+import cn.lankao.com.lovelankao.model.CommonCode;
 import cn.lankao.com.lovelankao.utils.TextUtil;
 /**
  * Created by BuZhiheng on 2016/3/31.
@@ -69,7 +69,7 @@ public class LKNewsAdapter extends RecyclerView.Adapter<LKNewsAdapter.MyViewHold
                     intent.putExtra(CommonCode.INTENT_SETTING_URL,news.getNewsFromUrl());
                     intent.putExtra(CommonCode.INTENT_SHARED_DESC,news.getNewsContent());
                     if (news.getNewsPhoto() != null){
-                        intent.putExtra(CommonCode.INTENT_SHARED_IMG,news.getNewsPhoto().getFileUrl(context));
+                        intent.putExtra(CommonCode.INTENT_SHARED_IMG,news.getNewsPhoto().getFileUrl());
                     } else {
                         intent.putExtra(CommonCode.INTENT_SHARED_IMG, CommonCode.APP_ICON);
                     }

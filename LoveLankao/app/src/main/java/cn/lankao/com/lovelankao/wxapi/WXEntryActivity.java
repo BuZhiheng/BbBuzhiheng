@@ -9,7 +9,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
-import cn.lankao.com.lovelankao.utils.CommonCode;
+import cn.lankao.com.lovelankao.model.CommonCode;
 public class WXEntryActivity extends Activity implements IWXAPIEventHandler{
     private IWXAPI api;
     @Override

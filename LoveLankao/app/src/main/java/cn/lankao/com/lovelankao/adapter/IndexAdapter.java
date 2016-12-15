@@ -16,20 +16,20 @@ import org.xutils.x;
 import java.util.ArrayList;
 import java.util.List;
 import cn.bmob.v3.BmobQuery;
+import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.LKNewsMsgActivity;
 import cn.lankao.com.lovelankao.activity.WebViewActivity;
-import cn.lankao.com.lovelankao.entity.JuheApiResult;
-import cn.lankao.com.lovelankao.entity.LanKaoNews;
-import cn.lankao.com.lovelankao.entity.MainService;
-import cn.lankao.com.lovelankao.entity.ReadNews;
+import cn.lankao.com.lovelankao.model.JuheApiResult;
+import cn.lankao.com.lovelankao.model.LanKaoNews;
+import cn.lankao.com.lovelankao.model.MainService;
+import cn.lankao.com.lovelankao.model.ReadNews;
 import cn.lankao.com.lovelankao.utils.BitmapUtil;
-import cn.lankao.com.lovelankao.utils.CommonCode;
+import cn.lankao.com.lovelankao.model.CommonCode;
 import cn.lankao.com.lovelankao.utils.GsonUtil;
 import cn.lankao.com.lovelankao.utils.OkHttpUtil;
 import cn.lankao.com.lovelankao.utils.TextUtil;
-import cn.lankao.com.lovelankao.utils.ToastUtil;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -51,7 +51,7 @@ public class IndexAdapter {
         this.context = context;
         this.listener = listener;
         lkNews = new ArrayList<>();
-        optionService = BitmapUtil.getOptionRadius();
+        optionService = BitmapUtil.getOptionCommonRadius();
         optionHead = BitmapUtil.getOptionCommon();
         llMenus = (LinearLayout) view.findViewById(R.id.ll_indexfrm_service);
         llNews = (LinearLayout) view.findViewById(R.id.ll_indexfrm_news);
@@ -73,43 +73,39 @@ public class IndexAdapter {
         //加载服务菜单
         BmobQuery<MainService> query = new BmobQuery<>();
         query.order("index");
-        query.findObjects(context, new FindListener<MainService>() {
+        query.findObjects(new FindListener<MainService>() {
             @Override
-            public void onSuccess(List<MainService> list) {
-                setService(list);
-                if (listener != null){
-                    listener.success();
+            public void done(List<MainService> list, BmobException e) {
+                if (e == null){
+                    setService(list);
+                    if (listener != null){
+                        listener.success();
+                    }
                 }
-            }
-            @Override
-            public void onError(int i, String s) {
-//                ToastUtil.show(s);
             }
         });
         //加载兰考新闻
         BmobQuery<LanKaoNews> queryNews = new BmobQuery<>();
-        queryNews.setLimit(CommonCode.RV_ITEMS_COUT);
-        queryNews.order("-createdAt");
-        queryNews.findObjects(context, new FindListener<LanKaoNews>() {
+        queryNews.setLimit(CommonCode.RV_ITEMS_COUT20);
+        queryNews.order("-newsTime");
+        queryNews.findObjects(new FindListener<LanKaoNews>() {
             @Override
-            public void onSuccess(List<LanKaoNews> list) {
-                List<LanKaoNews> data = new ArrayList<>();
-                lkNews.clear();
-                for (int i = 0; i < list.size(); i++) {
-                    LanKaoNews news = list.get(i);
-                    if ("1".equals(news.getNewsType())) {
-                        lkNews.add(news);
-                    } else {
-                        data.add(news);
+            public void done(List<LanKaoNews> list, BmobException e) {
+                if (e == null){
+                    List<LanKaoNews> data = new ArrayList<>();
+                    lkNews.clear();
+                    for (int i = 0; i < list.size(); i++) {
+                        LanKaoNews news = list.get(i);
+                        if ("1".equals(news.getNewsType())) {
+                            lkNews.add(news);
+                        } else {
+                            data.add(news);
+                        }
                     }
-                }
-                setNews(data);
+                    setNews(data);
 //                ToastUtil.show(lkNews.size()+"");
-                convenientBanner.notifyDataSetChanged();
-            }
-            @Override
-            public void onError(int i, String s) {
-//                ToastUtil.show(s);
+                    convenientBanner.notifyDataSetChanged();
+                }
             }
         });
         //加载微信阅读
@@ -148,7 +144,7 @@ public class IndexAdapter {
             holder.tvTitle = (TextView) view.findViewById(R.id.tv_indexfrm_item_title);
             holder.tvTitle.setText(advert.getTitle());
             if (advert.getFile() != null){
-                x.image().bind(holder.ivPhoto,advert.getFile().getFileUrl(context),optionService);
+                x.image().bind(holder.ivPhoto,advert.getFile().getFileUrl(),optionService);
             }
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -158,7 +154,7 @@ public class IndexAdapter {
                     intent.putExtra(CommonCode.INTENT_SETTING_URL,advert.getUrl());
                     intent.putExtra(CommonCode.INTENT_SHARED_DESC,advert.getTitle());
                     if (advert.getFile() != null){
-                        intent.putExtra(CommonCode.INTENT_SHARED_IMG,advert.getFile().getFileUrl(context));
+                        intent.putExtra(CommonCode.INTENT_SHARED_IMG,advert.getFile().getFileUrl());
                     } else {
                         intent.putExtra(CommonCode.INTENT_SHARED_IMG, CommonCode.APP_ICON);
                     }
@@ -198,7 +194,7 @@ public class IndexAdapter {
                         intent.putExtra(CommonCode.INTENT_SETTING_URL,news.getNewsFromUrl());
                         intent.putExtra(CommonCode.INTENT_SHARED_DESC,news.getNewsContent());
                         if (news.getNewsPhoto() != null){
-                            intent.putExtra(CommonCode.INTENT_SHARED_IMG,news.getNewsPhoto().getFileUrl(context));
+                            intent.putExtra(CommonCode.INTENT_SHARED_IMG,news.getNewsPhoto().getFileUrl());
                         } else {
                             intent.putExtra(CommonCode.INTENT_SHARED_IMG, CommonCode.APP_ICON);
                         }
@@ -260,7 +256,7 @@ public class IndexAdapter {
         @Override
         public void UpdateUI(final Context context, final int position, final LanKaoNews data) {
             if (data.getNewsPhoto() != null){
-                x.image().bind(iv, data.getNewsPhoto().getFileUrl(context),optionHead);
+                x.image().bind(iv, data.getNewsImg(),optionHead);
             }
             tv.setText(data.getNewsTitle());
             tvIndex.setText((position+1)+"/"+lkNews.size());
@@ -273,7 +269,7 @@ public class IndexAdapter {
                     intent.putExtra(CommonCode.INTENT_SETTING_URL, data.getNewsFromUrl());
                     intent.putExtra(CommonCode.INTENT_SHARED_DESC,data.getNewsTitle());
                     if (data.getNewsPhoto() != null){
-                        intent.putExtra(CommonCode.INTENT_SHARED_IMG, data.getNewsPhoto().getFileUrl(context));
+                        intent.putExtra(CommonCode.INTENT_SHARED_IMG, data.getNewsPhoto().getFileUrl());
                     } else {
                         intent.putExtra(CommonCode.INTENT_SHARED_IMG, CommonCode.APP_ICON);
                     }

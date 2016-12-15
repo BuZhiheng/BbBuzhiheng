@@ -14,8 +14,8 @@ import com.igexin.sdk.PushConsts;
 
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.AdvertDetailActivity;
-import cn.lankao.com.lovelankao.entity.PushData;
-import cn.lankao.com.lovelankao.utils.CommonCode;
+import cn.lankao.com.lovelankao.model.PushData;
+import cn.lankao.com.lovelankao.model.CommonCode;
 
 /**
  * Created by BuZhiheng on 2016/4/8.

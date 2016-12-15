@@ -15,7 +15,8 @@ import com.tencent.tauth.Tencent;
 import com.tencent.tauth.UiError;
 
 import cn.lankao.com.lovelankao.R;
-import cn.lankao.com.lovelankao.entity.Shared;
+import cn.lankao.com.lovelankao.model.CommonCode;
+import cn.lankao.com.lovelankao.model.Shared;
 /**
  * Created by BuZhiheng on 2016/5/17.
  */

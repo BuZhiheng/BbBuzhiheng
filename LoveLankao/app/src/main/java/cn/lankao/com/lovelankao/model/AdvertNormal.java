@@ -1,4 +1,4 @@
-package cn.lankao.com.lovelankao.entity;
+package cn.lankao.com.lovelankao.model;
 
 import java.io.Serializable;
 

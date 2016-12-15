@@ -1,7 +1,6 @@
 package cn.lankao.com.lovelankao.viewcontroller;
 
 import android.content.Intent;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,13 +10,13 @@ import org.greenrobot.eventbus.EventBus;
 
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.LogInListener;
-import cn.bmob.v3.listener.SaveListener;
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.LoginActivity;
 import cn.lankao.com.lovelankao.activity.RegisterActivity;
-import cn.lankao.com.lovelankao.entity.MyUser;
-import cn.lankao.com.lovelankao.utils.CommonCode;
+import cn.lankao.com.lovelankao.model.MyUser;
+import cn.lankao.com.lovelankao.model.CommonCode;
 import cn.lankao.com.lovelankao.utils.PrefUtil;
+import cn.lankao.com.lovelankao.utils.TextUtil;
 import cn.lankao.com.lovelankao.utils.ToastUtil;
 
 /**
@@ -56,7 +55,7 @@ public class LoginController implements View.OnClickListener {
                 return;
             }
             MyUser user = new MyUser();
-            user.loginByAccount(context, un, pwd, new LogInListener<MyUser>() {
+            user.loginByAccount(un, pwd, new LogInListener<MyUser>() {
                 @Override
                 public void done(MyUser user, BmobException e) {
                     if (user != null) {
@@ -66,7 +65,7 @@ public class LoginController implements View.OnClickListener {
                         PrefUtil.putString(CommonCode.SP_USER_NICKNAME, user.getNickName());
                         PrefUtil.putString(CommonCode.SP_USER_USERTYPE, user.getUserType());
                         if (user.getPhoto() != null){
-                            PrefUtil.putString(CommonCode.SP_USER_PHOTO, user.getPhoto().getFileUrl(context));
+                            PrefUtil.putString(CommonCode.SP_USER_PHOTO, user.getPhoto().getFileUrl());
                         }
                         Integer point = user.getPoint();
                         if (point == null){
@@ -87,9 +86,10 @@ public class LoginController implements View.OnClickListener {
         }
     }
     private boolean checkPhone(String phone){
-        if (phone == null || "".equals(phone)){
+        if (TextUtil.isNull(phone)){
             return false;
-        }else if (phone.length() != 11 || phone.contains(" ")){
+        }
+        if (!TextUtil.strEX(phone, TextUtil.EX_PHONE)){
             return false;
         }
         return true;

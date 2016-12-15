@@ -1,5 +1,4 @@
 package cn.lankao.com.lovelankao.viewcontroller;
-
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -9,23 +8,18 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import org.xutils.x;
-
 import java.util.List;
-
 import cn.bmob.v3.BmobQuery;
+import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
+import cn.bmob.v3.listener.UpdateListener;
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.AdvertDetailActivity;
 import cn.lankao.com.lovelankao.activity.AdvertMsgActivity;
 import cn.lankao.com.lovelankao.activity.AllBusinessActivity;
-import cn.lankao.com.lovelankao.activity.WebViewActivity;
-import cn.lankao.com.lovelankao.entity.AdvertNormal;
-import cn.lankao.com.lovelankao.utils.CommonCode;
-import cn.lankao.com.lovelankao.utils.PrefUtil;
-import cn.lankao.com.lovelankao.utils.ToastUtil;
-
+import cn.lankao.com.lovelankao.model.AdvertNormal;
+import cn.lankao.com.lovelankao.model.CommonCode;
 /**
  * Created by BuZhiheng on 2016/3/31.
  */
@@ -40,7 +34,6 @@ public class MainFragmentController implements View.OnClickListener, SwipeRefres
         initView();
         initData();
     }
-
     private void initView() {
         layoutBottom = (LinearLayout) view.findViewById(R.id.ll_mainfrm_bottom);
         refresh = (SwipeRefreshLayout)view.findViewById(R.id.srl_main_frm);
@@ -68,16 +61,15 @@ public class MainFragmentController implements View.OnClickListener, SwipeRefres
         BmobQuery<AdvertNormal> query = new BmobQuery<>();
         query.order("-advClicked");
         query.addWhereEqualTo("advIndex",CommonCode.ADVERT_INDEX);
-        query.findObjects(context, new FindListener<AdvertNormal>() {
+        query.findObjects(new FindListener<AdvertNormal>() {
             @Override
-            public void onSuccess(List<AdvertNormal> list) {
-                refresh.setRefreshing(false);
-                setBottom(list);
-            }
-            @Override
-            public void onError(int i, String s) {
-                ToastUtil.show(s);
-                refresh.setRefreshing(false);
+            public void done(List<AdvertNormal> list, BmobException e) {
+                if (e == null){
+                    refresh.setRefreshing(false);
+                    setBottom(list);
+                } else {
+                    refresh.setRefreshing(false);
+                }
             }
         });
     }
@@ -154,7 +146,7 @@ public class MainFragmentController implements View.OnClickListener, SwipeRefres
             holder.tvAverage = (TextView) view.findViewById(R.id.tv_mainfrm_item_average);
             holder.frameLayout = (FrameLayout) view.findViewById(R.id.fl_mainfrm_content);
             if (advert.getAdvPhoto() != null) {
-                x.image().bind(holder.photo, advert.getAdvPhoto().getFileUrl(context));
+                x.image().bind(holder.photo, advert.getAdvPhoto().getFileUrl());
             }
             if (advert.getAdvClicked() == null) {
                 holder.tvPoints.setText("点击量:0");
@@ -174,7 +166,12 @@ public class MainFragmentController implements View.OnClickListener, SwipeRefres
                     } else {
                         advert.setAdvClicked(1);
                     }
-                    advert.update(context);
+                    advert.update(new UpdateListener() {
+                        @Override
+                        public void done(BmobException e) {
+
+                        }
+                    });
                     Intent intent = new Intent(context, AdvertMsgActivity.class);
                     intent.putExtra("data", advert);
                     context.startActivity(intent);

@@ -8,12 +8,13 @@ import android.view.View;
 import android.widget.TextView;
 import java.util.List;
 import cn.bmob.v3.BmobQuery;
+import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.AdvertDetailActivity;
 import cn.lankao.com.lovelankao.adapter.MyAdapter;
-import cn.lankao.com.lovelankao.entity.AdvertNormal;
-import cn.lankao.com.lovelankao.utils.CommonCode;
+import cn.lankao.com.lovelankao.model.AdvertNormal;
+import cn.lankao.com.lovelankao.model.CommonCode;
 import cn.lankao.com.lovelankao.utils.ToastUtil;
 import cn.lankao.com.lovelankao.widget.OnRvScrollListener;
 import cn.lankao.com.lovelankao.widget.ProDialog;
@@ -86,27 +87,27 @@ public class AdvertDetailController implements View.OnClickListener, SwipeRefres
             query.setSkip(0);
         }
         query.order("-advClicked");//按点击次数倒序排序
-        query.findObjects(context, new FindListener<AdvertNormal>() {
+        query.findObjects(new FindListener<AdvertNormal>() {
             @Override
-            public void onSuccess(List<AdvertNormal> list) {
-                adapter.setData(list);
-                if (list == null || list.size() == 0){
-                    ToastUtil.show("空空如也!");
-                }else{
-                    if (cout > list.size()){//请求个数大于返回个数,加载完毕,不能加载更多了
-                        canLoadMore = false;
+            public void done(List<AdvertNormal> list, BmobException e) {
+                if (e == null){
+                    adapter.setData(list);
+                    if (list == null || list.size() == 0){
+                        ToastUtil.show("空空如也!");
                     }else{
-                        canLoadMore = true;
+                        if (cout > list.size()){//请求个数大于返回个数,加载完毕,不能加载更多了
+                            canLoadMore = false;
+                        }else{
+                            canLoadMore = true;
+                        }
                     }
+                    adapter.notifyDataSetChanged();
+                    refresh.setRefreshing(false);
+                    dialog.dismiss();
+                } else {
+                    ToastUtil.show(e.getMessage());
+                    refresh.setRefreshing(false);
                 }
-                adapter.notifyDataSetChanged();
-                refresh.setRefreshing(false);
-                dialog.dismiss();
-            }
-            @Override
-            public void onError(int i, String s) {
-                ToastUtil.show(s);
-                refresh.setRefreshing(false);
             }
         });
     }

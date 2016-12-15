@@ -1,10 +1,12 @@
 package cn.lankao.com.lovelankao.viewcontroller;
-
+import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.Build;
+import android.provider.Settings;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.ImageView;
@@ -15,19 +17,19 @@ import org.xutils.x;
 import java.io.File;
 
 import cn.bmob.v3.datatype.BmobFile;
+import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.UpdateListener;
 import cn.bmob.v3.listener.UploadFileListener;
 import cn.lankao.com.lovelankao.R;
-import cn.lankao.com.lovelankao.activity.LoginActivity;
 import cn.lankao.com.lovelankao.activity.SettingActivity;
-import cn.lankao.com.lovelankao.entity.MyUser;
+import cn.lankao.com.lovelankao.model.MyUser;
 import cn.lankao.com.lovelankao.utils.BitmapUtil;
-import cn.lankao.com.lovelankao.utils.CommonCode;
+import cn.lankao.com.lovelankao.model.CommonCode;
+import cn.lankao.com.lovelankao.utils.PermissionUtil;
 import cn.lankao.com.lovelankao.utils.PrefUtil;
 import cn.lankao.com.lovelankao.utils.ToastUtil;
 import cn.lankao.com.lovelankao.utils.WindowUtils;
 import cn.lankao.com.lovelankao.widget.ProDialog;
-
 /**
  * Created by BuZhiheng on 2016/4/7.
  */
@@ -41,7 +43,6 @@ public class SettingActivityController implements View.OnClickListener ,SettingA
         x.view().inject(context);
         initView();
     }
-
     private void initView() {
         dialog = ProDialog.getProDialog(context);
         context.findViewById(R.id.btn_setting_zhuxiao).setOnClickListener(this);
@@ -49,7 +50,7 @@ public class SettingActivityController implements View.OnClickListener ,SettingA
         context.findViewById(R.id.iv_setting_back).setOnClickListener(this);
         photo = (ImageView) context.findViewById(R.id.iv_setting_photo);
         photo.setOnClickListener(this);
-        x.image().bind(photo, PrefUtil.getString(CommonCode.SP_USER_PHOTO, CommonCode.APP_ICON), BitmapUtil.getOptionRadius());
+        x.image().bind(photo, PrefUtil.getString(CommonCode.SP_USER_PHOTO, CommonCode.APP_ICON), BitmapUtil.getOptionCommonRadius());
     }
     private void saveBitmap(Bitmap bitmap){
         if (bitmap == null){
@@ -59,33 +60,22 @@ public class SettingActivityController implements View.OnClickListener ,SettingA
         final String userId = PrefUtil.getString(CommonCode.SP_USER_USERID,"");
         String s = BitmapUtil.compressImage(context,bitmap);
         final BmobFile file = new BmobFile(new File(s));
-        file.upload(context, new UploadFileListener() {
+        file.upload(new UploadFileListener() {
             @Override
-            public void onSuccess() {
+            public void done(BmobException e) {
                 final MyUser myUser = new MyUser();
                 myUser.setPhoto(file);
-                myUser.update(context,userId,new UpdateListener() {
+                myUser.update(userId, new UpdateListener() {
                     @Override
-                    public void onSuccess() {
+                    public void done(BmobException e) {
                         dialog.dismiss();
                         ToastUtil.show("上传成功");
-                        PrefUtil.putString(CommonCode.SP_USER_PHOTO, file.getFileUrl(context));
-                        x.image().bind(photo, file.getFileUrl(context), BitmapUtil.getOptionRadius());
+                        PrefUtil.putString(CommonCode.SP_USER_PHOTO, file.getFileUrl());
+                        x.image().bind(photo, file.getFileUrl(), BitmapUtil.getOptionCommonRadius());
                         myUser.setNickName(CommonCode.SP_USER_PHOTO);//user frm 界面更新头像
                         EventBus.getDefault().post(myUser);
                     }
-                    @Override
-                    public void onFailure(int code, String msg) {
-                        dialog.dismiss();
-                        ToastUtil.show(msg);
-                    }
                 });
-            }
-
-            @Override
-            public void onFailure(int i, String s) {
-                dialog.dismiss();
-                ToastUtil.show(s);
             }
         });
     }
@@ -102,6 +92,7 @@ public class SettingActivityController implements View.OnClickListener ,SettingA
                                 if (which == 0) {
                                     BitmapUtil.startPicture(context);
                                 } else {
+//                                    checkCameraPermission();
                                     imageFilePath = BitmapUtil.startCamera(context);
                                 }
                             }
@@ -127,7 +118,27 @@ public class SettingActivityController implements View.OnClickListener ,SettingA
                 break;
         }
     }
-
+    public void checkCameraPermission() {
+        String permission = Manifest.permission.CAMERA;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (PermissionUtil.checkNoPermission(context,permission)) {
+                if (PermissionUtil.checkDismissPermissionWindow(context,
+                        permission)) {
+                    ToastUtil.show("权限被关闭,请打开相机权限");
+                    Intent intentSet = new Intent();
+                    intentSet.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                    Uri uri = Uri.fromParts("package", context.getPackageName(), null);
+                    intentSet.setData(uri);
+                    context.startActivity(intentSet);
+                    return;
+                }
+            } else {
+                imageFilePath = BitmapUtil.startCamera(context);
+            }
+        } else {
+            imageFilePath = BitmapUtil.startCamera(context);
+        }
+    }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == context.RESULT_OK) {

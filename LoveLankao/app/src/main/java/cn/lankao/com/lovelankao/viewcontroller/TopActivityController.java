@@ -11,14 +11,11 @@ import com.google.gson.JsonElement;
 import java.util.List;
 
 import cn.lankao.com.lovelankao.R;
-import cn.lankao.com.lovelankao.activity.ReadWeixinActivity;
 import cn.lankao.com.lovelankao.activity.TopActivity;
-import cn.lankao.com.lovelankao.adapter.ReadAdapter;
 import cn.lankao.com.lovelankao.adapter.TopAdapter;
-import cn.lankao.com.lovelankao.entity.JuheApiResult;
-import cn.lankao.com.lovelankao.entity.ReadNews;
-import cn.lankao.com.lovelankao.entity.Top;
-import cn.lankao.com.lovelankao.utils.CommonCode;
+import cn.lankao.com.lovelankao.model.JuheApiResult;
+import cn.lankao.com.lovelankao.model.Top;
+import cn.lankao.com.lovelankao.model.CommonCode;
 import cn.lankao.com.lovelankao.utils.GsonUtil;
 import cn.lankao.com.lovelankao.utils.OkHttpUtil;
 import cn.lankao.com.lovelankao.widget.OnRvScrollListener;

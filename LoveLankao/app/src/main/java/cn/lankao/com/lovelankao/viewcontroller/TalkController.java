@@ -10,20 +10,13 @@ import android.view.View;
 import java.util.List;
 
 import cn.bmob.v3.BmobQuery;
+import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
 import cn.lankao.com.lovelankao.R;
-import cn.lankao.com.lovelankao.activity.ChatRoomActivity;
-import cn.lankao.com.lovelankao.activity.CookActivity;
-import cn.lankao.com.lovelankao.activity.JockActivity;
-import cn.lankao.com.lovelankao.activity.LKNewsActivity;
-import cn.lankao.com.lovelankao.activity.ReadWeixinActivity;
-import cn.lankao.com.lovelankao.activity.SquareActivity;
 import cn.lankao.com.lovelankao.activity.SquareSendActivity;
-import cn.lankao.com.lovelankao.activity.TopActivity;
-import cn.lankao.com.lovelankao.adapter.MyAdapter;
 import cn.lankao.com.lovelankao.adapter.SquareAdapter;
-import cn.lankao.com.lovelankao.entity.Square;
-import cn.lankao.com.lovelankao.utils.CommonCode;
+import cn.lankao.com.lovelankao.model.Square;
+import cn.lankao.com.lovelankao.model.CommonCode;
 import cn.lankao.com.lovelankao.utils.ToastUtil;
 import cn.lankao.com.lovelankao.widget.OnRvScrollListener;
 
@@ -55,25 +48,25 @@ public class TalkController implements View.OnClickListener, SwipeRefreshLayout.
             query.setSkip(0);
         }
         query.order("-createdAt");//按事件排序
-        query.findObjects(context,new FindListener<Square>(){
+        query.findObjects(new FindListener<Square>(){
             @Override
-            public void onSuccess(List<Square> list) {
-                adapter.setData(list);
-                if (list == null || list.size() == 0){
-                }else{
-                    if (cout > list.size()){//请求个数大于返回个数,加载完毕,不能加载更多了
-                        canLoadMore = false;
+            public void done(List<Square> list, BmobException e) {
+                if (e == null){
+                    adapter.setData(list);
+                    if (list == null || list.size() == 0){
                     }else{
-                        canLoadMore = true;
+                        if (cout > list.size()){//请求个数大于返回个数,加载完毕,不能加载更多了
+                            canLoadMore = false;
+                        }else{
+                            canLoadMore = true;
+                        }
                     }
+                    adapter.notifyDataSetChanged();
+                    refresh.setRefreshing(false);
+                } else {
+                    ToastUtil.show(e.getMessage());
+                    refresh.setRefreshing(false);
                 }
-                adapter.notifyDataSetChanged();
-                refresh.setRefreshing(false);
-            }
-            @Override
-            public void onError(int i, String s) {
-                ToastUtil.show(s);
-                refresh.setRefreshing(false);
             }
         });
     }

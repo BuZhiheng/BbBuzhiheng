@@ -164,8 +164,8 @@
         <activity android:name=".activity.AllBusinessActivity" />
         <activity android:name=".activity.ChatRoomActivity" />
         <activity android:name=".activity.CookActivity" />
+        <activity android:name=".activity.CommentActivity" />
         <activity android:name=".activity.JockActivity" />
-
         <activity android:name=".activity.LKNewsActivity" />
         <activity android:name=".activity.LKNewsMsgActivity" />
         <activity android:name=".activity.LBSActivity" />

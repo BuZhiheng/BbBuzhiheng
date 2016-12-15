@@ -1,11 +1,10 @@
 package cn.lankao.com.lovelankao.viewcontroller;
-
 import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.support.v4.app.ActivityCompat;
+import android.os.Build;
+import android.provider.Settings;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,30 +12,26 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import com.baidu.mapapi.model.LatLng;
-
 import org.xutils.image.ImageOptions;
 import org.xutils.x;
-
 import java.util.List;
-
 import cn.bmob.v3.BmobQuery;
+import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
-import cn.bmob.v3.listener.GetListener;
+import cn.bmob.v3.listener.QueryListener;
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.AdvertMsgActivity;
 import cn.lankao.com.lovelankao.activity.PicShowActivity;
 import cn.lankao.com.lovelankao.activity.ShopLocationActivity;
-import cn.lankao.com.lovelankao.entity.AdvertNormal;
-import cn.lankao.com.lovelankao.entity.Comment;
-import cn.lankao.com.lovelankao.utils.CommonCode;
+import cn.lankao.com.lovelankao.model.AdvertNormal;
+import cn.lankao.com.lovelankao.model.Comment;
+import cn.lankao.com.lovelankao.model.CommonCode;
 import cn.lankao.com.lovelankao.utils.MapUtil;
+import cn.lankao.com.lovelankao.utils.PermissionUtil;
 import cn.lankao.com.lovelankao.utils.PrefUtil;
 import cn.lankao.com.lovelankao.utils.ToastUtil;
 import cn.lankao.com.lovelankao.widget.ProDialog;
-
 /**
  * Created by BuZhiheng on 2016/4/2.
  */
@@ -76,18 +71,18 @@ public class AdvertMsgController implements View.OnClickListener, SwipeRefreshLa
     private void initData(){
         initComment();
         BmobQuery<AdvertNormal> query = new BmobQuery<>();
-        query.getObject(context, advertNormal.getObjectId(), new GetListener<AdvertNormal>() {
+        query.getObject(advertNormal.getObjectId(), new QueryListener<AdvertNormal>() {
             @Override
-            public void onSuccess(AdvertNormal advert) {
-                advertNormal = advert;
-                refreshData();
-                refresh.setRefreshing(false);
-                dialog.dismiss();
-            }
-            @Override
-            public void onFailure(int i, String s) {
-                ToastUtil.show(s);
-                refresh.setRefreshing(false);
+            public void done(AdvertNormal advert, BmobException e) {
+                if (e == null){
+                    advertNormal = advert;
+                    refreshData();
+                    refresh.setRefreshing(false);
+                    dialog.dismiss();
+                } else {
+                    refresh.setRefreshing(false);
+                    dialog.dismiss();
+                }
             }
         });
     }
@@ -126,7 +121,7 @@ public class AdvertMsgController implements View.OnClickListener, SwipeRefreshLa
                     .setImageScaleType(ImageView.ScaleType.CENTER_CROP)
                     .setLoadingDrawableId(R.drawable.ic_common_defult)//加载中默认显示图片
                     .build();
-            x.image().bind(ivPhoto, advertNormal.getAdvPhoto().getFileUrl(context),imageOptions);
+            x.image().bind(ivPhoto, advertNormal.getAdvPhoto().getFileUrl(),imageOptions);
         }
         if (advertNormal.getAdvClicked() == null) {
             tvPoints.setText("已点击:0次");
@@ -152,31 +147,28 @@ public class AdvertMsgController implements View.OnClickListener, SwipeRefreshLa
         tvPinglun.setText(advertNormal.getAdvRemark());
         BmobQuery<AdvertNormal> query = new BmobQuery<>();
         query.addWhereEqualTo("advVipType", CommonCode.ADVERT_TUIJIAN);
-        query.findObjects(context, new FindListener<AdvertNormal>() {
+        query.findObjects(new FindListener<AdvertNormal>() {
             @Override
-            public void onSuccess(List<AdvertNormal> list) {
-                setBottom(list);
-            }
-
-            @Override
-            public void onError(int i, String s) {
-                Toast.makeText(context, s, Toast.LENGTH_SHORT).show();
+            public void done(List<AdvertNormal> list, BmobException e) {
+                if (e == null){
+                    setBottom(list);
+                } else {
+                    ToastUtil.show(e.getMessage());
+                }
             }
         });
     }
     private void initComment(){
         BmobQuery<Comment> query = new BmobQuery<>();
         query.addWhereEqualTo("postId",advertNormal.getObjectId());
-        query.findObjects(context, new FindListener<Comment>() {
-
+        query.findObjects(new FindListener<Comment>() {
             @Override
-            public void onSuccess(List<Comment> list) {
-                setComment(list);
-            }
-
-            @Override
-            public void onError(int i, String s) {
-
+            public void done(List<Comment> list, BmobException e) {
+                if (e == null){
+                    setComment(list);
+                } else {
+                    ToastUtil.show(e.getMessage());
+                }
             }
         });
     }
@@ -209,7 +201,7 @@ public class AdvertMsgController implements View.OnClickListener, SwipeRefreshLa
             holder.tvAverage = (TextView) view.findViewById(R.id.tv_mainfrm_item_average);
             holder.frameLayout = (FrameLayout) view.findViewById(R.id.fl_mainfrm_content);
             if (advert.getAdvPhoto() != null) {
-                x.image().bind(holder.photo, advert.getAdvPhoto().getFileUrl(context));
+                x.image().bind(holder.photo, advert.getAdvPhoto().getFileUrl());
             }
             if (advert.getAdvClicked() == null) {
                 holder.tvPoints.setText("点击量:0");
@@ -229,7 +221,7 @@ public class AdvertMsgController implements View.OnClickListener, SwipeRefreshLa
                     } else {
                         advert.setAdvClicked(1);
                     }
-                    advert.update(context);
+                    advert.update(null);
                     Intent intent = new Intent(context, AdvertMsgActivity.class);
                     intent.putExtra("data", advert);
                     context.startActivity(intent);
@@ -239,7 +231,29 @@ public class AdvertMsgController implements View.OnClickListener, SwipeRefreshLa
             layoutBottom.addView(view);
         }
     }
-
+    public void checkCameraPermission() {
+        String permission = Manifest.permission.CALL_PHONE;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (PermissionUtil.checkNoPermission(context, permission)) {
+                if (PermissionUtil.checkDismissPermissionWindow(context,
+                        permission)) {
+                    ToastUtil.show("权限被关闭,请打开电话权限");
+                    Intent intentSet = new Intent();
+                    intentSet.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                    Uri uri = Uri.fromParts("package", context.getPackageName(), null);
+                    intentSet.setData(uri);
+                    context.startActivity(intentSet);
+                    return;
+                }
+            } else {
+                Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + advertNormal.getAdvPhoneNumber()));
+                context.startActivity(intent);
+            }
+        } else {
+            Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + advertNormal.getAdvPhoneNumber()));
+            context.startActivity(intent);
+        }
+    }
     @Override
     public void onClick(View v) {
         if (v == layoutAddress) {
@@ -249,11 +263,7 @@ public class AdvertMsgController implements View.OnClickListener, SwipeRefreshLa
             intent.putExtra("lng",advertNormal.getAdvLng());
             context.startActivity(intent);
         } else if (v == ivCall) {
-            Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + advertNormal.getAdvPhoneNumber()));
-            if (ActivityCompat.checkSelfPermission(context, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                return;
-            }
-            context.startActivity(intent);
+            checkCameraPermission();
         } else if(v.getId() == R.id.iv_advertmsg_back){
             context.finish();
         } else if(v.getId() == R.id.iv_advertdetail_photo){

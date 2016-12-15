@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.lankao.com.lovelankao.R;
-import cn.lankao.com.lovelankao.entity.ChatRoom;
+import cn.lankao.com.lovelankao.model.ChatRoom;
 
 /**
  * Created by BuZhiheng on 2016/4/3.

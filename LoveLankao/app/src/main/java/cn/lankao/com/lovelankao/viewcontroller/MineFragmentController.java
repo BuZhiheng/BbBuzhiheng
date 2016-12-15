@@ -17,9 +17,9 @@ import cn.lankao.com.lovelankao.activity.AdvertDetailActivity;
 import cn.lankao.com.lovelankao.activity.LoginActivity;
 import cn.lankao.com.lovelankao.activity.SettingActivity;
 import cn.lankao.com.lovelankao.activity.WebViewActivity;
-import cn.lankao.com.lovelankao.entity.MyUser;
+import cn.lankao.com.lovelankao.model.MyUser;
 import cn.lankao.com.lovelankao.utils.BitmapUtil;
-import cn.lankao.com.lovelankao.utils.CommonCode;
+import cn.lankao.com.lovelankao.model.CommonCode;
 import cn.lankao.com.lovelankao.utils.PrefUtil;
 
 /**
@@ -57,7 +57,7 @@ public class MineFragmentController implements View.OnClickListener {
         tvNickName.setText(PrefUtil.getString(CommonCode.SP_USER_NICKNAME, "未登录"));
         tvPhone.setText(PrefUtil.getString(CommonCode.SP_USER_USERNAME, ""));
         tvJifen.setText(PrefUtil.getInt(CommonCode.SP_USER_POINT, 0)+"");
-        x.image().bind(photo, PrefUtil.getString(CommonCode.SP_USER_PHOTO, CommonCode.APP_ICON), BitmapUtil.getOptionRadius());
+        x.image().bind(photo, PrefUtil.getString(CommonCode.SP_USER_PHOTO, CommonCode.APP_ICON), BitmapUtil.getOptionCommonRadius());
     }
     @Override
     public void onClick(View v) {
@@ -121,9 +121,9 @@ public class MineFragmentController implements View.OnClickListener {
         } else if(CommonCode.SP_USER_PHOTO.equals(user.getNickName())){
             //nickname等于CommonCode.SP_USER_PHOTO,更新头像
             if (user.getPhoto() != null){
-                x.image().bind(photo,user.getPhoto().getFileUrl(context), BitmapUtil.getOptionRadius());
+                x.image().bind(photo,user.getPhoto().getFileUrl(), BitmapUtil.getOptionCommonRadius());
             } else {
-                x.image().bind(photo,CommonCode.APP_ICON,BitmapUtil.getOptionRadius());
+                x.image().bind(photo,CommonCode.APP_ICON,BitmapUtil.getOptionCommonRadius());
             }
         } else {
             //登陆成功,更新user frm 界面
@@ -135,9 +135,9 @@ public class MineFragmentController implements View.OnClickListener {
                 tvJifen.setText("0");
             }
             if (user.getPhoto() != null){
-                x.image().bind(photo, user.getPhoto().getFileUrl(context), BitmapUtil.getOptionRadius());
+                x.image().bind(photo, user.getPhoto().getFileUrl(), BitmapUtil.getOptionCommonRadius());
             } else {
-                x.image().bind(photo,CommonCode.APP_ICON,BitmapUtil.getOptionRadius());
+                x.image().bind(photo,CommonCode.APP_ICON,BitmapUtil.getOptionCommonRadius());
             }
         }
     }

@@ -1,20 +1,20 @@
 package cn.lankao.com.lovelankao.viewcontroller;
-
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.RegisterActivity;
-import cn.lankao.com.lovelankao.entity.MyUser;
+import cn.lankao.com.lovelankao.model.MyUser;
 import cn.lankao.com.lovelankao.utils.ToastUtil;
-
 /**
  * Created by BuZhiheng on 2016/4/2.
  */
 public class RegisterController implements View.OnClickListener {
+    private String SMS_URL = "http://v.juhe.cn/sms/send?key=cb56555dd8eda40257f8eda6b7d8c88c&tpl_id=25454&tpl_value=%23code%23%3d";//+code&mobile=151
     private RegisterActivity context;
     private EditText nickname;
     private EditText username;
@@ -65,16 +65,20 @@ public class RegisterController implements View.OnClickListener {
             user.setNickName(nn);
             user.setUsername(un);
             user.setPassword(pwd);
-            user.signUp(context, new SaveListener() {
+            user.signUp(new SaveListener() {
                 @Override
-                public void onSuccess() {
-                    ToastUtil.show("注册成功");
-                    context.finish();
+                public void done(Object o, Object o2) {
+
                 }
 
                 @Override
-                public void onFailure(int i, String s) {
-                    ToastUtil.show("用户名已经存在");
+                public void done(Object o, BmobException e) {
+                    if (e == null){
+                        ToastUtil.show("注册成功");
+                        context.finish();
+                    } else {
+                        ToastUtil.show(e.getMessage());
+                    }
                 }
             });
         } else if (v == tvCancle){

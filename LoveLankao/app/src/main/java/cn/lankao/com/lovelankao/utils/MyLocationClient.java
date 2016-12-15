@@ -1,12 +1,9 @@
 package cn.lankao.com.lovelankao.utils;
-
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
-
 import cn.lankao.com.lovelankao.LApplication;
-
 /**
  * Created by BuZhiheng on 2016/4/6.
  */
@@ -47,7 +44,6 @@ public class MyLocationClient {
         option.setEnableSimulateGps(false);//可选，默认false，设置是否需要过滤gps仿真结果，默认需要
         locationClient.setLocOption(option);
     }
-
     public interface MyLocationListener{
         void onLocSuccess(BDLocation bdLocation);
     }

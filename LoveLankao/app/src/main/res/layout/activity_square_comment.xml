@@ -10,14 +10,14 @@
         android:layout_marginTop="@dimen/common_margin"
         >
         <ImageView
-            android:id="@+id/iv_square_item_photo"
+            android:id="@+id/iv_square_comment_photo"
             android:layout_gravity="center_vertical"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginLeft="@dimen/common_margin"
             android:src="@drawable/ic_launcher"/>
         <TextView
-            android:id="@+id/tv_square_item_nickname"
+            android:id="@+id/tv_square_comment_nickname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/common_title_height"
@@ -27,7 +27,7 @@
             android:gravity="center_vertical"
             />
         <TextView
-            android:id="@+id/tv_square_item_time"
+            android:id="@+id/tv_square_comment_time"
             android:layout_gravity="bottom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -37,12 +37,46 @@
             android:textColor="@color/color_gray_deep"
             android:gravity="center_vertical"
             />
-        <ImageView
+        <TextView
+            android:id="@+id/tv_square_comment_recomment"
             android:layout_gravity="right"
             android:layout_width="@dimen/common_title_height"
             android:layout_height="match_parent"
-            android:padding="@dimen/common_margin_little"
-            android:src="@drawable/ic_square_commenttimes"
+            android:gravity="center"
+            android:text="回复"
+            android:textSize="@dimen/text_common_item_content"
+            android:textColor="@color/color_green"
             />
     </FrameLayout>
+    <TextView
+        android:id="@+id/tv_square_comment_recontent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/common_title_height"
+        android:layout_marginRight="@dimen/common_title_height"
+        android:layout_marginTop="@dimen/common_margin"
+        android:text="回复：Carry 你说的有道理"
+        android:textSize="@dimen/text_common_item_content"
+        android:textColor="@color/color_gray_deep"
+        android:textStyle="italic"
+        android:visibility="gone"
+        />
+    <TextView
+        android:id="@+id/tv_square_comment_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/common_title_height"
+        android:layout_marginRight="@dimen/common_title_height"
+        android:layout_marginTop="@dimen/common_margin"
+        android:text="@string/app_test"
+        android:textSize="@dimen/text_common_item_title"
+        android:textColor="@color/color_black_text"
+        />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:layout_marginTop="@dimen/common_margin_little"
+        android:layout_marginLeft="@dimen/common_title_height"
+        android:background="@color/color_gray"
+        />
 </LinearLayout>
