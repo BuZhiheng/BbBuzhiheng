@@ -9,4 +9,9 @@ public class IntegerUtils {
         int i = r.nextInt(5);
         return i+1;
     }
+    public static int randomCode(){
+        Random r = new Random();
+        int i = r.nextInt(8000);
+        return i+1000;
+    }
 }

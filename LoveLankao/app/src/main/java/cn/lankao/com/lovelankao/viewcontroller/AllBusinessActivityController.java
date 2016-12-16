@@ -40,7 +40,6 @@ public class AllBusinessActivityController implements View.OnClickListener, Swip
         context.findViewById(R.id.iv_allact_back).setOnClickListener(this);
         refresh = (SwipeRefreshLayout)context.findViewById(R.id.srl_allact);
         refresh.setOnRefreshListener(this);
-        refresh.setRefreshing(true);
         recyclerView = (RecyclerView) context.findViewById(R.id.rv_allact);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.setAdapter(adapter);

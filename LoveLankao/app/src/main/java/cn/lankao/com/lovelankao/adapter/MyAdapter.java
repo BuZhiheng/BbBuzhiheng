@@ -91,7 +91,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 } else {
                     advertNormal.setAdvClicked(1);
                 }
-                advertNormal.update(new UpdateListener() {
+                advertNormal.update(advertNormal.getObjectId(),new UpdateListener() {
                     @Override
                     public void done(BmobException e) {
 

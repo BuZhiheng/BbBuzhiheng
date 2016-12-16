@@ -55,7 +55,7 @@ public class MineFragmentController implements View.OnClickListener {
 
 
         tvNickName.setText(PrefUtil.getString(CommonCode.SP_USER_NICKNAME, "未登录"));
-        tvPhone.setText(PrefUtil.getString(CommonCode.SP_USER_USERNAME, ""));
+        tvPhone.setText(PrefUtil.getString(CommonCode.SP_USER_USERMOBILE, ""));
         tvJifen.setText(PrefUtil.getInt(CommonCode.SP_USER_POINT, 0)+"");
         x.image().bind(photo, PrefUtil.getString(CommonCode.SP_USER_PHOTO, CommonCode.APP_ICON), BitmapUtil.getOptionCommonRadius());
     }
@@ -64,7 +64,7 @@ public class MineFragmentController implements View.OnClickListener {
         int id = v.getId();
         switch (id) {
             case R.id.ll_minefrm_user_msg:
-                if (PrefUtil.getString(CommonCode.SP_USER_USERNAME, null) == null) {
+                if (PrefUtil.getString(CommonCode.SP_USER_USERMOBILE, null) == null) {
                     Intent intent = new Intent(context, LoginActivity.class);
                     context.startActivity(intent);
                 } else {
@@ -128,9 +128,9 @@ public class MineFragmentController implements View.OnClickListener {
         } else {
             //登陆成功,更新user frm 界面
             tvNickName.setText(user.getNickName());
-            tvPhone.setText(user.getUsername());
-            if (user.getPoint() != null){
-                tvJifen.setText(user.getPoint());
+            tvPhone.setText(user.getMobile());
+            if (user.getCoupon() != null){
+                tvJifen.setText(user.getCoupon());
             } else {
                 tvJifen.setText("0");
             }

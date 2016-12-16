@@ -1,14 +1,11 @@
 package cn.lankao.com.lovelankao.viewcontroller;
-
-import android.content.Context;
 import android.content.Intent;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-
 import java.util.List;
-
 import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
@@ -19,12 +16,11 @@ import cn.lankao.com.lovelankao.model.Square;
 import cn.lankao.com.lovelankao.model.CommonCode;
 import cn.lankao.com.lovelankao.utils.ToastUtil;
 import cn.lankao.com.lovelankao.widget.OnRvScrollListener;
-
 /**
  * Created by BuZhiheng on 2016/5/20.
  */
 public class TalkController implements View.OnClickListener, SwipeRefreshLayout.OnRefreshListener {
-    private Context context;
+    private AppCompatActivity context;
     private View view;
     private RecyclerView recyclerView;
     private SwipeRefreshLayout refresh;
@@ -32,43 +28,11 @@ public class TalkController implements View.OnClickListener, SwipeRefreshLayout.
     private int cout = CommonCode.RV_ITEMS_COUT;
     private boolean isRefresh = true;
     private boolean canLoadMore = true;
-    public TalkController(Context context,View view){
+    public TalkController(AppCompatActivity context,View view){
         this.context = context;
         this.view = view;
         initView();
         initData();
-    }
-    private void initData() {
-        BmobQuery<Square> query = new BmobQuery<>();
-        if (isRefresh){
-            query.setLimit(CommonCode.RV_ITEMS_COUT);
-            query.setSkip(0);
-        }else{
-            query.setLimit(cout);
-            query.setSkip(0);
-        }
-        query.order("-createdAt");//按事件排序
-        query.findObjects(new FindListener<Square>(){
-            @Override
-            public void done(List<Square> list, BmobException e) {
-                if (e == null){
-                    adapter.setData(list);
-                    if (list == null || list.size() == 0){
-                    }else{
-                        if (cout > list.size()){//请求个数大于返回个数,加载完毕,不能加载更多了
-                            canLoadMore = false;
-                        }else{
-                            canLoadMore = true;
-                        }
-                    }
-                    adapter.notifyDataSetChanged();
-                    refresh.setRefreshing(false);
-                } else {
-                    ToastUtil.show(e.getMessage());
-                    refresh.setRefreshing(false);
-                }
-            }
-        });
     }
     private void initView() {
         adapter = new SquareAdapter(context);
@@ -90,6 +54,39 @@ public class TalkController implements View.OnClickListener, SwipeRefreshLayout.
         });
         view.findViewById(R.id.iv_talkfrm_send).setOnClickListener(this);
     }
+    private void initData() {
+        BmobQuery<Square> query = new BmobQuery<>();
+        if (isRefresh){
+            query.setLimit(CommonCode.RV_ITEMS_COUT);
+            query.setSkip(0);
+        }else{
+            query.setLimit(cout);
+            query.setSkip(0);
+        }
+        query.order("-createdAt");//按事件排序
+        query.findObjects(new FindListener<Square>() {
+            @Override
+            public void done(List<Square> list, BmobException e) {
+                if (e == null) {
+                    adapter.setData(list);
+                    if (list == null || list.size() == 0) {
+                        ToastUtil.show("空空如也!");
+                    } else {
+                        if (cout > list.size()) {//请求个数大于返回个数,加载完毕,不能加载更多了
+                            canLoadMore = false;
+                        } else {
+                            canLoadMore = true;
+                        }
+                    }
+                    adapter.notifyDataSetChanged();
+                    refresh.setRefreshing(false);
+                } else {
+                    ToastUtil.show(e.getMessage());
+                    refresh.setRefreshing(false);
+                }
+            }
+        });
+    }
     @Override
     public void onClick(View v) {
         int id = v.getId();
@@ -100,7 +97,6 @@ public class TalkController implements View.OnClickListener, SwipeRefreshLayout.
                 break;
         }
     }
-
     @Override
     public void onRefresh() {
         isRefresh = true;

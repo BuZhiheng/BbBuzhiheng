@@ -1,36 +1,25 @@
 package cn.lankao.com.lovelankao.utils;
+import android.util.Log;
 import java.io.IOException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 import rx.Observable;
 import rx.Subscriber;
+import rx.Subscription;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 /**
  * Created by BuZhiheng on 2016/4/18.
  */
 public class OkHttpUtil {
     private static OkHttpClient client = new OkHttpClient();
-    public static void get(String url, final CallBack callBack) {
-        final Request request = new Request
-                .Builder()
-                .url(url)
-                .build();
-        new Thread(){
-            public void run(){
-                try {
-                    Response resp = client.newCall(request).execute();
-                    if (resp.isSuccessful()){
-                        if (callBack != null){
-                            callBack.success(resp.body().string());
-                        }
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }.start();
-    }
-    public static Observable<String> getApi(final String url){
+    public static ExecutorService executor = Executors.newCachedThreadPool();
+    //限制系统中执行线程的数量。
+    public static Subscription get(final String url, Subscriber<String> sub){
+        Log.i(">>>", url);
         return Observable.create(new Observable.OnSubscribe<String>() {
             @Override
             public void call(final Subscriber<? super String> subscriber) {
@@ -38,26 +27,23 @@ public class OkHttpUtil {
                         .Builder()
                         .url(url)
                         .build();
-                new Thread(){
-                    public void run(){
+                executor.execute(new Runnable() {
+                    @Override
+                    public void run() {
                         try {
                             Response resp = client.newCall(request).execute();
-                            if (resp.isSuccessful()){
+                            if (resp.isSuccessful()) {
                                 subscriber.onNext(resp.body().string());
                                 subscriber.onCompleted();
-                            }else{
+                            } else {
                                 subscriber.onError(null);
                             }
                         } catch (IOException e) {
-                            e.printStackTrace();
-                            subscriber.onError(e);
+                            subscriber.onError(null);
                         }
                     }
-                }.start();
+                });
             }
-        });
-    }
-    public interface CallBack{
-        void success(String result);
+        }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(sub);
     }
 }

@@ -4,12 +4,15 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import org.greenrobot.eventbus.EventBus;
 import org.xutils.x;
@@ -27,6 +30,7 @@ import cn.lankao.com.lovelankao.utils.BitmapUtil;
 import cn.lankao.com.lovelankao.model.CommonCode;
 import cn.lankao.com.lovelankao.utils.PermissionUtil;
 import cn.lankao.com.lovelankao.utils.PrefUtil;
+import cn.lankao.com.lovelankao.utils.TextUtil;
 import cn.lankao.com.lovelankao.utils.ToastUtil;
 import cn.lankao.com.lovelankao.utils.WindowUtils;
 import cn.lankao.com.lovelankao.widget.ProDialog;
@@ -52,14 +56,10 @@ public class SettingActivityController implements View.OnClickListener ,SettingA
         photo.setOnClickListener(this);
         x.image().bind(photo, PrefUtil.getString(CommonCode.SP_USER_PHOTO, CommonCode.APP_ICON), BitmapUtil.getOptionCommonRadius());
     }
-    private void saveBitmap(Bitmap bitmap){
-        if (bitmap == null){
-            return;
-        }
+    private void saveBitmap(String path){
         dialog.show();
         final String userId = PrefUtil.getString(CommonCode.SP_USER_USERID,"");
-        String s = BitmapUtil.compressImage(context,bitmap);
-        final BmobFile file = new BmobFile(new File(s));
+        final BmobFile file = new BmobFile(new File(path));
         file.upload(new UploadFileListener() {
             @Override
             public void done(BmobException e) {
@@ -92,8 +92,8 @@ public class SettingActivityController implements View.OnClickListener ,SettingA
                                 if (which == 0) {
                                     BitmapUtil.startPicture(context);
                                 } else {
-//                                    checkCameraPermission();
-                                    imageFilePath = BitmapUtil.startCamera(context);
+                                    checkCameraPermission();
+//                                    imageFilePath = BitmapUtil.startCamera(context);
                                 }
                             }
                         })
@@ -133,10 +133,10 @@ public class SettingActivityController implements View.OnClickListener ,SettingA
                     return;
                 }
             } else {
-                imageFilePath = BitmapUtil.startCamera(context);
+                BitmapUtil.startCamera(context);
             }
         } else {
-            imageFilePath = BitmapUtil.startCamera(context);
+            BitmapUtil.startCamera(context);
         }
     }
     @Override
@@ -144,13 +144,22 @@ public class SettingActivityController implements View.OnClickListener ,SettingA
         if (resultCode == context.RESULT_OK) {
             if (requestCode == BitmapUtil.PIC_PICTURE){//相册
                 Bitmap b = BitmapUtil.getBitmapByPicture(context,data);
-                saveBitmap(b);
+                String path = BitmapUtil.compressImage(context, b);
+                if (TextUtil.isNull(path)){
+                    ToastUtil.show("相册选取失败,请拍照上传");
+                    return;
+                }
+                saveBitmap(path);
             } else if (requestCode == BitmapUtil.PIC_CAMERA){//相机
-                int dp = WindowUtils.px2dip(context, 1000);
-                BitmapUtil.cropImage(context, imageFilePath, dp, dp);
-            } else if (requestCode == BitmapUtil.PIC_CROP){//裁剪
-                Bitmap b = BitmapUtil.getBitmapByCameraOrCrop(data);
-                saveBitmap(b);
+                if (data.getData() != null|| data.getExtras() != null){ //防止没有返回结果
+                    Bitmap photo = BitmapUtil.getBitmapByPicture(context,data);
+                    String path = BitmapUtil.compressImage(context, photo);
+                    if (TextUtil.isNull(path)){
+                        ToastUtil.show("拍照上传失败,请去相册选择");
+                        return;
+                    }
+                    saveBitmap(path);
+                }
             }
         }
     }

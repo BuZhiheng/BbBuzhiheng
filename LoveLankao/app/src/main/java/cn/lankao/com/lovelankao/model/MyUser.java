@@ -1,22 +1,22 @@
 package cn.lankao.com.lovelankao.model;
-
-import cn.bmob.v3.BmobUser;
+import cn.bmob.v3.BmobObject;
 import cn.bmob.v3.datatype.BmobFile;
-
 /**
  * Created by BuZhiheng on 2016/4/2.
  */
-public class MyUser extends BmobUser{
-    private Integer point;//
+public class MyUser extends BmobObject{
+    private String mobile;
+    private Integer coupon;//
     private String nickName;
     private String userType;
+    private String passWord;
     private BmobFile photo;
-    public Integer getPoint() {
-        return point;
+    public Integer getCoupon() {
+        return coupon;
     }
 
-    public void setPoint(Integer point) {
-        this.point = point;
+    public void setCoupon(Integer coupon) {
+        this.coupon = coupon;
     }
 
     public String getNickName() {
@@ -41,5 +41,21 @@ public class MyUser extends BmobUser{
 
     public void setPhoto(BmobFile photo) {
         this.photo = photo;
+    }
+
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+
+    public String getPassWord() {
+        return passWord;
+    }
+
+    public void setPassWord(String passWord) {
+        this.passWord = passWord;
     }
 }

@@ -1,8 +1,6 @@
 package cn.lankao.com.lovelankao.widget;
-
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-
 /**
  * Created by BuZhiheng on 2016/4/19.
  */

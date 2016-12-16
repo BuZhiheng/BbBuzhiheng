@@ -56,18 +56,17 @@ public class JockActivityController implements SwipeRefreshLayout.OnRefreshListe
         }else{
             finalUrl = url+CommonCode.RV_ITEMS_COUT+"&page="+page;
         }
-        OkHttpUtil.getApi(finalUrl)
-        .subscribeOn(Schedulers.io())
-        .observeOn(AndroidSchedulers.mainThread())
-        .subscribe(new Subscriber<String>() {
+        OkHttpUtil.get(finalUrl, new Subscriber<String>() {
             @Override
             public void onCompleted() {
-                refresh.setRefreshing(false);
+
             }
+
             @Override
-            public void onError(Throwable e) {
-                refresh.setRefreshing(false);
+            public void onError(Throwable throwable) {
+
             }
+
             @Override
             public void onNext(String s) {
                 JuheApiResult res = GsonUtil.jsonToObject(s, JuheApiResult.class);

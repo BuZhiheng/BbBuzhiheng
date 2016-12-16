@@ -109,29 +109,30 @@ public class IndexAdapter {
             }
         });
         //加载微信阅读
-        OkHttpUtil.getApi(urlRead)
-                .subscribeOn(Schedulers.io())// 在非UI线程中执行getUser
-                .observeOn(AndroidSchedulers.mainThread())// 在UI线程中执行结果
-                .subscribe(new Subscriber<String>() {
-                    @Override
-                    public void onCompleted() {
+        OkHttpUtil.get(urlRead, new Subscriber<String>() {
+            @Override
+            public void onCompleted() {
+
+            }
+
+            @Override
+            public void onError(Throwable throwable) {
+
+            }
+
+            @Override
+            public void onNext(String s) {
+                JuheApiResult res = GsonUtil.jsonToObject(s, JuheApiResult.class);
+                if (res.getError_code() == 0) {
+                    try {
+                        JsonElement list = res.getResult().getAsJsonObject().getAsJsonArray("data");
+                        List<ReadNews> data = GsonUtil.jsonToList(list, ReadNews.class);
+                        setRead(data);
+                    } catch (Exception e) {
                     }
-                    @Override
-                    public void onError(Throwable e) {
-                    }
-                    @Override
-                    public void onNext(String s) {
-                        JuheApiResult res = GsonUtil.jsonToObject(s, JuheApiResult.class);
-                        if (res.getError_code() == 0) {
-                            try {
-                                JsonElement list = res.getResult().getAsJsonObject().getAsJsonArray("data");
-                                List<ReadNews> data = GsonUtil.jsonToList(list, ReadNews.class);
-                                setRead(data);
-                            } catch (Exception e) {
-                            }
-                        }
-                    }
-                });
+                }
+            }
+        });
     }
     private void setService(List<MainService> list) {
         llMenus.removeAllViews();

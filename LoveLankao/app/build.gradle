@@ -36,6 +36,7 @@ dependencies {
     compile 'com.android.support:support-v4:23.1.1'
     compile 'com.android.support:support-v13:23.1.1'
     compile 'com.android.support:design:23.1.1'
+    compile 'com.bm.photoview:library:1.4.1'
     //bmob-sdk ：Bmob的android sdk包
     compile 'cn.bmob.android:bmob-sdk:3.5.3'
     compile 'org.xutils:xutils:3.3.26'

@@ -8,7 +8,11 @@ import android.widget.TextView;
 
 import org.greenrobot.eventbus.EventBus;
 
+import java.util.List;
+
+import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.FindListener;
 import cn.bmob.v3.listener.LogInListener;
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.LoginActivity;
@@ -41,7 +45,6 @@ public class LoginController implements View.OnClickListener {
         btnLogin.setOnClickListener(this);
         tvRegister.setOnClickListener(this);
     }
-
     @Override
     public void onClick(View v) {
         if (v == btnLogin){
@@ -54,29 +57,36 @@ public class LoginController implements View.OnClickListener {
                 ToastUtil.show("请输入密码");
                 return;
             }
-            MyUser user = new MyUser();
-            user.loginByAccount(un, pwd, new LogInListener<MyUser>() {
+            BmobQuery<MyUser> query = new BmobQuery<>();
+            query.addWhereEqualTo("mobile",un);
+            query.addWhereEqualTo("passWord",pwd);
+            query.findObjects(new FindListener<MyUser>() {
                 @Override
-                public void done(MyUser user, BmobException e) {
-                    if (user != null) {
-                        ToastUtil.show("登陆成功");
-                        PrefUtil.putString(CommonCode.SP_USER_USERID, user.getObjectId());
-                        PrefUtil.putString(CommonCode.SP_USER_USERNAME, user.getUsername());
-                        PrefUtil.putString(CommonCode.SP_USER_NICKNAME, user.getNickName());
-                        PrefUtil.putString(CommonCode.SP_USER_USERTYPE, user.getUserType());
-                        if (user.getPhoto() != null){
-                            PrefUtil.putString(CommonCode.SP_USER_PHOTO, user.getPhoto().getFileUrl());
+                public void done(List<MyUser> list, BmobException e) {
+                    if (e == null){
+                        if (list != null && list.size() > 0){
+                            MyUser user = list.get(0);
+                            PrefUtil.putString(CommonCode.SP_USER_USERID, user.getObjectId());
+                            PrefUtil.putString(CommonCode.SP_USER_USERMOBILE, user.getMobile());
+                            PrefUtil.putString(CommonCode.SP_USER_NICKNAME, user.getNickName());
+                            PrefUtil.putString(CommonCode.SP_USER_USERTYPE, user.getUserType());
+                            if (user.getPhoto() != null){
+                                PrefUtil.putString(CommonCode.SP_USER_PHOTO, user.getPhoto().getFileUrl());
+                            }
+                            Integer point = user.getCoupon();
+                            if (point == null){
+                                PrefUtil.putInt(CommonCode.SP_USER_POINT, 0);
+                            }else{
+                                PrefUtil.putInt(CommonCode.SP_USER_POINT, point);
+                            }
+                            EventBus.getDefault().post(user);
+                            context.finish();
+                            ToastUtil.show("登陆成功");
+                        } else {
+                            ToastUtil.show("用户名或密码错误");
                         }
-                        Integer point = user.getPoint();
-                        if (point == null){
-                            PrefUtil.putInt(CommonCode.SP_USER_POINT, 0);
-                        }else{
-                            PrefUtil.putInt(CommonCode.SP_USER_POINT, point);
-                        }
-                        EventBus.getDefault().post(user);
-                        context.finish();
-                    } else{
-                        ToastUtil.show(e.getMessage());
+                    } else {
+                        ToastUtil.show("登陆失败");
                     }
                 }
             });

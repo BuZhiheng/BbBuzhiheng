@@ -27,6 +27,7 @@ import cn.lankao.com.lovelankao.utils.BitmapUtil;
 import cn.lankao.com.lovelankao.model.CommonCode;
 import cn.lankao.com.lovelankao.utils.PermissionUtil;
 import cn.lankao.com.lovelankao.utils.PrefUtil;
+import cn.lankao.com.lovelankao.utils.TextUtil;
 import cn.lankao.com.lovelankao.utils.ToastUtil;
 import cn.lankao.com.lovelankao.utils.WindowUtils;
 import cn.lankao.com.lovelankao.widget.ProDialog;
@@ -44,7 +45,6 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
     private ImageView ivChoose4;
     private ImageView ivChoose5;
     private int imgIndex;
-    private Uri imageFilePath;
     private String[] pathArr;
     private Bitmap bitmap1;
     private Bitmap bitmap2;
@@ -134,16 +134,14 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
     private void upLoading(){
         final Square square = new Square();
         square.setNickName(PrefUtil.getString(CommonCode.SP_USER_NICKNAME, "游客"));
-        square.setUserPhoto(PrefUtil.getString(CommonCode.SP_USER_PHOTO,null));
+        square.setUserPhoto(PrefUtil.getString(CommonCode.SP_USER_PHOTO,""));
         square.setSquareTitle(etTitle.getText().toString());
         square.setSquareContent(etContent.getText().toString());
         if (pathArr == null || pathArr.length == 0){
             square.save(new SaveListener() {
                 @Override
                 public void done(Object o, Object o2) {
-
                 }
-
                 @Override
                 public void done(Object o, BmobException e) {
                     if (e == null){
@@ -157,43 +155,49 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
                 }
             });
         } else {
-//            Bmob.uploadBatch(context, pathArr, new UploadBatchListener() {
-//                @Override
-//                public void onSuccess(List<BmobFile> list, List<String> strs) {
-//                    if (strs.size() == pathArr.length) {
-//                        for (int i = 0; i < list.size(); i++) {
-//                            if (i == 0) {
-//                                square.setSquarePhoto1(list.get(i));
-//                            } else if (i == 1) {
-//                                square.setSquarePhoto2(list.get(i));
-//                            } else if (i == 2) {
-//                                square.setSquarePhoto3(list.get(i));
-//                            } else if (i == 3) {
-//                                square.setSquarePhoto4(list.get(i));
-//                            } else if (i == 4) {
-//                                square.setSquarePhoto5(list.get(i));
-//                            }
-//                        }
-//                        square.save(new SaveListener() {
-//                            @Override
-//                            public void done(Object o, Object o2) {
-//                            }
-//                            @Override
-//                            public void done(Object o, BmobException e) {
-//                                if (e == null){
-//                                    dialog.dismiss();
-//                                    ToastUtil.show("发表成功");
-//                                    EventBus.getDefault().post(square);
-//                                    context.finish();
-//                                } else {
-//                                    ToastUtil.show("发表成功");
-//                                }
-//                            }
-//
-//                        });
-//                    }
-//                }
-//            });
+            BmobFile.uploadBatch(pathArr, new UploadBatchListener() {
+                @Override
+                public void onSuccess(List<BmobFile> list, List<String> strs) {
+                    if (strs.size() == pathArr.length) {
+                        for (int i = 0; i < list.size(); i++) {
+                            if (i == 0) {
+                                square.setSquarePhoto1(list.get(i));
+                            } else if (i == 1) {
+                                square.setSquarePhoto2(list.get(i));
+                            } else if (i == 2) {
+                                square.setSquarePhoto3(list.get(i));
+                            } else if (i == 3) {
+                                square.setSquarePhoto4(list.get(i));
+                            } else if (i == 4) {
+                                square.setSquarePhoto5(list.get(i));
+                            }
+                        }
+                        square.save(new SaveListener() {
+                            @Override
+                            public void done(Object o, Object o2) {
+                            }
+                            @Override
+                            public void done(Object o, BmobException e) {
+                                if (e == null){
+                                    dialog.dismiss();
+                                    ToastUtil.show("发表成功");
+                                    EventBus.getDefault().post(square);
+                                    context.finish();
+                                } else {
+                                    ToastUtil.show("发表失败");
+                                }
+                            }
+                        });
+                    }
+                }
+                @Override
+                public void onProgress(int i, int i1, int i2, int i3) {
+                }
+                @Override
+                public void onError(int i, String s) {
+                    ToastUtil.show(s);
+                }
+            });
         }
     }
     private void chooseImg(int i){
@@ -227,10 +231,10 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
                     return;
                 }
             } else {
-                imageFilePath = BitmapUtil.startCamera(context);
+                BitmapUtil.startCamera(context);
             }
         } else {
-            imageFilePath = BitmapUtil.startCamera(context);
+            BitmapUtil.startCamera(context);
         }
     }
     private void setPath(){
@@ -289,13 +293,20 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
         if (resultCode == context.RESULT_OK) {
             if (requestCode == BitmapUtil.PIC_PICTURE){//相册
                 Bitmap b = BitmapUtil.getBitmapByPicture(context,data);
+                if (b == null){
+                    ToastUtil.show("相册选取失败,请拍照上传");
+                    return;
+                }
                 saveBitmap(b);
             } else if (requestCode == BitmapUtil.PIC_CAMERA){//相机
-                int dp = WindowUtils.px2dip(context, 1000);
-                BitmapUtil.cropImage(context, imageFilePath, dp, dp);
-            } else if (requestCode == BitmapUtil.PIC_CROP){//裁剪
-                Bitmap b = BitmapUtil.getBitmapByCameraOrCrop(data);
-                saveBitmap(b);
+                if (data.getData() != null|| data.getExtras() != null){ //防止没有返回结果
+                    Bitmap b = BitmapUtil.getBitmapByPicture(context,data);
+                    if (b == null){
+                        ToastUtil.show("相册选取失败,请拍照上传");
+                        return;
+                    }
+                    saveBitmap(b);
+                }
             }
         }
     }

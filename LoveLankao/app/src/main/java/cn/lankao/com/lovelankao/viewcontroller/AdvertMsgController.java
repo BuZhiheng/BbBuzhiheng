@@ -20,6 +20,7 @@ import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
 import cn.bmob.v3.listener.QueryListener;
+import cn.bmob.v3.listener.UpdateListener;
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.AdvertMsgActivity;
 import cn.lankao.com.lovelankao.activity.PicShowActivity;
@@ -221,7 +222,11 @@ public class AdvertMsgController implements View.OnClickListener, SwipeRefreshLa
                     } else {
                         advert.setAdvClicked(1);
                     }
-                    advert.update(null);
+                    advert.update(new UpdateListener() {
+                        @Override
+                        public void done(BmobException e) {
+                        }
+                    });
                     Intent intent = new Intent(context, AdvertMsgActivity.class);
                     intent.putExtra("data", advert);
                     context.startActivity(intent);

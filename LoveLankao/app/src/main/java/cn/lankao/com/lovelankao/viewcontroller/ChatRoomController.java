@@ -4,11 +4,9 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.EditText;
-
 import com.google.gson.Gson;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import cn.bmob.v3.BmobRealTimeData;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
@@ -21,7 +19,6 @@ import cn.lankao.com.lovelankao.model.CommonCode;
 import cn.lankao.com.lovelankao.utils.PrefUtil;
 import cn.lankao.com.lovelankao.utils.ToastUtil;
 import cn.lankao.com.lovelankao.widget.ProDialog;
-
 /**
  * Created by BuZhiheng on 2016/4/3.
  */
@@ -36,7 +33,6 @@ public class ChatRoomController implements ChatRoomActivity.ChatRoomHolder, View
         this.context = context;
         initView();
     }
-
     private void initView() {
         dialog = ProDialog.getProDialog(context);
         dialog.show();
@@ -48,7 +44,6 @@ public class ChatRoomController implements ChatRoomActivity.ChatRoomHolder, View
         rvChat = (RecyclerView) context.findViewById(R.id.rv_chat_room);
         rvChat.setLayoutManager(new LinearLayoutManager(context));
         rvChat.setAdapter(adapter);
-
         realTimeData.start(new ValueEventListener() {
             @Override
             public void onConnectCompleted(Exception e) {
@@ -71,14 +66,12 @@ public class ChatRoomController implements ChatRoomActivity.ChatRoomHolder, View
             }
         });
     }
-
     @Override
     public void onDestory() {
         if (realTimeData.isConnected()){
             realTimeData.unsubTableUpdate("ChatRoom");
         }
     }
-
     @Override
     public void onClick(View v) {
         int id = v.getId();
@@ -92,7 +85,6 @@ public class ChatRoomController implements ChatRoomActivity.ChatRoomHolder, View
             default:break;
         }
     }
-
     private void sendMsg(int isFirst) {
         ChatRoom chatRoom = new ChatRoom();
         String nickname = PrefUtil.getString(CommonCode.SP_USER_NICKNAME, "游客");

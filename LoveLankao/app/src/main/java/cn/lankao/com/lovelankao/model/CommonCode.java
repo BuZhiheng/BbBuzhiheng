@@ -47,10 +47,13 @@ public class CommonCode {
     public static final String SP_LOCATION_LAT = "SP_LOCATION_LAT";
     public static final String SP_LOCATION_LNG = "SP_LOCATION_LNG";
     public static final String SP_USER_USERID = "SP_USER_USERID";
-    public static final String SP_USER_USERNAME = "SP_USER_USERNAME";
+    public static final String SP_USER_USERMOBILE = "SP_USER_USERMOBILE";
     public static final String SP_USER_NICKNAME = "SP_USER_NICKNAME";
     public static final String SP_USER_POINT = "SP_USER_POINT";
     public static final String SP_USER_PHOTO = "SP_USER_PHOTO";
     public static final String SP_USER_USERTYPE = "SP_USER_USERTYPE";
+
+    public static final String SP_REGISTER_CODE_PHONE = "SP_REGISTER_CODE_PHONE";
+    public static final String SP_REGISTER_CODE = "SP_REGISTER_CODE";
 
 }

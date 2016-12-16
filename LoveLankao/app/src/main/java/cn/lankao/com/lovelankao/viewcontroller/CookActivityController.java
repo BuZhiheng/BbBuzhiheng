@@ -64,42 +64,39 @@ public class CookActivityController implements SwipeRefreshLayout.OnRefreshListe
         }else{
             finalUrl = url+CommonCode.RV_ITEMS_COUT+"&page="+page;
         }
-        OkHttpUtil.getApi(finalUrl)
-                .subscribeOn(Schedulers.io())// 在非UI线程中执行getUser
-                .observeOn(AndroidSchedulers.mainThread())// 在UI线程中执行结果
-                .subscribe(new Subscriber<String>() {
-                    @Override
-                    public void onCompleted() {
-                        refresh.setRefreshing(false);
-                    }
+        OkHttpUtil.get(finalUrl, new Subscriber<String>() {
+            @Override
+            public void onCompleted() {
 
-                    @Override
-                    public void onError(Throwable e) {
-                        refresh.setRefreshing(false);
-                    }
+            }
 
-                    @Override
-                    public void onNext(String s) {
-                        JuheApiResult res = GsonUtil.jsonToObject(s, JuheApiResult.class);
-                        if (res != null) {
-                            try {
-                                JsonElement tngou = res.getTngou();
-                                List<Cook> data = GsonUtil.jsonToList(tngou, Cook.class);
-                                if (isRefresh){
-                                    adapter.setData(data);
-                                }else{
-                                    adapter.addData(data);
-                                }
-                                canLoadMore = true;
-                                adapter.notifyDataSetChanged();
-                                refresh.setRefreshing(false);
-                                dialog.dismiss();
-                            } catch (Exception e) {
-                                refresh.setRefreshing(false);
-                            }
+            @Override
+            public void onError(Throwable throwable) {
+
+            }
+
+            @Override
+            public void onNext(String s) {
+                JuheApiResult res = GsonUtil.jsonToObject(s, JuheApiResult.class);
+                if (res != null) {
+                    try {
+                        JsonElement tngou = res.getTngou();
+                        List<Cook> data = GsonUtil.jsonToList(tngou, Cook.class);
+                        if (isRefresh) {
+                            adapter.setData(data);
+                        } else {
+                            adapter.addData(data);
                         }
+                        canLoadMore = true;
+                        adapter.notifyDataSetChanged();
+                        refresh.setRefreshing(false);
+                        dialog.dismiss();
+                    } catch (Exception e) {
+                        refresh.setRefreshing(false);
                     }
-                });
+                }
+            }
+        });
     }
 
     private void initView() {
@@ -139,14 +136,12 @@ public class CookActivityController implements SwipeRefreshLayout.OnRefreshListe
             }
         });
     }
-
     @Override
     public void onRefresh() {
         isRefresh = true;
         page = 1;
         initData();
     }
-
     @Override
     public void onClick(View v) {
         switch (v.getId()){
