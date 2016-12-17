@@ -14,7 +14,6 @@ import android.widget.ImageView;
 import org.greenrobot.eventbus.EventBus;
 import java.util.ArrayList;
 import java.util.List;
-import cn.bmob.v3.Bmob;
 import cn.bmob.v3.datatype.BmobFile;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
@@ -25,13 +24,11 @@ import cn.lankao.com.lovelankao.activity.SquareSendActivity;
 import cn.lankao.com.lovelankao.model.Square;
 import cn.lankao.com.lovelankao.utils.BitmapUtil;
 import cn.lankao.com.lovelankao.model.CommonCode;
+import cn.lankao.com.lovelankao.utils.OkHttpUtil;
 import cn.lankao.com.lovelankao.utils.PermissionUtil;
 import cn.lankao.com.lovelankao.utils.PrefUtil;
-import cn.lankao.com.lovelankao.utils.TextUtil;
 import cn.lankao.com.lovelankao.utils.ToastUtil;
-import cn.lankao.com.lovelankao.utils.WindowUtils;
 import cn.lankao.com.lovelankao.widget.ProDialog;
-
 /**
  * Created by BuZhiheng on 2016/4/4.
  */
@@ -44,6 +41,7 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
     private ImageView ivChoose3;
     private ImageView ivChoose4;
     private ImageView ivChoose5;
+    private ImageView ivChoose6;
     private int imgIndex;
     private String[] pathArr;
     private Bitmap bitmap1;
@@ -51,6 +49,7 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
     private Bitmap bitmap3;
     private Bitmap bitmap4;
     private Bitmap bitmap5;
+    private Bitmap bitmap6;
     private ProgressDialog dialog;
 //    private final int REQUEST_EXTERNAL_STORAGE = 1;
 //    private String[] PERMISSIONS_STORAGE = {
@@ -72,6 +71,7 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
         ivChoose3 = (ImageView) context.findViewById(R.id.iv_square_choose_photo3);
         ivChoose4 = (ImageView) context.findViewById(R.id.iv_square_choose_photo4);
         ivChoose5 = (ImageView) context.findViewById(R.id.iv_square_choose_photo5);
+        ivChoose6 = (ImageView) context.findViewById(R.id.iv_square_choose_photo6);
         context.findViewById(R.id.btn_square_send).setOnClickListener(this);
         context.findViewById(R.id.iv_squaresend_back).setOnClickListener(this);
         ivChoose1.setOnClickListener(this);
@@ -79,6 +79,7 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
         ivChoose3.setOnClickListener(this);
         ivChoose4.setOnClickListener(this);
         ivChoose5.setOnClickListener(this);
+        ivChoose6.setOnClickListener(this);
     }
 
     @Override
@@ -99,6 +100,9 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
                 break;
             case R.id.iv_square_choose_photo5:
                 chooseImg(R.id.iv_square_choose_photo5);
+                break;
+            case R.id.iv_square_choose_photo6:
+                chooseImg(R.id.iv_square_choose_photo6);
                 break;
             case R.id.btn_square_send:
                 sendMsg();
@@ -124,12 +128,13 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
             return;
         }
         dialog.show();
-        new Thread(){
-            public void run(){
+        OkHttpUtil.executor.execute(new Runnable() {
+            @Override
+            public void run() {
                 setPath();
                 upLoading();
             }
-        }.start();
+        });
     }
     private void upLoading(){
         final Square square = new Square();
@@ -139,9 +144,6 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
         square.setSquareContent(etContent.getText().toString());
         if (pathArr == null || pathArr.length == 0){
             square.save(new SaveListener() {
-                @Override
-                public void done(Object o, Object o2) {
-                }
                 @Override
                 public void done(Object o, BmobException e) {
                     if (e == null){
@@ -170,12 +172,11 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
                                 square.setSquarePhoto4(list.get(i));
                             } else if (i == 4) {
                                 square.setSquarePhoto5(list.get(i));
+                            } else if (i == 5) {
+                                square.setSquarePhoto6(list.get(i));
                             }
                         }
                         square.save(new SaveListener() {
-                            @Override
-                            public void done(Object o, Object o2) {
-                            }
                             @Override
                             public void done(Object o, BmobException e) {
                                 if (e == null){
@@ -254,6 +255,9 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
         } if (bitmap5 != null){
             String s = BitmapUtil.compressImage(context,bitmap5);
             list.add(s);
+        } if (bitmap6 != null){
+            String s = BitmapUtil.compressImage(context,bitmap6);
+            list.add(s);
         }
         if (list.size() > 0){
             pathArr = new String[list.size()];
@@ -285,6 +289,10 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
             case R.id.iv_square_choose_photo5:
                 bitmap5 = bitmap;
                 ivChoose5.setImageBitmap(bitmap);
+                break;
+            case R.id.iv_square_choose_photo6:
+                bitmap6 = bitmap;
+                ivChoose6.setImageBitmap(bitmap);
                 break;
         }
     }

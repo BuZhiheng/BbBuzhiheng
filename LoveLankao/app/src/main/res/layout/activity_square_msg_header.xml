@@ -62,45 +62,62 @@
             android:textColor="@color/color_black_text"
             />
         <LinearLayout
-            android:id="@+id/ll_square_item_photo"
+            android:id="@+id/ll_square_item_photo1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_height="100dp"
+            android:layout_marginLeft="@dimen/common_margin"
+            android:layout_marginRight="@dimen/common_margin"
+            android:orientation="horizontal"
             >
             <ImageView
                 android:id="@+id/iv_square_item_photo1"
-                android:layout_width="match_parent"
-                android:layout_height="390dp"
-                android:layout_margin="@dimen/common_margin"
-                android:visibility="gone"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
                 />
             <ImageView
                 android:id="@+id/iv_square_item_photo2"
-                android:layout_width="match_parent"
-                android:layout_height="390dp"
-                android:layout_margin="@dimen/common_margin"
-                android:visibility="gone"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/common_margin_little"
+                android:layout_marginRight="@dimen/common_margin_little"
                 />
             <ImageView
                 android:id="@+id/iv_square_item_photo3"
-                android:layout_width="match_parent"
-                android:layout_height="390dp"
-                android:layout_margin="@dimen/common_margin"
-                android:visibility="gone"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
                 />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_square_item_photo2"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="@dimen/common_margin_little"
+            android:layout_marginLeft="@dimen/common_margin"
+            android:layout_marginRight="@dimen/common_margin"
+            android:orientation="horizontal"
+            >
             <ImageView
                 android:id="@+id/iv_square_item_photo4"
-                android:layout_width="match_parent"
-                android:layout_height="390dp"
-                android:layout_margin="@dimen/common_margin"
-                android:visibility="gone"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
                 />
             <ImageView
                 android:id="@+id/iv_square_item_photo5"
-                android:layout_width="match_parent"
-                android:layout_height="390dp"
-                android:layout_margin="@dimen/common_margin"
-                android:visibility="gone"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/common_margin_little"
+                android:layout_marginRight="@dimen/common_margin_little"
+                />
+            <ImageView
+                android:id="@+id/iv_square_item_photo6"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
                 />
         </LinearLayout>
         <LinearLayout
@@ -126,7 +143,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:text="10"
+                    android:text=""
                     android:textColor="@color/color_gray_deep"
                     />
             </LinearLayout>

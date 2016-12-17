@@ -4,21 +4,15 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
-import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
-
 import org.greenrobot.eventbus.EventBus;
 import org.xutils.x;
-
 import java.io.File;
-
 import cn.bmob.v3.datatype.BmobFile;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.UpdateListener;
@@ -32,7 +26,6 @@ import cn.lankao.com.lovelankao.utils.PermissionUtil;
 import cn.lankao.com.lovelankao.utils.PrefUtil;
 import cn.lankao.com.lovelankao.utils.TextUtil;
 import cn.lankao.com.lovelankao.utils.ToastUtil;
-import cn.lankao.com.lovelankao.utils.WindowUtils;
 import cn.lankao.com.lovelankao.widget.ProDialog;
 /**
  * Created by BuZhiheng on 2016/4/7.

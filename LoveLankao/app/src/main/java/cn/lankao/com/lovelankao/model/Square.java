@@ -1,8 +1,6 @@
 package cn.lankao.com.lovelankao.model;
-
 import cn.bmob.v3.BmobObject;
 import cn.bmob.v3.datatype.BmobFile;
-
 /**
  * Created by BuZhiheng on 2016/4/4.
  */
@@ -16,12 +14,11 @@ public class Square extends BmobObject{
     private BmobFile squarePhoto3;
     private BmobFile squarePhoto4;
     private BmobFile squarePhoto5;
+    private BmobFile squarePhoto6;
     private String squareUserType;
     private String likeUsers;
     private Integer likeTimes;
     private Integer clickTimes;
-    private Integer commentTimes;
-
     public String getUserPhoto() {
         return userPhoto;
     }
@@ -52,14 +49,6 @@ public class Square extends BmobObject{
 
     public void setClickTimes(Integer clickTimes) {
         this.clickTimes = clickTimes;
-    }
-
-    public Integer getCommentTimes() {
-        return commentTimes;
-    }
-
-    public void setCommentTimes(Integer commentTimes) {
-        this.commentTimes = commentTimes;
     }
 
     public String getSquareTitle() {
@@ -132,5 +121,13 @@ public class Square extends BmobObject{
 
     public void setSquareContent(String squareContent) {
         this.squareContent = squareContent;
+    }
+
+    public BmobFile getSquarePhoto6() {
+        return squarePhoto6;
+    }
+
+    public void setSquarePhoto6(BmobFile squarePhoto6) {
+        this.squarePhoto6 = squarePhoto6;
     }
 }

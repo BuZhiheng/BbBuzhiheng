@@ -29,6 +29,7 @@ public class CommonCode {
     public static int RV_ITEMS_COUT20 = 20;//recycleView分页加载默认条数
     public static final int INTENT_COMMON_ACTIVITY_CODE = 10000;
     public static final String INTENT_COMMON_OBJ = "INTENT_COMMON_OBJ";
+    public static final String INTENT_COMMON_STRING = "INTENT_COMMON_STRING";
     public static final String INTENT_ADVERT_TITLE = "ADVERT_TITLE";
     public static final String INTENT_ADVERT_TYPE = "ADVERT_TYPE";
     public static final String INTENT_SHARED_DESC = "INTENT_SHARED_DESC";

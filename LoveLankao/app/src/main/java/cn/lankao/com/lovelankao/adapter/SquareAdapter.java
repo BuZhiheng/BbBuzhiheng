@@ -9,17 +9,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import com.bm.library.PhotoView;
-
 import org.xutils.x;
 import java.util.ArrayList;
 import java.util.List;
-
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.UpdateListener;
 import cn.lankao.com.lovelankao.R;
-import cn.lankao.com.lovelankao.activity.PhotoViewPagerActivity;
+import cn.lankao.com.lovelankao.activity.CommentActivity;
 import cn.lankao.com.lovelankao.activity.SquareActivity;
 import cn.lankao.com.lovelankao.model.Square;
 import cn.lankao.com.lovelankao.utils.BitmapUtil;
@@ -29,15 +25,13 @@ import cn.lankao.com.lovelankao.utils.WindowUtils;
 /**
  * Created by BuZhiheng on 2016/4/3.
  */
-public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.MyViewHolder> implements View.OnClickListener {
+public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.MyViewHolder> {
     private Context context;
     private List<Square> data;
-    private List<String> list;
     private int width = WindowUtils.getWindowWidth();
     public SquareAdapter(Context context) {
         this.context = context;
         data = new ArrayList<>();
-        list = new ArrayList<>();
     }
     public void addData(Square data) {
         this.data.add(data);
@@ -62,12 +56,10 @@ public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.MyViewHold
         if (square.getObjectId() == null){
             return;
         }
-        list.clear();
         holder.tvNickname.setText(square.getNickName());
         holder.tvTime.setText(square.getCreatedAt());
-        holder.tvCommentTimes.setText(square.getCommentTimes() == null ? "0" : square.getCommentTimes() + "");
         holder.tvLikeTimes.setText(square.getLikeTimes() == null ? "0" : square.getLikeTimes() + "");
-        holder.tvClickTimes.setText(square.getClickTimes()==null?"0":square.getClickTimes()+"");
+        holder.tvClickTimes.setText(square.getClickTimes() == null ? "0" : square.getClickTimes() + "");
         if (square.getSquareTitle() == null){
             holder.tvTitle.setVisibility(View.GONE);
         } else {
@@ -87,24 +79,29 @@ public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.MyViewHold
         if (square.getSquarePhoto1() == null){
             holder.llPhoto.setVisibility(View.GONE);
         } else {
+//            params.width = width/3;
+//            params.leftMargin = 10;
             holder.llPhoto.setVisibility(View.VISIBLE);
             holder.ivPhoto1.setVisibility(View.VISIBLE);
+//            holder.ivPhoto1.setLayoutParams(params);
             x.image().bind(holder.ivPhoto1, square.getSquarePhoto1().getFileUrl(), BitmapUtil.getOptionCommon());
-            list.add(square.getSquarePhoto1().getFileUrl());
-            holder.ivPhoto1.setOnClickListener(this);
+            LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) holder.llPhoto.getLayoutParams();
+            params.height = holder.ivPhoto1.getWidth();
+            holder.llPhoto.setLayoutParams(params);
             if (square.getSquarePhoto2() == null){
-                holder.ivPhoto2.setVisibility(View.GONE);
+                holder.ivPhoto2.setImageDrawable(null);
             } else {
                 holder.ivPhoto2.setVisibility(View.VISIBLE);
                 x.image().bind(holder.ivPhoto2, square.getSquarePhoto2().getFileUrl(), BitmapUtil.getOptionCommon());
-                list.add(square.getSquarePhoto2().getFileUrl());
+//                holder.ivPhoto2.setLayoutParams(params);
             }
             if (square.getSquarePhoto3() == null){
-                holder.ivPhoto3.setVisibility(View.GONE);
+//                holder.ivPhoto3.setVisibility(View.GONE);
+                holder.ivPhoto3.setImageDrawable(null);
             } else {
                 holder.ivPhoto3.setVisibility(View.VISIBLE);
                 x.image().bind(holder.ivPhoto3, square.getSquarePhoto3().getFileUrl(), BitmapUtil.getOptionCommon());
-                list.add(square.getSquarePhoto3().getFileUrl());
+//                holder.ivPhoto3.setLayoutParams(params);
             }
         }
         final String nickname = PrefUtil.getString(CommonCode.SP_USER_NICKNAME,"");
@@ -116,14 +113,14 @@ public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.MyViewHold
         holder.llLikeTimes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (square.getLikeUsers() == null || !square.getLikeUsers().contains(nickname)){
-                    final int like = square.getLikeTimes()==null?1:square.getLikeTimes()+1;
-                    String likeUsers = square.getLikeUsers()==null?nickname:nickname+","+square.getLikeUsers();
+                if (square.getLikeUsers() == null || !square.getLikeUsers().contains(nickname)) {
+                    final int like = square.getLikeTimes() == null ? 1 : square.getLikeTimes() + 1;
+                    String likeUsers = square.getLikeUsers() == null ? nickname : nickname + "," + square.getLikeUsers();
                     square.setLikeTimes(like);
                     square.setLikeUsers(likeUsers);
                     holder.ivLikeTimes.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_square_liketimesc));
                     holder.tvLikeTimes.setText(like + "");
-                    square.update(square.getObjectId(),new UpdateListener() {
+                    square.update(square.getObjectId(), new UpdateListener() {
                         @Override
                         public void done(BmobException e) {
                         }
@@ -134,29 +131,31 @@ public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.MyViewHold
         holder.llContent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (square.getClickTimes() == null){
+                if (square.getClickTimes() == null) {
                     square.setClickTimes(1);
                 } else {
                     int i = square.getClickTimes();
-                    square.setClickTimes(i+1);
+                    square.setClickTimes(i + 1);
                 }
-                square.update(square.getObjectId(),new UpdateListener() {
+                square.update(square.getObjectId(), new UpdateListener() {
                     @Override
                     public void done(BmobException e) {
-
                     }
                 });
                 Intent intent = new Intent(context, SquareActivity.class);
-                intent.putExtra(CommonCode.INTENT_COMMON_OBJ,square);
+                intent.putExtra(CommonCode.INTENT_COMMON_OBJ, square);
                 context.startActivity(intent);
             }
         });
-    }
-    @Override
-    public void onClick(View v) {
-        Intent intent = new Intent(context, PhotoViewPagerActivity.class);
-        intent.putStringArrayListExtra(CommonCode.INTENT_COMMON_OBJ, (ArrayList<String>) list);
-        context.startActivity(intent);
+        holder.llComment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context,CommentActivity.class);
+                intent.putExtra(CommonCode.INTENT_COMMENT_POSTID,square.getObjectId());
+                intent.putExtra(CommonCode.INTENT_COMMENT_LASTCONTENT,"");
+                context.startActivity(intent);
+            }
+        });
     }
     class MyViewHolder extends RecyclerView.ViewHolder {
         ImageView ivPhoto;
@@ -168,10 +167,10 @@ public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.MyViewHold
         ImageView ivPhoto2;
         ImageView ivPhoto3;
         ImageView ivLikeTimes;
-        TextView tvCommentTimes;
         TextView tvLikeTimes;
         TextView tvClickTimes;
         LinearLayout llPhoto;
+        LinearLayout llComment;
         LinearLayout llLikeTimes;
         LinearLayout llContent;
         public MyViewHolder(View view) {
@@ -185,11 +184,11 @@ public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.MyViewHold
             tvTime = (TextView) view.findViewById(R.id.tv_square_item_time);
             tvTitle = (TextView) view.findViewById(R.id.tv_square_item_title);
             tvContent = (TextView) view.findViewById(R.id.tv_square_item_content);
-            tvCommentTimes = (TextView) view.findViewById(R.id.tv_square_item_commenttimes);
             tvLikeTimes = (TextView) view.findViewById(R.id.tv_square_item_liketimes);
             tvClickTimes = (TextView) view.findViewById(R.id.tv_square_item_clicktimes);
             llPhoto = (LinearLayout) view.findViewById(R.id.ll_square_item_photo);
             llLikeTimes = (LinearLayout) view.findViewById(R.id.ll_square_item_liketimes);
+            llComment = (LinearLayout) view.findViewById(R.id.ll_square_item_comment);
             llContent = (LinearLayout) view.findViewById(R.id.ll_square_item_content);
         }
     }

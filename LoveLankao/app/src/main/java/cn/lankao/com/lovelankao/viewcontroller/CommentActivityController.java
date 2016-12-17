@@ -36,7 +36,7 @@ public class CommentActivityController {
             return;
         }
 
-        Comment comment = new Comment();
+        final Comment comment = new Comment();
         comment.setPostId(postId);
         comment.setContent(content);
         if (!TextUtil.isNull(last)){
@@ -53,7 +53,7 @@ public class CommentActivityController {
             @Override
             public void done(Object o, BmobException e) {
                 if (e == null){
-                    view.commentSuccess();
+                    view.commentSuccess(comment);
                 } else {
                     view.showToast(e.getMessage());
                 }

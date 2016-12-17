@@ -9,11 +9,11 @@ import android.widget.TextView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import cn.lankao.com.lovelankao.R;
+import cn.lankao.com.lovelankao.model.Comment;
 import cn.lankao.com.lovelankao.model.CommonCode;
 import cn.lankao.com.lovelankao.utils.ToastUtil;
 import cn.lankao.com.lovelankao.viewcontroller.CommentActivityController;
 import cn.lankao.com.lovelankao.widget.ProDialog;
-
 /**
  * Created by buzhiheng on 2016/12/15.
  */
@@ -39,9 +39,9 @@ public class CommentActivity extends AppCompatActivity {
     public void showToast(String toast){
         ToastUtil.show(toast);
     }
-    public void commentSuccess(){
+    public void commentSuccess(Comment comment) {
         Intent intent = new Intent();
-        intent.putExtra(CommonCode.INTENT_COMMENT_POSTID,CommonCode.INTENT_COMMENT_POSTID);
+        intent.putExtra(CommonCode.INTENT_COMMON_OBJ,comment);
         setResult(CommonCode.INTENT_COMMON_ACTIVITY_CODE, intent);
         showToast("评论成功");
         finish();

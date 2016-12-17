@@ -7,6 +7,7 @@
     <color name="color_black">#000000</color>
     <color name="color_gray">#cccccc</color>
     <color name="color_gray_deep">#B2B2B2</color>
+    <color name="color_gray_b1">#B1B1B1</color>
     <color name="color_bg">#F2F3F5</color>
     <color name="color_alpha_black">#cc404040</color>
 

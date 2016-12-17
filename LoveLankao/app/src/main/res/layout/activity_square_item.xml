@@ -67,20 +67,23 @@
         >
         <ImageView
             android:id="@+id/iv_square_item_photo1"
-            android:layout_width="100dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent"
             />
         <ImageView
             android:id="@+id/iv_square_item_photo2"
-            android:layout_width="100dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="@dimen/common_margin_little"
+            android:layout_marginRight="@dimen/common_margin_little"
             />
         <ImageView
             android:id="@+id/iv_square_item_photo3"
-            android:layout_width="100dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent"
-            android:layout_marginLeft="5dp"
             />
     </LinearLayout>
     <LinearLayout
@@ -88,29 +91,28 @@
         android:layout_height="39dp"
         android:layout_marginLeft="@dimen/common_margin"
         android:layout_marginRight="@dimen/common_margin"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
         <LinearLayout
+            android:id="@+id/ll_square_item_comment"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="horizontal"
             android:gravity="center">
-            <ImageView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:src="@drawable/ic_square_commenttimes"/>
             <TextView
-                android:id="@+id/tv_square_item_commenttimes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text="10"
-                android:textColor="@color/color_gray_deep"
+                android:text="评论"
+                android:textSize="@dimen/text_common_item_content"
                 />
         </LinearLayout>
-        <include layout="@layout/include_slid_img_vertical"/>
+        <ImageView
+            android:layout_width="1dp"
+            android:layout_height="15dp"
+            android:background="@color/color_gray"
+            />
         <LinearLayout
             android:id="@+id/ll_square_item_liketimes"
             android:layout_width="0dp"
@@ -132,7 +134,11 @@
                 android:textColor="@color/color_gray_deep"
                 />
         </LinearLayout>
-        <include layout="@layout/include_slid_img_vertical"/>
+        <ImageView
+            android:layout_width="1dp"
+            android:layout_height="15dp"
+            android:background="@color/color_gray"
+            />
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"

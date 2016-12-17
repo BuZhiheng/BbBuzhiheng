@@ -45,6 +45,8 @@ public class SquareActivity extends AppCompatActivity {
     public ImageView ivPhoto4;
     @Bind(R.id.iv_square_item_photo5)
     public ImageView ivPhoto5;
+    @Bind(R.id.iv_square_item_photo6)
+    public ImageView ivPhoto6;
     @Bind(R.id.iv_square_item_liketimes)
     ImageView ivLikeTimes;
     @Bind(R.id.tv_square_item_commenttimes)
@@ -57,6 +59,10 @@ public class SquareActivity extends AppCompatActivity {
     LinearLayout llLikes;
     @Bind(R.id.ll_square_item_comment)
     LinearLayout llComment;
+    @Bind(R.id.ll_square_item_photo1)
+    public LinearLayout llPhoto1;
+    @Bind(R.id.ll_square_item_photo2)
+    public LinearLayout llPhoto2;
     private ImageOptions option;
     private ImageOptions optionPhoto;
     private Square square;
@@ -69,6 +75,7 @@ public class SquareActivity extends AppCompatActivity {
     }
     private void initView() {
         controller = new SquareActivityController(this);
+        controller.initData(getIntent());
     }
     public void setData(final Square square,String userImg,Drawable drawable){
         this.square = square;
@@ -77,7 +84,6 @@ public class SquareActivity extends AppCompatActivity {
         tvNickname.setText(square.getNickName());
         tvTime.setText(square.getCreatedAt());
         tvContent.setText(square.getSquareContent());
-        tvCommentTimes.setText(square.getCommentTimes() == null ? "0" : square.getCommentTimes() + "");
         tvLikeTimes.setText(square.getLikeTimes() == null ? "0" : square.getLikeTimes() + "");
         tvClickTimes.setText(square.getClickTimes() == null ? "0" : square.getClickTimes() + "");
         if (square.getSquareTitle() == null){
@@ -119,6 +125,9 @@ public class SquareActivity extends AppCompatActivity {
                 controller.checkComment("");
                 break;
         }
+    }
+    public void setGone(View v){
+        v.setVisibility(View.GONE);
     }
     public void toComment(String id,String last){
         Intent intent = new Intent(this,CommentActivity.class);
@@ -170,12 +179,7 @@ public class SquareActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        controller.onResult(resultCode, data);
-    }
-    @Override
-    protected void onResume() {
-        super.onResume();
-        controller.initData(getIntent());
+        controller.onResult(resultCode,data);
     }
     @Override
     protected void onDestroy() {

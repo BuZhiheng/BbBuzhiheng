@@ -63,7 +63,7 @@ public class BitmapUtil {
                 return photo;
             }
         }
-        Uri uri =data.getData();
+        Uri uri = data.getData();
         if (uri != null) {
             photo = BitmapFactory.decodeFile(uri.getPath()); //拿到图片
             if (photo != null){
@@ -134,14 +134,14 @@ public class BitmapUtil {
          * 调起手机拍照功能,拍照完毕存储到Uri imageFilePath,返回存储地址
          * */
         Intent camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-//        ContentValues values = new ContentValues(3);
-//        values.put(MediaStore.MediaColumns.DISPLAY_NAME,
-//                "picture" + new Date().toString());
-//        values.put(MediaStore.Images.ImageColumns.DESCRIPTION, "picture");
-//        values.put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg");
-//        Uri imageFilePath = context.getContentResolver().insert(
-//                MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
-//        camera.putExtra(MediaStore.EXTRA_OUTPUT, imageFilePath);
+        ContentValues values = new ContentValues(3);
+        values.put(MediaStore.MediaColumns.DISPLAY_NAME,
+                "picture" + new Date().toString());
+        values.put(MediaStore.Images.ImageColumns.DESCRIPTION, "picture");
+        values.put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg");
+        Uri imageFilePath = context.getContentResolver().insert(
+                MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
+        camera.putExtra(MediaStore.EXTRA_OUTPUT, imageFilePath);
         context.startActivityForResult(camera, PIC_CAMERA);
     }
     public static void cropImage(AppCompatActivity context,Uri imageFilePath,int width, int height) {

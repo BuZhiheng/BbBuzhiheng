@@ -67,42 +67,56 @@
             android:gravity="top" />
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="@dimen/common_title_height39"
             android:layout_marginTop="@dimen/common_margin_large"
             android:orientation="horizontal"
             android:gravity="center">
             <ImageView
                 android:id="@+id/iv_square_choose_photo1"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:src="@drawable/ic_common_addimg"
                 />
             <ImageView
                 android:id="@+id/iv_square_choose_photo2"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:src="@drawable/ic_common_addimg"
                 />
             <ImageView
                 android:id="@+id/iv_square_choose_photo3"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:src="@drawable/ic_common_addimg"
                 />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_title_height39"
+            android:layout_marginTop="@dimen/common_margin_large"
+            android:orientation="horizontal"
+            android:gravity="center">
             <ImageView
                 android:id="@+id/iv_square_choose_photo4"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:src="@drawable/ic_common_addimg"
                 />
             <ImageView
                 android:id="@+id/iv_square_choose_photo5"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/ic_common_addimg"
+                />
+            <ImageView
+                android:id="@+id/iv_square_choose_photo6"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:src="@drawable/ic_common_addimg"
                 />
@@ -111,7 +125,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/common_margin"
-            android:text="最多可以上传5张图片哦"
+            android:text="最多可以上传6张图片哦"
             android:textSize="@dimen/text_common_item_content"
             android:textColor="@color/color_gray_deep"/>
         <Button
