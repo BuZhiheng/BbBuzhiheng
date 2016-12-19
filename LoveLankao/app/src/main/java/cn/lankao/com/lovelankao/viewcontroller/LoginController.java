@@ -32,6 +32,7 @@ public class LoginController implements View.OnClickListener {
     private EditText password;
     private Button btnLogin;
     private TextView tvRegister;
+    private TextView tvForget;
     public LoginController(LoginActivity context){
         this.context = context;
         initView();
@@ -42,8 +43,10 @@ public class LoginController implements View.OnClickListener {
         password = (EditText) context.findViewById(R.id.et_login_password);
         btnLogin = (Button) context.findViewById(R.id.btn_login_login);
         tvRegister = (TextView) context.findViewById(R.id.tv_login_register);
+        tvForget = (TextView) context.findViewById(R.id.tv_login_forget);
         btnLogin.setOnClickListener(this);
         tvRegister.setOnClickListener(this);
+        tvForget.setOnClickListener(this);
     }
     @Override
     public void onClick(View v) {
@@ -92,6 +95,10 @@ public class LoginController implements View.OnClickListener {
             });
         } else if (v == tvRegister) {
             Intent intent = new Intent(context, RegisterActivity.class);
+            context.startActivity(intent);
+        } else if (v == tvForget) {
+            Intent intent = new Intent(context, RegisterActivity.class);
+            intent.putExtra(CommonCode.INTENT_COMMON_STRING,CommonCode.INTENT_COMMON_INT0);
             context.startActivity(intent);
         }
     }

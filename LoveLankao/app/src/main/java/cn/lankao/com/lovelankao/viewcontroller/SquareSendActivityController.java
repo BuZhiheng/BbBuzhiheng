@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.Settings;
@@ -51,6 +52,7 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
     private Bitmap bitmap5;
     private Bitmap bitmap6;
     private ProgressDialog dialog;
+    private String url;
 //    private final int REQUEST_EXTERNAL_STORAGE = 1;
 //    private String[] PERMISSIONS_STORAGE = {
 //            Manifest.permission.READ_EXTERNAL_STORAGE,
@@ -61,7 +63,6 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
         this.context = context;
         initView();
     }
-
     private void initView() {
         dialog = ProDialog.getProDialog(context);
         etContent = (EditText) context.findViewById(R.id.et_square_send_content);
@@ -203,19 +204,19 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
     }
     private void chooseImg(int i){
         imgIndex = i;
-        CharSequence[] items = {"相册", "相机"};
-        new AlertDialog.Builder(context)
-                .setTitle("选择图片来源")
-                .setItems(items, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        if (which == 0) {
-                            BitmapUtil.startPicture(context);
-                        } else {
-                            checkCameraPermission();
-                        }
-                    }
-                })
-                .create().show();
+//        CharSequence[] items = {"相册", "相机"};
+//        new AlertDialog.Builder(context)
+//                .setTitle("选择图片来源")
+//                .setItems(items, new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        if (which == 0) {
+//                        } else {
+//                            checkCameraPermission();
+//                        }
+//                    }
+//                })
+//                .create().show();
+        BitmapUtil.startPicture(context);
     }
     public void checkCameraPermission() {
         String permission = Manifest.permission.CAMERA;
@@ -232,10 +233,10 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
                     return;
                 }
             } else {
-                BitmapUtil.startCamera(context);
+                url = BitmapUtil.startCamera(context);
             }
         } else {
-            BitmapUtil.startCamera(context);
+            url = BitmapUtil.startCamera(context);
         }
     }
     private void setPath(){
@@ -306,15 +307,13 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
                     return;
                 }
                 saveBitmap(b);
-            } else if (requestCode == BitmapUtil.PIC_CAMERA){//相机
-                if (data.getData() != null|| data.getExtras() != null){ //防止没有返回结果
-                    Bitmap b = BitmapUtil.getBitmapByPicture(context,data);
-                    if (b == null){
-                        ToastUtil.show("相册选取失败,请拍照上传");
-                        return;
-                    }
-                    saveBitmap(b);
+            } else if (requestCode == BitmapUtil.PIC_CAMERA) {//相机
+                Bitmap b = BitmapFactory.decodeFile(url);
+                if (b == null) {
+                    ToastUtil.show("相册选取失败,请拍照上传");
+                    return;
                 }
+                saveBitmap(b);
             }
         }
     }

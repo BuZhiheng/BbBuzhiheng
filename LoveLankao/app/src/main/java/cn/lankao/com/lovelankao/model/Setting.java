@@ -1,7 +1,5 @@
 package cn.lankao.com.lovelankao.model;
-
 import cn.bmob.v3.BmobObject;
-
 /**
  * Created by BuZhiheng on 2016/4/7.
  */
@@ -10,7 +8,8 @@ public class Setting extends BmobObject{
     private String setPartnerUrl;
     private String setAboutusUrl;
     private String setJCLKUrl;
-
+    private String androidUpdateLog;
+    private Integer androidVersionCode;
     public String getSetJCLKUrl() {
         return setJCLKUrl;
     }
@@ -41,5 +40,21 @@ public class Setting extends BmobObject{
 
     public void setSetAboutusUrl(String setAboutusUrl) {
         this.setAboutusUrl = setAboutusUrl;
+    }
+
+    public String getAndroidUpdateLog() {
+        return androidUpdateLog;
+    }
+
+    public void setAndroidUpdateLog(String androidUpdateLog) {
+        this.androidUpdateLog = androidUpdateLog;
+    }
+
+    public Integer getAndroidVersionCode() {
+        return androidVersionCode;
+    }
+
+    public void setAndroidVersionCode(Integer androidVersionCode) {
+        this.androidVersionCode = androidVersionCode;
     }
 }

@@ -7,12 +7,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import com.baidu.location.BDLocation;
-import java.util.List;
-import cn.bmob.v3.BmobQuery;
-import cn.bmob.v3.exception.BmobException;
-import cn.bmob.v3.listener.FindListener;
 import cn.lankao.com.lovelankao.R;
-import cn.lankao.com.lovelankao.model.Setting;
 import cn.lankao.com.lovelankao.model.CommonCode;
 import cn.lankao.com.lovelankao.utils.MyLocationClient;
 import cn.lankao.com.lovelankao.utils.PermissionUtil;
@@ -35,7 +30,6 @@ public class SplashActivity extends AppCompatActivity{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        initSetting();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -43,20 +37,6 @@ public class SplashActivity extends AppCompatActivity{
             }
         }, 2000);
         checkPermission();
-    }
-    private void initSetting() {
-        BmobQuery<Setting> query = new BmobQuery<>();
-        query.addWhereEqualTo("setType", 1);
-        query.findObjects(new FindListener<Setting>() {
-            @Override
-            public void done(List<Setting> list, BmobException e) {
-                if (list != null && list.size() > 0) {
-                    PrefUtil.putString(CommonCode.SP_SET_PARTNERURL, list.get(0).getSetPartnerUrl());
-                    PrefUtil.putString(CommonCode.SP_SET_ABOUTUSURL, list.get(0).getSetAboutusUrl());
-                    PrefUtil.putString(CommonCode.SP_SET_JCLKURL, list.get(0).getSetJCLKUrl());
-                }
-            }
-        });
     }
     public void checkPermission() {
         String permission = Manifest.permission.ACCESS_FINE_LOCATION;

@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.Settings;
@@ -22,6 +23,7 @@ import cn.lankao.com.lovelankao.activity.SettingActivity;
 import cn.lankao.com.lovelankao.model.MyUser;
 import cn.lankao.com.lovelankao.utils.BitmapUtil;
 import cn.lankao.com.lovelankao.model.CommonCode;
+import cn.lankao.com.lovelankao.utils.OkHttpUtil;
 import cn.lankao.com.lovelankao.utils.PermissionUtil;
 import cn.lankao.com.lovelankao.utils.PrefUtil;
 import cn.lankao.com.lovelankao.utils.TextUtil;
@@ -33,7 +35,7 @@ import cn.lankao.com.lovelankao.widget.ProDialog;
 public class SettingActivityController implements View.OnClickListener ,SettingActivity.SettingHolder{
     private SettingActivity context;
     private ImageView photo;
-    private Uri imageFilePath;
+    private String imageFilePath;
     private ProgressDialog dialog;
     public SettingActivityController(SettingActivity context){
         this.context = context;
@@ -50,7 +52,6 @@ public class SettingActivityController implements View.OnClickListener ,SettingA
         x.image().bind(photo, PrefUtil.getString(CommonCode.SP_USER_PHOTO, CommonCode.APP_ICON), BitmapUtil.getOptionCommonRadius());
     }
     private void saveBitmap(String path){
-        dialog.show();
         final String userId = PrefUtil.getString(CommonCode.SP_USER_USERID,"");
         final BmobFile file = new BmobFile(new File(path));
         file.upload(new UploadFileListener() {
@@ -126,10 +127,10 @@ public class SettingActivityController implements View.OnClickListener ,SettingA
                     return;
                 }
             } else {
-                BitmapUtil.startCamera(context);
+                imageFilePath = BitmapUtil.startCamera(context);
             }
         } else {
-            BitmapUtil.startCamera(context);
+            imageFilePath = BitmapUtil.startCamera(context);
         }
     }
     @Override
@@ -144,15 +145,15 @@ public class SettingActivityController implements View.OnClickListener ,SettingA
                 }
                 saveBitmap(path);
             } else if (requestCode == BitmapUtil.PIC_CAMERA){//相机
-                if (data.getData() != null|| data.getExtras() != null){ //防止没有返回结果
-                    Bitmap photo = BitmapUtil.getBitmapByPicture(context,data);
-                    String path = BitmapUtil.compressImage(context, photo);
-                    if (TextUtil.isNull(path)){
-                        ToastUtil.show("拍照上传失败,请去相册选择");
-                        return;
+                dialog.show();
+                OkHttpUtil.executor.execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        Bitmap photo = BitmapFactory.decodeFile(imageFilePath);
+                        String path = BitmapUtil.compressImage(context, photo);
+                        saveBitmap(path);
                     }
-                    saveBitmap(path);
-                }
+                });
             }
         }
     }

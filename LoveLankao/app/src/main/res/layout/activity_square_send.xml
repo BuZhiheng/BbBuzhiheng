@@ -125,7 +125,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/common_margin"
-            android:text="最多可以上传6张图片哦"
+            android:text="最多可以上传6张图片,不上传也可以哦"
             android:textSize="@dimen/text_common_item_content"
             android:textColor="@color/color_gray_deep"/>
         <Button

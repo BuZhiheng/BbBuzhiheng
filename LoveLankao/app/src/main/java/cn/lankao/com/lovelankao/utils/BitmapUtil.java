@@ -1,6 +1,5 @@
 package cn.lankao.com.lovelankao.utils;
 import android.content.ContentResolver;
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -11,19 +10,14 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
-
 import org.xutils.common.util.DensityUtil;
 import org.xutils.image.ImageOptions;
-
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.Date;
-
 import cn.lankao.com.lovelankao.R;
-
 /**
  * Created by BuZhiheng on 2016/4/5.
  * Desc 相机,图片处理
@@ -129,20 +123,27 @@ public class BitmapUtil {
         intent.setAction(Intent.ACTION_GET_CONTENT);
         context.startActivityForResult(intent, PIC_PICTURE);
     }
-    public static void startCamera(AppCompatActivity context){
+    public static String startCamera(AppCompatActivity context){
         /**
          * 调起手机拍照功能,拍照完毕存储到Uri imageFilePath,返回存储地址
          * */
-        Intent camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        ContentValues values = new ContentValues(3);
-        values.put(MediaStore.MediaColumns.DISPLAY_NAME,
-                "picture" + new Date().toString());
-        values.put(MediaStore.Images.ImageColumns.DESCRIPTION, "picture");
-        values.put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg");
-        Uri imageFilePath = context.getContentResolver().insert(
-                MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
-        camera.putExtra(MediaStore.EXTRA_OUTPUT, imageFilePath);
-        context.startActivityForResult(camera, PIC_CAMERA);
+//        Intent camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//        ContentValues values = new ContentValues(3);
+//        values.put(MediaStore.MediaColumns.DISPLAY_NAME,
+//                "picture" + new Date().toString());
+//        values.put(MediaStore.Images.ImageColumns.DESCRIPTION, "picture");
+//        values.put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg");
+//        Uri imageFilePath = context.getContentResolver().insert(
+//                MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
+//        camera.putExtra(MediaStore.EXTRA_OUTPUT, imageFilePath);
+//        context.startActivityForResult(camera, PIC_CAMERA);
+        String url = Environment.getExternalStorageDirectory().getAbsolutePath()+"/"+System.currentTimeMillis()+".jpg";
+        File temp = new File(url);
+        Uri imageFileUri = Uri.fromFile(temp);//获取文件的Uri
+        Intent it = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);//跳转到相机Activity
+        it.putExtra(android.provider.MediaStore.EXTRA_OUTPUT, imageFileUri);//告诉相机拍摄完毕输出图片到指定的Uri
+        context.startActivityForResult(it, PIC_CAMERA);
+        return url;
     }
     public static void cropImage(AppCompatActivity context,Uri imageFilePath,int width, int height) {
         /**

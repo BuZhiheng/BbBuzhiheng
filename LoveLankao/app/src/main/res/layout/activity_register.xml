@@ -93,6 +93,7 @@
             android:layout_marginTop="5dp"
             android:background="@color/color_green"/>
         <LinearLayout
+            android:id="@+id/ll_register_nickname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
@@ -115,6 +116,7 @@
                 />
         </LinearLayout>
         <ImageView
+            android:id="@+id/iv_register_nickname_slid"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:layout_marginTop="5dp"

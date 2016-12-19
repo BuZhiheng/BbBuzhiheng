@@ -1,10 +1,15 @@
 package cn.lankao.com.lovelankao.viewcontroller;
+import android.content.Context;
 import android.content.Intent;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
 import java.util.List;
 import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.exception.BmobException;
@@ -20,7 +25,7 @@ import cn.lankao.com.lovelankao.widget.OnRvScrollListener;
  * Created by BuZhiheng on 2016/5/20.
  */
 public class TalkController implements View.OnClickListener, SwipeRefreshLayout.OnRefreshListener {
-    private AppCompatActivity context;
+    private Context context;
     private View view;
     private RecyclerView recyclerView;
     private SwipeRefreshLayout refresh;
@@ -28,7 +33,8 @@ public class TalkController implements View.OnClickListener, SwipeRefreshLayout.
     private int cout = CommonCode.RV_ITEMS_COUT;
     private boolean isRefresh = true;
     private boolean canLoadMore = true;
-    public TalkController(AppCompatActivity context,View view){
+    public TalkController(Context context,View view){
+        EventBus.getDefault().register(this);
         this.context = context;
         this.view = view;
         initView();
@@ -53,6 +59,7 @@ public class TalkController implements View.OnClickListener, SwipeRefreshLayout.
             }
         });
         view.findViewById(R.id.iv_talkfrm_send).setOnClickListener(this);
+        onRefresh();
     }
     private void initData() {
         BmobQuery<Square> query = new BmobQuery<>();
@@ -96,6 +103,10 @@ public class TalkController implements View.OnClickListener, SwipeRefreshLayout.
                 context.startActivity(intentSend);
                 break;
         }
+    }
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void refresh(Square s){
+        onRefresh();
     }
     @Override
     public void onRefresh() {

@@ -22,13 +22,14 @@ import cn.lankao.com.lovelankao.utils.BitmapUtil;
 import cn.lankao.com.lovelankao.model.CommonCode;
 import cn.lankao.com.lovelankao.utils.PrefUtil;
 import cn.lankao.com.lovelankao.utils.WindowUtils;
+
 /**
  * Created by BuZhiheng on 2016/4/3.
  */
 public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.MyViewHolder> {
     private Context context;
     private List<Square> data;
-    private int width = WindowUtils.getWindowWidth();
+    private int width = WindowUtils.getWindowsWidth();
     public SquareAdapter(Context context) {
         this.context = context;
         data = new ArrayList<>();

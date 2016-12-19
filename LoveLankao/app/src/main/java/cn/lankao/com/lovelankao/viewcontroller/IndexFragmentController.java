@@ -1,13 +1,17 @@
 package cn.lankao.com.lovelankao.viewcontroller;
 import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 import android.widget.HorizontalScrollView;
-
 import org.xutils.x;
-
+import java.util.List;
+import cn.bmob.v3.BmobQuery;
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.FindListener;
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.ChatRoomActivity;
 import cn.lankao.com.lovelankao.activity.CookActivity;
@@ -16,6 +20,11 @@ import cn.lankao.com.lovelankao.activity.LKNewsActivity;
 import cn.lankao.com.lovelankao.activity.ReadWeixinActivity;
 import cn.lankao.com.lovelankao.adapter.IndexAdapter;
 import cn.lankao.com.lovelankao.model.CommonCode;
+import cn.lankao.com.lovelankao.model.Setting;
+import cn.lankao.com.lovelankao.utils.PrefUtil;
+import cn.lankao.com.lovelankao.utils.WindowUtils;
+import cn.lankao.com.lovelankao.widget.MyDialog;
+
 /**
  * Created by BuZhiheng on 2016/5/11.
  */
@@ -30,6 +39,7 @@ public class IndexFragmentController implements SwipeRefreshLayout.OnRefreshList
         this.view = view;
         initView();
         initData();
+        initSetting();
     }
     private void initView() {
         x.view().inject((Activity) context);
@@ -48,6 +58,33 @@ public class IndexFragmentController implements SwipeRefreshLayout.OnRefreshList
             @Override
             public void success() {
                 refreshLayout.setRefreshing(false);
+            }
+        });
+    }
+    private void initSetting() {
+        BmobQuery<Setting> query = new BmobQuery<>();
+        query.addWhereEqualTo("setType", 1);
+        query.findObjects(new FindListener<Setting>() {
+            @Override
+            public void done(List<Setting> list, BmobException e) {
+                if (list != null && list.size() > 0) {
+                    Setting setting = list.get(0);
+                    PrefUtil.putString(CommonCode.SP_SET_PARTNERURL, setting.getSetPartnerUrl());
+                    PrefUtil.putString(CommonCode.SP_SET_ABOUTUSURL, setting.getSetAboutusUrl());
+                    PrefUtil.putString(CommonCode.SP_SET_JCLKURL, setting.getSetJCLKUrl());
+                    if (WindowUtils.getAppVersionCode()<setting.getAndroidVersionCode()){
+                        MyDialog.getAlertDialog(context, "发现新版本", setting.getAndroidUpdateLog(), false, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Intent intent = new Intent();
+                                intent.setAction("android.intent.action.VIEW");
+                                Uri content_url = Uri.parse(CommonCode.APP_URL);
+                                intent.setData(content_url);
+                                context.startActivity(intent);
+                            }
+                        });
+                    }
+                }
             }
         });
     }

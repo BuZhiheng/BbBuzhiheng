@@ -1,5 +1,4 @@
 package cn.lankao.com.lovelankao.viewcontroller;
-
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.support.v13.app.FragmentPagerAdapter;
@@ -9,20 +8,15 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import com.igexin.sdk.PushManager;
-
 import java.util.ArrayList;
 import java.util.List;
-
-import cn.bmob.v3.update.BmobUpdateAgent;
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.MainActivity;
 import cn.lankao.com.lovelankao.fragment.IndexFragment;
 import cn.lankao.com.lovelankao.fragment.MainFragment;
 import cn.lankao.com.lovelankao.fragment.MineFragment;
 import cn.lankao.com.lovelankao.fragment.TalkFragment;
-
 /**
  * Created by 卜智衡 on 2016/3/18.
  */
@@ -47,7 +41,6 @@ public class MainActivityController implements View.OnClickListener{
 
     public MainActivityController(MainActivity context) {
         this.context = context;
-        BmobUpdateAgent.forceUpdate(context);
         PushManager.getInstance().initialize(context.getApplicationContext());
         llIndex = (LinearLayout) context.findViewById(R.id.ll_main_index);
         llLbs = (LinearLayout) context.findViewById(R.id.ll_main_lbs);
