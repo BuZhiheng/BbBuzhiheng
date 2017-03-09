@@ -28,7 +28,6 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
     private SharePopupWindow popWin;
     private ShareManager manager;
     private String webUrl;
-    private String currentUrl;
     private String shareImg;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +53,6 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
             webView.setWebViewClient(new WebViewClient() {
                 @Override
                 public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                    currentUrl = url;
                     view.loadUrl(url);
                     return true;
                 }
@@ -66,7 +64,6 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
             });
         }
     }
-
     private void initView() {
         popWin = new SharePopupWindow(this,this);
         manager = ShareManager.getInstance(this);
@@ -84,8 +81,8 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
             share.setImgUrl(shareImg);
             share.setUrl(webUrl);
         } else {
-            share.setImgUrl(currentUrl);
-            share.setUrl(CommonCode.APP_ICON);
+            share.setImgUrl(CommonCode.APP_ICON);
+            share.setUrl(webView.getUrl());
         }
         share.setWxType(type);
         share.setTitle("掌上兰考");
@@ -98,8 +95,8 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
             share.setUrl(webUrl);
             share.setImgUrl(shareImg);
         } else {
-            share.setUrl(currentUrl);
             share.setImgUrl(CommonCode.APP_ICON);
+            share.setUrl(webView.getUrl());
         }
         share.setTitle("掌上兰考");
         share.setDesc(webView.getTitle() == null ? "来自掌上兰考的分享" : webView.getTitle());
@@ -118,7 +115,6 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
             e.printStackTrace();
         }
     }
-
     @Override
     public void onClick(View v) {
         switch (v.getId()){

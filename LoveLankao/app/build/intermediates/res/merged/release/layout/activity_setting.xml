@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_title_height"
+        android:background="@color/color_green">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="设置"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/text_main_title" />
+
+        <ImageView
+            android:id="@+id/iv_setting_back"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/common_margin"
+            android:src="@drawable/ic_common_back_white" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/common_margin"
+        android:gravity="center"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/iv_setting_photo"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_launcher"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="点击更新头像"
+            android:textSize="@dimen/text_common_item_content"
+            android:textColor="@color/color_gray_deep"/>
+        <Button
+            android:id="@+id/btn_setting_zhuxiao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/common_tv_chat"
+            android:text="注销"
+            android:textColor="@color/color_green"
+            />
+        <Button
+            android:id="@+id/btn_setting_exit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/common_tv_chat"
+            android:text="退出"
+            android:textColor="@color/color_green"
+            />
+    </LinearLayout>
+</LinearLayout>

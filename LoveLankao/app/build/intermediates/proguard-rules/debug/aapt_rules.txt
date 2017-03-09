@@ -1,0 +1,242 @@
+# view res/layout/design_navigation_item.xml #generated:17
+-keep class android.support.design.internal.NavigationMenuItemView { <init>(...); }
+
+# view res/layout/design_navigation_menu.xml #generated:17
+-keep class android.support.design.internal.NavigationMenuView { <init>(...); }
+
+# view res/layout/design_layout_snackbar.xml #generated:18
+# view sw600dp-v13\res/layout-sw600dp-v13/design_layout_snackbar.xml #generated:18
+-keep class android.support.design.widget.Snackbar$SnackbarLayout { <init>(...); }
+
+# view res/layout/activity_main.xml #generated:7
+# view res/layout/activity_photo_viewpage.xml #generated:9
+-keep class android.support.v4.view.ViewPager { <init>(...); }
+
+# view res/layout/abc_alert_dialog_material.xml #generated:75
+-keep class android.support.v4.widget.NestedScrollView { <init>(...); }
+
+# view res/layout/abc_alert_dialog_button_bar_material.xml #generated:40
+-keep class android.support.v4.widget.Space { <init>(...); }
+
+# view res/layout/activity_advert_msg.xml #generated:28
+# view res/layout/activity_advertdetail.xml #generated:29
+# view res/layout/activity_allbusiess.xml #generated:27
+# view res/layout/activity_cook.xml #generated:28
+# view res/layout/activity_jock.xml #generated:27
+# view res/layout/activity_lknews.xml #generated:27
+# view res/layout/activity_read_weixin.xml #generated:27
+# view res/layout/activity_square.xml #generated:34
+# view res/layout/activity_top.xml #generated:27
+# view res/layout/fragment_index.xml #generated:20
+# view res/layout/fragment_main.xml #generated:28
+# view res/layout/fragment_talknew.xml #generated:27
+-keep class android.support.v4.widget.SwipeRefreshLayout { <init>(...); }
+
+# view res/layout/abc_action_menu_item_layout.xml #generated:17
+-keep class android.support.v7.view.menu.ActionMenuItemView { <init>(...); }
+
+# view res/layout/abc_expanded_menu_layout.xml #generated:17
+-keep class android.support.v7.view.menu.ExpandedMenuView { <init>(...); }
+
+# view res/layout/abc_list_menu_item_layout.xml #generated:17
+# view res/layout/abc_popup_menu_item_layout.xml #generated:17
+-keep class android.support.v7.view.menu.ListMenuItemView { <init>(...); }
+
+# view res/layout/abc_screen_toolbar.xml #generated:27
+-keep class android.support.v7.widget.ActionBarContainer { <init>(...); }
+
+# view res/layout/abc_action_mode_bar.xml #generated:19
+# view res/layout/abc_screen_toolbar.xml #generated:43
+-keep class android.support.v7.widget.ActionBarContextView { <init>(...); }
+
+# view res/layout/abc_screen_toolbar.xml #generated:17
+-keep class android.support.v7.widget.ActionBarOverlayLayout { <init>(...); }
+
+# view res/layout/abc_action_menu_layout.xml #generated:17
+-keep class android.support.v7.widget.ActionMenuView { <init>(...); }
+
+# view res/layout/abc_activity_chooser_view.xml #generated:19
+-keep class android.support.v7.widget.ActivityChooserView$InnerLayout { <init>(...); }
+
+# view res/layout/abc_alert_dialog_button_bar_material.xml #generated:18
+-keep class android.support.v7.widget.ButtonBarLayout { <init>(...); }
+
+# view res/layout/abc_screen_content_include.xml #generated:19
+-keep class android.support.v7.widget.ContentFrameLayout { <init>(...); }
+
+# view res/layout/abc_alert_dialog_material.xml #generated:48
+-keep class android.support.v7.widget.DialogTitle { <init>(...); }
+
+# view res/layout/abc_screen_simple_overlay_action_mode.xml #generated:23
+-keep class android.support.v7.widget.FitWindowsFrameLayout { <init>(...); }
+
+# view res/layout/abc_dialog_title_material.xml #generated:22
+# view res/layout/abc_screen_simple.xml #generated:17
+-keep class android.support.v7.widget.FitWindowsLinearLayout { <init>(...); }
+
+# view res/layout/activity_advertdetail.xml #generated:34
+# view res/layout/activity_allbusiess.xml #generated:33
+# view res/layout/activity_chat_room.xml #generated:28
+# view res/layout/activity_cook.xml #generated:33
+# view res/layout/activity_jock.xml #generated:32
+# view res/layout/activity_lknews.xml #generated:32
+# view res/layout/activity_read_weixin.xml #generated:32
+# view res/layout/activity_square.xml #generated:39
+# view res/layout/activity_top.xml #generated:32
+# view res/layout/fragment_talknew.xml #generated:32
+-keep class android.support.v7.widget.RecyclerView { <init>(...); }
+
+# view res/layout/abc_search_view.xml #generated:78
+-keep class android.support.v7.widget.SearchView$SearchAutoComplete { <init>(...); }
+
+# view res/layout/abc_screen_toolbar.xml #generated:36
+-keep class android.support.v7.widget.Toolbar { <init>(...); }
+
+# view res/layout/abc_screen_simple.xml #generated:25
+# view res/layout/abc_screen_simple_overlay_action_mode.xml #generated:32
+-keep class android.support.v7.widget.ViewStubCompat { <init>(...); }
+
+# view AndroidManifest.xml #generated:172
+-keep class cn.bmob.v3.update.UpdateDialogActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:39
+-keep class cn.lankao.com.lovelankao.LApplication { <init>(...); }
+
+# view AndroidManifest.xml #generated:195
+-keep class cn.lankao.com.lovelankao.activity.AdvertDetailActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:194
+-keep class cn.lankao.com.lovelankao.activity.AdvertMsgActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:196
+-keep class cn.lankao.com.lovelankao.activity.AllBusinessActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:197
+-keep class cn.lankao.com.lovelankao.activity.ChatRoomActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:199
+-keep class cn.lankao.com.lovelankao.activity.CommentActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:198
+-keep class cn.lankao.com.lovelankao.activity.CookActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:200
+-keep class cn.lankao.com.lovelankao.activity.JockActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:203
+-keep class cn.lankao.com.lovelankao.activity.LBSActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:201
+-keep class cn.lankao.com.lovelankao.activity.LKNewsActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:202
+-keep class cn.lankao.com.lovelankao.activity.LKNewsMsgActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:204
+-keep class cn.lankao.com.lovelankao.activity.LoginActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:205
+-keep class cn.lankao.com.lovelankao.activity.MainActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:209
+-keep class cn.lankao.com.lovelankao.activity.PhotoViewPagerActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:208
+-keep class cn.lankao.com.lovelankao.activity.PicShowActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:211
+-keep class cn.lankao.com.lovelankao.activity.ReadWeixinActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:210
+-keep class cn.lankao.com.lovelankao.activity.RegisterActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:212
+-keep class cn.lankao.com.lovelankao.activity.SettingActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:215
+-keep class cn.lankao.com.lovelankao.activity.ShopLocationActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:46
+-keep class cn.lankao.com.lovelankao.activity.SplashActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:213
+-keep class cn.lankao.com.lovelankao.activity.SquareActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:214
+-keep class cn.lankao.com.lovelankao.activity.SquareSendActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:216
+-keep class cn.lankao.com.lovelankao.activity.TopActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:217
+-keep class cn.lankao.com.lovelankao.activity.WebViewActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:100
+-keep class cn.lankao.com.lovelankao.receiver.PushReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:218
+-keep class cn.lankao.com.lovelankao.wxapi.WXEntryActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:58
+-keep class com.baidu.location.f { <init>(...); }
+
+# view res/layout/activity_lbs.xml #generated:6
+# view res/layout/activity_shop_loc.xml #generated:5
+-keep class com.baidu.mapapi.map.MapView { <init>(...); }
+
+# view res/layout/fragment_index.xml #generated:32
+-keep class com.bigkoo.convenientbanner.ConvenientBanner { <init>(...); }
+
+# view res/layout/include_viewpager.xml #generated:11
+-keep class com.bigkoo.convenientbanner.view.CBLoopViewPager { <init>(...); }
+
+# view AndroidManifest.xml #generated:142
+-keep class com.igexin.download.DownloadProvider { <init>(...); }
+
+# view AndroidManifest.xml #generated:136
+-keep class com.igexin.download.DownloadReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:132
+-keep class com.igexin.download.DownloadService { <init>(...); }
+
+# view AndroidManifest.xml #generated:148
+-keep class com.igexin.getuiext.activity.GetuiExtActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:167
+-keep class com.igexin.getuiext.service.GetuiExtService { <init>(...); }
+
+# view AndroidManifest.xml #generated:157
+-keep class com.igexin.getuiext.service.PayloadReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:124
+-keep class com.igexin.sdk.GActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:117
+-keep class com.igexin.sdk.PushActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:109
+-keep class com.igexin.sdk.PushManagerReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:87
+-keep class com.igexin.sdk.PushReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:77
+-keep class com.igexin.sdk.PushService { <init>(...); }
+
+# view AndroidManifest.xml #generated:82
+-keep class com.igexin.sdk.PushServiceUser { <init>(...); }
+
+# view AndroidManifest.xml #generated:190
+-keep class com.tencent.connect.common.AssistActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:177
+-keep class com.tencent.tauth.AuthActivity { <init>(...); }
+
+# onClick res/layout/activity_comment.xml #generated:36
+# onClick res/layout/activity_square_msg.xml #generated:19
+# onClick res/layout/activity_square_msg_header.xml #generated:127
+# onClick res/layout/activity_square_msg_header.xml #generated:157
+# onClick res/layout/activity_square_msg_header.xml #generated:188
+# onClick res/layout/include_title_bar_common.xml #generated:15
+-keepclassmembers class * { *** onClick(...); }
+

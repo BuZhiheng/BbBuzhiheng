@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fl_lknews_content"
+    android:layout_width="match_parent"
+    android:layout_height="100dp">
+
+    <ImageView
+        android:id="@+id/iv_lknews_item_photo"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="@dimen/common_margin"
+        android:src="@drawable/ic_common_defult" />
+
+    <TextView
+        android:id="@+id/tv_lknews_item_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="119dp"
+        android:layout_marginTop="@dimen/common_margin"
+        android:layout_marginRight="@dimen/common_margin"
+        android:textColor="@color/color_black_text"
+        android:textSize="@dimen/text_common_item_title" />
+
+
+    <TextView
+        android:id="@+id/tv_lknews_item_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="119dp"
+        android:layout_marginRight="10dp"
+        android:textColor="@color/color_gray_deep"
+        android:textSize="@dimen/text_common_item_content" />
+
+    <TextView
+        android:id="@+id/tv_lknews_item_from"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:textColor="@color/color_gray_deep"
+        android:textSize="@dimen/text_common_item_content" />
+
+    <include layout="@layout/include_slid_img"/>
+</FrameLayout>
