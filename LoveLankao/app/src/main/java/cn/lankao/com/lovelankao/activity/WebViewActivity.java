@@ -78,7 +78,7 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
     private void shareQQ(int type) {
         Shared share = new Shared();
         if (!webView.canGoBack()){
-            share.setImgUrl(shareImg);
+            share.setImgUrl(CommonCode.APP_ICON);
             share.setUrl(webUrl);
         } else {
             share.setImgUrl(CommonCode.APP_ICON);
@@ -93,7 +93,7 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
         Shared share = new Shared();
         if (!webView.canGoBack()){
             share.setUrl(webUrl);
-            share.setImgUrl(shareImg);
+            share.setImgUrl(CommonCode.APP_ICON);
         } else {
             share.setImgUrl(CommonCode.APP_ICON);
             share.setUrl(webView.getUrl());

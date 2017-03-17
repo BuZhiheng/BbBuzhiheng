@@ -376,12 +376,14 @@
                     android:orientation="vertical">
                 </LinearLayout>
                 <TextView
+                    android:id="@+id/tv_mainfrm_tomore"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:padding="@dimen/common_margin"
                     android:gravity="center"
-                    android:text="加载完毕"
+                    android:text="查看更多"
                     android:textSize="@dimen/text_common_item_content"
-                    android:textColor="@color/color_gray_deep"/>
+                    android:textColor="@color/color_black_text"/>
             </LinearLayout>
         </ScrollView>
     </android.support.v4.widget.SwipeRefreshLayout>

@@ -3,7 +3,7 @@ package cn.lankao.com.lovelankao.model;
  * Created by BuZhiheng on 2016/4/2.
  */
 public class CommonCode {
-    public static final String APP_ICON = "http://pp.myapp.com/ma_icon/0/icon_42267135_1461206561/96";
+    public static final String APP_ICON = "https://mmbiz.qlogo.cn/mmbiz/677l3LGxwHm5d3ZoatY5qqicQGAicZMopQQ1UsicPPUJb3ST6XTE7lctH9fO9qiaORRibZvVhTm8IB5nls7Aia8yVtcw/0?wx_fmt=png";
     public static final String APP_URL = "http://a.app.qq.com/o/simple.jsp?pkgname=cn.lankao.com.lovelankao";
     public static final String APP_ID_QQ = "1105245681";
     public static final String APP_ID_WX = "wxac9ca0bfd95ef04e";

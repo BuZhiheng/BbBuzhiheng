@@ -41,7 +41,7 @@ public class SquareActivityController{
             return;
         }
         String userImg;
-        if (square.getUserPhoto() != null){
+        if (!TextUtil.isNull(square.getUserPhoto())){
             userImg = square.getUserPhoto();
         } else {
             userImg = CommonCode.APP_ICON;
@@ -66,10 +66,11 @@ public class SquareActivityController{
         setPhotoPager(square.getSquarePhoto4(), context.ivPhoto4);
         setPhotoPager(square.getSquarePhoto5(), context.ivPhoto5);
         setPhotoPager(square.getSquarePhoto6(), context.ivPhoto6);
-        if (square.getSquarePhoto1() == null){
-            context.setGone(context.llPhoto1);
-        } else if (square.getSquarePhoto4() == null){
-            context.setGone(context.llPhoto2);
+        if (square.getSquarePhoto1() != null){
+            context.setVisibility(context.llPhoto1);
+        }
+        if (square.getSquarePhoto4() != null){
+            context.setVisibility(context.llPhoto2);
         }
         context.setData(square, userImg, drawable);
         BmobQuery<Comment> query = new BmobQuery<>();

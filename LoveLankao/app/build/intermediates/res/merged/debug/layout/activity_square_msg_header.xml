@@ -68,6 +68,7 @@
             android:layout_marginLeft="@dimen/common_margin"
             android:layout_marginRight="@dimen/common_margin"
             android:orientation="horizontal"
+            android:visibility="gone"
             >
             <ImageView
                 android:id="@+id/iv_square_item_photo1"
@@ -98,6 +99,7 @@
             android:layout_marginLeft="@dimen/common_margin"
             android:layout_marginRight="@dimen/common_margin"
             android:orientation="horizontal"
+            android:visibility="gone"
             >
             <ImageView
                 android:id="@+id/iv_square_item_photo4"
@@ -208,16 +210,35 @@
                     />
             </LinearLayout>
         </LinearLayout>
-        <TextView
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="@dimen/common_margin"
-            android:paddingTop="@dimen/common_margin_little"
-            android:paddingBottom="@dimen/common_margin_little"
             android:background="@color/color_bg"
-            android:text="评论"
-            android:textSize="@dimen/text_common_item_title"
-            android:textColor="@color/color_black_text"
-            />
+            >
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/common_margin"
+                android:layout_marginTop="@dimen/common_margin_little"
+                android:layout_marginBottom="@dimen/common_margin_little"
+                android:text="评论"
+                android:textSize="@dimen/text_common_item_title"
+                android:textColor="@color/color_black_text"
+                />
+            <TextView
+                android:id="@+id/tv_square_comment_writecomment"
+                android:layout_gravity="center_vertical|right"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/common_margin"
+                android:layout_marginTop="@dimen/common_margin_little"
+                android:layout_marginBottom="@dimen/common_margin_little"
+                android:text="写评论"
+                android:textSize="@dimen/text_common_item_title"
+                android:textColor="@color/color_green"
+                android:onClick="onClick"
+                />
+        </FrameLayout>
     </LinearLayout>
 </LinearLayout>

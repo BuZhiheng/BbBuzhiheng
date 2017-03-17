@@ -12,12 +12,12 @@
         "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\layout\\activity_lbs.xml"
     },
     {
-        "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_dialog_title_material.xml",
-        "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_dialog_title_material.xml"
-    },
-    {
         "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\layout\\select_dialog_item_material.xml",
         "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\select_dialog_item_material.xml"
+    },
+    {
+        "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_dialog_title_material.xml",
+        "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_dialog_title_material.xml"
     },
     {
         "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_lknews_msg.xml",
@@ -184,12 +184,12 @@
         "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\layout\\activity_allbusiess.xml"
     },
     {
-        "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\layout\\include_viewpager.xml",
-        "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.bigkoo\\convenientbanner\\2.0.5\\res\\layout\\include_viewpager.xml"
-    },
-    {
         "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_search_dropdown_item_icons_2line.xml",
         "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\layout\\include_viewpager.xml",
+        "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.bigkoo\\convenientbanner\\2.0.5\\res\\layout\\include_viewpager.xml"
     },
     {
         "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\layout\\design_layout_tab_text.xml",

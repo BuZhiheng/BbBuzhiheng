@@ -7938,6 +7938,7 @@ cn.lankao.com.lovelankao.R$id: int tv_mainfrm_item_title
 cn.lankao.com.lovelankao.R$id: int tv_mainfrm_item_titlecontent
 cn.lankao.com.lovelankao.R$id: int tv_mainfrm_tehui
 cn.lankao.com.lovelankao.R$id: int tv_mainfrm_toall
+cn.lankao.com.lovelankao.R$id: int tv_mainfrm_tomore
 cn.lankao.com.lovelankao.R$id: int tv_mainfrm_tuiian
 cn.lankao.com.lovelankao.R$id: int tv_minefrm_jifen
 cn.lankao.com.lovelankao.R$id: int tv_minefrm_nickname
@@ -7953,6 +7954,7 @@ cn.lankao.com.lovelankao.R$id: int tv_square_comment_nickname
 cn.lankao.com.lovelankao.R$id: int tv_square_comment_recomment
 cn.lankao.com.lovelankao.R$id: int tv_square_comment_recontent
 cn.lankao.com.lovelankao.R$id: int tv_square_comment_time
+cn.lankao.com.lovelankao.R$id: int tv_square_comment_writecomment
 cn.lankao.com.lovelankao.R$id: int tv_square_item_clicktimes
 cn.lankao.com.lovelankao.R$id: int tv_square_item_commenttimes
 cn.lankao.com.lovelankao.R$id: int tv_square_item_content
@@ -9060,7 +9062,7 @@ cn.lankao.com.lovelankao.activity.SquareActivity: void setIvPhoto(android.widget
 cn.lankao.com.lovelankao.activity.SquareActivity: void showToast(java.lang.String)
 cn.lankao.com.lovelankao.activity.SquareActivity: void toLogin()
 cn.lankao.com.lovelankao.activity.SquareActivity: void onClick(android.view.View)
-cn.lankao.com.lovelankao.activity.SquareActivity: void setGone(android.view.View)
+cn.lankao.com.lovelankao.activity.SquareActivity: void setVisibility(android.view.View)
 cn.lankao.com.lovelankao.activity.SquareActivity: void toComment(java.lang.String,java.lang.String)
 cn.lankao.com.lovelankao.activity.SquareActivity: void clearCommentLL()
 cn.lankao.com.lovelankao.activity.SquareActivity: void setCommentTimes(java.lang.String)
@@ -9193,7 +9195,7 @@ cn.lankao.com.lovelankao.adapter.IndexAdapter: java.lang.String urlRead
 cn.lankao.com.lovelankao.adapter.IndexAdapter: com.bigkoo.convenientbanner.ConvenientBanner convenientBanner
 cn.lankao.com.lovelankao.adapter.IndexAdapter: org.xutils.image.ImageOptions optionService
 cn.lankao.com.lovelankao.adapter.IndexAdapter: org.xutils.image.ImageOptions optionHead
-cn.lankao.com.lovelankao.adapter.IndexAdapter: java.util.List lkNews
+cn.lankao.com.lovelankao.adapter.IndexAdapter: java.util.List banners
 cn.lankao.com.lovelankao.adapter.IndexAdapter: android.content.Context context
 cn.lankao.com.lovelankao.adapter.IndexAdapter: android.widget.LinearLayout llMenus
 cn.lankao.com.lovelankao.adapter.IndexAdapter: android.widget.LinearLayout llNews

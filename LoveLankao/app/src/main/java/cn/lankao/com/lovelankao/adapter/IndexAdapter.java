@@ -41,7 +41,7 @@ public class IndexAdapter {
     private ConvenientBanner convenientBanner;//顶部广告栏控件
     private ImageOptions optionService;
     private ImageOptions optionHead;
-    private List<LanKaoNews> lkNews;
+    private List<LanKaoNews> banners;
     private Context context;
     private LinearLayout llMenus;
     private LinearLayout llNews;
@@ -50,7 +50,7 @@ public class IndexAdapter {
     public IndexAdapter(Context context, View view, OnReloadListener listener){
         this.context = context;
         this.listener = listener;
-        lkNews = new ArrayList<>();
+        banners = new ArrayList<>();
         optionService = BitmapUtil.getOptionCommonRadius();
         optionHead = BitmapUtil.getOptionCommon();
         llMenus = (LinearLayout) view.findViewById(R.id.ll_indexfrm_service);
@@ -64,7 +64,7 @@ public class IndexAdapter {
                     public ImageHolderView createHolder() {
                         return new ImageHolderView();
                     }
-                }, lkNews)
+                }, banners)
                 .setPageIndicatorAlign(ConvenientBanner.PageIndicatorAlign.ALIGN_PARENT_RIGHT);
         convenientBanner.startTurning(5000);
         initData();
@@ -93,11 +93,11 @@ public class IndexAdapter {
             public void done(List<LanKaoNews> list, BmobException e) {
                 if (e == null){
                     List<LanKaoNews> data = new ArrayList<>();
-                    lkNews.clear();
+                    banners.clear();
                     for (int i = 0; i < list.size(); i++) {
                         LanKaoNews news = list.get(i);
                         if ("1".equals(news.getNewsType())) {
-                            lkNews.add(news);
+                            banners.add(news);
                         } else {
                             data.add(news);
                         }
@@ -256,11 +256,9 @@ public class IndexAdapter {
         }
         @Override
         public void UpdateUI(final Context context, final int position, final LanKaoNews data) {
-            if (data.getNewsPhoto() != null){
-                x.image().bind(iv, data.getNewsImg(),optionHead);
-            }
+            x.image().bind(iv, data.getNewsImg(),optionHead);
             tv.setText(data.getNewsTitle());
-            tvIndex.setText((position+1)+"/"+lkNews.size());
+            tvIndex.setText((position + 1) + "/" + banners.size());
             fLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

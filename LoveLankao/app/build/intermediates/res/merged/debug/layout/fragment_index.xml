@@ -254,7 +254,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/common_margin"
-                        android:text="精品阅读"
+                        android:text="时事热点"
                         android:textSize="@dimen/text_common_item_title"
                         android:textColor="@color/color_black_text"
                         />

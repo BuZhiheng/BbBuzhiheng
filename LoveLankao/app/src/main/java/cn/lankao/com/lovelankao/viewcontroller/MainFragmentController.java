@@ -50,11 +50,12 @@ public class MainFragmentController implements View.OnClickListener, SwipeRefres
         view.findViewById(R.id.ll_mainfrm_header_service).setOnClickListener(this);
         view.findViewById(R.id.ll_mainfrm_header_jingcailankao).setOnClickListener(this);
         view.findViewById(R.id.ll_mainfrm_header_other).setOnClickListener(this);
-
         view.findViewById(R.id.ll_mainfrm_header_mingqi).setOnClickListener(this);
+
         view.findViewById(R.id.tv_mainfrm_tehui).setOnClickListener(this);
         view.findViewById(R.id.tv_mainfrm_tuiian).setOnClickListener(this);
         view.findViewById(R.id.tv_mainfrm_toall).setOnClickListener(this);
+        view.findViewById(R.id.tv_mainfrm_tomore).setOnClickListener(this);
     }
 
     private void initData() {
@@ -78,6 +79,7 @@ public class MainFragmentController implements View.OnClickListener, SwipeRefres
         int id = v.getId();
         switch (id) {
             case R.id.tv_mainfrm_toall:
+            case R.id.tv_mainfrm_tomore:
                 Intent intent = new Intent(context, AllBusinessActivity.class);
                 context.startActivity(intent);
                 break;

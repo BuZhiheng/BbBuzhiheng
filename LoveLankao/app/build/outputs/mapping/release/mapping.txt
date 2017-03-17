@@ -16654,6 +16654,7 @@ cn.lankao.com.lovelankao.R$id -> cn.lankao.com.lovelankao.R$id:
     int tv_mainfrm_item_titlecontent -> tv_mainfrm_item_titlecontent
     int tv_mainfrm_tehui -> tv_mainfrm_tehui
     int tv_mainfrm_toall -> tv_mainfrm_toall
+    int tv_mainfrm_tomore -> tv_mainfrm_tomore
     int tv_mainfrm_tuiian -> tv_mainfrm_tuiian
     int tv_minefrm_jifen -> tv_minefrm_jifen
     int tv_minefrm_nickname -> tv_minefrm_nickname
@@ -16669,6 +16670,7 @@ cn.lankao.com.lovelankao.R$id -> cn.lankao.com.lovelankao.R$id:
     int tv_square_comment_recomment -> tv_square_comment_recomment
     int tv_square_comment_recontent -> tv_square_comment_recontent
     int tv_square_comment_time -> tv_square_comment_time
+    int tv_square_comment_writecomment -> tv_square_comment_writecomment
     int tv_square_item_clicktimes -> tv_square_item_clicktimes
     int tv_square_item_commenttimes -> tv_square_item_commenttimes
     int tv_square_item_content -> tv_square_item_content
@@ -17776,7 +17778,7 @@ cn.lankao.com.lovelankao.activity.SquareActivity -> cn.lankao.com.lovelankao.act
     void showToast(java.lang.String) -> showToast
     void toLogin() -> toLogin
     void onClick(android.view.View) -> onClick
-    void setGone(android.view.View) -> setGone
+    void setVisibility(android.view.View) -> setVisibility
     void toComment(java.lang.String,java.lang.String) -> toComment
     void clearCommentLL() -> clearCommentLL
     void setCommentTimes(java.lang.String) -> setCommentTimes
@@ -17909,7 +17911,7 @@ cn.lankao.com.lovelankao.adapter.IndexAdapter -> cn.lankao.com.lovelankao.adapte
     com.bigkoo.convenientbanner.ConvenientBanner convenientBanner -> convenientBanner
     org.xutils.image.ImageOptions optionService -> optionService
     org.xutils.image.ImageOptions optionHead -> optionHead
-    java.util.List lkNews -> lkNews
+    java.util.List banners -> banners
     android.content.Context context -> context
     android.widget.LinearLayout llMenus -> llMenus
     android.widget.LinearLayout llNews -> llNews

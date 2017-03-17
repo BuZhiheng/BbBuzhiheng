@@ -64,6 +64,7 @@
         android:layout_marginLeft="@dimen/common_margin"
         android:layout_marginRight="@dimen/common_margin"
         android:orientation="horizontal"
+        android:visibility="gone"
         >
         <ImageView
             android:id="@+id/iv_square_item_photo1"

@@ -234,9 +234,10 @@
 
 # onClick res/layout/activity_comment.xml #generated:36
 # onClick res/layout/activity_square_msg.xml #generated:19
-# onClick res/layout/activity_square_msg_header.xml #generated:127
-# onClick res/layout/activity_square_msg_header.xml #generated:157
-# onClick res/layout/activity_square_msg_header.xml #generated:188
+# onClick res/layout/activity_square_msg_header.xml #generated:129
+# onClick res/layout/activity_square_msg_header.xml #generated:159
+# onClick res/layout/activity_square_msg_header.xml #generated:190
+# onClick res/layout/activity_square_msg_header.xml #generated:229
 # onClick res/layout/include_title_bar_common.xml #generated:15
 -keepclassmembers class * { *** onClick(...); }
 

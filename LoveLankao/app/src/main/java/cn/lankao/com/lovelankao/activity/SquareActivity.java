@@ -121,13 +121,14 @@ public class SquareActivity extends AppCompatActivity {
             case R.id.iv_square_back:
                 finish();
                 break;
+            case R.id.tv_square_comment_writecomment:
             case R.id.ll_square_item_commenttimes:
                 controller.checkComment("");
                 break;
         }
     }
-    public void setGone(View v){
-        v.setVisibility(View.GONE);
+    public void setVisibility(View v){
+        v.setVisibility(View.VISIBLE);
     }
     public void toComment(String id,String last){
         Intent intent = new Intent(this,CommentActivity.class);
@@ -144,7 +145,11 @@ public class SquareActivity extends AppCompatActivity {
     public void setComment(final Comment comment){
         View view = LayoutInflater.from(this).inflate(R.layout.activity_square_comment,null);
         CommentHolder holder = new CommentHolder(view);
-        x.image().bind(holder.ivPhoto, comment.getUserPhotoUrl(), optionPhoto);
+        if (TextUtil.isNull(comment.getUserPhotoUrl())){
+            x.image().bind(holder.ivPhoto, CommonCode.APP_ICON, optionPhoto);
+        } else {
+            x.image().bind(holder.ivPhoto, comment.getUserPhotoUrl(), optionPhoto);
+        }
         holder.tvNickname.setText(comment.getUsername());
         holder.tvTime.setText(comment.getCreatedAt());
         if (!TextUtil.isNull(comment.getLastUserContent())){

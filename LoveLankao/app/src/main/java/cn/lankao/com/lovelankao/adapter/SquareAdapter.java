@@ -21,6 +21,7 @@ import cn.lankao.com.lovelankao.model.Square;
 import cn.lankao.com.lovelankao.utils.BitmapUtil;
 import cn.lankao.com.lovelankao.model.CommonCode;
 import cn.lankao.com.lovelankao.utils.PrefUtil;
+import cn.lankao.com.lovelankao.utils.TextUtil;
 import cn.lankao.com.lovelankao.utils.WindowUtils;
 
 /**
@@ -72,18 +73,15 @@ public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.MyViewHold
             content = content.substring(0,80)+"...(全文)";
         }
         holder.tvContent.setText(content);
-        if (square.getUserPhoto() != null){
+        if (!TextUtil.isNull(square.getUserPhoto())){
             x.image().bind(holder.ivPhoto, square.getUserPhoto(), BitmapUtil.getOptionCommonRadius());
         } else {
             x.image().bind(holder.ivPhoto, CommonCode.APP_ICON, BitmapUtil.getOptionCommonRadius());
         }
-        if (square.getSquarePhoto1() == null){
-            holder.llPhoto.setVisibility(View.GONE);
-        } else {
-//            params.width = width/3;
+        holder.llPhoto.setVisibility(View.VISIBLE);
+        if (square.getSquarePhoto1() != null){
+            //            params.width = width/3;
 //            params.leftMargin = 10;
-            holder.llPhoto.setVisibility(View.VISIBLE);
-            holder.ivPhoto1.setVisibility(View.VISIBLE);
 //            holder.ivPhoto1.setLayoutParams(params);
             x.image().bind(holder.ivPhoto1, square.getSquarePhoto1().getFileUrl(), BitmapUtil.getOptionCommon());
             LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) holder.llPhoto.getLayoutParams();
@@ -92,7 +90,6 @@ public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.MyViewHold
             if (square.getSquarePhoto2() == null){
                 holder.ivPhoto2.setImageDrawable(null);
             } else {
-                holder.ivPhoto2.setVisibility(View.VISIBLE);
                 x.image().bind(holder.ivPhoto2, square.getSquarePhoto2().getFileUrl(), BitmapUtil.getOptionCommon());
 //                holder.ivPhoto2.setLayoutParams(params);
             }
@@ -100,10 +97,12 @@ public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.MyViewHold
 //                holder.ivPhoto3.setVisibility(View.GONE);
                 holder.ivPhoto3.setImageDrawable(null);
             } else {
-                holder.ivPhoto3.setVisibility(View.VISIBLE);
                 x.image().bind(holder.ivPhoto3, square.getSquarePhoto3().getFileUrl(), BitmapUtil.getOptionCommon());
 //                holder.ivPhoto3.setLayoutParams(params);
             }
+        }
+        if (square.getSquarePhoto1() == null){
+            holder.llPhoto.setVisibility(View.GONE);
         }
         final String nickname = PrefUtil.getString(CommonCode.SP_USER_NICKNAME,"");
         if (square.getLikeUsers() == null || !square.getLikeUsers().contains(nickname)){

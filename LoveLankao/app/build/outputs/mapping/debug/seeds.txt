@@ -7939,6 +7939,7 @@ cn.lankao.com.lovelankao.R$id: int tv_mainfrm_item_title
 cn.lankao.com.lovelankao.R$id: int tv_mainfrm_item_titlecontent
 cn.lankao.com.lovelankao.R$id: int tv_mainfrm_tehui
 cn.lankao.com.lovelankao.R$id: int tv_mainfrm_toall
+cn.lankao.com.lovelankao.R$id: int tv_mainfrm_tomore
 cn.lankao.com.lovelankao.R$id: int tv_mainfrm_tuiian
 cn.lankao.com.lovelankao.R$id: int tv_minefrm_jifen
 cn.lankao.com.lovelankao.R$id: int tv_minefrm_nickname
@@ -7954,6 +7955,7 @@ cn.lankao.com.lovelankao.R$id: int tv_square_comment_nickname
 cn.lankao.com.lovelankao.R$id: int tv_square_comment_recomment
 cn.lankao.com.lovelankao.R$id: int tv_square_comment_recontent
 cn.lankao.com.lovelankao.R$id: int tv_square_comment_time
+cn.lankao.com.lovelankao.R$id: int tv_square_comment_writecomment
 cn.lankao.com.lovelankao.R$id: int tv_square_item_clicktimes
 cn.lankao.com.lovelankao.R$id: int tv_square_item_commenttimes
 cn.lankao.com.lovelankao.R$id: int tv_square_item_content
@@ -9061,7 +9063,7 @@ cn.lankao.com.lovelankao.activity.SquareActivity: void setIvPhoto(android.widget
 cn.lankao.com.lovelankao.activity.SquareActivity: void showToast(java.lang.String)
 cn.lankao.com.lovelankao.activity.SquareActivity: void toLogin()
 cn.lankao.com.lovelankao.activity.SquareActivity: void onClick(android.view.View)
-cn.lankao.com.lovelankao.activity.SquareActivity: void setGone(android.view.View)
+cn.lankao.com.lovelankao.activity.SquareActivity: void setVisibility(android.view.View)
 cn.lankao.com.lovelankao.activity.SquareActivity: void toComment(java.lang.String,java.lang.String)
 cn.lankao.com.lovelankao.activity.SquareActivity: void clearCommentLL()
 cn.lankao.com.lovelankao.activity.SquareActivity: void setCommentTimes(java.lang.String)
@@ -9111,7 +9113,6 @@ cn.lankao.com.lovelankao.activity.WebViewActivity: android.app.ProgressDialog di
 cn.lankao.com.lovelankao.activity.WebViewActivity: cn.lankao.com.lovelankao.widget.SharePopupWindow popWin
 cn.lankao.com.lovelankao.activity.WebViewActivity: cn.lankao.com.lovelankao.utils.ShareManager manager
 cn.lankao.com.lovelankao.activity.WebViewActivity: java.lang.String webUrl
-cn.lankao.com.lovelankao.activity.WebViewActivity: java.lang.String currentUrl
 cn.lankao.com.lovelankao.activity.WebViewActivity: java.lang.String shareImg
 cn.lankao.com.lovelankao.activity.WebViewActivity: WebViewActivity()
 cn.lankao.com.lovelankao.activity.WebViewActivity: void onCreate(android.os.Bundle)
@@ -9122,8 +9123,7 @@ cn.lankao.com.lovelankao.activity.WebViewActivity: void shareWx(int)
 cn.lankao.com.lovelankao.activity.WebViewActivity: void onDestroy()
 cn.lankao.com.lovelankao.activity.WebViewActivity: void onClick(android.view.View)
 cn.lankao.com.lovelankao.activity.WebViewActivity: boolean onKeyDown(int,android.view.KeyEvent)
-cn.lankao.com.lovelankao.activity.WebViewActivity: java.lang.String access$002(cn.lankao.com.lovelankao.activity.WebViewActivity,java.lang.String)
-cn.lankao.com.lovelankao.activity.WebViewActivity: android.app.ProgressDialog access$100(cn.lankao.com.lovelankao.activity.WebViewActivity)
+cn.lankao.com.lovelankao.activity.WebViewActivity: android.app.ProgressDialog access$000(cn.lankao.com.lovelankao.activity.WebViewActivity)
 cn.lankao.com.lovelankao.activity.WebViewActivity$1
 cn.lankao.com.lovelankao.activity.WebViewActivity$1: cn.lankao.com.lovelankao.activity.WebViewActivity this$0
 cn.lankao.com.lovelankao.activity.WebViewActivity$1: WebViewActivity$1(cn.lankao.com.lovelankao.activity.WebViewActivity)
@@ -9196,7 +9196,7 @@ cn.lankao.com.lovelankao.adapter.IndexAdapter: java.lang.String urlRead
 cn.lankao.com.lovelankao.adapter.IndexAdapter: com.bigkoo.convenientbanner.ConvenientBanner convenientBanner
 cn.lankao.com.lovelankao.adapter.IndexAdapter: org.xutils.image.ImageOptions optionService
 cn.lankao.com.lovelankao.adapter.IndexAdapter: org.xutils.image.ImageOptions optionHead
-cn.lankao.com.lovelankao.adapter.IndexAdapter: java.util.List lkNews
+cn.lankao.com.lovelankao.adapter.IndexAdapter: java.util.List banners
 cn.lankao.com.lovelankao.adapter.IndexAdapter: android.content.Context context
 cn.lankao.com.lovelankao.adapter.IndexAdapter: android.widget.LinearLayout llMenus
 cn.lankao.com.lovelankao.adapter.IndexAdapter: android.widget.LinearLayout llNews
