@@ -20,12 +20,12 @@
         "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-hdpi\\abc_ic_search_api_mtrl_alpha.png"
     },
     {
-        "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\bmob_update_btn_check_off_pressed_holo_light.png",
-        "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\drawable-hdpi\\bmob_update_btn_check_off_pressed_holo_light.png"
-    },
-    {
         "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_square_commenttimes.png",
         "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\drawable-hdpi\\ic_square_commenttimes.png"
+    },
+    {
+        "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\bmob_update_btn_check_off_pressed_holo_light.png",
+        "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\drawable-hdpi\\bmob_update_btn_check_off_pressed_holo_light.png"
     },
     {
         "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_btn_rating_star_off_mtrl_alpha.png",
@@ -92,12 +92,12 @@
         "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-hdpi\\abc_ic_go_search_api_mtrl_alpha.png"
     },
     {
-        "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png",
-        "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-hdpi\\abc_textfield_activated_mtrl_alpha.9.png"
-    },
-    {
         "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\bmob_update_btn_check_on_holo_light.png",
         "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\drawable-hdpi\\bmob_update_btn_check_on_holo_light.png"
+    },
+    {
+        "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png",
+        "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-hdpi\\abc_textfield_activated_mtrl_alpha.9.png"
     },
     {
         "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png",
@@ -150,6 +150,10 @@
     {
         "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png",
         "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-hdpi\\abc_ab_share_pack_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_launcher_216.png",
+        "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher_216.png"
     },
     {
         "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_talk_food.png",
@@ -230,6 +234,10 @@
     {
         "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_btn_rating_star_on_mtrl_alpha.png",
         "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-hdpi\\abc_btn_rating_star_on_mtrl_alpha.png"
+    },
+    {
+        "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_launcher_512.png",
+        "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher_512.png"
     },
     {
         "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_list_divider_mtrl_alpha.9.png",
@@ -478,6 +486,10 @@
     {
         "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_indexfrm_chat.png",
         "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\drawable-hdpi\\ic_indexfrm_chat.png"
+    },
+    {
+        "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_launcher_256.png",
+        "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher_256.png"
     },
     {
         "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png",

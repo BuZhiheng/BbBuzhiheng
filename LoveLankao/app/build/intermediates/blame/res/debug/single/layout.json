@@ -304,6 +304,10 @@
         "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\layout\\activity_lknews.xml"
     },
     {
+        "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_temp.xml",
+        "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\layout\\fragment_temp.xml"
+    },
+    {
         "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_top.xml",
         "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\layout\\activity_top.xml"
     },

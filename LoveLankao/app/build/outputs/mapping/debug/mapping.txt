@@ -16209,6 +16209,9 @@ cn.lankao.com.lovelankao.R$drawable -> cn.lankao.com.lovelankao.R$drawable:
     int ic_indexfrm_jock -> ic_indexfrm_jock
     int ic_indexfrm_menu -> ic_indexfrm_menu
     int ic_launcher -> ic_launcher
+    int ic_launcher_216 -> ic_launcher_216
+    int ic_launcher_256 -> ic_launcher_256
+    int ic_launcher_512 -> ic_launcher_512
     int ic_lbsfrm_map -> ic_lbsfrm_map
     int ic_login_password -> ic_login_password
     int ic_login_username -> ic_login_username
@@ -16785,6 +16788,7 @@ cn.lankao.com.lovelankao.R$layout -> cn.lankao.com.lovelankao.R$layout:
     int fragment_rv_header -> fragment_rv_header
     int fragment_talk -> fragment_talk
     int fragment_talknew -> fragment_talknew
+    int fragment_temp -> fragment_temp
     int getui_notification -> getui_notification
     int include_slid_img -> include_slid_img
     int include_slid_img_height10 -> include_slid_img_height10
@@ -18205,6 +18209,27 @@ cn.lankao.com.lovelankao.fragment.TalkFragment -> cn.lankao.com.lovelankao.fragm
     android.view.View view -> view
     void <init>() -> <init>
     android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
+cn.lankao.com.lovelankao.fragment.TempFragment -> cn.lankao.com.lovelankao.fragment.TempFragment:
+    android.webkit.WebView webView -> webView
+    android.view.View view -> view
+    void <init>() -> <init>
+    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
+    void initData() -> initData
+    void onDestroy() -> onDestroy
+    android.webkit.WebView access$000(cn.lankao.com.lovelankao.fragment.TempFragment) -> access$000
+cn.lankao.com.lovelankao.fragment.TempFragment$1 -> cn.lankao.com.lovelankao.fragment.TempFragment$1:
+    cn.lankao.com.lovelankao.fragment.TempFragment this$0 -> this$0
+    void <init>(cn.lankao.com.lovelankao.fragment.TempFragment) -> <init>
+    void onReceivedTitle(android.webkit.WebView,java.lang.String) -> onReceivedTitle
+cn.lankao.com.lovelankao.fragment.TempFragment$2 -> cn.lankao.com.lovelankao.fragment.TempFragment$2:
+    cn.lankao.com.lovelankao.fragment.TempFragment this$0 -> this$0
+    void <init>(cn.lankao.com.lovelankao.fragment.TempFragment) -> <init>
+    boolean shouldOverrideUrlLoading(android.webkit.WebView,java.lang.String) -> shouldOverrideUrlLoading
+    void onPageFinished(android.webkit.WebView,java.lang.String) -> onPageFinished
+cn.lankao.com.lovelankao.fragment.TempFragment$3 -> cn.lankao.com.lovelankao.fragment.TempFragment$3:
+    cn.lankao.com.lovelankao.fragment.TempFragment this$0 -> this$0
+    void <init>(cn.lankao.com.lovelankao.fragment.TempFragment) -> <init>
+    void onClick(android.view.View) -> onClick
 cn.lankao.com.lovelankao.model.AdvertNormal -> cn.lankao.com.lovelankao.model.AdvertNormal:
     java.lang.String title -> title
     java.lang.String titleContent -> titleContent
@@ -18744,6 +18769,13 @@ cn.lankao.com.lovelankao.utils.TextUtil -> cn.lankao.com.lovelankao.utils.TextUt
     boolean strEXChinese(java.lang.String,java.lang.String) -> strEXChinese
     boolean isCarId(java.lang.String) -> isCarId
     java.lang.String phoneSetMiddleGone(java.lang.String) -> phoneSetMiddleGone
+cn.lankao.com.lovelankao.utils.TimeUtil -> cn.lankao.com.lovelankao.utils.TimeUtil:
+    java.lang.String FORMAT_YYMMDD -> FORMAT_YYMMDD
+    java.lang.String FORMAT_YYMMDD_HMS -> FORMAT_YYMMDD_HMS
+    void <init>() -> <init>
+    java.lang.String getTime(java.lang.String) -> getTime
+    boolean isTrueTime() -> isTrueTime
+    void <clinit>() -> <clinit>
 cn.lankao.com.lovelankao.utils.ToastUtil -> cn.lankao.com.lovelankao.utils.ToastUtil:
     void <init>() -> <init>
     void show(java.lang.String) -> show

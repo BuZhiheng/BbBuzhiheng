@@ -7492,6 +7492,9 @@ cn.lankao.com.lovelankao.R$drawable: int ic_indexfrm_eat
 cn.lankao.com.lovelankao.R$drawable: int ic_indexfrm_jock
 cn.lankao.com.lovelankao.R$drawable: int ic_indexfrm_menu
 cn.lankao.com.lovelankao.R$drawable: int ic_launcher
+cn.lankao.com.lovelankao.R$drawable: int ic_launcher_216
+cn.lankao.com.lovelankao.R$drawable: int ic_launcher_256
+cn.lankao.com.lovelankao.R$drawable: int ic_launcher_512
 cn.lankao.com.lovelankao.R$drawable: int ic_lbsfrm_map
 cn.lankao.com.lovelankao.R$drawable: int ic_login_password
 cn.lankao.com.lovelankao.R$drawable: int ic_login_username
@@ -8068,6 +8071,7 @@ cn.lankao.com.lovelankao.R$layout: int fragment_mine
 cn.lankao.com.lovelankao.R$layout: int fragment_rv_header
 cn.lankao.com.lovelankao.R$layout: int fragment_talk
 cn.lankao.com.lovelankao.R$layout: int fragment_talknew
+cn.lankao.com.lovelankao.R$layout: int fragment_temp
 cn.lankao.com.lovelankao.R$layout: int getui_notification
 cn.lankao.com.lovelankao.R$layout: int include_slid_img
 cn.lankao.com.lovelankao.R$layout: int include_slid_img_height10
@@ -9488,6 +9492,27 @@ cn.lankao.com.lovelankao.fragment.TalkFragment
 cn.lankao.com.lovelankao.fragment.TalkFragment: android.view.View view
 cn.lankao.com.lovelankao.fragment.TalkFragment: TalkFragment()
 cn.lankao.com.lovelankao.fragment.TalkFragment: android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle)
+cn.lankao.com.lovelankao.fragment.TempFragment
+cn.lankao.com.lovelankao.fragment.TempFragment: android.webkit.WebView webView
+cn.lankao.com.lovelankao.fragment.TempFragment: android.view.View view
+cn.lankao.com.lovelankao.fragment.TempFragment: TempFragment()
+cn.lankao.com.lovelankao.fragment.TempFragment: android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle)
+cn.lankao.com.lovelankao.fragment.TempFragment: void initData()
+cn.lankao.com.lovelankao.fragment.TempFragment: void onDestroy()
+cn.lankao.com.lovelankao.fragment.TempFragment: android.webkit.WebView access$000(cn.lankao.com.lovelankao.fragment.TempFragment)
+cn.lankao.com.lovelankao.fragment.TempFragment$1
+cn.lankao.com.lovelankao.fragment.TempFragment$1: cn.lankao.com.lovelankao.fragment.TempFragment this$0
+cn.lankao.com.lovelankao.fragment.TempFragment$1: TempFragment$1(cn.lankao.com.lovelankao.fragment.TempFragment)
+cn.lankao.com.lovelankao.fragment.TempFragment$1: void onReceivedTitle(android.webkit.WebView,java.lang.String)
+cn.lankao.com.lovelankao.fragment.TempFragment$2
+cn.lankao.com.lovelankao.fragment.TempFragment$2: cn.lankao.com.lovelankao.fragment.TempFragment this$0
+cn.lankao.com.lovelankao.fragment.TempFragment$2: TempFragment$2(cn.lankao.com.lovelankao.fragment.TempFragment)
+cn.lankao.com.lovelankao.fragment.TempFragment$2: boolean shouldOverrideUrlLoading(android.webkit.WebView,java.lang.String)
+cn.lankao.com.lovelankao.fragment.TempFragment$2: void onPageFinished(android.webkit.WebView,java.lang.String)
+cn.lankao.com.lovelankao.fragment.TempFragment$3
+cn.lankao.com.lovelankao.fragment.TempFragment$3: cn.lankao.com.lovelankao.fragment.TempFragment this$0
+cn.lankao.com.lovelankao.fragment.TempFragment$3: TempFragment$3(cn.lankao.com.lovelankao.fragment.TempFragment)
+cn.lankao.com.lovelankao.fragment.TempFragment$3: void onClick(android.view.View)
 cn.lankao.com.lovelankao.model.AdvertNormal
 cn.lankao.com.lovelankao.model.AdvertNormal: java.lang.String title
 cn.lankao.com.lovelankao.model.AdvertNormal: java.lang.String titleContent
@@ -10027,6 +10052,13 @@ cn.lankao.com.lovelankao.utils.TextUtil: boolean strEX(java.lang.String,java.lan
 cn.lankao.com.lovelankao.utils.TextUtil: boolean strEXChinese(java.lang.String,java.lang.String)
 cn.lankao.com.lovelankao.utils.TextUtil: boolean isCarId(java.lang.String)
 cn.lankao.com.lovelankao.utils.TextUtil: java.lang.String phoneSetMiddleGone(java.lang.String)
+cn.lankao.com.lovelankao.utils.TimeUtil
+cn.lankao.com.lovelankao.utils.TimeUtil: java.lang.String FORMAT_YYMMDD
+cn.lankao.com.lovelankao.utils.TimeUtil: java.lang.String FORMAT_YYMMDD_HMS
+cn.lankao.com.lovelankao.utils.TimeUtil: TimeUtil()
+cn.lankao.com.lovelankao.utils.TimeUtil: java.lang.String getTime(java.lang.String)
+cn.lankao.com.lovelankao.utils.TimeUtil: boolean isTrueTime()
+cn.lankao.com.lovelankao.utils.TimeUtil: void <clinit>()
 cn.lankao.com.lovelankao.utils.ToastUtil
 cn.lankao.com.lovelankao.utils.ToastUtil: ToastUtil()
 cn.lankao.com.lovelankao.utils.ToastUtil: void show(java.lang.String)

@@ -24,7 +24,6 @@ import cn.lankao.com.lovelankao.model.Setting;
 import cn.lankao.com.lovelankao.utils.PrefUtil;
 import cn.lankao.com.lovelankao.utils.WindowUtils;
 import cn.lankao.com.lovelankao.widget.MyDialog;
-
 /**
  * Created by BuZhiheng on 2016/5/11.
  */

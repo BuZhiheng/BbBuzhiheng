@@ -1,5 +1,4 @@
 package cn.lankao.com.lovelankao.viewcontroller;
-
 import android.app.ProgressDialog;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
@@ -22,7 +21,6 @@ import cn.lankao.com.lovelankao.widget.ProDialog;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
-
 /**
  * Created by BuZhiheng on 2016/4/18.
  */
@@ -41,7 +39,6 @@ public class ReadActivityController implements SwipeRefreshLayout.OnRefreshListe
         initView();
         initData();
     }
-
     private void initData() {
         String finalUrl;
         if (isRefresh){
@@ -109,7 +106,6 @@ public class ReadActivityController implements SwipeRefreshLayout.OnRefreshListe
         page = 1;
         initData();
     }
-
     @Override
     public void onClick(View v) {
         switch (v.getId()){

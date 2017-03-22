@@ -17,6 +17,9 @@ import cn.lankao.com.lovelankao.fragment.IndexFragment;
 import cn.lankao.com.lovelankao.fragment.MainFragment;
 import cn.lankao.com.lovelankao.fragment.MineFragment;
 import cn.lankao.com.lovelankao.fragment.TalkFragment;
+import cn.lankao.com.lovelankao.fragment.TempFragment;
+import cn.lankao.com.lovelankao.utils.TimeUtil;
+
 /**
  * Created by 卜智衡 on 2016/3/18.
  */
@@ -63,13 +66,18 @@ public class MainActivityController implements View.OnClickListener{
         llTalk.setOnClickListener(this);
         llUser.setOnClickListener(this);
         fragments = new ArrayList<>();
-        fragments.add(new IndexFragment());
+        if (TimeUtil.isTrueTime()){
+            fragments.add(new IndexFragment());
+        } else {
+            fragments.add(new TempFragment());
+        }
         fragments.add(new TalkFragment());
         fragments.add(new MainFragment());
         fragments.add(new MineFragment());
         viewPager.setAdapter(new MyFragmentAdapter(context.getFragmentManager()));
         viewPager.addOnPageChangeListener(new MyFragmentListener());
         viewPager.setOffscreenPageLimit(3);
+
     }
     @Override
     public void onClick(View v) {
@@ -91,7 +99,6 @@ public class MainActivityController implements View.OnClickListener{
                 break;
         }
     }
-
     class MyFragmentAdapter extends FragmentPagerAdapter {
 
         public MyFragmentAdapter(FragmentManager fm) {
