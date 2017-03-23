@@ -7576,6 +7576,7 @@ cn.lankao.com.lovelankao.R$id: int action_mode_close_button
 cn.lankao.com.lovelankao.R$id: int activity_chooser_view_content
 cn.lankao.com.lovelankao.R$id: int alertTitle
 cn.lankao.com.lovelankao.R$id: int always
+cn.lankao.com.lovelankao.R$id: int banner_advertdetail_photo
 cn.lankao.com.lovelankao.R$id: int banner_indexfrm
 cn.lankao.com.lovelankao.R$id: int beginning
 cn.lankao.com.lovelankao.R$id: int bmob_update_content
@@ -7711,7 +7712,6 @@ cn.lankao.com.lovelankao.R$id: int info
 cn.lankao.com.lovelankao.R$id: int item_touch_helper_previous_elevation
 cn.lankao.com.lovelankao.R$id: int iv_advertdetail_back
 cn.lankao.com.lovelankao.R$id: int iv_advertdetail_call
-cn.lankao.com.lovelankao.R$id: int iv_advertdetail_photo
 cn.lankao.com.lovelankao.R$id: int iv_advertmsg_back
 cn.lankao.com.lovelankao.R$id: int iv_allact_back
 cn.lankao.com.lovelankao.R$id: int iv_allact_tomap
@@ -7903,10 +7903,13 @@ cn.lankao.com.lovelankao.R$id: int tv_advertdetail_average
 cn.lankao.com.lovelankao.R$id: int tv_advertdetail_content
 cn.lankao.com.lovelankao.R$id: int tv_advertdetail_content_msg
 cn.lankao.com.lovelankao.R$id: int tv_advertdetail_distance
+cn.lankao.com.lovelankao.R$id: int tv_advertdetail_imgindex
+cn.lankao.com.lovelankao.R$id: int tv_advertdetail_map
 cn.lankao.com.lovelankao.R$id: int tv_advertdetail_new_pinglun
 cn.lankao.com.lovelankao.R$id: int tv_advertdetail_points
 cn.lankao.com.lovelankao.R$id: int tv_advertdetail_title
 cn.lankao.com.lovelankao.R$id: int tv_advertdetail_title_center
+cn.lankao.com.lovelankao.R$id: int tv_advertdetail_tocomment
 cn.lankao.com.lovelankao.R$id: int tv_advertlist_title
 cn.lankao.com.lovelankao.R$id: int tv_chat_item_content
 cn.lankao.com.lovelankao.R$id: int tv_chat_item_nickname
@@ -9137,6 +9140,21 @@ cn.lankao.com.lovelankao.activity.WebViewActivity$2: cn.lankao.com.lovelankao.ac
 cn.lankao.com.lovelankao.activity.WebViewActivity$2: WebViewActivity$2(cn.lankao.com.lovelankao.activity.WebViewActivity)
 cn.lankao.com.lovelankao.activity.WebViewActivity$2: boolean shouldOverrideUrlLoading(android.webkit.WebView,java.lang.String)
 cn.lankao.com.lovelankao.activity.WebViewActivity$2: void onPageFinished(android.webkit.WebView,java.lang.String)
+cn.lankao.com.lovelankao.adapter.AdvertBannerHolder
+cn.lankao.com.lovelankao.adapter.AdvertBannerHolder: android.widget.ImageView iv
+cn.lankao.com.lovelankao.adapter.AdvertBannerHolder: android.widget.TextView tvIndex
+cn.lankao.com.lovelankao.adapter.AdvertBannerHolder: java.util.List list
+cn.lankao.com.lovelankao.adapter.AdvertBannerHolder: AdvertBannerHolder(java.util.List,android.widget.TextView)
+cn.lankao.com.lovelankao.adapter.AdvertBannerHolder: android.view.View createView(android.content.Context)
+cn.lankao.com.lovelankao.adapter.AdvertBannerHolder: void UpdateUI(android.content.Context,int,java.lang.String)
+cn.lankao.com.lovelankao.adapter.AdvertBannerHolder: void UpdateUI(android.content.Context,int,java.lang.Object)
+cn.lankao.com.lovelankao.adapter.AdvertBannerHolder: java.util.List access$000(cn.lankao.com.lovelankao.adapter.AdvertBannerHolder)
+cn.lankao.com.lovelankao.adapter.AdvertBannerHolder$1
+cn.lankao.com.lovelankao.adapter.AdvertBannerHolder$1: android.content.Context val$context
+cn.lankao.com.lovelankao.adapter.AdvertBannerHolder$1: java.lang.String val$s
+cn.lankao.com.lovelankao.adapter.AdvertBannerHolder$1: cn.lankao.com.lovelankao.adapter.AdvertBannerHolder this$0
+cn.lankao.com.lovelankao.adapter.AdvertBannerHolder$1: AdvertBannerHolder$1(cn.lankao.com.lovelankao.adapter.AdvertBannerHolder,android.content.Context,java.lang.String)
+cn.lankao.com.lovelankao.adapter.AdvertBannerHolder$1: void onClick(android.view.View)
 cn.lankao.com.lovelankao.adapter.ChatRoomAdapter
 cn.lankao.com.lovelankao.adapter.ChatRoomAdapter: android.content.Context context
 cn.lankao.com.lovelankao.adapter.ChatRoomAdapter: java.util.List data
@@ -10110,8 +10128,9 @@ cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController: cn.lankao.com.lovelankao.activity.AdvertMsgActivity context
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController: cn.lankao.com.lovelankao.model.AdvertNormal advertNormal
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController: android.support.v4.widget.SwipeRefreshLayout refresh
-cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController: android.widget.ImageView ivPhoto
+cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController: com.bigkoo.convenientbanner.ConvenientBanner banner
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController: android.widget.ImageView ivCall
+cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController: android.widget.TextView tvIndex
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController: android.widget.TextView tvTitle
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController: android.widget.TextView tvContent
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController: android.widget.TextView tvAverge
@@ -10122,6 +10141,7 @@ cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController: android.widget.Text
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController: android.widget.TextView tvDistance
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController: android.widget.TextView tvContentMsg
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController: android.widget.TextView tvPinglun
+cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController: android.widget.TextView tvMap
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController: android.widget.LinearLayout layoutBottom
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController: android.widget.LinearLayout layoutComment
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController: android.widget.LinearLayout layoutAddress
@@ -10136,14 +10156,17 @@ cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController: void setComment(jav
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController: void setBottom(java.util.List)
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController: void checkCameraPermission()
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController: void onClick(android.view.View)
+cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController: void toComment(java.lang.String)
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController: void onRefresh()
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController: cn.lankao.com.lovelankao.model.AdvertNormal access$002(cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController,cn.lankao.com.lovelankao.model.AdvertNormal)
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController: void access$100(cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController)
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController: android.support.v4.widget.SwipeRefreshLayout access$200(cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController)
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController: android.app.ProgressDialog access$300(cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController)
-cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController: void access$400(cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController,java.util.List)
+cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController: android.widget.TextView access$400(cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController)
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController: void access$500(cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController,java.util.List)
-cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController: cn.lankao.com.lovelankao.activity.AdvertMsgActivity access$600(cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController)
+cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController: void access$600(cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController,java.util.List)
+cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController: void access$700(cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController,java.lang.String)
+cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController: cn.lankao.com.lovelankao.activity.AdvertMsgActivity access$800(cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController)
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$1
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$1: cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController this$0
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$1: AdvertMsgController$1(cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController)
@@ -10151,26 +10174,46 @@ cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$1: void done(cn.lank
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$1: void done(java.lang.Object,cn.bmob.v3.exception.BmobException)
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$1: void done(java.lang.Object,java.lang.Object)
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$2
+cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$2: java.util.List val$banners
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$2: cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController this$0
-cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$2: AdvertMsgController$2(cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController)
-cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$2: void done(java.util.List,cn.bmob.v3.exception.BmobException)
-cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$2: void done(java.lang.Object,java.lang.Object)
+cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$2: AdvertMsgController$2(cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController,java.util.List)
+cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$2: cn.lankao.com.lovelankao.adapter.AdvertBannerHolder createHolder()
+cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$2: java.lang.Object createHolder()
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$3
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$3: cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController this$0
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$3: AdvertMsgController$3(cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController)
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$3: void done(java.util.List,cn.bmob.v3.exception.BmobException)
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$3: void done(java.lang.Object,java.lang.Object)
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$4
-cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$4: cn.lankao.com.lovelankao.model.AdvertNormal val$advert
-cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$4: cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$ViewHolder val$holder
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$4: cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController this$0
-cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$4: AdvertMsgController$4(cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController,cn.lankao.com.lovelankao.model.AdvertNormal,cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$ViewHolder)
-cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$4: void onClick(android.view.View)
-cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$4$1
-cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$4$1: cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$4 this$1
-cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$4$1: AdvertMsgController$4$1(cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$4)
-cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$4$1: void done(cn.bmob.v3.exception.BmobException)
-cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$4$1: void done(java.lang.Object)
+cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$4: AdvertMsgController$4(cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController)
+cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$4: void done(java.util.List,cn.bmob.v3.exception.BmobException)
+cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$4: void done(java.lang.Object,java.lang.Object)
+cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$5
+cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$5: cn.lankao.com.lovelankao.model.Comment val$comment
+cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$5: cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController this$0
+cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$5: AdvertMsgController$5(cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController,cn.lankao.com.lovelankao.model.Comment)
+cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$5: void onClick(android.view.View)
+cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$6
+cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$6: cn.lankao.com.lovelankao.model.AdvertNormal val$advert
+cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$6: cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$ViewHolder val$holder
+cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$6: cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController this$0
+cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$6: AdvertMsgController$6(cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController,cn.lankao.com.lovelankao.model.AdvertNormal,cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$ViewHolder)
+cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$6: void onClick(android.view.View)
+cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$6$1
+cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$6$1: cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$6 this$1
+cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$6$1: AdvertMsgController$6$1(cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$6)
+cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$6$1: void done(cn.bmob.v3.exception.BmobException)
+cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$6$1: void done(java.lang.Object)
+cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$CommentHolder
+cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$CommentHolder: android.widget.ImageView ivPhoto
+cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$CommentHolder: android.widget.TextView tvToReComment
+cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$CommentHolder: android.widget.TextView tvNickname
+cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$CommentHolder: android.widget.TextView tvTime
+cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$CommentHolder: android.widget.TextView tvReComment
+cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$CommentHolder: android.widget.TextView tvComment
+cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$CommentHolder: cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController this$0
+cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$CommentHolder: AdvertMsgController$CommentHolder(cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController,android.view.View)
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$ViewHolder
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$ViewHolder: android.widget.FrameLayout frameLayout
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$ViewHolder: android.widget.ImageView photo
@@ -10180,11 +10223,6 @@ cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$ViewHolder: android.
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$ViewHolder: android.widget.TextView tvTitleContent
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$ViewHolder: cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController this$0
 cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$ViewHolder: AdvertMsgController$ViewHolder(cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController)
-cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$ViewHolderComment
-cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$ViewHolderComment: android.widget.TextView tvUsername
-cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$ViewHolderComment: android.widget.TextView tvContent
-cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$ViewHolderComment: cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController this$0
-cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController$ViewHolderComment: AdvertMsgController$ViewHolderComment(cn.lankao.com.lovelankao.viewcontroller.AdvertMsgController)
 cn.lankao.com.lovelankao.viewcontroller.AllBusinessActivityController
 cn.lankao.com.lovelankao.viewcontroller.AllBusinessActivityController: cn.lankao.com.lovelankao.activity.AllBusinessActivity context
 cn.lankao.com.lovelankao.viewcontroller.AllBusinessActivityController: android.support.v7.widget.RecyclerView recyclerView

@@ -145,7 +145,6 @@ public class SquareActivityController{
             square.update(new UpdateListener() {
                 @Override
                 public void done(BmobException e) {
-
                 }
             });
         }

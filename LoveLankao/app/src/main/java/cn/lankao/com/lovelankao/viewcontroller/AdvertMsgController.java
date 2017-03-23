@@ -13,8 +13,13 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.baidu.mapapi.model.LatLng;
+import com.bigkoo.convenientbanner.ConvenientBanner;
+import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
+
 import org.xutils.image.ImageOptions;
 import org.xutils.x;
+
+import java.util.ArrayList;
 import java.util.List;
 import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.exception.BmobException;
@@ -23,14 +28,21 @@ import cn.bmob.v3.listener.QueryListener;
 import cn.bmob.v3.listener.UpdateListener;
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.AdvertMsgActivity;
+import cn.lankao.com.lovelankao.activity.AllBusinessActivity;
+import cn.lankao.com.lovelankao.activity.CommentActivity;
+import cn.lankao.com.lovelankao.activity.LBSActivity;
+import cn.lankao.com.lovelankao.activity.LoginActivity;
 import cn.lankao.com.lovelankao.activity.PicShowActivity;
 import cn.lankao.com.lovelankao.activity.ShopLocationActivity;
+import cn.lankao.com.lovelankao.adapter.AdvertBannerHolder;
 import cn.lankao.com.lovelankao.model.AdvertNormal;
 import cn.lankao.com.lovelankao.model.Comment;
 import cn.lankao.com.lovelankao.model.CommonCode;
+import cn.lankao.com.lovelankao.utils.BitmapUtil;
 import cn.lankao.com.lovelankao.utils.MapUtil;
 import cn.lankao.com.lovelankao.utils.PermissionUtil;
 import cn.lankao.com.lovelankao.utils.PrefUtil;
+import cn.lankao.com.lovelankao.utils.TextUtil;
 import cn.lankao.com.lovelankao.utils.ToastUtil;
 import cn.lankao.com.lovelankao.widget.ProDialog;
 /**
@@ -40,8 +52,9 @@ public class AdvertMsgController implements View.OnClickListener, SwipeRefreshLa
     private AdvertMsgActivity context;
     private AdvertNormal advertNormal;
     private SwipeRefreshLayout refresh;
-    private ImageView ivPhoto;
+    private ConvenientBanner banner;
     private ImageView ivCall;
+    private TextView tvIndex;
     private TextView tvTitle;
     private TextView tvContent;
     private TextView tvAverge;
@@ -52,6 +65,7 @@ public class AdvertMsgController implements View.OnClickListener, SwipeRefreshLa
     private TextView tvDistance;
     private TextView tvContentMsg;
     private TextView tvPinglun;
+    private TextView tvMap;
     private LinearLayout layoutBottom;
     private LinearLayout layoutComment;
     private LinearLayout layoutAddress;
@@ -94,8 +108,9 @@ public class AdvertMsgController implements View.OnClickListener, SwipeRefreshLa
         refresh = (SwipeRefreshLayout)context.findViewById(R.id.srl_advertmsg_activity);
         refresh.setOnRefreshListener(this);
         refresh.setRefreshing(true);
-        ivPhoto = (ImageView) context.findViewById(R.id.iv_advertdetail_photo);
+        banner = (ConvenientBanner) context.findViewById(R.id.banner_advertdetail_photo);
         ivCall = (ImageView) context.findViewById(R.id.iv_advertdetail_call);
+        tvIndex = (TextView) context.findViewById(R.id.tv_advertdetail_imgindex);
         tvTitle = (TextView) context.findViewById(R.id.tv_advertdetail_title);
         tvContent = (TextView) context.findViewById(R.id.tv_advertdetail_content);
         tvAverge = (TextView) context.findViewById(R.id.tv_advertdetail_average);
@@ -105,24 +120,47 @@ public class AdvertMsgController implements View.OnClickListener, SwipeRefreshLa
         tvAddress = (TextView) context.findViewById(R.id.tv_advertdetail_address);
         tvDistance = (TextView) context.findViewById(R.id.tv_advertdetail_distance);
         tvContentMsg = (TextView) context.findViewById(R.id.tv_advertdetail_content_msg);
+        tvMap = (TextView) context.findViewById(R.id.tv_advertdetail_map);
         tvPinglun = (TextView) context.findViewById(R.id.tv_advertdetail_new_pinglun);
         layoutBottom = (LinearLayout) context.findViewById(R.id.ll_advertmsg_bottom);
         layoutComment = (LinearLayout) context.findViewById(R.id.ll_advertmsg_comment);
 
         layoutAddress = (LinearLayout) context.findViewById(R.id.ll_advertdetail_address);
         layoutAddress.setOnClickListener(this);
+        tvMap.setOnClickListener(this);
         ivCall.setOnClickListener(this);
-        ivPhoto.setOnClickListener(this);
+        context.findViewById(R.id.tv_advertdetail_tocomment).setOnClickListener(this);
     }
-
     private void refreshData() {
-        if (advertNormal.getAdvPhoto() != null) {
-            ImageOptions imageOptions =new ImageOptions.Builder()
-                    .setCrop(false)// 如果ImageView的大小不是定义为wrap_content, 不要crop.
-                    .setImageScaleType(ImageView.ScaleType.CENTER_CROP)
-                    .setLoadingDrawableId(R.drawable.ic_common_defult)//加载中默认显示图片
-                    .build();
-            x.image().bind(ivPhoto, advertNormal.getAdvPhoto().getFileUrl(),imageOptions);
+        if (advertNormal != null) {
+            final List<String> banners = new ArrayList<>();
+            if (advertNormal.getAdvPhoto()!=null){
+                banners.add(advertNormal.getAdvPhoto().getFileUrl());
+            }
+            if (advertNormal.getAdvPhoto1()!=null){
+                banners.add(advertNormal.getAdvPhoto1().getFileUrl());
+            }
+            if (advertNormal.getAdvPhoto2()!=null){
+                banners.add(advertNormal.getAdvPhoto2().getFileUrl());
+            }
+            if (advertNormal.getAdvPhoto3()!=null){
+                banners.add(advertNormal.getAdvPhoto3().getFileUrl());
+            }
+            if (advertNormal.getAdvPhoto4()!=null){
+                banners.add(advertNormal.getAdvPhoto4().getFileUrl());
+            }
+            if (advertNormal.getAdvPhoto5()!=null){
+                banners.add(advertNormal.getAdvPhoto5().getFileUrl());
+            }
+            banner.setPages(
+                    new CBViewHolderCreator<AdvertBannerHolder>() {
+                        @Override
+                        public AdvertBannerHolder createHolder() {
+                            return new AdvertBannerHolder(banners,tvIndex);
+                        }
+                    }, banners)
+                    .setPageIndicatorAlign(ConvenientBanner.PageIndicatorAlign.ALIGN_PARENT_RIGHT);
+            banner.startTurning(3500);
         }
         if (advertNormal.getAdvClicked() == null) {
             tvPoints.setText("已点击:0次");
@@ -151,7 +189,7 @@ public class AdvertMsgController implements View.OnClickListener, SwipeRefreshLa
         query.findObjects(new FindListener<AdvertNormal>() {
             @Override
             public void done(List<AdvertNormal> list, BmobException e) {
-                if (e == null){
+                if (e == null) {
                     setBottom(list);
                 } else {
                     ToastUtil.show(e.getMessage());
@@ -179,13 +217,27 @@ public class AdvertMsgController implements View.OnClickListener, SwipeRefreshLa
         }
         layoutComment.removeAllViews();
         for (int i=0;i<list.size();i++){
-            ViewHolderComment holder = new ViewHolderComment();
-            Comment comm = list.get(i);
-            View view = LayoutInflater.from(context).inflate(R.layout.activity_advertmsg_comment_item,null);
-            holder.tvUsername = (TextView) view.findViewById(R.id.tv_advert_comment_username);
-            holder.tvContent = (TextView) view.findViewById(R.id.tv_advert_comment_content);
-            holder.tvUsername.setText(comm.getUsername());
-            holder.tvContent.setText(comm.getContent());
+            final Comment comment = list.get(i);
+            final View view = LayoutInflater.from(context).inflate(R.layout.activity_square_comment, null);
+            CommentHolder holder = new CommentHolder(view);
+            if (TextUtil.isNull(comment.getUserPhotoUrl())){
+                x.image().bind(holder.ivPhoto, CommonCode.APP_ICON, BitmapUtil.getOptionByRadius(15));
+            } else {
+                x.image().bind(holder.ivPhoto, comment.getUserPhotoUrl(), BitmapUtil.getOptionByRadius(15));
+            }
+            holder.tvNickname.setText(comment.getUsername());
+            holder.tvTime.setText(comment.getCreatedAt());
+            if (!TextUtil.isNull(comment.getLastUserContent())){
+                holder.tvReComment.setText(comment.getLastUserContent());
+                holder.tvReComment.setVisibility(View.VISIBLE);
+            }
+            holder.tvToReComment.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    toComment("回复(" + comment.getUsername() + "):" + comment.getContent());
+                }
+            });
+            holder.tvComment.setText(comment.getContent());
             layoutComment.addView(view);
         }
     }
@@ -271,21 +323,30 @@ public class AdvertMsgController implements View.OnClickListener, SwipeRefreshLa
             checkCameraPermission();
         } else if(v.getId() == R.id.iv_advertmsg_back){
             context.finish();
-        } else if(v.getId() == R.id.iv_advertdetail_photo){
-            if (advertNormal == null){
-                return;
-            }
-            Intent intent = new Intent(context, PicShowActivity.class);
-            intent.putExtra(CommonCode.INTENT_ADVERT_TYPE,advertNormal);
+        } else if (v.getId() == R.id.tv_advertdetail_map){
+            Intent intent = new Intent(context, LBSActivity.class);
+            context.startActivity(intent);
+        } else if (v.getId() == R.id.tv_advertdetail_tocomment){
+            toComment("");
+        }
+    }
+    private void toComment(String s) {
+        String nickname = PrefUtil.getString(CommonCode.SP_USER_NICKNAME, "");
+        if (TextUtil.isNull(nickname)){
+            ToastUtil.show("请先登录");
+            Intent intent = new Intent(context,LoginActivity.class);
+            context.startActivity(intent);
+        } else {
+            Intent intent = new Intent(context,CommentActivity.class);
+            intent.putExtra(CommonCode.INTENT_COMMENT_POSTID, advertNormal.getObjectId());
+            intent.putExtra(CommonCode.INTENT_COMMENT_LASTCONTENT,s);
             context.startActivity(intent);
         }
     }
-
     @Override
     public void onRefresh() {
         initData();
     }
-
     class ViewHolder{
         FrameLayout frameLayout;
         ImageView photo;
@@ -294,8 +355,20 @@ public class AdvertMsgController implements View.OnClickListener, SwipeRefreshLa
         TextView tvPoints;
         TextView tvTitleContent;
     }
-    class ViewHolderComment{
-        TextView tvUsername;
-        TextView tvContent;
+    class CommentHolder{
+        ImageView ivPhoto;
+        TextView tvToReComment;
+        TextView tvNickname;
+        TextView tvTime;
+        TextView tvReComment;
+        TextView tvComment;
+        public CommentHolder(View view){
+            ivPhoto = (ImageView) view.findViewById(R.id.iv_square_comment_photo);
+            tvToReComment = (TextView) view.findViewById(R.id.tv_square_comment_recomment);
+            tvNickname = (TextView) view.findViewById(R.id.tv_square_comment_nickname);
+            tvTime = (TextView) view.findViewById(R.id.tv_square_comment_time);
+            tvReComment = (TextView) view.findViewById(R.id.tv_square_comment_recontent);
+            tvComment = (TextView) view.findViewById(R.id.tv_square_comment_content);
+        }
     }
 }
