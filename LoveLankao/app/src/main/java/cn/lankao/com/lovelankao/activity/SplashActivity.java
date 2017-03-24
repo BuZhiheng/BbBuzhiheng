@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.TextView;
+
 import com.baidu.location.BDLocation;
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.model.CommonCode;
@@ -13,6 +15,8 @@ import cn.lankao.com.lovelankao.utils.MyLocationClient;
 import cn.lankao.com.lovelankao.utils.PermissionUtil;
 import cn.lankao.com.lovelankao.utils.PrefUtil;
 import cn.lankao.com.lovelankao.utils.ToastUtil;
+import cn.lankao.com.lovelankao.utils.WindowUtils;
+
 /**
  * Created by BuZhiheng on 2016/4/6.
  */
@@ -37,6 +41,7 @@ public class SplashActivity extends AppCompatActivity{
             }
         }, 2000);
         checkPermission();
+        ((TextView)findViewById(R.id.tv_splash_code)).setText("版本 "+WindowUtils.getAppVersionName());
     }
     public void checkPermission() {
         String permission = Manifest.permission.ACCESS_FINE_LOCATION;

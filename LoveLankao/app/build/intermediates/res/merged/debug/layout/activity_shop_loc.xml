@@ -28,15 +28,16 @@
             android:layout_height="25dp"
             android:layout_marginLeft="@dimen/common_margin"
             android:src="@drawable/ic_common_back_white"/>
-        <TextView
-            android:id="@+id/tv_shoploc_nvg"
-            android:layout_gravity="right"
-            android:layout_width="@dimen/common_title_height"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="导航"
-            android:textSize="@dimen/text_common_item_title"
-            android:textColor="@color/color_white"
-            />
     </FrameLayout>
+    <TextView
+        android:id="@+id/tv_shoploc_nvg"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_title_height39"
+        android:gravity="center"
+        android:background="@color/color_green"
+        android:text="导航"
+        android:textSize="@dimen/text_common_item_title"
+        android:textColor="@color/color_white"
+        />
 </FrameLayout>

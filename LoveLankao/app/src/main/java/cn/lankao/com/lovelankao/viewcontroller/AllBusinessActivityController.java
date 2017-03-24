@@ -72,7 +72,7 @@ public class AllBusinessActivityController implements View.OnClickListener, Swip
                     adapter.setData(list);
                     if (list == null || list.size() == 0){
                         ToastUtil.show("空空如也!");
-                    }else{
+                    } else {
                         if (cout > list.size()){//请求个数大于返回个数,加载完毕,不能加载更多了
                             canLoadMore = false;
                         }else{

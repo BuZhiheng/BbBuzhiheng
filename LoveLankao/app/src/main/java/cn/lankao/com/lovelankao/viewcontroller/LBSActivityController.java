@@ -35,6 +35,7 @@ import cn.lankao.com.lovelankao.activity.AdvertMsgActivity;
 import cn.lankao.com.lovelankao.activity.LBSActivity;
 import cn.lankao.com.lovelankao.model.AdvertNormal;
 import cn.lankao.com.lovelankao.model.CommonCode;
+import cn.lankao.com.lovelankao.utils.ToastUtil;
 
 /**
  * Created by BuZhiheng on 2016/4/1.
@@ -63,7 +64,7 @@ public class LBSActivityController implements View.OnClickListener {
         query.findObjects(new FindListener<AdvertNormal>() {
             @Override
             public void done(List<AdvertNormal> list, BmobException e) {
-                if (e == null){
+                if (e == null) {
                     data = list;
                     setMapMarker();
                     menu.close(true);
@@ -91,7 +92,6 @@ public class LBSActivityController implements View.OnClickListener {
             }
         }
     }
-
     private void initView() {
         context.findViewById(R.id.iv_lbsact_back).setOnClickListener(this);
         mapView = (MapView) context.findViewById(R.id.map_lbs_act);
@@ -178,22 +178,30 @@ public class LBSActivityController implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         if (v == btn1) {
+            showTitle("吃喝玩乐");
             tvTitle.setText("吃喝玩乐");
             initData(CommonCode.ADVERT_CHIHEWANLE);
         } else if (v == btn2) {
+            showTitle("佳丽专区");
             tvTitle.setText("佳丽专区");
             initData(CommonCode.ADVERT_WOMEN);
         } else if (v == btn3) {
+            showTitle("招聘租赁");
             tvTitle.setText("招聘租赁");
             initData(CommonCode.ADVERT_OFFER);
         } else if (v == btn4) {
+            showTitle("爱家");
             tvTitle.setText("爱家");
             initData(CommonCode.ADVERT_ZULIN);
         } else if (v == btn5) {
+            showTitle("全部商家");
             tvTitle.setText("全部商家");
             initData(CommonCode.ADVERT_OTHER);
         } else if(v.getId() == R.id.iv_lbsact_back){
             context.finish();
         }
+    }
+    private void showTitle(String title){
+        ToastUtil.show(title);
     }
 }

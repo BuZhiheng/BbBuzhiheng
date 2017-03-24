@@ -7185,6 +7185,7 @@ cn.lankao.com.lovelankao.R$color: int colorAccent
 cn.lankao.com.lovelankao.R$color: int colorPrimary
 cn.lankao.com.lovelankao.R$color: int colorPrimaryDark
 cn.lankao.com.lovelankao.R$color: int color_alpha_black
+cn.lankao.com.lovelankao.R$color: int color_alpha_green
 cn.lankao.com.lovelankao.R$color: int color_bg
 cn.lankao.com.lovelankao.R$color: int color_black
 cn.lankao.com.lovelankao.R$color: int color_black_text
@@ -7956,6 +7957,7 @@ cn.lankao.com.lovelankao.R$id: int tv_readact_item_title
 cn.lankao.com.lovelankao.R$id: int tv_register_cancle
 cn.lankao.com.lovelankao.R$id: int tv_shoploc_nvg
 cn.lankao.com.lovelankao.R$id: int tv_shoploc_title
+cn.lankao.com.lovelankao.R$id: int tv_splash_code
 cn.lankao.com.lovelankao.R$id: int tv_square_comment_content
 cn.lankao.com.lovelankao.R$id: int tv_square_comment_nickname
 cn.lankao.com.lovelankao.R$id: int tv_square_comment_recomment
@@ -10090,6 +10092,7 @@ cn.lankao.com.lovelankao.utils.WindowUtils: java.lang.String getAppVersionName()
 cn.lankao.com.lovelankao.utils.WindowUtils: int getAppVersionCode()
 cn.lankao.com.lovelankao.utils.WindowUtils: int getRandom()
 cn.lankao.com.lovelankao.utils.WindowUtils: java.lang.String getBaiduDistance(double)
+cn.lankao.com.lovelankao.utils.WindowUtils: void showVoice(android.content.Context)
 cn.lankao.com.lovelankao.viewcontroller.AdvertDetailController
 cn.lankao.com.lovelankao.viewcontroller.AdvertDetailController: cn.lankao.com.lovelankao.activity.AdvertDetailActivity context
 cn.lankao.com.lovelankao.viewcontroller.AdvertDetailController: android.support.v7.widget.RecyclerView recyclerView
@@ -10269,8 +10272,9 @@ cn.lankao.com.lovelankao.viewcontroller.ChatRoomController: cn.bmob.v3.BmobRealT
 cn.lankao.com.lovelankao.viewcontroller.ChatRoomController: void access$100(cn.lankao.com.lovelankao.viewcontroller.ChatRoomController,int)
 cn.lankao.com.lovelankao.viewcontroller.ChatRoomController: cn.lankao.com.lovelankao.adapter.ChatRoomAdapter access$200(cn.lankao.com.lovelankao.viewcontroller.ChatRoomController)
 cn.lankao.com.lovelankao.viewcontroller.ChatRoomController: android.support.v7.widget.RecyclerView access$300(cn.lankao.com.lovelankao.viewcontroller.ChatRoomController)
-cn.lankao.com.lovelankao.viewcontroller.ChatRoomController: android.app.ProgressDialog access$400(cn.lankao.com.lovelankao.viewcontroller.ChatRoomController)
-cn.lankao.com.lovelankao.viewcontroller.ChatRoomController: android.widget.EditText access$500(cn.lankao.com.lovelankao.viewcontroller.ChatRoomController)
+cn.lankao.com.lovelankao.viewcontroller.ChatRoomController: cn.lankao.com.lovelankao.activity.ChatRoomActivity access$400(cn.lankao.com.lovelankao.viewcontroller.ChatRoomController)
+cn.lankao.com.lovelankao.viewcontroller.ChatRoomController: android.app.ProgressDialog access$500(cn.lankao.com.lovelankao.viewcontroller.ChatRoomController)
+cn.lankao.com.lovelankao.viewcontroller.ChatRoomController: android.widget.EditText access$600(cn.lankao.com.lovelankao.viewcontroller.ChatRoomController)
 cn.lankao.com.lovelankao.viewcontroller.ChatRoomController$1
 cn.lankao.com.lovelankao.viewcontroller.ChatRoomController$1: cn.lankao.com.lovelankao.viewcontroller.ChatRoomController this$0
 cn.lankao.com.lovelankao.viewcontroller.ChatRoomController$1: ChatRoomController$1(cn.lankao.com.lovelankao.viewcontroller.ChatRoomController)
@@ -10279,7 +10283,12 @@ cn.lankao.com.lovelankao.viewcontroller.ChatRoomController$1: void onDataChange(
 cn.lankao.com.lovelankao.viewcontroller.ChatRoomController$2
 cn.lankao.com.lovelankao.viewcontroller.ChatRoomController$2: cn.lankao.com.lovelankao.viewcontroller.ChatRoomController this$0
 cn.lankao.com.lovelankao.viewcontroller.ChatRoomController$2: ChatRoomController$2(cn.lankao.com.lovelankao.viewcontroller.ChatRoomController)
-cn.lankao.com.lovelankao.viewcontroller.ChatRoomController$2: void done(java.lang.Object,cn.bmob.v3.exception.BmobException)
+cn.lankao.com.lovelankao.viewcontroller.ChatRoomController$2: void done(java.util.List,cn.bmob.v3.exception.BmobException)
+cn.lankao.com.lovelankao.viewcontroller.ChatRoomController$2: void done(java.lang.Object,java.lang.Object)
+cn.lankao.com.lovelankao.viewcontroller.ChatRoomController$3
+cn.lankao.com.lovelankao.viewcontroller.ChatRoomController$3: cn.lankao.com.lovelankao.viewcontroller.ChatRoomController this$0
+cn.lankao.com.lovelankao.viewcontroller.ChatRoomController$3: ChatRoomController$3(cn.lankao.com.lovelankao.viewcontroller.ChatRoomController)
+cn.lankao.com.lovelankao.viewcontroller.ChatRoomController$3: void done(java.lang.Object,cn.bmob.v3.exception.BmobException)
 cn.lankao.com.lovelankao.viewcontroller.CommentActivityController
 cn.lankao.com.lovelankao.viewcontroller.CommentActivityController: cn.lankao.com.lovelankao.activity.CommentActivity view
 cn.lankao.com.lovelankao.viewcontroller.CommentActivityController: android.content.Intent intent
@@ -10418,6 +10427,7 @@ cn.lankao.com.lovelankao.viewcontroller.LBSActivityController: void initData(int
 cn.lankao.com.lovelankao.viewcontroller.LBSActivityController: void setMapMarker()
 cn.lankao.com.lovelankao.viewcontroller.LBSActivityController: void initView()
 cn.lankao.com.lovelankao.viewcontroller.LBSActivityController: void onClick(android.view.View)
+cn.lankao.com.lovelankao.viewcontroller.LBSActivityController: void showTitle(java.lang.String)
 cn.lankao.com.lovelankao.viewcontroller.LBSActivityController: java.util.List access$002(cn.lankao.com.lovelankao.viewcontroller.LBSActivityController,java.util.List)
 cn.lankao.com.lovelankao.viewcontroller.LBSActivityController: void access$100(cn.lankao.com.lovelankao.viewcontroller.LBSActivityController)
 cn.lankao.com.lovelankao.viewcontroller.LBSActivityController: com.oguzdev.circularfloatingactionmenu.library.FloatingActionMenu access$200(cn.lankao.com.lovelankao.viewcontroller.LBSActivityController)

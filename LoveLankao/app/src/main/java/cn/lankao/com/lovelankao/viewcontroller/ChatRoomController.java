@@ -7,8 +7,13 @@ import android.widget.EditText;
 import com.google.gson.Gson;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.List;
+
+import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.BmobRealTimeData;
 import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.FindListener;
 import cn.bmob.v3.listener.SaveListener;
 import cn.bmob.v3.listener.ValueEventListener;
 import cn.lankao.com.lovelankao.R;
@@ -18,6 +23,7 @@ import cn.lankao.com.lovelankao.model.ChatRoom;
 import cn.lankao.com.lovelankao.model.CommonCode;
 import cn.lankao.com.lovelankao.utils.PrefUtil;
 import cn.lankao.com.lovelankao.utils.ToastUtil;
+import cn.lankao.com.lovelankao.utils.WindowUtils;
 import cn.lankao.com.lovelankao.widget.ProDialog;
 /**
  * Created by BuZhiheng on 2016/4/3.
@@ -62,7 +68,22 @@ public class ChatRoomController implements ChatRoomActivity.ChatRoomHolder, View
                 adapter.addData(chatRoom);
                 adapter.notifyDataSetChanged();
                 rvChat.smoothScrollToPosition(adapter.getItemCount());
+                WindowUtils.showVoice(context);
                 dialog.dismiss();
+            }
+        });
+        BmobQuery<ChatRoom> query = new BmobQuery<>();
+        query.order("createdAt");
+        query.setLimit(50);
+        query.findObjects(new FindListener<ChatRoom>() {
+            @Override
+            public void done(List<ChatRoom> list, BmobException e) {
+                if (list != null){
+                    adapter.setData(list);
+                    adapter.notifyDataSetChanged();
+                    rvChat.smoothScrollToPosition(adapter.getItemCount());
+                    dialog.dismiss();
+                }
             }
         });
     }

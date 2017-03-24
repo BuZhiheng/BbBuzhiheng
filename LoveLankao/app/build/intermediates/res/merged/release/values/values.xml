@@ -34,6 +34,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="color_alpha_black">#cc404040</color>
+    <color name="color_alpha_green">#aa25B7AA</color>
     <color name="color_bg">#F2F3F5</color>
     <color name="color_black">#000000</color>
     <color name="color_black_text">#404040</color>

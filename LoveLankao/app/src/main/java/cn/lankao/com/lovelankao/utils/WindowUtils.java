@@ -2,6 +2,9 @@ package cn.lankao.com.lovelankao.utils;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.WindowManager;
@@ -77,5 +80,10 @@ public class WindowUtils {
                 return df.format(d) + "km";
             }
         }
+    }
+    public static void showVoice(Context context){
+        Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+        Ringtone r = RingtoneManager.getRingtone(context.getApplicationContext(), notification);
+        r.play();
     }
 }

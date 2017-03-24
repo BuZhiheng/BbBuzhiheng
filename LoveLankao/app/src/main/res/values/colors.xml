@@ -10,7 +10,7 @@
     <color name="color_gray_b1">#B1B1B1</color>
     <color name="color_bg">#F2F3F5</color>
     <color name="color_alpha_black">#cc404040</color>
-
+    <color name="color_alpha_green">#aa25B7AA</color>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
