@@ -4217,11 +4217,33 @@ android.support.v7.widget.DecorToolbar:
 android.support.v7.widget.DefaultItemAnimator:
     private static final boolean DEBUG
 android.support.v7.widget.DrawableUtils
-android.support.v7.widget.GridLayoutManager
+android.support.v7.widget.GridLayoutManager:
+    private static final boolean DEBUG
+    private static final java.lang.String TAG
+    public static final int DEFAULT_SPAN_COUNT
+    48:79:public GridLayoutManager(android.content.Context,android.util.AttributeSet,int,int)
+    48:90:public GridLayoutManager(android.content.Context,int)
+    48:103:public GridLayoutManager(android.content.Context,int,int,boolean)
+    111:117:public void setStackFromEnd(boolean)
+    254:255:public void setSpanSizeLookup(android.support.v7.widget.GridLayoutManager$SpanSizeLookup)
+    263:263:public android.support.v7.widget.GridLayoutManager$SpanSizeLookup getSpanSizeLookup()
+    663:673:public void setSpanCount(int)
 android.support.v7.widget.GridLayoutManager$DefaultSpanSizeLookup
-android.support.v7.widget.GridLayoutManager$LayoutParams
-android.support.v7.widget.GridLayoutManager$SpanSizeLookup
-android.support.v7.widget.LayoutState
+android.support.v7.widget.GridLayoutManager$LayoutParams:
+    public static final int INVALID_SPAN_ID
+    879:901:public GridLayoutManager$LayoutParams(android.support.v7.widget.RecyclerView$LayoutParams)
+android.support.v7.widget.GridLayoutManager$SpanSizeLookup:
+    682:686:public GridLayoutManager$SpanSizeLookup()
+    704:705:public void setSpanIndexCacheEnabled(boolean)
+    721:721:public boolean isSpanIndexCacheEnabled()
+android.support.v7.widget.LayoutState:
+    static final java.lang.String TAG
+    static final int LAYOUT_START
+    static final int LAYOUT_END
+    static final int INVALID_LAYOUT
+    static final int ITEM_DIRECTION_HEAD
+    static final int ITEM_DIRECTION_TAIL
+    static final int SCOLLING_OFFSET_NaN
 android.support.v7.widget.LinearLayoutCompat:
     public static final int HORIZONTAL
     public static final int VERTICAL
@@ -4252,8 +4274,6 @@ android.support.v7.widget.LinearLayoutManager:
     209:210:public void setRecycleChildrenOnDetach(boolean)
     292:298:public void setStackFromEnd(boolean)
     301:301:public boolean getStackFromEnd()
-    311:311:public int getOrientation()
-    354:354:public boolean getReverseLayout()
     988:994:public void scrollToPositionWithOffset(int,int)
     1102:1103:public void setSmoothScrollbarEnabled(boolean)
     1113:1113:public boolean isSmoothScrollbarEnabled()
@@ -4366,13 +4386,8 @@ android.support.v7.widget.RecyclerView:
     public static final int SCROLL_STATE_SETTLING
     773:773:public boolean hasFixedSize()
     830:834:public void swapAdapter(android.support.v7.widget.RecyclerView$Adapter,boolean)
-    950:954:public void addOnChildAttachStateChangeListener(android.support.v7.widget.RecyclerView$OnChildAttachStateChangeListener)
-    962:966:public void removeOnChildAttachStateChangeListener(android.support.v7.widget.RecyclerView$OnChildAttachStateChangeListener)
     973:976:public void clearOnChildAttachStateChangeListeners()
-    1200:1214:public void addItemDecoration(android.support.v7.widget.RecyclerView$ItemDecoration,int)
     1229:1230:public void addItemDecoration(android.support.v7.widget.RecyclerView$ItemDecoration)
-    1242:1252:public void removeItemDecoration(android.support.v7.widget.RecyclerView$ItemDecoration)
-    1309:1312:public void removeOnScrollListener(android.support.v7.widget.RecyclerView$OnScrollListener)
     1318:1321:public void clearOnScrollListeners()
     1332:1343:public void scrollToPosition(int)
     1731:1731:public boolean isLayoutFrozen()
@@ -4380,7 +4395,6 @@ android.support.v7.widget.RecyclerView:
     2137:2138:public void addOnItemTouchListener(android.support.v7.widget.RecyclerView$OnItemTouchListener)
     2146:2150:public void removeOnItemTouchListener(android.support.v7.widget.RecyclerView$OnItemTouchListener)
     3204:3204:public boolean isAnimating()
-    3381:3390:public void invalidateItemDecorations()
     3420:3420:public int getChildPosition(android.view.View)
     3430:3431:public int getChildAdapterPosition(android.view.View)
     3456:3460:public long getChildItemId(android.view.View)
@@ -4389,7 +4403,6 @@ android.support.v7.widget.RecyclerView:
     3506:3516:public android.support.v7.widget.RecyclerView$ViewHolder findViewHolderForAdapterPosition(int)
     3551:3560:public android.support.v7.widget.RecyclerView$ViewHolder findViewHolderForItemId(long)
     3571:3583:public android.view.View findChildViewUnder(float,float)
-    144:144:static synthetic boolean access$5200(android.support.v7.widget.RecyclerView)
     144:144:static synthetic void access$5400(android.support.v7.widget.RecyclerView,int,int)
 android.support.v7.widget.RecyclerView$ItemAnimator:
     public static final int FLAG_CHANGED
@@ -4408,10 +4421,6 @@ android.support.v7.widget.RecyclerView$ItemAnimator$ItemHolderInfo:
     public int changeFlags
 android.support.v7.widget.RecyclerView$LayoutManager:
     5758:5761:public void assertInLayoutOrScroll(java.lang.String)
-    5818:5818:public boolean isAttachedToWindow()
-    5832:5835:public void postOnAnimation(java.lang.Runnable)
-    5852:5855:public boolean removeCallbacks(java.lang.Runnable)
-    5901:5901:public boolean getClipToPadding()
     6152:6155:public void endAnimation(android.view.View)
     6302:6306:public void removeAllViews()
     6336:6336:public int getItemViewType(android.view.View)
@@ -4427,11 +4436,9 @@ android.support.v7.widget.RecyclerView$LayoutManager:
     6721:6729:public void ignoreView(android.view.View)
     6741:6745:public void stopIgnoringView(android.view.View)
     6832:6845:public void measureChild(android.view.View,int,int)
-    7046:7052:public void calculateItemDecorationsForChild(android.view.View,android.graphics.Rect)
     7481:7482:public void setMeasuredDimension(int,int)
     7488:7488:public int getMinimumWidth()
     7495:7495:public int getMinimumHeight()
-    7686:7687:public void requestSimpleAnimationsInNextLayout()
     7845:7853:public static android.support.v7.widget.RecyclerView$LayoutManager$Properties getProperties(android.content.Context,android.util.AttributeSet,int,int)
 android.support.v7.widget.RecyclerView$LayoutManager$Properties
 android.support.v7.widget.RecyclerView$LayoutParams:
@@ -4446,7 +4453,6 @@ android.support.v7.widget.RecyclerView$RecycledViewPool:
 android.support.v7.widget.RecyclerView$Recycler:
     private static final int DEFAULT_CACHE_SIZE
     4283:4317:public void bindViewToPosition(android.view.View,int)
-    4338:4345:public int convertPreLayoutPositionToPostLayout(int)
     4583:4584:void recycleViewInternal(android.view.View)
 android.support.v7.widget.RecyclerView$SimpleOnItemTouchListener
 android.support.v7.widget.RecyclerView$SmoothScroller:
@@ -4468,7 +4474,6 @@ android.support.v7.widget.RecyclerView$State:
     9417:9421:public void remove(int)
     9432:9435:public java.lang.Object get(int)
     9447:9451:public void put(int,java.lang.Object)
-    9461:9461:public int getTargetScrollPosition()
     9478:9478:public boolean didStructureChange()
 android.support.v7.widget.RecyclerView$ViewCacheExtension:
     5111:5111:public RecyclerView$ViewCacheExtension()
@@ -4577,17 +4582,57 @@ android.support.v7.widget.SimpleItemAnimator:
     private static final java.lang.String TAG
     37:37:public boolean getSupportsChangeAnimations()
     58:59:public void setSupportsChangeAnimations(boolean)
-android.support.v7.widget.StaggeredGridLayoutManager
+android.support.v7.widget.StaggeredGridLayoutManager:
+    public static final java.lang.String TAG
+    private static final boolean DEBUG
+    public static final int HORIZONTAL
+    public static final int VERTICAL
+    public static final int GAP_HANDLING_NONE
+    public static final int GAP_HANDLING_LAZY
+    public static final int GAP_HANDLING_MOVE_ITEMS_BETWEEN_SPANS
+    private static final int INVALID_OFFSET
+    97:214:public StaggeredGridLayoutManager(android.content.Context,android.util.AttributeSet,int,int)
+    97:226:public StaggeredGridLayoutManager(int,int)
+    384:395:public void setSpanCount(int)
+    404:419:public void setOrientation(int)
+    458:458:public int getGapStrategy()
+    471:482:public void setGapStrategy(int)
+    497:497:public int getSpanCount()
+    507:509:public void invalidateSpanAssignments()
+    547:547:public boolean getReverseLayout()
+    826:835:public int[] findFirstVisibleItemPositions(int[])
+    858:867:public int[] findFirstCompletelyVisibleItemPositions(int[])
+    890:899:public int[] findLastVisibleItemPositions(int[])
+    922:931:public int[] findLastCompletelyVisibleItemPositions(int[])
+    1902:1908:public void scrollToPositionWithOffset(int,int)
+    2014:2014:public int getOrientation()
+    53:53:static synthetic boolean access$100(android.support.v7.widget.StaggeredGridLayoutManager)
+    53:53:static synthetic boolean access$600(android.support.v7.widget.StaggeredGridLayoutManager)
 android.support.v7.widget.StaggeredGridLayoutManager$1
-android.support.v7.widget.StaggeredGridLayoutManager$2
-android.support.v7.widget.StaggeredGridLayoutManager$AnchorInfo
-android.support.v7.widget.StaggeredGridLayoutManager$LayoutParams
-android.support.v7.widget.StaggeredGridLayoutManager$LazySpanLookup
-android.support.v7.widget.StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem
-android.support.v7.widget.StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem$1
-android.support.v7.widget.StaggeredGridLayoutManager$SavedState
-android.support.v7.widget.StaggeredGridLayoutManager$SavedState$1
-android.support.v7.widget.StaggeredGridLayoutManager$Span
+android.support.v7.widget.StaggeredGridLayoutManager$AnchorInfo:
+    2787:2787:private StaggeredGridLayoutManager$AnchorInfo(android.support.v7.widget.StaggeredGridLayoutManager)
+    2787:2787:synthetic StaggeredGridLayoutManager$AnchorInfo(android.support.v7.widget.StaggeredGridLayoutManager,android.support.v7.widget.StaggeredGridLayoutManager$1)
+android.support.v7.widget.StaggeredGridLayoutManager$LayoutParams:
+    public static final int INVALID_SPAN_ID
+    2054:2055:public StaggeredGridLayoutManager$LayoutParams(android.support.v7.widget.RecyclerView$LayoutParams)
+    2066:2067:public void setFullSpan(boolean)
+    2076:2076:public boolean isFullSpan()
+android.support.v7.widget.StaggeredGridLayoutManager$LazySpanLookup:
+    private static final int MIN_SIZE
+    2370:2604:StaggeredGridLayoutManager$LazySpanLookup()
+android.support.v7.widget.StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem:
+    2633:2634:public void invalidateSpanGaps()
+android.support.v7.widget.StaggeredGridLayoutManager$Span:
+    static final int INVALID_LINE
+    2097:2105:private StaggeredGridLayoutManager$Span(android.support.v7.widget.StaggeredGridLayoutManager,int)
+    2283:2297:int getNormalizedOffset(int,int,int)
+    2309:2317:boolean isEmpty(int,int)
+    2321:2321:public int findFirstVisibleItemPosition()
+    2327:2327:public int findFirstCompletelyVisibleItemPosition()
+    2333:2333:public int findLastVisibleItemPosition()
+    2339:2339:public int findLastCompletelyVisibleItemPosition()
+    2345:2362:int findOneVisibleChild(int,int,boolean)
+    2094:2094:synthetic StaggeredGridLayoutManager$Span(android.support.v7.widget.StaggeredGridLayoutManager,int,android.support.v7.widget.StaggeredGridLayoutManager$1)
 android.support.v7.widget.SuggestionsAdapter:
     private static final boolean DBG
     private static final java.lang.String LOG_TAG
@@ -4707,14 +4752,10 @@ cn.bmob.aar.R$id
 cn.bmob.aar.R$layout
 cn.bmob.aar.R$string
 com.bartoszlipinski.recyclerviewheader2.BuildConfig
-com.bartoszlipinski.recyclerviewheader2.RecyclerViewHeader
-com.bartoszlipinski.recyclerviewheader2.RecyclerViewHeader$1
-com.bartoszlipinski.recyclerviewheader2.RecyclerViewHeader$2
-com.bartoszlipinski.recyclerviewheader2.RecyclerViewHeader$2$1
-com.bartoszlipinski.recyclerviewheader2.RecyclerViewHeader$HeaderItemDecoration
-com.bartoszlipinski.recyclerviewheader2.RecyclerViewHeader$LayoutManagerDelegate
-com.bartoszlipinski.recyclerviewheader2.RecyclerViewHeader$RecyclerViewDelegate
-com.bartoszlipinski.recyclerviewheader2.RecyclerViewHeader$RecyclerViewDelegate$1
+com.bartoszlipinski.recyclerviewheader2.RecyclerViewHeader:
+    101:108:public final void detach()
+com.bartoszlipinski.recyclerviewheader2.RecyclerViewHeader$RecyclerViewDelegate:
+    317:320:public final void reset()
 com.bigkoo.convenientbanner.BuildConfig
 com.bigkoo.convenientbanner.ConvenientBanner:
     143:144:public com.bigkoo.convenientbanner.ConvenientBanner setPointViewVisible(boolean)

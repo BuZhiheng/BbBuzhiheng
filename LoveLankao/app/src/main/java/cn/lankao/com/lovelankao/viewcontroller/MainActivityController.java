@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.igexin.sdk.PushManager;
 import java.util.ArrayList;
 import java.util.List;
 import cn.lankao.com.lovelankao.R;
@@ -44,7 +43,6 @@ public class MainActivityController implements View.OnClickListener{
 
     public MainActivityController(MainActivity context) {
         this.context = context;
-        PushManager.getInstance().initialize(context.getApplicationContext());
         llIndex = (LinearLayout) context.findViewById(R.id.ll_main_index);
         llLbs = (LinearLayout) context.findViewById(R.id.ll_main_lbs);
         llTalk = (LinearLayout) context.findViewById(R.id.ll_main_talk);

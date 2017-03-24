@@ -20,10 +20,11 @@ public class OnRvScrollListener extends RecyclerView.OnScrollListener implements
             if (lastVisibleItem == (totalItemCount -1) && isSlidingToLast) {
                 //加载更多功能的代码
                 toBottom();
+            } else {
+                toMid();
             }
         }
     }
-
     @Override
     public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
         super.onScrolled(recyclerView, dx, dy);
@@ -38,5 +39,8 @@ public class OnRvScrollListener extends RecyclerView.OnScrollListener implements
     }
     @Override
     public void toBottom() {
+    }
+    @Override
+    public void toMid() {
     }
 }

@@ -16,21 +16,20 @@ import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.UpdateListener;
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.CommentActivity;
+import cn.lankao.com.lovelankao.activity.LoginActivity;
 import cn.lankao.com.lovelankao.activity.SquareActivity;
 import cn.lankao.com.lovelankao.model.Square;
 import cn.lankao.com.lovelankao.utils.BitmapUtil;
 import cn.lankao.com.lovelankao.model.CommonCode;
 import cn.lankao.com.lovelankao.utils.PrefUtil;
 import cn.lankao.com.lovelankao.utils.TextUtil;
-import cn.lankao.com.lovelankao.utils.WindowUtils;
-
+import cn.lankao.com.lovelankao.utils.ToastUtil;
 /**
  * Created by BuZhiheng on 2016/4/3.
  */
 public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.MyViewHolder> {
     private Context context;
     private List<Square> data;
-    private int width = WindowUtils.getWindowsWidth();
     public SquareAdapter(Context context) {
         this.context = context;
         data = new ArrayList<>();
@@ -113,6 +112,11 @@ public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.MyViewHold
         holder.llLikeTimes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (!isLogin()){
+                    Intent intent = new Intent(context,LoginActivity.class);
+                    context.startActivity(intent);
+                    return;
+                }
                 if (square.getLikeUsers() == null || !square.getLikeUsers().contains(nickname)) {
                     final int like = square.getLikeTimes() == null ? 1 : square.getLikeTimes() + 1;
                     String likeUsers = square.getLikeUsers() == null ? nickname : nickname + "," + square.getLikeUsers();
@@ -150,12 +154,25 @@ public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.MyViewHold
         holder.llComment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (!isLogin()){
+                    Intent intent = new Intent(context,LoginActivity.class);
+                    context.startActivity(intent);
+                    return;
+                }
                 Intent intent = new Intent(context,CommentActivity.class);
                 intent.putExtra(CommonCode.INTENT_COMMENT_POSTID,square.getObjectId());
                 intent.putExtra(CommonCode.INTENT_COMMENT_LASTCONTENT,"");
                 context.startActivity(intent);
             }
         });
+    }
+    private boolean isLogin(){
+        String nickname = PrefUtil.getString(CommonCode.SP_USER_NICKNAME, "");
+        if (TextUtil.isNull(nickname)){
+            ToastUtil.show("请先登录");
+            return false;
+        }
+        return true;
     }
     class MyViewHolder extends RecyclerView.ViewHolder {
         ImageView ivPhoto;

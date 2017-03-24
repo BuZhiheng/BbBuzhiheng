@@ -160,5 +160,5 @@
                 />
         </LinearLayout>
     </LinearLayout>
-    <include layout="@layout/include_slid_img_height10"/>
+    <include layout="@layout/include_slid_img_height5"/>
 </LinearLayout>

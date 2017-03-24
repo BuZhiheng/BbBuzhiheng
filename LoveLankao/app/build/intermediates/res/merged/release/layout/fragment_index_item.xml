@@ -2,8 +2,8 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/ll_indexfrm_item"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="80dp"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/common_ll_bg"
     >
@@ -16,8 +16,8 @@
         >
         <ImageView
             android:id="@+id/iv_indexfrm_item_service_title"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="39dp"
+            android:layout_height="39dp"
             android:src="@drawable/ic_launcher"
             />
         <TextView

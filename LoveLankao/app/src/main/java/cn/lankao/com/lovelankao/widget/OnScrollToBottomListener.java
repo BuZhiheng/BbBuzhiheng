@@ -4,4 +4,5 @@ package cn.lankao.com.lovelankao.widget;
  */
 public interface OnScrollToBottomListener {
     void toBottom();
+    void toMid();
 }

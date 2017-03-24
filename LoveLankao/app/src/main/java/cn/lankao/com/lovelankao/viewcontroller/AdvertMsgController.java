@@ -180,7 +180,7 @@ public class AdvertMsgController implements View.OnClickListener, SwipeRefreshLa
         tvAverge.setText(advertNormal.getAdvPrice());
 
         tvActivite.setText(advertNormal.getAdvActivity());
-        tvTitleCenter.setText(advertNormal.getTitle());
+        tvTitleCenter.setText(advertNormal.getTitle()+"(查看位置)");
         tvAddress.setText(advertNormal.getAdvAddress());
         tvContentMsg.setText(advertNormal.getAdvContent());
         tvPinglun.setText(advertNormal.getAdvRemark());

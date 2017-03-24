@@ -31,7 +31,6 @@ public class IndexFragmentController implements SwipeRefreshLayout.OnRefreshList
     private Context context;
     private View view;
     private SwipeRefreshLayout refreshLayout;
-    private HorizontalScrollView scrollView;
     private IndexAdapter adapter;
     public IndexFragmentController(Context context, View view){
         this.context = context;
@@ -42,12 +41,10 @@ public class IndexFragmentController implements SwipeRefreshLayout.OnRefreshList
     }
     private void initView() {
         x.view().inject((Activity) context);
-        scrollView = (HorizontalScrollView) view.findViewById(R.id.scv_indexfrm_service);
         refreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.srl_index_frm);
         refreshLayout.setOnRefreshListener(this);
-        view.findViewById(R.id.fl_indexfrm_more_news).setOnClickListener(this);
-        view.findViewById(R.id.fl_indexfrm_more_read).setOnClickListener(this);
         view.findViewById(R.id.fl_indexfrm_more_chat).setOnClickListener(this);
+        view.findViewById(R.id.fl_indexfrm_more_news).setOnClickListener(this);
         view.findViewById(R.id.fl_indexfrm_more_menu).setOnClickListener(this);
         view.findViewById(R.id.fl_indexfrm_more_eat).setOnClickListener(this);
         view.findViewById(R.id.fl_indexfrm_more_jock).setOnClickListener(this);
@@ -97,10 +94,6 @@ public class IndexFragmentController implements SwipeRefreshLayout.OnRefreshList
             case R.id.fl_indexfrm_more_news:
                 Intent intentNews = new Intent(context, LKNewsActivity.class);
                 context.startActivity(intentNews);
-                break;
-            case R.id.fl_indexfrm_more_read:
-                Intent intentRead = new Intent(context, ReadWeixinActivity.class);
-                context.startActivity(intentRead);
                 break;
             case R.id.fl_indexfrm_more_chat:
                 Intent intentChat = new Intent(context, ChatRoomActivity.class);

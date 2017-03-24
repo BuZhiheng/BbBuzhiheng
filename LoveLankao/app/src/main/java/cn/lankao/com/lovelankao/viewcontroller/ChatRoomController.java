@@ -4,10 +4,14 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
+
 import com.google.gson.Gson;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import cn.bmob.v3.BmobQuery;
@@ -22,8 +26,10 @@ import cn.lankao.com.lovelankao.adapter.ChatRoomAdapter;
 import cn.lankao.com.lovelankao.model.ChatRoom;
 import cn.lankao.com.lovelankao.model.CommonCode;
 import cn.lankao.com.lovelankao.utils.PrefUtil;
+import cn.lankao.com.lovelankao.utils.TextUtil;
 import cn.lankao.com.lovelankao.utils.ToastUtil;
 import cn.lankao.com.lovelankao.utils.WindowUtils;
+import cn.lankao.com.lovelankao.widget.OnRvScrollListener;
 import cn.lankao.com.lovelankao.widget.ProDialog;
 /**
  * Created by BuZhiheng on 2016/4/3.
@@ -34,7 +40,9 @@ public class ChatRoomController implements ChatRoomActivity.ChatRoomHolder, View
     private BmobRealTimeData realTimeData;
     private ChatRoomAdapter adapter;
     private EditText etContent;
+    private ImageView ivNewMsg;
     private ProgressDialog dialog;
+    private boolean isBottom = false;
     public ChatRoomController(ChatRoomActivity context){
         this.context = context;
         initView();
@@ -47,14 +55,28 @@ public class ChatRoomController implements ChatRoomActivity.ChatRoomHolder, View
         context.findViewById(R.id.btn_chat_send).setOnClickListener(this);
         context.findViewById(R.id.iv_chatroom_back).setOnClickListener(this);
         etContent = (EditText) context.findViewById(R.id.et_chat_content);
+        ivNewMsg = (ImageView) context.findViewById(R.id.iv_chatroom_newmsg);
+        ivNewMsg.setOnClickListener(this);
         rvChat = (RecyclerView) context.findViewById(R.id.rv_chat_room);
         rvChat.setLayoutManager(new LinearLayoutManager(context));
         rvChat.setAdapter(adapter);
+        rvChat.addOnScrollListener(new OnRvScrollListener(){
+            @Override
+            public void toBottom() {
+                isBottom = true;
+                ivNewMsg.setVisibility(View.GONE);
+            }
+            @Override
+            public void toMid() {
+                isBottom = false;
+            }
+        });
         realTimeData.start(new ValueEventListener() {
             @Override
             public void onConnectCompleted(Exception e) {
                 realTimeData.subTableUpdate("ChatRoom");
-                sendMsg(1);
+                //连接成功聊天室,加载历史记录
+                initChatRoomHis();
             }
             @Override
             public void onDataChange(JSONObject jsonObject) {
@@ -65,25 +87,38 @@ public class ChatRoomController implements ChatRoomActivity.ChatRoomHolder, View
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+                if (TextUtil.isNull(chatRoom.getNickName())){
+                    return;
+                }
                 adapter.addData(chatRoom);
                 adapter.notifyDataSetChanged();
+                if (isBottom){
+                    //如果在最底部就滚动到最底部
+                    rvChat.smoothScrollToPosition(adapter.getItemCount());
+                } else {
+                    ivNewMsg.setVisibility(View.VISIBLE);
+                }
                 rvChat.smoothScrollToPosition(adapter.getItemCount());
                 WindowUtils.showVoice(context);
                 dialog.dismiss();
             }
         });
+    }
+    private void initChatRoomHis() {
         BmobQuery<ChatRoom> query = new BmobQuery<>();
-        query.order("createdAt");
-        query.setLimit(50);
+        query.order("-createdAt");
+        query.setLimit(100);
         query.findObjects(new FindListener<ChatRoom>() {
             @Override
             public void done(List<ChatRoom> list, BmobException e) {
                 if (list != null){
+                    Collections.reverse(list);
                     adapter.setData(list);
                     adapter.notifyDataSetChanged();
-                    rvChat.smoothScrollToPosition(adapter.getItemCount());
                     dialog.dismiss();
                 }
+                //加载历史记录完毕以后,发送本人加入聊天室信息
+                sendMsg(1);
             }
         });
     }
@@ -103,6 +138,8 @@ public class ChatRoomController implements ChatRoomActivity.ChatRoomHolder, View
             case R.id.iv_chatroom_back:
                 context.finish();
                 break;
+            case R.id.iv_chatroom_newmsg:
+                rvChat.smoothScrollToPosition(adapter.getItemCount());
             default:break;
         }
     }
@@ -110,9 +147,11 @@ public class ChatRoomController implements ChatRoomActivity.ChatRoomHolder, View
         ChatRoom chatRoom = new ChatRoom();
         String nickname = PrefUtil.getString(CommonCode.SP_USER_NICKNAME, "游客");
         if(isFirst == 1){
+            //发送本人加入聊天室
             chatRoom.setNickName(nickname);
-            chatRoom.setChatContent(nickname + "  加入聊天室!");
-        }else{
+            chatRoom.setChatContent("欢迎  " + nickname + "  进入聊天室!");
+        } else {
+            //发送内容
             String content = etContent.getText().toString();
             if (content == null || "".equals(content)){
                 ToastUtil.show("请输入内容");
@@ -124,9 +163,9 @@ public class ChatRoomController implements ChatRoomActivity.ChatRoomHolder, View
         String type = PrefUtil.getString(CommonCode.SP_USER_USERTYPE,"");
         if ("1000".equals(type)){
             chatRoom.setChatUserType("管理员");
-        }else if ("1001".equals(type)){
+        } else if ("1001".equals(type)){
             chatRoom.setChatUserType("VIP用户");
-        } else{
+        } else {
             chatRoom.setChatUserType("");
         }
         chatRoom.save(new SaveListener() {

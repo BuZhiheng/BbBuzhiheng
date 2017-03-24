@@ -2,13 +2,11 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
     <FrameLayout
         android:layout_gravity="top"
         android:layout_width="match_parent"
         android:layout_height="@dimen/common_title_height"
         android:background="@color/color_green">
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -16,7 +14,6 @@
             android:text="聊天室"
             android:textColor="@color/color_white"
             android:textSize="@dimen/text_main_title" />
-
         <ImageView
             android:id="@+id/iv_chatroom_back"
             android:layout_width="25dp"
@@ -29,12 +26,20 @@
         android:id="@+id/rv_chat_room"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/common_margin"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="50dp"
         android:layout_marginTop="@dimen/common_title_height"
         android:scrollbars="vertical"
         />
-
+    <ImageView
+        android:id="@+id/iv_chatroom_newmsg"
+        android:layout_gravity="bottom|right"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="50dp"
+        android:layout_marginRight="@dimen/common_margin"
+        android:src="@drawable/ic_chatroom_newmsg"
+        android:visibility="gone"
+        />
     <LinearLayout
         android:layout_gravity="bottom"
         android:layout_width="match_parent"
