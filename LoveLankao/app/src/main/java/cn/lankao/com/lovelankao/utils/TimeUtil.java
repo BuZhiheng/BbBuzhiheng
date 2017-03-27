@@ -2,7 +2,6 @@ package cn.lankao.com.lovelankao.utils;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 /**
  * Created by buzhiheng on 2016/11/9.
  */

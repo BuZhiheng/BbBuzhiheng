@@ -203,7 +203,7 @@ public class BitmapUtil {
          * */
         return new ImageOptions.Builder()
                 .setCrop(false)
-                .setImageScaleType(ImageView.ScaleType.FIT_XY)
+                .setImageScaleType(ImageView.ScaleType.FIT_CENTER)
                 .build();
     }
     public static byte[] bitmapToByte(Bitmap bmp){

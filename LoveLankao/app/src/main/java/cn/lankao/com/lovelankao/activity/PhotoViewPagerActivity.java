@@ -31,7 +31,7 @@ public class PhotoViewPagerActivity extends AppCompatActivity {
             return;
         }
         mPager = (ViewPager) findViewById(R.id.vp_photo);
-//        mPager.setPageMargin((int) (getResources().getDisplayMetrics().density * 15));
+        mPager.setPageMargin((int) (getResources().getDisplayMetrics().density * 15));
         mPager.setAdapter(new PagerAdapter() {
             @Override
             public int getCount() {
