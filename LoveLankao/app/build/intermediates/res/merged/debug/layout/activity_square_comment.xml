@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="@dimen/common_title_height39"
         android:layout_marginTop="@dimen/common_margin"
         >
         <ImageView
@@ -16,16 +16,31 @@
             android:layout_height="30dp"
             android:layout_marginLeft="@dimen/common_margin"
             android:src="@drawable/ic_launcher"/>
-        <TextView
-            android:id="@+id/tv_square_comment_nickname"
+        <LinearLayout
+            android:layout_marginLeft="@dimen/common_title_height"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/common_title_height"
-            android:text="Carry"
-            android:textSize="@dimen/text_common_item_content"
-            android:textColor="@color/colorPrimaryDark"
-            android:gravity="center_vertical"
-            />
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:id="@+id/tv_square_comment_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_test"
+                android:textColor="@color/colorPrimaryDark"
+                />
+            <TextView
+                android:id="@+id/tv_square_comment_usertype"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/common_margin_little"
+                android:layout_marginRight="@dimen/common_margin"
+                android:background="@drawable/common_vip_type"
+                android:text=""
+                android:textSize="@dimen/text_common_item_content"
+                android:textColor="@color/color_yellow_vip"
+                />
+        </LinearLayout>
         <TextView
             android:id="@+id/tv_square_comment_time"
             android:layout_gravity="bottom"
@@ -55,7 +70,7 @@
         android:layout_marginLeft="@dimen/common_title_height"
         android:layout_marginRight="@dimen/common_title_height"
         android:layout_marginTop="@dimen/common_margin"
-        android:text="回复：Carry 你说的有道理"
+        android:text=""
         android:textSize="@dimen/text_common_item_content"
         android:textColor="@color/color_gray_deep"
         android:textStyle="italic"

@@ -48,11 +48,18 @@ public class SquareActivityController{
         }
         final String nickname = PrefUtil.getString(CommonCode.SP_USER_NICKNAME, "");
         Drawable drawable;
-        if (square.getLikeUsers() == null || !square.getLikeUsers().contains(nickname)){
-            drawable = ContextCompat.getDrawable(context, R.drawable.ic_square_liketimes);
-        } else {
+        if (!TextUtil.isNull(nickname) && !TextUtil.isNull(square.getLikeUsers()) && square.getLikeUsers().contains(nickname)){
             drawable = ContextCompat.getDrawable(context, R.drawable.ic_square_liketimesc);
+        } else {
+            drawable = ContextCompat.getDrawable(context, R.drawable.ic_square_liketimes);
         }
+//        final String nickname = PrefUtil.getString(CommonCode.SP_USER_NICKNAME,"");
+//        holder.ivLikeTimes.setImageDrawable(ContextCompat.getDrawable(context,R.drawable.ic_square_liketimes));
+//        if (!TextUtil.isNull(nickname) && !TextUtil.isNull(square.getLikeUsers()) && square.getLikeUsers().contains(nickname)){
+//            holder.ivLikeTimes.setImageDrawable(ContextCompat.getDrawable(context,R.drawable.ic_square_liketimesc));
+//        } else {
+//            holder.ivLikeTimes.setImageDrawable(ContextCompat.getDrawable(context,R.drawable.ic_square_liketimes));
+//        }
         list.clear();
         setPhoto(square.getSquarePhoto1(), context.ivPhoto1);
         setPhoto(square.getSquarePhoto2(), context.ivPhoto2);
@@ -76,13 +83,19 @@ public class SquareActivityController{
         BmobQuery<Comment> query = new BmobQuery<>();
         query.addWhereEqualTo("postId",square.getObjectId());
         query.order("-createdAt");
-        query.setLimit(1000);
+        query.setLimit(100);
         query.findObjects(new FindListener<Comment>() {
             @Override
             public void done(List<Comment> list, BmobException e) {
                 if (e == null){
                     listComment = list;
                     setComment();
+                    square.setCommentTimes(list.size());
+                    square.update(new UpdateListener() {
+                        @Override
+                        public void done(BmobException e) {
+                        }
+                    });
                 }
             }
         });

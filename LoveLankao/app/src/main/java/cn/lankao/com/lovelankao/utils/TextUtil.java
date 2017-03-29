@@ -3,6 +3,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import cn.lankao.com.lovelankao.model.CommonCode;
+
 /**
  * Created by buzhiheng on 2016/8/4.
  */
@@ -69,5 +72,20 @@ public class TextUtil {
                 return phone.replaceFirst(sMiddle,"****");
             }
         }
+    }
+    public static String getVipString(String vipCode){
+        if (isNull(vipCode)){
+            return "";
+        }
+        if(CommonCode.USER_VIP_TYPE1.equals(vipCode)){
+            return "  钻石用户 ";
+        }
+        if(CommonCode.USER_VIP_TYPE2.equals(vipCode)){
+            return "  黄金用户  ";
+        }
+        if(CommonCode.USER_VIP_TYPE3.equals(vipCode)){
+            return "  白银用户  ";
+        }
+        return "";
     }
 }

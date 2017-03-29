@@ -18,6 +18,7 @@ public class Square extends BmobObject{
     private String squareUserType;
     private String likeUsers;
     private Integer likeTimes;
+    private Integer commentTimes;
     private Integer clickTimes;
     public String getUserPhoto() {
         return userPhoto;
@@ -129,5 +130,13 @@ public class Square extends BmobObject{
 
     public void setSquarePhoto6(BmobFile squarePhoto6) {
         this.squarePhoto6 = squarePhoto6;
+    }
+
+    public Integer getCommentTimes() {
+        return commentTimes;
+    }
+
+    public void setCommentTimes(Integer commentTimes) {
+        this.commentTimes = commentTimes;
     }
 }

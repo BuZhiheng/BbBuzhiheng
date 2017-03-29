@@ -7194,6 +7194,7 @@ cn.lankao.com.lovelankao.R$color: int color_gray_deep
 cn.lankao.com.lovelankao.R$color: int color_green
 cn.lankao.com.lovelankao.R$color: int color_white
 cn.lankao.com.lovelankao.R$color: int color_yellow
+cn.lankao.com.lovelankao.R$color: int color_yellow_vip
 cn.lankao.com.lovelankao.R$color: int design_fab_shadow_end_color
 cn.lankao.com.lovelankao.R$color: int design_fab_shadow_mid_color
 cn.lankao.com.lovelankao.R$color: int design_fab_shadow_start_color
@@ -7478,6 +7479,7 @@ cn.lankao.com.lovelankao.R$drawable: int common_ll_bg
 cn.lankao.com.lovelankao.R$drawable: int common_ll_bg_pressed
 cn.lankao.com.lovelankao.R$drawable: int common_ll_bg_pressup
 cn.lankao.com.lovelankao.R$drawable: int common_tv_chat
+cn.lankao.com.lovelankao.R$drawable: int common_vip_type
 cn.lankao.com.lovelankao.R$drawable: int design_fab_background
 cn.lankao.com.lovelankao.R$drawable: int design_snackbar_background
 cn.lankao.com.lovelankao.R$drawable: int ic_chatroom_newmsg
@@ -7965,6 +7967,7 @@ cn.lankao.com.lovelankao.R$id: int tv_square_comment_nickname
 cn.lankao.com.lovelankao.R$id: int tv_square_comment_recomment
 cn.lankao.com.lovelankao.R$id: int tv_square_comment_recontent
 cn.lankao.com.lovelankao.R$id: int tv_square_comment_time
+cn.lankao.com.lovelankao.R$id: int tv_square_comment_usertype
 cn.lankao.com.lovelankao.R$id: int tv_square_comment_writecomment
 cn.lankao.com.lovelankao.R$id: int tv_square_item_clicktimes
 cn.lankao.com.lovelankao.R$id: int tv_square_item_commenttimes
@@ -7973,6 +7976,7 @@ cn.lankao.com.lovelankao.R$id: int tv_square_item_liketimes
 cn.lankao.com.lovelankao.R$id: int tv_square_item_nickname
 cn.lankao.com.lovelankao.R$id: int tv_square_item_time
 cn.lankao.com.lovelankao.R$id: int tv_square_item_title
+cn.lankao.com.lovelankao.R$id: int tv_square_item_usertype
 cn.lankao.com.lovelankao.R$id: int tv_titlebar_title
 cn.lankao.com.lovelankao.R$id: int tv_top_item_desc
 cn.lankao.com.lovelankao.R$id: int tv_top_item_from
@@ -9050,6 +9054,7 @@ cn.lankao.com.lovelankao.activity.SquareActivity: android.widget.TextView tvNick
 cn.lankao.com.lovelankao.activity.SquareActivity: android.widget.TextView tvTime
 cn.lankao.com.lovelankao.activity.SquareActivity: android.widget.TextView tvTitle
 cn.lankao.com.lovelankao.activity.SquareActivity: android.widget.TextView tvContent
+cn.lankao.com.lovelankao.activity.SquareActivity: android.widget.TextView tvUserType
 cn.lankao.com.lovelankao.activity.SquareActivity: android.widget.ImageView ivPhoto1
 cn.lankao.com.lovelankao.activity.SquareActivity: android.widget.ImageView ivPhoto2
 cn.lankao.com.lovelankao.activity.SquareActivity: android.widget.ImageView ivPhoto3
@@ -9066,7 +9071,6 @@ cn.lankao.com.lovelankao.activity.SquareActivity: android.widget.LinearLayout ll
 cn.lankao.com.lovelankao.activity.SquareActivity: android.widget.LinearLayout llPhoto2
 cn.lankao.com.lovelankao.activity.SquareActivity: org.xutils.image.ImageOptions option
 cn.lankao.com.lovelankao.activity.SquareActivity: org.xutils.image.ImageOptions optionPhoto
-cn.lankao.com.lovelankao.activity.SquareActivity: cn.lankao.com.lovelankao.model.Square square
 cn.lankao.com.lovelankao.activity.SquareActivity: SquareActivity()
 cn.lankao.com.lovelankao.activity.SquareActivity: void onCreate(android.os.Bundle)
 cn.lankao.com.lovelankao.activity.SquareActivity: void initView()
@@ -9106,6 +9110,7 @@ cn.lankao.com.lovelankao.activity.SquareActivity$CommentHolder: android.widget.T
 cn.lankao.com.lovelankao.activity.SquareActivity$CommentHolder: android.widget.TextView tvTime
 cn.lankao.com.lovelankao.activity.SquareActivity$CommentHolder: android.widget.TextView tvReComment
 cn.lankao.com.lovelankao.activity.SquareActivity$CommentHolder: android.widget.TextView tvComment
+cn.lankao.com.lovelankao.activity.SquareActivity$CommentHolder: android.widget.TextView tvUserType
 cn.lankao.com.lovelankao.activity.SquareActivity$CommentHolder: cn.lankao.com.lovelankao.activity.SquareActivity this$0
 cn.lankao.com.lovelankao.activity.SquareActivity$CommentHolder: SquareActivity$CommentHolder(cn.lankao.com.lovelankao.activity.SquareActivity,android.view.View)
 cn.lankao.com.lovelankao.activity.SquareSendActivity
@@ -9431,8 +9436,9 @@ cn.lankao.com.lovelankao.adapter.SquareAdapter$1$1: void done(cn.bmob.v3.excepti
 cn.lankao.com.lovelankao.adapter.SquareAdapter$1$1: void done(java.lang.Object)
 cn.lankao.com.lovelankao.adapter.SquareAdapter$2
 cn.lankao.com.lovelankao.adapter.SquareAdapter$2: cn.lankao.com.lovelankao.model.Square val$square
+cn.lankao.com.lovelankao.adapter.SquareAdapter$2: cn.lankao.com.lovelankao.adapter.SquareAdapter$MyViewHolder val$holder
 cn.lankao.com.lovelankao.adapter.SquareAdapter$2: cn.lankao.com.lovelankao.adapter.SquareAdapter this$0
-cn.lankao.com.lovelankao.adapter.SquareAdapter$2: SquareAdapter$2(cn.lankao.com.lovelankao.adapter.SquareAdapter,cn.lankao.com.lovelankao.model.Square)
+cn.lankao.com.lovelankao.adapter.SquareAdapter$2: SquareAdapter$2(cn.lankao.com.lovelankao.adapter.SquareAdapter,cn.lankao.com.lovelankao.model.Square,cn.lankao.com.lovelankao.adapter.SquareAdapter$MyViewHolder)
 cn.lankao.com.lovelankao.adapter.SquareAdapter$2: void onClick(android.view.View)
 cn.lankao.com.lovelankao.adapter.SquareAdapter$2$1
 cn.lankao.com.lovelankao.adapter.SquareAdapter$2$1: cn.lankao.com.lovelankao.adapter.SquareAdapter$2 this$1
@@ -9450,10 +9456,12 @@ cn.lankao.com.lovelankao.adapter.SquareAdapter$MyViewHolder: android.widget.Text
 cn.lankao.com.lovelankao.adapter.SquareAdapter$MyViewHolder: android.widget.TextView tvTime
 cn.lankao.com.lovelankao.adapter.SquareAdapter$MyViewHolder: android.widget.TextView tvTitle
 cn.lankao.com.lovelankao.adapter.SquareAdapter$MyViewHolder: android.widget.TextView tvContent
+cn.lankao.com.lovelankao.adapter.SquareAdapter$MyViewHolder: android.widget.TextView tvUserType
 cn.lankao.com.lovelankao.adapter.SquareAdapter$MyViewHolder: android.widget.ImageView ivPhoto1
 cn.lankao.com.lovelankao.adapter.SquareAdapter$MyViewHolder: android.widget.ImageView ivPhoto2
 cn.lankao.com.lovelankao.adapter.SquareAdapter$MyViewHolder: android.widget.ImageView ivPhoto3
 cn.lankao.com.lovelankao.adapter.SquareAdapter$MyViewHolder: android.widget.ImageView ivLikeTimes
+cn.lankao.com.lovelankao.adapter.SquareAdapter$MyViewHolder: android.widget.TextView tvCommentTimes
 cn.lankao.com.lovelankao.adapter.SquareAdapter$MyViewHolder: android.widget.TextView tvLikeTimes
 cn.lankao.com.lovelankao.adapter.SquareAdapter$MyViewHolder: android.widget.TextView tvClickTimes
 cn.lankao.com.lovelankao.adapter.SquareAdapter$MyViewHolder: android.widget.LinearLayout llPhoto
@@ -9648,6 +9656,7 @@ cn.lankao.com.lovelankao.model.Comment: java.lang.String likeUsers
 cn.lankao.com.lovelankao.model.Comment: java.lang.String lastUserName
 cn.lankao.com.lovelankao.model.Comment: java.lang.String lastUserContent
 cn.lankao.com.lovelankao.model.Comment: java.lang.Integer likeTimes
+cn.lankao.com.lovelankao.model.Comment: java.lang.String userType
 cn.lankao.com.lovelankao.model.Comment: Comment()
 cn.lankao.com.lovelankao.model.Comment: java.lang.String getUserPhotoUrl()
 cn.lankao.com.lovelankao.model.Comment: void setUserPhotoUrl(java.lang.String)
@@ -9665,6 +9674,8 @@ cn.lankao.com.lovelankao.model.Comment: java.lang.String getPostId()
 cn.lankao.com.lovelankao.model.Comment: void setPostId(java.lang.String)
 cn.lankao.com.lovelankao.model.Comment: java.lang.String getUsername()
 cn.lankao.com.lovelankao.model.Comment: void setUsername(java.lang.String)
+cn.lankao.com.lovelankao.model.Comment: java.lang.String getUserType()
+cn.lankao.com.lovelankao.model.Comment: void setUserType(java.lang.String)
 cn.lankao.com.lovelankao.model.CommonCode
 cn.lankao.com.lovelankao.model.CommonCode: java.lang.String APP_ICON
 cn.lankao.com.lovelankao.model.CommonCode: java.lang.String APP_URL
@@ -9688,6 +9699,9 @@ cn.lankao.com.lovelankao.model.CommonCode: int ADVERT_HEZUO
 cn.lankao.com.lovelankao.model.CommonCode: int ADVERT_TUISONG
 cn.lankao.com.lovelankao.model.CommonCode: int RV_ITEMS_COUT
 cn.lankao.com.lovelankao.model.CommonCode: int RV_ITEMS_COUT20
+cn.lankao.com.lovelankao.model.CommonCode: java.lang.String USER_VIP_TYPE1
+cn.lankao.com.lovelankao.model.CommonCode: java.lang.String USER_VIP_TYPE2
+cn.lankao.com.lovelankao.model.CommonCode: java.lang.String USER_VIP_TYPE3
 cn.lankao.com.lovelankao.model.CommonCode: int INTENT_COMMON_ACTIVITY_CODE
 cn.lankao.com.lovelankao.model.CommonCode: java.lang.String INTENT_COMMON_OBJ
 cn.lankao.com.lovelankao.model.CommonCode: java.lang.String INTENT_COMMON_STRING
@@ -9701,6 +9715,7 @@ cn.lankao.com.lovelankao.model.CommonCode: java.lang.String INTENT_SETTING_URL
 cn.lankao.com.lovelankao.model.CommonCode: java.lang.String INTENT_COOK_OR_FOOD
 cn.lankao.com.lovelankao.model.CommonCode: java.lang.String INTENT_COOK
 cn.lankao.com.lovelankao.model.CommonCode: java.lang.String INTENT_FOOD
+cn.lankao.com.lovelankao.model.CommonCode: java.lang.String INTENT_COMMENT_FROM_SQUARE
 cn.lankao.com.lovelankao.model.CommonCode: java.lang.String INTENT_COMMENT_POSTID
 cn.lankao.com.lovelankao.model.CommonCode: java.lang.String INTENT_COMMENT_LASTCONTENT
 cn.lankao.com.lovelankao.model.CommonCode: java.lang.String SP_SET_PARTNERURL
@@ -9911,6 +9926,7 @@ cn.lankao.com.lovelankao.model.Square: cn.bmob.v3.datatype.BmobFile squarePhoto6
 cn.lankao.com.lovelankao.model.Square: java.lang.String squareUserType
 cn.lankao.com.lovelankao.model.Square: java.lang.String likeUsers
 cn.lankao.com.lovelankao.model.Square: java.lang.Integer likeTimes
+cn.lankao.com.lovelankao.model.Square: java.lang.Integer commentTimes
 cn.lankao.com.lovelankao.model.Square: java.lang.Integer clickTimes
 cn.lankao.com.lovelankao.model.Square: Square()
 cn.lankao.com.lovelankao.model.Square: java.lang.String getUserPhoto()
@@ -9941,6 +9957,8 @@ cn.lankao.com.lovelankao.model.Square: java.lang.String getSquareContent()
 cn.lankao.com.lovelankao.model.Square: void setSquareContent(java.lang.String)
 cn.lankao.com.lovelankao.model.Square: cn.bmob.v3.datatype.BmobFile getSquarePhoto6()
 cn.lankao.com.lovelankao.model.Square: void setSquarePhoto6(cn.bmob.v3.datatype.BmobFile)
+cn.lankao.com.lovelankao.model.Square: java.lang.Integer getCommentTimes()
+cn.lankao.com.lovelankao.model.Square: void setCommentTimes(java.lang.Integer)
 cn.lankao.com.lovelankao.model.Top
 cn.lankao.com.lovelankao.model.Top: java.lang.String title
 cn.lankao.com.lovelankao.model.Top: int topclass
@@ -10089,6 +10107,7 @@ cn.lankao.com.lovelankao.utils.TextUtil: boolean strEX(java.lang.String,java.lan
 cn.lankao.com.lovelankao.utils.TextUtil: boolean strEXChinese(java.lang.String,java.lang.String)
 cn.lankao.com.lovelankao.utils.TextUtil: boolean isCarId(java.lang.String)
 cn.lankao.com.lovelankao.utils.TextUtil: java.lang.String phoneSetMiddleGone(java.lang.String)
+cn.lankao.com.lovelankao.utils.TextUtil: java.lang.String getVipString(java.lang.String)
 cn.lankao.com.lovelankao.utils.TimeUtil
 cn.lankao.com.lovelankao.utils.TimeUtil: java.lang.String FORMAT_YYMMDD
 cn.lankao.com.lovelankao.utils.TimeUtil: java.lang.String FORMAT_YYMMDD_HMS
@@ -10321,14 +10340,23 @@ cn.lankao.com.lovelankao.viewcontroller.CommentActivityController
 cn.lankao.com.lovelankao.viewcontroller.CommentActivityController: cn.lankao.com.lovelankao.activity.CommentActivity view
 cn.lankao.com.lovelankao.viewcontroller.CommentActivityController: android.content.Intent intent
 cn.lankao.com.lovelankao.viewcontroller.CommentActivityController: java.lang.String last
+cn.lankao.com.lovelankao.viewcontroller.CommentActivityController: java.lang.String postId
+cn.lankao.com.lovelankao.viewcontroller.CommentActivityController: java.lang.String commentFrom
 cn.lankao.com.lovelankao.viewcontroller.CommentActivityController: CommentActivityController(cn.lankao.com.lovelankao.activity.CommentActivity)
 cn.lankao.com.lovelankao.viewcontroller.CommentActivityController: void comment(android.widget.EditText)
+cn.lankao.com.lovelankao.viewcontroller.CommentActivityController: void setCommentTime()
 cn.lankao.com.lovelankao.viewcontroller.CommentActivityController: cn.lankao.com.lovelankao.activity.CommentActivity access$000(cn.lankao.com.lovelankao.viewcontroller.CommentActivityController)
+cn.lankao.com.lovelankao.viewcontroller.CommentActivityController: void access$100(cn.lankao.com.lovelankao.viewcontroller.CommentActivityController)
 cn.lankao.com.lovelankao.viewcontroller.CommentActivityController$1
 cn.lankao.com.lovelankao.viewcontroller.CommentActivityController$1: cn.lankao.com.lovelankao.model.Comment val$comment
 cn.lankao.com.lovelankao.viewcontroller.CommentActivityController$1: cn.lankao.com.lovelankao.viewcontroller.CommentActivityController this$0
 cn.lankao.com.lovelankao.viewcontroller.CommentActivityController$1: CommentActivityController$1(cn.lankao.com.lovelankao.viewcontroller.CommentActivityController,cn.lankao.com.lovelankao.model.Comment)
 cn.lankao.com.lovelankao.viewcontroller.CommentActivityController$1: void done(java.lang.Object,cn.bmob.v3.exception.BmobException)
+cn.lankao.com.lovelankao.viewcontroller.CommentActivityController$2
+cn.lankao.com.lovelankao.viewcontroller.CommentActivityController$2: cn.lankao.com.lovelankao.viewcontroller.CommentActivityController this$0
+cn.lankao.com.lovelankao.viewcontroller.CommentActivityController$2: CommentActivityController$2(cn.lankao.com.lovelankao.viewcontroller.CommentActivityController)
+cn.lankao.com.lovelankao.viewcontroller.CommentActivityController$2: void done(cn.bmob.v3.exception.BmobException)
+cn.lankao.com.lovelankao.viewcontroller.CommentActivityController$2: void done(java.lang.Object)
 cn.lankao.com.lovelankao.viewcontroller.CookActivityController
 cn.lankao.com.lovelankao.viewcontroller.CookActivityController: java.lang.String URL_COOK
 cn.lankao.com.lovelankao.viewcontroller.CookActivityController: java.lang.String URL_FOOD
@@ -10596,12 +10624,19 @@ cn.lankao.com.lovelankao.viewcontroller.MineFragmentController: android.widget.T
 cn.lankao.com.lovelankao.viewcontroller.MineFragmentController: android.widget.TextView tvJifen
 cn.lankao.com.lovelankao.viewcontroller.MineFragmentController: android.widget.ImageView photo
 cn.lankao.com.lovelankao.viewcontroller.MineFragmentController: MineFragmentController(android.content.Context,android.view.View)
+cn.lankao.com.lovelankao.viewcontroller.MineFragmentController: void initUser()
 cn.lankao.com.lovelankao.viewcontroller.MineFragmentController: void initView()
 cn.lankao.com.lovelankao.viewcontroller.MineFragmentController: void onClick(android.view.View)
 cn.lankao.com.lovelankao.viewcontroller.MineFragmentController: void toAdvert(int,java.lang.String)
 cn.lankao.com.lovelankao.viewcontroller.MineFragmentController: void toWebView(java.lang.String,java.lang.String)
 cn.lankao.com.lovelankao.viewcontroller.MineFragmentController: void onEventMainThread(cn.lankao.com.lovelankao.model.MyUser)
 cn.lankao.com.lovelankao.viewcontroller.MineFragmentController: void onDestroy()
+cn.lankao.com.lovelankao.viewcontroller.MineFragmentController$1
+cn.lankao.com.lovelankao.viewcontroller.MineFragmentController$1: cn.lankao.com.lovelankao.viewcontroller.MineFragmentController this$0
+cn.lankao.com.lovelankao.viewcontroller.MineFragmentController$1: MineFragmentController$1(cn.lankao.com.lovelankao.viewcontroller.MineFragmentController)
+cn.lankao.com.lovelankao.viewcontroller.MineFragmentController$1: void done(cn.lankao.com.lovelankao.model.MyUser,cn.bmob.v3.exception.BmobException)
+cn.lankao.com.lovelankao.viewcontroller.MineFragmentController$1: void done(java.lang.Object,cn.bmob.v3.exception.BmobException)
+cn.lankao.com.lovelankao.viewcontroller.MineFragmentController$1: void done(java.lang.Object,java.lang.Object)
 cn.lankao.com.lovelankao.viewcontroller.PicShowActivityController
 cn.lankao.com.lovelankao.viewcontroller.PicShowActivityController: cn.lankao.com.lovelankao.activity.PicShowActivity context
 cn.lankao.com.lovelankao.viewcontroller.PicShowActivityController: android.widget.ImageView iv0
@@ -10771,13 +10806,19 @@ cn.lankao.com.lovelankao.viewcontroller.SquareActivityController: void onLikeCli
 cn.lankao.com.lovelankao.viewcontroller.SquareActivityController: void onResult(int,android.content.Intent)
 cn.lankao.com.lovelankao.viewcontroller.SquareActivityController: java.util.List access$002(cn.lankao.com.lovelankao.viewcontroller.SquareActivityController,java.util.List)
 cn.lankao.com.lovelankao.viewcontroller.SquareActivityController: void access$100(cn.lankao.com.lovelankao.viewcontroller.SquareActivityController)
-cn.lankao.com.lovelankao.viewcontroller.SquareActivityController: cn.lankao.com.lovelankao.activity.SquareActivity access$200(cn.lankao.com.lovelankao.viewcontroller.SquareActivityController)
-cn.lankao.com.lovelankao.viewcontroller.SquareActivityController: java.util.List access$300(cn.lankao.com.lovelankao.viewcontroller.SquareActivityController)
+cn.lankao.com.lovelankao.viewcontroller.SquareActivityController: cn.lankao.com.lovelankao.model.Square access$200(cn.lankao.com.lovelankao.viewcontroller.SquareActivityController)
+cn.lankao.com.lovelankao.viewcontroller.SquareActivityController: cn.lankao.com.lovelankao.activity.SquareActivity access$300(cn.lankao.com.lovelankao.viewcontroller.SquareActivityController)
+cn.lankao.com.lovelankao.viewcontroller.SquareActivityController: java.util.List access$400(cn.lankao.com.lovelankao.viewcontroller.SquareActivityController)
 cn.lankao.com.lovelankao.viewcontroller.SquareActivityController$1
 cn.lankao.com.lovelankao.viewcontroller.SquareActivityController$1: cn.lankao.com.lovelankao.viewcontroller.SquareActivityController this$0
 cn.lankao.com.lovelankao.viewcontroller.SquareActivityController$1: SquareActivityController$1(cn.lankao.com.lovelankao.viewcontroller.SquareActivityController)
 cn.lankao.com.lovelankao.viewcontroller.SquareActivityController$1: void done(java.util.List,cn.bmob.v3.exception.BmobException)
 cn.lankao.com.lovelankao.viewcontroller.SquareActivityController$1: void done(java.lang.Object,java.lang.Object)
+cn.lankao.com.lovelankao.viewcontroller.SquareActivityController$1$1
+cn.lankao.com.lovelankao.viewcontroller.SquareActivityController$1$1: cn.lankao.com.lovelankao.viewcontroller.SquareActivityController$1 this$1
+cn.lankao.com.lovelankao.viewcontroller.SquareActivityController$1$1: SquareActivityController$1$1(cn.lankao.com.lovelankao.viewcontroller.SquareActivityController$1)
+cn.lankao.com.lovelankao.viewcontroller.SquareActivityController$1$1: void done(cn.bmob.v3.exception.BmobException)
+cn.lankao.com.lovelankao.viewcontroller.SquareActivityController$1$1: void done(java.lang.Object)
 cn.lankao.com.lovelankao.viewcontroller.SquareActivityController$2
 cn.lankao.com.lovelankao.viewcontroller.SquareActivityController$2: java.lang.String val$imgUrl
 cn.lankao.com.lovelankao.viewcontroller.SquareActivityController$2: cn.lankao.com.lovelankao.viewcontroller.SquareActivityController this$0

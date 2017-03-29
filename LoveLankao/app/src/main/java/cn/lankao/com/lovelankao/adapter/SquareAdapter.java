@@ -67,6 +67,7 @@ public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.MyViewHold
             holder.tvTitle.setText(square.getSquareTitle());
             holder.tvTitle.setVisibility(View.VISIBLE);
         }
+        holder.tvUserType.setText(TextUtil.getVipString(square.getSquareUserType()));
         String content = square.getSquareContent();
         if (content != null && content.length() > 100){
             content = content.substring(0,80)+"...(全文)";
@@ -104,10 +105,16 @@ public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.MyViewHold
             holder.llPhoto.setVisibility(View.GONE);
         }
         final String nickname = PrefUtil.getString(CommonCode.SP_USER_NICKNAME,"");
-        if (square.getLikeUsers() == null || !square.getLikeUsers().contains(nickname)){
-            holder.ivLikeTimes.setImageDrawable(ContextCompat.getDrawable(context,R.drawable.ic_square_liketimes));
-        } else {
+        holder.ivLikeTimes.setImageDrawable(ContextCompat.getDrawable(context,R.drawable.ic_square_liketimes));
+        if (!TextUtil.isNull(nickname) && !TextUtil.isNull(square.getLikeUsers()) && square.getLikeUsers().contains(nickname)){
             holder.ivLikeTimes.setImageDrawable(ContextCompat.getDrawable(context,R.drawable.ic_square_liketimesc));
+        } else {
+            holder.ivLikeTimes.setImageDrawable(ContextCompat.getDrawable(context,R.drawable.ic_square_liketimes));
+        }
+        if (square.getCommentTimes() == null){
+            holder.tvCommentTimes.setText("评论 0");
+        } else {
+            holder.tvCommentTimes.setText("评论 " + square.getCommentTimes());
         }
         holder.llLikeTimes.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -118,34 +125,35 @@ public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.MyViewHold
                     return;
                 }
                 if (square.getLikeUsers() == null || !square.getLikeUsers().contains(nickname)) {
-                    final int like = square.getLikeTimes() == null ? 1 : square.getLikeTimes() + 1;
                     String likeUsers = square.getLikeUsers() == null ? nickname : nickname + "," + square.getLikeUsers();
-                    square.setLikeTimes(like);
                     square.setLikeUsers(likeUsers);
                     holder.ivLikeTimes.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_square_liketimesc));
+                    final int like = square.getLikeTimes() == null ? 1 : square.getLikeTimes() + 1;
                     holder.tvLikeTimes.setText(like + "");
+                    square.increment("likeTimes");
                     square.update(square.getObjectId(), new UpdateListener() {
                         @Override
                         public void done(BmobException e) {
                         }
                     });
+                    square.setLikeTimes(like);
+                } else {
+                    ToastUtil.show("您已经点过赞了");
                 }
             }
         });
         holder.llContent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (square.getClickTimes() == null) {
-                    square.setClickTimes(1);
-                } else {
-                    int i = square.getClickTimes();
-                    square.setClickTimes(i + 1);
-                }
+                square.increment("clickTimes");
                 square.update(square.getObjectId(), new UpdateListener() {
                     @Override
                     public void done(BmobException e) {
                     }
                 });
+                final int click = square.getClickTimes() == null ? 1 : square.getClickTimes() + 1;
+                holder.tvClickTimes.setText(click + "");
+                square.setClickTimes(click);
                 Intent intent = new Intent(context, SquareActivity.class);
                 intent.putExtra(CommonCode.INTENT_COMMON_OBJ, square);
                 context.startActivity(intent);
@@ -162,6 +170,7 @@ public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.MyViewHold
                 Intent intent = new Intent(context,CommentActivity.class);
                 intent.putExtra(CommonCode.INTENT_COMMENT_POSTID,square.getObjectId());
                 intent.putExtra(CommonCode.INTENT_COMMENT_LASTCONTENT,"");
+                intent.putExtra(CommonCode.INTENT_COMMENT_FROM_SQUARE,CommonCode.INTENT_COMMENT_FROM_SQUARE);
                 context.startActivity(intent);
             }
         });
@@ -180,10 +189,12 @@ public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.MyViewHold
         TextView tvTime;
         TextView tvTitle;
         TextView tvContent;
+        TextView tvUserType;
         ImageView ivPhoto1;
         ImageView ivPhoto2;
         ImageView ivPhoto3;
         ImageView ivLikeTimes;
+        TextView tvCommentTimes;
         TextView tvLikeTimes;
         TextView tvClickTimes;
         LinearLayout llPhoto;
@@ -201,8 +212,10 @@ public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.MyViewHold
             tvTime = (TextView) view.findViewById(R.id.tv_square_item_time);
             tvTitle = (TextView) view.findViewById(R.id.tv_square_item_title);
             tvContent = (TextView) view.findViewById(R.id.tv_square_item_content);
+            tvUserType = (TextView) view.findViewById(R.id.tv_square_item_usertype);
             tvLikeTimes = (TextView) view.findViewById(R.id.tv_square_item_liketimes);
             tvClickTimes = (TextView) view.findViewById(R.id.tv_square_item_clicktimes);
+            tvCommentTimes = (TextView) view.findViewById(R.id.tv_square_item_commenttimes);
             llPhoto = (LinearLayout) view.findViewById(R.id.ll_square_item_photo);
             llLikeTimes = (LinearLayout) view.findViewById(R.id.ll_square_item_liketimes);
             llComment = (LinearLayout) view.findViewById(R.id.ll_square_item_comment);

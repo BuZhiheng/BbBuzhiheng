@@ -35,6 +35,8 @@ public class SquareActivity extends AppCompatActivity {
     TextView tvTitle;
     @Bind(R.id.tv_square_item_content)
     TextView tvContent;
+    @Bind(R.id.tv_square_item_usertype)
+    TextView tvUserType;
     @Bind(R.id.iv_square_item_photo1)
     public ImageView ivPhoto1;
     @Bind(R.id.iv_square_item_photo2)
@@ -65,7 +67,6 @@ public class SquareActivity extends AppCompatActivity {
     public LinearLayout llPhoto2;
     private ImageOptions option;
     private ImageOptions optionPhoto;
-    private Square square;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,7 +79,6 @@ public class SquareActivity extends AppCompatActivity {
         controller.initData(getIntent());
     }
     public void setData(final Square square,String userImg,Drawable drawable){
-        this.square = square;
         option = BitmapUtil.getOptionCommon();
         optionPhoto = BitmapUtil.getOptionByRadius(15);
         tvNickname.setText(square.getNickName());
@@ -92,6 +92,7 @@ public class SquareActivity extends AppCompatActivity {
             tvTitle.setText(square.getSquareTitle());
             tvTitle.setVisibility(View.VISIBLE);
         }
+        tvUserType.setText(TextUtil.getVipString(square.getSquareUserType()));
         x.image().bind(ivPhoto, userImg, BitmapUtil.getOptionCommonRadius());
         ivLikeTimes.setImageDrawable(drawable);
         llLikes.setOnClickListener(new View.OnClickListener() {
@@ -134,6 +135,7 @@ public class SquareActivity extends AppCompatActivity {
         Intent intent = new Intent(this,CommentActivity.class);
         intent.putExtra(CommonCode.INTENT_COMMENT_POSTID,id);
         intent.putExtra(CommonCode.INTENT_COMMENT_LASTCONTENT,last);
+        intent.putExtra(CommonCode.INTENT_COMMENT_FROM_SQUARE,CommonCode.INTENT_COMMENT_FROM_SQUARE);
         startActivityForResult(intent, CommonCode.INTENT_COMMON_ACTIVITY_CODE);
     }
     public void clearCommentLL(){
@@ -159,9 +161,10 @@ public class SquareActivity extends AppCompatActivity {
         holder.tvToReComment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                controller.checkComment("回复("+comment.getUsername()+"):"+comment.getContent());
+                controller.checkComment("回复(" + comment.getUsername() + "):" + comment.getContent());
             }
         });
+        holder.tvUserType.setText(TextUtil.getVipString(comment.getUserType()));
         holder.tvComment.setText(comment.getContent());
         llComment.addView(view);
     }
@@ -172,6 +175,7 @@ public class SquareActivity extends AppCompatActivity {
         TextView tvTime;
         TextView tvReComment;
         TextView tvComment;
+        TextView tvUserType;
         public CommentHolder(View view){
             ivPhoto = (ImageView) view.findViewById(R.id.iv_square_comment_photo);
             tvToReComment = (TextView) view.findViewById(R.id.tv_square_comment_recomment);
@@ -179,6 +183,7 @@ public class SquareActivity extends AppCompatActivity {
             tvTime = (TextView) view.findViewById(R.id.tv_square_comment_time);
             tvReComment = (TextView) view.findViewById(R.id.tv_square_comment_recontent);
             tvComment = (TextView) view.findViewById(R.id.tv_square_comment_content);
+            tvUserType = (TextView) view.findViewById(R.id.tv_square_comment_usertype);
         }
     }
     @Override

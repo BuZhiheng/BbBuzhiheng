@@ -86,17 +86,20 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             @Override
             public void onClick(View v) {
                 AdvertNormal advertNormal = data.get(position);
-                if(advertNormal.getAdvClicked() != null){
-                    advertNormal.setAdvClicked(advertNormal.getAdvClicked() + 1);
+                Integer clicked = advertNormal.getAdvClicked();
+                if(clicked != null){
+                    advertNormal.increment("advClicked");
+                    clicked ++;
                 } else {
                     advertNormal.setAdvClicked(1);
+                    clicked = 1;
                 }
                 advertNormal.update(advertNormal.getObjectId(),new UpdateListener() {
                     @Override
                     public void done(BmobException e) {
-
                     }
                 });
+                advertNormal.setAdvClicked(clicked);
                 Intent intent = new Intent(context, AdvertMsgActivity.class);
                 intent.putExtra("data",data.get(position));
                 context.startActivity(intent);

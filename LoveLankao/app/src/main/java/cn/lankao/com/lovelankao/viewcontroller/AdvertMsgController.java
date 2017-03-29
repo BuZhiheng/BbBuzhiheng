@@ -340,6 +340,7 @@ public class AdvertMsgController implements View.OnClickListener, SwipeRefreshLa
             Intent intent = new Intent(context,CommentActivity.class);
             intent.putExtra(CommonCode.INTENT_COMMENT_POSTID, advertNormal.getObjectId());
             intent.putExtra(CommonCode.INTENT_COMMENT_LASTCONTENT,s);
+            intent.putExtra(CommonCode.INTENT_COMMENT_FROM_SQUARE,"");
             context.startActivity(intent);
         }
     }
@@ -347,7 +348,7 @@ public class AdvertMsgController implements View.OnClickListener, SwipeRefreshLa
     public void onRefresh() {
         initData();
     }
-    class ViewHolder{
+    class ViewHolder {
         FrameLayout frameLayout;
         ImageView photo;
         TextView tvTitle;
@@ -355,14 +356,14 @@ public class AdvertMsgController implements View.OnClickListener, SwipeRefreshLa
         TextView tvPoints;
         TextView tvTitleContent;
     }
-    class CommentHolder{
+    class CommentHolder {
         ImageView ivPhoto;
         TextView tvToReComment;
         TextView tvNickname;
         TextView tvTime;
         TextView tvReComment;
         TextView tvComment;
-        public CommentHolder(View view){
+        public CommentHolder(View view) {
             ivPhoto = (ImageView) view.findViewById(R.id.iv_square_comment_photo);
             tvToReComment = (TextView) view.findViewById(R.id.tv_square_comment_recomment);
             tvNickname = (TextView) view.findViewById(R.id.tv_square_comment_nickname);

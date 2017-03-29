@@ -44,6 +44,7 @@
     <color name="color_green">#25B7AA</color>
     <color name="color_white">#ffffff</color>
     <color name="color_yellow">#FF5000</color>
+    <color name="color_yellow_vip">#ff7900</color>
     <color name="design_fab_shadow_end_color">@android:color/transparent</color>
     <color name="design_fab_shadow_mid_color">#14000000</color>
     <color name="design_fab_shadow_start_color">#44000000</color>

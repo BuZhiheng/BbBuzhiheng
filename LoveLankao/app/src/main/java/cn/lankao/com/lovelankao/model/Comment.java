@@ -1,7 +1,5 @@
 package cn.lankao.com.lovelankao.model;
-
 import cn.bmob.v3.BmobObject;
-
 /**
  * Created by BuZhiheng on 2016/4/27.
  */
@@ -14,7 +12,7 @@ public class Comment extends BmobObject{
     private String lastUserName;
     private String lastUserContent;
     private Integer likeTimes;
-
+    private String userType;
     public String getUserPhotoUrl() {
         return userPhotoUrl;
     }
@@ -77,5 +75,13 @@ public class Comment extends BmobObject{
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
     }
 }

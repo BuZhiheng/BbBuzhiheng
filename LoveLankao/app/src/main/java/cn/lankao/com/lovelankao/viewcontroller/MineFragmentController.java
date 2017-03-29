@@ -1,16 +1,16 @@
 package cn.lankao.com.lovelankao.viewcontroller;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.xutils.x;
-
+import cn.bmob.v3.BmobQuery;
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.QueryListener;
 import cn.lankao.com.lovelankao.activity.MainActivity;
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.AdvertDetailActivity;
@@ -21,7 +21,7 @@ import cn.lankao.com.lovelankao.model.MyUser;
 import cn.lankao.com.lovelankao.utils.BitmapUtil;
 import cn.lankao.com.lovelankao.model.CommonCode;
 import cn.lankao.com.lovelankao.utils.PrefUtil;
-
+import cn.lankao.com.lovelankao.utils.TextUtil;
 /**
  * Created by BuZhiheng on 2016/4/6.
  */
@@ -38,8 +38,34 @@ public class MineFragmentController implements View.OnClickListener {
         x.view().inject((Activity) context);
         EventBus.getDefault().register(this);
         initView();
+        initUser();
     }
-
+    private void initUser() {
+        String userid = PrefUtil.getString(CommonCode.SP_USER_USERID,"");
+        if (!TextUtil.isNull(userid)){
+            BmobQuery<MyUser> query = new BmobQuery<>();
+            query.getObject(userid, new QueryListener<MyUser>() {
+                @Override
+                public void done(MyUser user, BmobException e) {
+                    PrefUtil.putString(CommonCode.SP_USER_USERID, user.getObjectId());
+                    PrefUtil.putString(CommonCode.SP_USER_USERMOBILE, user.getMobile());
+                    PrefUtil.putString(CommonCode.SP_USER_NICKNAME, user.getNickName());
+                    PrefUtil.putString(CommonCode.SP_USER_USERTYPE, user.getUserType());
+                    if (user.getPhoto() != null){
+                        PrefUtil.putString(CommonCode.SP_USER_PHOTO, user.getPhoto().getFileUrl());
+                    }
+                    Integer point = user.getCoupon();
+                    if (point == null){
+                        PrefUtil.putInt(CommonCode.SP_USER_POINT, 0);
+                    }else{
+                        int p = point;
+                        PrefUtil.putInt(CommonCode.SP_USER_POINT, p);
+                    }
+                    onEventMainThread(user);
+                }
+            });
+        }
+    }
     private void initView() {
         view.findViewById(R.id.ll_minefrm_user_msg).setOnClickListener(this);
         view.findViewById(R.id.fl_minefrm_needpartner).setOnClickListener(this);
@@ -52,12 +78,6 @@ public class MineFragmentController implements View.OnClickListener {
         tvPhone = (TextView) view.findViewById(R.id.tv_minefrm_phone);
         tvJifen = (TextView) view.findViewById(R.id.tv_minefrm_jifen);
         photo = (ImageView) view.findViewById(R.id.iv_minefrm_photo);
-
-
-        tvNickName.setText(PrefUtil.getString(CommonCode.SP_USER_NICKNAME, "未登录"));
-        tvPhone.setText(PrefUtil.getString(CommonCode.SP_USER_USERMOBILE, ""));
-        tvJifen.setText(PrefUtil.getInt(CommonCode.SP_USER_POINT, 0)+"");
-        x.image().bind(photo, PrefUtil.getString(CommonCode.SP_USER_PHOTO, CommonCode.APP_ICON), BitmapUtil.getOptionCommonRadius());
     }
     @Override
     public void onClick(View v) {
@@ -97,7 +117,6 @@ public class MineFragmentController implements View.OnClickListener {
                 break;
         }
     }
-
     private void toAdvert(int code, String title) {
         Intent intent = new Intent(context, AdvertDetailActivity.class);
         intent.putExtra(CommonCode.INTENT_ADVERT_TITLE, title);
@@ -130,7 +149,7 @@ public class MineFragmentController implements View.OnClickListener {
             tvNickName.setText(user.getNickName());
             tvPhone.setText(user.getMobile());
             if (user.getCoupon() != null){
-                tvJifen.setText(user.getCoupon());
+                tvJifen.setText(user.getCoupon()+"");
             } else {
                 tvJifen.setText("0");
             }

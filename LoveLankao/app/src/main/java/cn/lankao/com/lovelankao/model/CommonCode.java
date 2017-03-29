@@ -19,7 +19,6 @@ public class CommonCode {
     public static int ADVERT_JINGCAILANKAO = 8;//外卖
     public static int ADVERT_OTHER = 9;//更多
     public static int ADVERT_INDEX = 100;//主页20条VIP广告
-
     public static int ADVERT_TUIJIAN = 1000;//精品推荐&&今日推荐&&大家都在看
     public static int ADVERT_TEHUI = 1001;//特惠
     public static int ADVERT_MINGQI = 1002;//名企名商
@@ -27,6 +26,11 @@ public class CommonCode {
     public static int ADVERT_TUISONG = 1005;//推送的消息
     public static int RV_ITEMS_COUT = 10;//recycleView分页加载默认条数
     public static int RV_ITEMS_COUT20 = 20;//recycleView分页加载默认条数
+
+    public static String USER_VIP_TYPE1 = "100";//用户VIP类型1
+    public static String USER_VIP_TYPE2 = "200";//用户VIP类型2
+    public static String USER_VIP_TYPE3 = "300";//用户VIP类型3
+//    书童、秀才、举人、进士、状元
     public static final int INTENT_COMMON_ACTIVITY_CODE = 10000;
     public static final String INTENT_COMMON_OBJ = "INTENT_COMMON_OBJ";
     public static final String INTENT_COMMON_STRING = "INTENT_COMMON_STRING";
@@ -41,6 +45,7 @@ public class CommonCode {
     public static final String INTENT_COOK_OR_FOOD = "INTENT_COOK_OR_FOOD";
     public static final String INTENT_COOK = "INTENT_COOK";
     public static final String INTENT_FOOD = "INTENT_FOOD";
+    public static final String INTENT_COMMENT_FROM_SQUARE = "INTENT_COMMENT_FROM_SQUARE";
 
     public static final String INTENT_COMMENT_POSTID = "INTENT_COMMENT_POSTID";
     public static final String INTENT_COMMENT_LASTCONTENT = "INTENT_COMMENT_LASTCONTENT";
