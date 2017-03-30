@@ -77,6 +77,9 @@ public class TextUtil {
         if (isNull(vipCode)){
             return "";
         }
+        if(CommonCode.USER_VIP_TYPE0.equals(vipCode)){
+            return "  至尊用户 ";
+        }
         if(CommonCode.USER_VIP_TYPE1.equals(vipCode)){
             return "  钻石用户 ";
         }

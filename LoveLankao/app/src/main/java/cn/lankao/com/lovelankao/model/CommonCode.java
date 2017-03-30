@@ -27,6 +27,7 @@ public class CommonCode {
     public static int RV_ITEMS_COUT = 10;//recycleView分页加载默认条数
     public static int RV_ITEMS_COUT20 = 20;//recycleView分页加载默认条数
 
+    public static String USER_VIP_TYPE0 = "1000";//用户VIP类型至尊
     public static String USER_VIP_TYPE1 = "100";//用户VIP类型1
     public static String USER_VIP_TYPE2 = "200";//用户VIP类型2
     public static String USER_VIP_TYPE3 = "300";//用户VIP类型3

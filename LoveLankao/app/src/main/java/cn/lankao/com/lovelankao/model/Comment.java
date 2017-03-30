@@ -10,9 +10,12 @@ public class Comment extends BmobObject{
     private String userPhotoUrl;
     private String likeUsers;
     private String lastUserName;
+    private String lastUserId;
     private String lastUserContent;
     private Integer likeTimes;
     private String userType;
+    private String userId;
+    private String commentFrom;
     public String getUserPhotoUrl() {
         return userPhotoUrl;
     }
@@ -83,5 +86,29 @@ public class Comment extends BmobObject{
 
     public void setUserType(String userType) {
         this.userType = userType;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getCommentFrom() {
+        return commentFrom;
+    }
+
+    public void setCommentFrom(String commentFrom) {
+        this.commentFrom = commentFrom;
+    }
+
+    public String getLastUserId() {
+        return lastUserId;
+    }
+
+    public void setLastUserId(String lastUserId) {
+        this.lastUserId = lastUserId;
     }
 }

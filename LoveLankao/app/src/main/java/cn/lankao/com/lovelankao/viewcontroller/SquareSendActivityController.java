@@ -143,7 +143,8 @@ public class SquareSendActivityController implements View.OnClickListener, Squar
         square.setUserPhoto(PrefUtil.getString(CommonCode.SP_USER_PHOTO, ""));
         square.setSquareTitle(etTitle.getText().toString());
         square.setSquareContent(etContent.getText().toString());
-        square.setSquareUserType(PrefUtil.getString(CommonCode.SP_USER_USERTYPE,""));
+        square.setSquareUserType(PrefUtil.getString(CommonCode.SP_USER_USERTYPE, ""));
+        square.setUserId(PrefUtil.getString(CommonCode.SP_USER_USERID,""));
         if (pathArr == null || pathArr.length == 0){
             square.save(new SaveListener() {
                 @Override

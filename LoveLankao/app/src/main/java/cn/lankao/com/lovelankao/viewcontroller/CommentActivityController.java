@@ -23,6 +23,7 @@ public class CommentActivityController {
     public CommentActivityController(CommentActivity view){
         this.view = view;
         intent = view.getIntent();
+        postId = intent.getStringExtra(CommonCode.INTENT_COMMENT_POSTID);
         last = intent.getStringExtra(CommonCode.INTENT_COMMENT_LASTCONTENT);
         commentFrom = intent.getStringExtra(CommonCode.INTENT_COMMENT_FROM_SQUARE);
         if (!TextUtil.isNull(last)){
@@ -35,7 +36,6 @@ public class CommentActivityController {
             view.showToast("请输入内容");
             return;
         }
-        postId = intent.getStringExtra(CommonCode.INTENT_COMMENT_POSTID);
         if (TextUtil.isNull(postId)){
             view.showToast("数据有误");
             return;

@@ -34,7 +34,7 @@ import cn.lankao.com.lovelankao.widget.ProDialog;
 /**
  * Created by BuZhiheng on 2016/4/3.
  */
-public class ChatRoomController implements ChatRoomActivity.ChatRoomHolder, View.OnClickListener {
+public class ChatRoomController implements View.OnClickListener {
     private ChatRoomActivity context;
     private RecyclerView rvChat;
     private BmobRealTimeData realTimeData;
@@ -98,8 +98,10 @@ public class ChatRoomController implements ChatRoomActivity.ChatRoomHolder, View
                 } else {
                     ivNewMsg.setVisibility(View.VISIBLE);
                 }
-                rvChat.smoothScrollToPosition(adapter.getItemCount());
-                WindowUtils.showVoice(context);
+                String myId = PrefUtil.getString(CommonCode.SP_USER_USERID,"");
+                if (TextUtil.isNull(myId) || !myId.equals(chatRoom.getUserId())){
+                    WindowUtils.showVoice(context);
+                }
                 dialog.dismiss();
             }
         });
@@ -122,7 +124,6 @@ public class ChatRoomController implements ChatRoomActivity.ChatRoomHolder, View
             }
         });
     }
-    @Override
     public void onDestory() {
         if (realTimeData.isConnected()){
             realTimeData.unsubTableUpdate("ChatRoom");
@@ -144,8 +145,12 @@ public class ChatRoomController implements ChatRoomActivity.ChatRoomHolder, View
         }
     }
     private void sendMsg(int isFirst) {
-        ChatRoom chatRoom = new ChatRoom();
         String nickname = PrefUtil.getString(CommonCode.SP_USER_NICKNAME, "游客");
+        String type = PrefUtil.getString(CommonCode.SP_USER_USERTYPE,"");
+        String userId = PrefUtil.getString(CommonCode.SP_USER_USERID,"");
+        ChatRoom chatRoom = new ChatRoom();
+        chatRoom.setChatUserType(type);
+        chatRoom.setUserId(userId);
         if(isFirst == 1){
             //发送本人加入聊天室
             chatRoom.setNickName(nickname);
@@ -153,20 +158,12 @@ public class ChatRoomController implements ChatRoomActivity.ChatRoomHolder, View
         } else {
             //发送内容
             String content = etContent.getText().toString();
-            if (content == null || "".equals(content)){
+            if (TextUtil.isNull(content)){
                 ToastUtil.show("请输入内容");
                 return;
             }
             chatRoom.setNickName(nickname);
             chatRoom.setChatContent(content);
-        }
-        String type = PrefUtil.getString(CommonCode.SP_USER_USERTYPE,"");
-        if ("1000".equals(type)){
-            chatRoom.setChatUserType("管理员");
-        } else if ("1001".equals(type)){
-            chatRoom.setChatUserType("VIP用户");
-        } else {
-            chatRoom.setChatUserType("");
         }
         chatRoom.save(new SaveListener() {
             @Override

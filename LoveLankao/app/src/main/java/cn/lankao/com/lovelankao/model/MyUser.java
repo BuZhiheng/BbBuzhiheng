@@ -11,6 +11,7 @@ public class MyUser extends BmobObject{
     private String userType;
     private String passWord;
     private BmobFile photo;
+    private String commentMsg;
     public Integer getCoupon() {
         return coupon;
     }
@@ -57,5 +58,13 @@ public class MyUser extends BmobObject{
 
     public void setPassWord(String passWord) {
         this.passWord = passWord;
+    }
+
+    public String getCommentMsg() {
+        return commentMsg;
+    }
+
+    public void setCommentMsg(String commentMsg) {
+        this.commentMsg = commentMsg;
     }
 }

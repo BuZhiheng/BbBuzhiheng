@@ -1,13 +1,12 @@
 package cn.lankao.com.lovelankao.model;
-
 import cn.bmob.v3.BmobObject;
 import cn.bmob.v3.datatype.BmobFile;
-
 /**
  * Created by BuZhiheng on 2016/4/3.
  */
 public class ChatRoom extends BmobObject{
     private String nickName;
+    private String userId;
     private String chatContent;
     private BmobFile chatUserPhoto;
     private String chatUserType;
@@ -42,5 +41,13 @@ public class ChatRoom extends BmobObject{
 
     public void setChatUserType(String chatUserType) {
         this.chatUserType = chatUserType;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 }

@@ -8945,8 +8945,6 @@ cn.lankao.com.lovelankao.activity.ChatRoomActivity: cn.lankao.com.lovelankao.vie
 cn.lankao.com.lovelankao.activity.ChatRoomActivity: ChatRoomActivity()
 cn.lankao.com.lovelankao.activity.ChatRoomActivity: void onCreate(android.os.Bundle)
 cn.lankao.com.lovelankao.activity.ChatRoomActivity: void onDestroy()
-cn.lankao.com.lovelankao.activity.ChatRoomActivity$ChatRoomHolder
-cn.lankao.com.lovelankao.activity.ChatRoomActivity$ChatRoomHolder: void onDestory()
 cn.lankao.com.lovelankao.activity.CommentActivity
 cn.lankao.com.lovelankao.activity.CommentActivity: cn.lankao.com.lovelankao.viewcontroller.CommentActivityController controller
 cn.lankao.com.lovelankao.activity.CommentActivity: android.widget.EditText etContent
@@ -9636,6 +9634,7 @@ cn.lankao.com.lovelankao.model.AdvertNormal: java.lang.String getAdvNewPinglun()
 cn.lankao.com.lovelankao.model.AdvertNormal: void setAdvNewPinglun(java.lang.String)
 cn.lankao.com.lovelankao.model.ChatRoom
 cn.lankao.com.lovelankao.model.ChatRoom: java.lang.String nickName
+cn.lankao.com.lovelankao.model.ChatRoom: java.lang.String userId
 cn.lankao.com.lovelankao.model.ChatRoom: java.lang.String chatContent
 cn.lankao.com.lovelankao.model.ChatRoom: cn.bmob.v3.datatype.BmobFile chatUserPhoto
 cn.lankao.com.lovelankao.model.ChatRoom: java.lang.String chatUserType
@@ -9648,6 +9647,8 @@ cn.lankao.com.lovelankao.model.ChatRoom: cn.bmob.v3.datatype.BmobFile getChatUse
 cn.lankao.com.lovelankao.model.ChatRoom: void setChatUserPhoto(cn.bmob.v3.datatype.BmobFile)
 cn.lankao.com.lovelankao.model.ChatRoom: java.lang.String getChatUserType()
 cn.lankao.com.lovelankao.model.ChatRoom: void setChatUserType(java.lang.String)
+cn.lankao.com.lovelankao.model.ChatRoom: java.lang.String getUserId()
+cn.lankao.com.lovelankao.model.ChatRoom: void setUserId(java.lang.String)
 cn.lankao.com.lovelankao.model.Comment
 cn.lankao.com.lovelankao.model.Comment: java.lang.String content
 cn.lankao.com.lovelankao.model.Comment: java.lang.String postId
@@ -9655,9 +9656,12 @@ cn.lankao.com.lovelankao.model.Comment: java.lang.String username
 cn.lankao.com.lovelankao.model.Comment: java.lang.String userPhotoUrl
 cn.lankao.com.lovelankao.model.Comment: java.lang.String likeUsers
 cn.lankao.com.lovelankao.model.Comment: java.lang.String lastUserName
+cn.lankao.com.lovelankao.model.Comment: java.lang.String lastUserId
 cn.lankao.com.lovelankao.model.Comment: java.lang.String lastUserContent
 cn.lankao.com.lovelankao.model.Comment: java.lang.Integer likeTimes
 cn.lankao.com.lovelankao.model.Comment: java.lang.String userType
+cn.lankao.com.lovelankao.model.Comment: java.lang.String userId
+cn.lankao.com.lovelankao.model.Comment: java.lang.String commentFrom
 cn.lankao.com.lovelankao.model.Comment: Comment()
 cn.lankao.com.lovelankao.model.Comment: java.lang.String getUserPhotoUrl()
 cn.lankao.com.lovelankao.model.Comment: void setUserPhotoUrl(java.lang.String)
@@ -9677,6 +9681,12 @@ cn.lankao.com.lovelankao.model.Comment: java.lang.String getUsername()
 cn.lankao.com.lovelankao.model.Comment: void setUsername(java.lang.String)
 cn.lankao.com.lovelankao.model.Comment: java.lang.String getUserType()
 cn.lankao.com.lovelankao.model.Comment: void setUserType(java.lang.String)
+cn.lankao.com.lovelankao.model.Comment: java.lang.String getUserId()
+cn.lankao.com.lovelankao.model.Comment: void setUserId(java.lang.String)
+cn.lankao.com.lovelankao.model.Comment: java.lang.String getCommentFrom()
+cn.lankao.com.lovelankao.model.Comment: void setCommentFrom(java.lang.String)
+cn.lankao.com.lovelankao.model.Comment: java.lang.String getLastUserId()
+cn.lankao.com.lovelankao.model.Comment: void setLastUserId(java.lang.String)
 cn.lankao.com.lovelankao.model.CommonCode
 cn.lankao.com.lovelankao.model.CommonCode: java.lang.String APP_ICON
 cn.lankao.com.lovelankao.model.CommonCode: java.lang.String APP_URL
@@ -9700,6 +9710,7 @@ cn.lankao.com.lovelankao.model.CommonCode: int ADVERT_HEZUO
 cn.lankao.com.lovelankao.model.CommonCode: int ADVERT_TUISONG
 cn.lankao.com.lovelankao.model.CommonCode: int RV_ITEMS_COUT
 cn.lankao.com.lovelankao.model.CommonCode: int RV_ITEMS_COUT20
+cn.lankao.com.lovelankao.model.CommonCode: java.lang.String USER_VIP_TYPE0
 cn.lankao.com.lovelankao.model.CommonCode: java.lang.String USER_VIP_TYPE1
 cn.lankao.com.lovelankao.model.CommonCode: java.lang.String USER_VIP_TYPE2
 cn.lankao.com.lovelankao.model.CommonCode: java.lang.String USER_VIP_TYPE3
@@ -9836,6 +9847,7 @@ cn.lankao.com.lovelankao.model.MyUser: java.lang.String nickName
 cn.lankao.com.lovelankao.model.MyUser: java.lang.String userType
 cn.lankao.com.lovelankao.model.MyUser: java.lang.String passWord
 cn.lankao.com.lovelankao.model.MyUser: cn.bmob.v3.datatype.BmobFile photo
+cn.lankao.com.lovelankao.model.MyUser: java.lang.String commentMsg
 cn.lankao.com.lovelankao.model.MyUser: MyUser()
 cn.lankao.com.lovelankao.model.MyUser: java.lang.Integer getCoupon()
 cn.lankao.com.lovelankao.model.MyUser: void setCoupon(java.lang.Integer)
@@ -9849,6 +9861,8 @@ cn.lankao.com.lovelankao.model.MyUser: java.lang.String getMobile()
 cn.lankao.com.lovelankao.model.MyUser: void setMobile(java.lang.String)
 cn.lankao.com.lovelankao.model.MyUser: java.lang.String getPassWord()
 cn.lankao.com.lovelankao.model.MyUser: void setPassWord(java.lang.String)
+cn.lankao.com.lovelankao.model.MyUser: java.lang.String getCommentMsg()
+cn.lankao.com.lovelankao.model.MyUser: void setCommentMsg(java.lang.String)
 cn.lankao.com.lovelankao.model.NewsList
 cn.lankao.com.lovelankao.model.NewsList: NewsList()
 cn.lankao.com.lovelankao.model.PushData
@@ -9915,6 +9929,7 @@ cn.lankao.com.lovelankao.model.Shared: java.lang.String getUrl()
 cn.lankao.com.lovelankao.model.Shared: void setUrl(java.lang.String)
 cn.lankao.com.lovelankao.model.Square
 cn.lankao.com.lovelankao.model.Square: java.lang.String nickName
+cn.lankao.com.lovelankao.model.Square: java.lang.String userId
 cn.lankao.com.lovelankao.model.Square: java.lang.String userPhoto
 cn.lankao.com.lovelankao.model.Square: java.lang.String squareTitle
 cn.lankao.com.lovelankao.model.Square: java.lang.String squareContent
@@ -9960,6 +9975,8 @@ cn.lankao.com.lovelankao.model.Square: cn.bmob.v3.datatype.BmobFile getSquarePho
 cn.lankao.com.lovelankao.model.Square: void setSquarePhoto6(cn.bmob.v3.datatype.BmobFile)
 cn.lankao.com.lovelankao.model.Square: java.lang.Integer getCommentTimes()
 cn.lankao.com.lovelankao.model.Square: void setCommentTimes(java.lang.Integer)
+cn.lankao.com.lovelankao.model.Square: java.lang.String getUserId()
+cn.lankao.com.lovelankao.model.Square: void setUserId(java.lang.String)
 cn.lankao.com.lovelankao.model.Top
 cn.lankao.com.lovelankao.model.Top: java.lang.String title
 cn.lankao.com.lovelankao.model.Top: int topclass

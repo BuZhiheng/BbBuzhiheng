@@ -76,7 +76,7 @@
 
 # view res/layout/activity_advertdetail.xml #generated:34
 # view res/layout/activity_allbusiess.xml #generated:33
-# view res/layout/activity_chat_room.xml #generated:25
+# view res/layout/activity_chat_room.xml #generated:27
 # view res/layout/activity_cook.xml #generated:33
 # view res/layout/activity_jock.xml #generated:33
 # view res/layout/activity_lknews.xml #generated:32

@@ -4,8 +4,9 @@ import cn.bmob.v3.datatype.BmobFile;
 /**
  * Created by BuZhiheng on 2016/4/4.
  */
-public class Square extends BmobObject{
+public class Square extends BmobObject {
     private String nickName;
+    private String userId;
     private String userPhoto;
     private String squareTitle;
     private String squareContent;
@@ -138,5 +139,13 @@ public class Square extends BmobObject{
 
     public void setCommentTimes(Integer commentTimes) {
         this.commentTimes = commentTimes;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 }
