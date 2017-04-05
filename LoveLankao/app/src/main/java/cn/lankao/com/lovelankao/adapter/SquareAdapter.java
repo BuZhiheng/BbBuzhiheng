@@ -18,6 +18,7 @@ import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.CommentActivity;
 import cn.lankao.com.lovelankao.activity.LoginActivity;
 import cn.lankao.com.lovelankao.activity.SquareActivity;
+import cn.lankao.com.lovelankao.model.Comment;
 import cn.lankao.com.lovelankao.model.Square;
 import cn.lankao.com.lovelankao.utils.BitmapUtil;
 import cn.lankao.com.lovelankao.model.CommonCode;
@@ -155,7 +156,7 @@ public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.MyViewHold
                 holder.tvClickTimes.setText(click + "");
                 square.setClickTimes(click);
                 Intent intent = new Intent(context, SquareActivity.class);
-                intent.putExtra(CommonCode.INTENT_COMMON_OBJ, square);
+                intent.putExtra(CommonCode.INTENT_COMMON_STRING, square.getObjectId());
                 context.startActivity(intent);
             }
         });
@@ -167,10 +168,13 @@ public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.MyViewHold
                     context.startActivity(intent);
                     return;
                 }
+                Comment comment = new Comment();
+                comment.setCommentFrom(CommonCode.INTENT_COMMENT_FROM_SQUARE);
+                comment.setPostId(square.getObjectId());
+                comment.setPostUserId(square.getUserId());
+                comment.setPostContent(square.getSquareContent());
                 Intent intent = new Intent(context,CommentActivity.class);
-                intent.putExtra(CommonCode.INTENT_COMMENT_POSTID,square.getObjectId());
-                intent.putExtra(CommonCode.INTENT_COMMENT_LASTCONTENT,"");
-                intent.putExtra(CommonCode.INTENT_COMMENT_FROM_SQUARE,CommonCode.INTENT_COMMENT_FROM_SQUARE);
+                intent.putExtra(CommonCode.INTENT_COMMON_OBJ,comment);
                 context.startActivity(intent);
             }
         });

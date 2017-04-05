@@ -16850,6 +16850,7 @@ cn.lankao.com.lovelankao.R$id -> cn.lankao.com.lovelankao.R$id:
     int loPageTurningPoint -> loPageTurningPoint
     int map_activity_shoploc -> map_activity_shoploc
     int map_lbs_act -> map_lbs_act
+    int map_lbs_people -> map_lbs_people
     int media_actions -> media_actions
     int middle -> middle
     int mini -> mini
@@ -16961,6 +16962,7 @@ cn.lankao.com.lovelankao.R$id -> cn.lankao.com.lovelankao.R$id:
     int tv_indexfrm_headview_index -> tv_indexfrm_headview_index
     int tv_indexfrm_headview_title -> tv_indexfrm_headview_title
     int tv_indexfrm_item_title -> tv_indexfrm_item_title
+    int tv_indexfrm_lkpeople -> tv_indexfrm_lkpeople
     int tv_jock_item_click -> tv_jock_item_click
     int tv_jock_item_content -> tv_jock_item_content
     int tv_jock_item_time -> tv_jock_item_time
@@ -17073,6 +17075,7 @@ cn.lankao.com.lovelankao.R$layout -> cn.lankao.com.lovelankao.R$layout:
     int activity_jock -> activity_jock
     int activity_jock_item -> activity_jock_item
     int activity_lbs -> activity_lbs
+    int activity_lk_people -> activity_lk_people
     int activity_lknews -> activity_lknews
     int activity_lknews_item -> activity_lknews_item
     int activity_lknews_msg -> activity_lknews_msg
@@ -17978,8 +17981,6 @@ cn.lankao.com.lovelankao.activity.ChatRoomActivity -> cn.lankao.com.lovelankao.a
     void <init>() -> <init>
     void onCreate(android.os.Bundle) -> onCreate
     void onDestroy() -> onDestroy
-cn.lankao.com.lovelankao.activity.ChatRoomActivity$ChatRoomHolder -> cn.lankao.com.lovelankao.activity.ChatRoomActivity$ChatRoomHolder:
-    void onDestory() -> onDestory
 cn.lankao.com.lovelankao.activity.CommentActivity -> cn.lankao.com.lovelankao.activity.CommentActivity:
     cn.lankao.com.lovelankao.viewcontroller.CommentActivityController controller -> controller
     android.widget.EditText etContent -> etContent
@@ -18014,6 +18015,26 @@ cn.lankao.com.lovelankao.activity.LKNewsActivity -> cn.lankao.com.lovelankao.act
 cn.lankao.com.lovelankao.activity.LKNewsMsgActivity -> cn.lankao.com.lovelankao.activity.LKNewsMsgActivity:
     void <init>() -> <init>
     void onCreate(android.os.Bundle) -> onCreate
+cn.lankao.com.lovelankao.activity.LKPeopleActivity -> cn.lankao.com.lovelankao.activity.LKPeopleActivity:
+    com.baidu.mapapi.map.MapView mapView -> mapView
+    com.baidu.mapapi.map.BaiduMap map -> map
+    void <init>() -> <init>
+    void onCreate(android.os.Bundle) -> onCreate
+    void initView() -> initView
+    void setMapMarker(java.util.List) -> setMapMarker
+    void onClick(android.view.View) -> onClick
+    void access$000(cn.lankao.com.lovelankao.activity.LKPeopleActivity,java.util.List) -> access$000
+cn.lankao.com.lovelankao.activity.LKPeopleActivity$$ViewBinder -> cn.lankao.com.lovelankao.activity.LKPeopleActivity$$ViewBinder:
+    void <init>() -> <init>
+    void bind(butterknife.ButterKnife$Finder,cn.lankao.com.lovelankao.activity.LKPeopleActivity,java.lang.Object) -> bind
+    void unbind(cn.lankao.com.lovelankao.activity.LKPeopleActivity) -> unbind
+    void unbind(java.lang.Object) -> unbind
+    void bind(butterknife.ButterKnife$Finder,java.lang.Object,java.lang.Object) -> bind
+cn.lankao.com.lovelankao.activity.LKPeopleActivity$1 -> cn.lankao.com.lovelankao.activity.LKPeopleActivity$1:
+    cn.lankao.com.lovelankao.activity.LKPeopleActivity this$0 -> this$0
+    void <init>(cn.lankao.com.lovelankao.activity.LKPeopleActivity) -> <init>
+    void done(java.util.List,cn.bmob.v3.exception.BmobException) -> done
+    void done(java.lang.Object,java.lang.Object) -> done
 cn.lankao.com.lovelankao.activity.LoginActivity -> cn.lankao.com.lovelankao.activity.LoginActivity:
     void <init>() -> <init>
     void onCreate(android.os.Bundle) -> onCreate
@@ -18081,6 +18102,11 @@ cn.lankao.com.lovelankao.activity.SplashActivity$3 -> cn.lankao.com.lovelankao.a
     cn.lankao.com.lovelankao.activity.SplashActivity this$0 -> this$0
     void <init>(cn.lankao.com.lovelankao.activity.SplashActivity) -> <init>
     void onLocSuccess(com.baidu.location.BDLocation) -> onLocSuccess
+cn.lankao.com.lovelankao.activity.SplashActivity$3$1 -> cn.lankao.com.lovelankao.activity.SplashActivity$3$1:
+    cn.lankao.com.lovelankao.activity.SplashActivity$3 this$1 -> this$1
+    void <init>(cn.lankao.com.lovelankao.activity.SplashActivity$3) -> <init>
+    void done(cn.bmob.v3.exception.BmobException) -> done
+    void done(java.lang.Object) -> done
 cn.lankao.com.lovelankao.activity.SquareActivity -> cn.lankao.com.lovelankao.activity.SquareActivity:
     cn.lankao.com.lovelankao.viewcontroller.SquareActivityController controller -> controller
     android.widget.ImageView ivPhoto -> ivPhoto
@@ -18669,6 +18695,7 @@ cn.lankao.com.lovelankao.model.AdvertNormal -> cn.lankao.com.lovelankao.model.Ad
     void setAdvNewPinglun(java.lang.String) -> setAdvNewPinglun
 cn.lankao.com.lovelankao.model.ChatRoom -> cn.lankao.com.lovelankao.model.ChatRoom:
     java.lang.String nickName -> nickName
+    java.lang.String userId -> userId
     java.lang.String chatContent -> chatContent
     cn.bmob.v3.datatype.BmobFile chatUserPhoto -> chatUserPhoto
     java.lang.String chatUserType -> chatUserType
@@ -18681,6 +18708,8 @@ cn.lankao.com.lovelankao.model.ChatRoom -> cn.lankao.com.lovelankao.model.ChatRo
     void setChatUserPhoto(cn.bmob.v3.datatype.BmobFile) -> setChatUserPhoto
     java.lang.String getChatUserType() -> getChatUserType
     void setChatUserType(java.lang.String) -> setChatUserType
+    java.lang.String getUserId() -> getUserId
+    void setUserId(java.lang.String) -> setUserId
 cn.lankao.com.lovelankao.model.Comment -> cn.lankao.com.lovelankao.model.Comment:
     java.lang.String content -> content
     java.lang.String postId -> postId
@@ -18688,9 +18717,12 @@ cn.lankao.com.lovelankao.model.Comment -> cn.lankao.com.lovelankao.model.Comment
     java.lang.String userPhotoUrl -> userPhotoUrl
     java.lang.String likeUsers -> likeUsers
     java.lang.String lastUserName -> lastUserName
+    java.lang.String lastUserId -> lastUserId
     java.lang.String lastUserContent -> lastUserContent
     java.lang.Integer likeTimes -> likeTimes
     java.lang.String userType -> userType
+    java.lang.String userId -> userId
+    java.lang.String commentFrom -> commentFrom
     void <init>() -> <init>
     java.lang.String getUserPhotoUrl() -> getUserPhotoUrl
     void setUserPhotoUrl(java.lang.String) -> setUserPhotoUrl
@@ -18710,6 +18742,12 @@ cn.lankao.com.lovelankao.model.Comment -> cn.lankao.com.lovelankao.model.Comment
     void setUsername(java.lang.String) -> setUsername
     java.lang.String getUserType() -> getUserType
     void setUserType(java.lang.String) -> setUserType
+    java.lang.String getUserId() -> getUserId
+    void setUserId(java.lang.String) -> setUserId
+    java.lang.String getCommentFrom() -> getCommentFrom
+    void setCommentFrom(java.lang.String) -> setCommentFrom
+    java.lang.String getLastUserId() -> getLastUserId
+    void setLastUserId(java.lang.String) -> setLastUserId
 cn.lankao.com.lovelankao.model.CommonCode -> cn.lankao.com.lovelankao.model.CommonCode:
     java.lang.String APP_ICON -> APP_ICON
     java.lang.String APP_URL -> APP_URL
@@ -18733,6 +18771,7 @@ cn.lankao.com.lovelankao.model.CommonCode -> cn.lankao.com.lovelankao.model.Comm
     int ADVERT_TUISONG -> ADVERT_TUISONG
     int RV_ITEMS_COUT -> RV_ITEMS_COUT
     int RV_ITEMS_COUT20 -> RV_ITEMS_COUT20
+    java.lang.String USER_VIP_TYPE0 -> USER_VIP_TYPE0
     java.lang.String USER_VIP_TYPE1 -> USER_VIP_TYPE1
     java.lang.String USER_VIP_TYPE2 -> USER_VIP_TYPE2
     java.lang.String USER_VIP_TYPE3 -> USER_VIP_TYPE3
@@ -18868,7 +18907,10 @@ cn.lankao.com.lovelankao.model.MyUser -> cn.lankao.com.lovelankao.model.MyUser:
     java.lang.String nickName -> nickName
     java.lang.String userType -> userType
     java.lang.String passWord -> passWord
+    java.lang.Float userLat -> userLat
+    java.lang.Float userLng -> userLng
     cn.bmob.v3.datatype.BmobFile photo -> photo
+    java.lang.String commentMsg -> commentMsg
     void <init>() -> <init>
     java.lang.Integer getCoupon() -> getCoupon
     void setCoupon(java.lang.Integer) -> setCoupon
@@ -18882,6 +18924,12 @@ cn.lankao.com.lovelankao.model.MyUser -> cn.lankao.com.lovelankao.model.MyUser:
     void setMobile(java.lang.String) -> setMobile
     java.lang.String getPassWord() -> getPassWord
     void setPassWord(java.lang.String) -> setPassWord
+    java.lang.String getCommentMsg() -> getCommentMsg
+    void setCommentMsg(java.lang.String) -> setCommentMsg
+    java.lang.Float getUserLat() -> getUserLat
+    void setUserLat(java.lang.Float) -> setUserLat
+    java.lang.Float getUserLng() -> getUserLng
+    void setUserLng(java.lang.Float) -> setUserLng
 cn.lankao.com.lovelankao.model.NewsList -> cn.lankao.com.lovelankao.model.NewsList:
     void <init>() -> <init>
 cn.lankao.com.lovelankao.model.PushData -> cn.lankao.com.lovelankao.model.PushData:
@@ -18948,6 +18996,7 @@ cn.lankao.com.lovelankao.model.Shared -> cn.lankao.com.lovelankao.model.Shared:
     void setUrl(java.lang.String) -> setUrl
 cn.lankao.com.lovelankao.model.Square -> cn.lankao.com.lovelankao.model.Square:
     java.lang.String nickName -> nickName
+    java.lang.String userId -> userId
     java.lang.String userPhoto -> userPhoto
     java.lang.String squareTitle -> squareTitle
     java.lang.String squareContent -> squareContent
@@ -18993,6 +19042,8 @@ cn.lankao.com.lovelankao.model.Square -> cn.lankao.com.lovelankao.model.Square:
     void setSquarePhoto6(cn.bmob.v3.datatype.BmobFile) -> setSquarePhoto6
     java.lang.Integer getCommentTimes() -> getCommentTimes
     void setCommentTimes(java.lang.Integer) -> setCommentTimes
+    java.lang.String getUserId() -> getUserId
+    void setUserId(java.lang.String) -> setUserId
 cn.lankao.com.lovelankao.model.Top -> cn.lankao.com.lovelankao.model.Top:
     java.lang.String title -> title
     int topclass -> topclass

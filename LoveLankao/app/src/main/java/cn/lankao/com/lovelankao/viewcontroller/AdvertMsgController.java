@@ -337,10 +337,11 @@ public class AdvertMsgController implements View.OnClickListener, SwipeRefreshLa
             Intent intent = new Intent(context,LoginActivity.class);
             context.startActivity(intent);
         } else {
+            Comment comment = new Comment();
+            comment.setPostId(advertNormal.getObjectId());
+            comment.setLastUserContent(s);
             Intent intent = new Intent(context,CommentActivity.class);
-            intent.putExtra(CommonCode.INTENT_COMMENT_POSTID, advertNormal.getObjectId());
-            intent.putExtra(CommonCode.INTENT_COMMENT_LASTCONTENT,s);
-            intent.putExtra(CommonCode.INTENT_COMMENT_FROM_SQUARE,"");
+            intent.putExtra(CommonCode.INTENT_COMMON_OBJ, comment);
             context.startActivity(intent);
         }
     }

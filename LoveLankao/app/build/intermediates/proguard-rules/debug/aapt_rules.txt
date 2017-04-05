@@ -27,7 +27,7 @@
 # view res/layout/activity_read_weixin.xml #generated:27
 # view res/layout/activity_square.xml #generated:34
 # view res/layout/activity_top.xml #generated:27
-# view res/layout/fragment_index.xml #generated:19
+# view res/layout/fragment_index.xml #generated:29
 # view res/layout/fragment_main.xml #generated:28
 # view res/layout/fragment_talknew.xml #generated:27
 -keep class android.support.v4.widget.SwipeRefreshLayout { <init>(...); }
@@ -83,10 +83,11 @@
 # view res/layout/activity_read_weixin.xml #generated:32
 # view res/layout/activity_square.xml #generated:39
 # view res/layout/activity_top.xml #generated:32
-# view res/layout/fragment_index.xml #generated:28
+# view res/layout/activity_user_square_msg.xml #generated:8
+# view res/layout/fragment_index.xml #generated:38
 # view res/layout/fragment_index_header.xml #generated:13
 # view res/layout/fragment_main.xml #generated:37
-# view res/layout/fragment_talknew.xml #generated:32
+# view res/layout/fragment_talknew.xml #generated:33
 -keep class android.support.v7.widget.RecyclerView { <init>(...); }
 
 # view res/layout/abc_search_view.xml #generated:78
@@ -126,7 +127,7 @@
 # view AndroidManifest.xml #generated:90
 -keep class cn.lankao.com.lovelankao.activity.JockActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:93
+# view AndroidManifest.xml #generated:94
 -keep class cn.lankao.com.lovelankao.activity.LBSActivity { <init>(...); }
 
 # view AndroidManifest.xml #generated:91
@@ -135,56 +136,63 @@
 # view AndroidManifest.xml #generated:92
 -keep class cn.lankao.com.lovelankao.activity.LKNewsMsgActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:94
--keep class cn.lankao.com.lovelankao.activity.LoginActivity { <init>(...); }
+# view AndroidManifest.xml #generated:93
+-keep class cn.lankao.com.lovelankao.activity.LKPeopleActivity { <init>(...); }
 
 # view AndroidManifest.xml #generated:95
+-keep class cn.lankao.com.lovelankao.activity.LoginActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:96
 -keep class cn.lankao.com.lovelankao.activity.MainActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:99
+# view AndroidManifest.xml #generated:100
 -keep class cn.lankao.com.lovelankao.activity.PhotoViewPagerActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:98
+# view AndroidManifest.xml #generated:99
 -keep class cn.lankao.com.lovelankao.activity.PicShowActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:101
+# view AndroidManifest.xml #generated:102
 -keep class cn.lankao.com.lovelankao.activity.ReadWeixinActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:100
+# view AndroidManifest.xml #generated:101
 -keep class cn.lankao.com.lovelankao.activity.RegisterActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:102
+# view AndroidManifest.xml #generated:103
 -keep class cn.lankao.com.lovelankao.activity.SettingActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:105
+# view AndroidManifest.xml #generated:107
 -keep class cn.lankao.com.lovelankao.activity.ShopLocationActivity { <init>(...); }
 
 # view AndroidManifest.xml #generated:45
 -keep class cn.lankao.com.lovelankao.activity.SplashActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:103
+# view AndroidManifest.xml #generated:104
 -keep class cn.lankao.com.lovelankao.activity.SquareActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:104
--keep class cn.lankao.com.lovelankao.activity.SquareSendActivity { <init>(...); }
+# view AndroidManifest.xml #generated:105
+-keep class cn.lankao.com.lovelankao.activity.SquareMsgActivity { <init>(...); }
 
 # view AndroidManifest.xml #generated:106
--keep class cn.lankao.com.lovelankao.activity.TopActivity { <init>(...); }
-
-# view AndroidManifest.xml #generated:107
--keep class cn.lankao.com.lovelankao.activity.WebViewActivity { <init>(...); }
+-keep class cn.lankao.com.lovelankao.activity.SquareSendActivity { <init>(...); }
 
 # view AndroidManifest.xml #generated:108
+-keep class cn.lankao.com.lovelankao.activity.TopActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:109
+-keep class cn.lankao.com.lovelankao.activity.WebViewActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:110
 -keep class cn.lankao.com.lovelankao.wxapi.WXEntryActivity { <init>(...); }
 
 # view AndroidManifest.xml #generated:57
 -keep class com.baidu.location.f { <init>(...); }
 
 # view res/layout/activity_lbs.xml #generated:6
+# view res/layout/activity_lk_people.xml #generated:6
 # view res/layout/activity_shop_loc.xml #generated:5
 -keep class com.baidu.mapapi.map.MapView { <init>(...); }
 
-# view res/layout/fragment_index.xml #generated:34
+# view res/layout/fragment_index.xml #generated:44
 # view res/layout/fragment_main.xml #generated:43
 -keep class com.bartoszlipinski.recyclerviewheader2.RecyclerViewHeader { <init>(...); }
 

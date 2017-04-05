@@ -104,6 +104,10 @@
         "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_search_view.xml"
     },
     {
+        "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_lk_people.xml",
+        "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\layout\\activity_lk_people.xml"
+    },
+    {
         "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_index_head.xml",
         "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\layout\\activity_index_head.xml"
     },

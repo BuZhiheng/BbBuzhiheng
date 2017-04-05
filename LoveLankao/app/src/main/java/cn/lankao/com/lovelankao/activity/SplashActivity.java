@@ -9,11 +9,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.baidu.location.BDLocation;
+
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.UpdateListener;
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.model.CommonCode;
+import cn.lankao.com.lovelankao.model.MyUser;
 import cn.lankao.com.lovelankao.utils.MyLocationClient;
 import cn.lankao.com.lovelankao.utils.PermissionUtil;
 import cn.lankao.com.lovelankao.utils.PrefUtil;
+import cn.lankao.com.lovelankao.utils.TextUtil;
 import cn.lankao.com.lovelankao.utils.ToastUtil;
 import cn.lankao.com.lovelankao.utils.WindowUtils;
 /**
@@ -72,9 +77,23 @@ public class SplashActivity extends AppCompatActivity{
         MyLocationClient.locSingle(new MyLocationClient.MyLocationListener() {
             @Override
             public void onLocSuccess(BDLocation bdLocation) {
-                PrefUtil.putString(CommonCode.SP_LOCATION_ADDRESS,bdLocation.getAddrStr());
+                if (bdLocation == null || bdLocation.getLatitude() <= 0 || bdLocation.getLongitude() <= 0){
+                    return;
+                }
+                PrefUtil.putString(CommonCode.SP_LOCATION_ADDRESS, bdLocation.getAddrStr());
                 PrefUtil.putFloat(CommonCode.SP_LOCATION_LAT, (float) bdLocation.getLatitude());
                 PrefUtil.putFloat(CommonCode.SP_LOCATION_LNG, (float) bdLocation.getLongitude());
+                String userId = PrefUtil.getString(CommonCode.SP_USER_USERID,"");
+                if (!TextUtil.isNull(userId)){
+                    MyUser user = new MyUser();
+                    user.setUserLat((float) bdLocation.getLatitude());
+                    user.setUserLng((float) bdLocation.getLongitude());
+                    user.update(userId, new UpdateListener() {
+                        @Override
+                        public void done(BmobException e) {
+                        }
+                    });
+                }
             }
         });
     }

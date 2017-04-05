@@ -90,6 +90,7 @@
         <activity android:name="cn.lankao.com.lovelankao.activity.JockActivity" />
         <activity android:name="cn.lankao.com.lovelankao.activity.LKNewsActivity" />
         <activity android:name="cn.lankao.com.lovelankao.activity.LKNewsMsgActivity" />
+        <activity android:name="cn.lankao.com.lovelankao.activity.LKPeopleActivity" />
         <activity android:name="cn.lankao.com.lovelankao.activity.LBSActivity" />
         <activity android:name="cn.lankao.com.lovelankao.activity.LoginActivity" />
         <activity

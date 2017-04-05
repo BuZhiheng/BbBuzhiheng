@@ -47,21 +47,25 @@ public class MineFragmentController implements View.OnClickListener {
             query.getObject(userid, new QueryListener<MyUser>() {
                 @Override
                 public void done(MyUser user, BmobException e) {
+                    if (user == null){
+                        return;
+                    }
                     PrefUtil.putString(CommonCode.SP_USER_USERID, user.getObjectId());
                     PrefUtil.putString(CommonCode.SP_USER_USERMOBILE, user.getMobile());
                     PrefUtil.putString(CommonCode.SP_USER_NICKNAME, user.getNickName());
                     PrefUtil.putString(CommonCode.SP_USER_USERTYPE, user.getUserType());
+                    PrefUtil.putString(CommonCode.SP_USER_USER_POST_MSG, user.getCommentMsg());
                     if (user.getPhoto() != null){
                         PrefUtil.putString(CommonCode.SP_USER_PHOTO, user.getPhoto().getFileUrl());
                     }
                     Integer point = user.getCoupon();
                     if (point == null){
                         PrefUtil.putInt(CommonCode.SP_USER_POINT, 0);
-                    }else{
+                    } else {
                         int p = point;
                         PrefUtil.putInt(CommonCode.SP_USER_POINT, p);
                     }
-                    onEventMainThread(user);
+                    EventBus.getDefault().post(user);
                 }
             });
         }

@@ -10,6 +10,8 @@ public class MyUser extends BmobObject{
     private String nickName;
     private String userType;
     private String passWord;
+    private Float userLat;
+    private Float userLng;
     private BmobFile photo;
     private String commentMsg;
     public Integer getCoupon() {
@@ -66,5 +68,21 @@ public class MyUser extends BmobObject{
 
     public void setCommentMsg(String commentMsg) {
         this.commentMsg = commentMsg;
+    }
+
+    public Float getUserLat() {
+        return userLat;
+    }
+
+    public void setUserLat(Float userLat) {
+        this.userLat = userLat;
+    }
+
+    public Float getUserLng() {
+        return userLng;
+    }
+
+    public void setUserLng(Float userLng) {
+        this.userLng = userLng;
     }
 }

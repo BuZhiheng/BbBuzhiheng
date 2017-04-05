@@ -10,6 +10,7 @@ import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.datatype.BmobFile;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
+import cn.bmob.v3.listener.QueryListener;
 import cn.bmob.v3.listener.UpdateListener;
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.PhotoViewPagerActivity;
@@ -27,16 +28,26 @@ public class SquareActivityController{
     private Square square;
     private List<String> list;
     private List<Comment> listComment;
-    public SquareActivityController(SquareActivity context){
+    public SquareActivityController(SquareActivity context,Intent intent){
         this.context = context;
         list = new ArrayList<>();
         listComment = new ArrayList<>();
-    }
-    public void initData(Intent intent){
-        if (intent == null || intent.getSerializableExtra(CommonCode.INTENT_COMMON_OBJ) == null){
-            return;
+        if (intent != null && intent.getStringExtra(CommonCode.INTENT_COMMON_STRING) != null){
+            initData(intent.getStringExtra(CommonCode.INTENT_COMMON_STRING));
         }
-        square = (Square) intent.getSerializableExtra(CommonCode.INTENT_COMMON_OBJ);
+    }
+
+    private void initData(String postId) {
+        BmobQuery<Square> squareQuery = new BmobQuery<>();
+        squareQuery.getObject(postId, new QueryListener<Square>() {
+            @Override
+            public void done(Square s, BmobException e) {
+                square = s;
+                initView();
+            }
+        });
+    }
+    public void initView(){
         if (square == null){
             return;
         }
@@ -81,21 +92,23 @@ public class SquareActivityController{
         }
         context.setData(square, userImg, drawable);
         BmobQuery<Comment> query = new BmobQuery<>();
-        query.addWhereEqualTo("postId",square.getObjectId());
+        query.addWhereEqualTo("postId", square.getObjectId());
         query.order("-createdAt");
         query.setLimit(100);
         query.findObjects(new FindListener<Comment>() {
             @Override
             public void done(List<Comment> list, BmobException e) {
-                if (e == null){
+                if (e == null) {
                     listComment = list;
                     setComment();
-                    square.setCommentTimes(list.size());
-                    square.update(new UpdateListener() {
-                        @Override
-                        public void done(BmobException e) {
-                        }
-                    });
+                    if (list.size() > 0) {
+                        square.setCommentTimes(list.size());
+                        square.update(new UpdateListener() {
+                            @Override
+                            public void done(BmobException e) {
+                            }
+                        });
+                    }
                 }
             }
         });
@@ -131,14 +144,24 @@ public class SquareActivityController{
             });
         }
     }
-    public void checkComment(String last){
+    public void checkComment(){
+        checkComment("","");
+    }
+    public void checkComment(String lastContent,String lastUserId){
         String nickname = PrefUtil.getString(CommonCode.SP_USER_NICKNAME, "");
         if (TextUtil.isNull(nickname)){
             context.showToast("请先登录");
             context.toLogin();
         } else {
             if (square != null){
-                context.toComment(square.getObjectId(),last);
+                Comment comment = new Comment();
+                comment.setPostId(square.getObjectId());
+                comment.setPostUserId(square.getUserId());
+                comment.setPostContent(square.getSquareContent());
+                comment.setLastUserId(lastUserId);
+                comment.setLastUserContent(lastContent);
+                comment.setCommentFrom(CommonCode.INTENT_COMMENT_FROM_SQUARE);
+                context.toComment(comment);
             }
         }
     }

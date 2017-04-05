@@ -75,8 +75,7 @@ public class SquareActivity extends AppCompatActivity {
         initView();
     }
     private void initView() {
-        controller = new SquareActivityController(this);
-        controller.initData(getIntent());
+        controller = new SquareActivityController(this,getIntent());
     }
     public void setData(final Square square,String userImg,Drawable drawable){
         option = BitmapUtil.getOptionCommon();
@@ -124,18 +123,16 @@ public class SquareActivity extends AppCompatActivity {
                 break;
             case R.id.tv_square_comment_writecomment:
             case R.id.ll_square_item_commenttimes:
-                controller.checkComment("");
+                controller.checkComment();
                 break;
         }
     }
     public void setVisibility(View v){
         v.setVisibility(View.VISIBLE);
     }
-    public void toComment(String id,String last){
+    public void toComment(Comment comment){
         Intent intent = new Intent(this,CommentActivity.class);
-        intent.putExtra(CommonCode.INTENT_COMMENT_POSTID,id);
-        intent.putExtra(CommonCode.INTENT_COMMENT_LASTCONTENT,last);
-        intent.putExtra(CommonCode.INTENT_COMMENT_FROM_SQUARE,CommonCode.INTENT_COMMENT_FROM_SQUARE);
+        intent.putExtra(CommonCode.INTENT_COMMON_OBJ,comment);
         startActivityForResult(intent, CommonCode.INTENT_COMMON_ACTIVITY_CODE);
     }
     public void clearCommentLL(){
@@ -161,14 +158,14 @@ public class SquareActivity extends AppCompatActivity {
         holder.tvToReComment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                controller.checkComment("回复(" + comment.getUsername() + "):" + comment.getContent());
+                controller.checkComment("回复(" + comment.getUsername() + "):" + comment.getContent(),comment.getUserId());
             }
         });
         holder.tvUserType.setText(TextUtil.getVipString(comment.getUserType()));
         holder.tvComment.setText(comment.getContent());
         llComment.addView(view);
     }
-    class CommentHolder{
+    class CommentHolder {
         ImageView ivPhoto;
         TextView tvToReComment;
         TextView tvNickname;

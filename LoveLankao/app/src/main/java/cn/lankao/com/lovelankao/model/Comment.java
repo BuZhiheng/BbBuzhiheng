@@ -6,6 +6,8 @@ import cn.bmob.v3.BmobObject;
 public class Comment extends BmobObject{
     private String content;
     private String postId;
+    private String postUserId;
+    private String postContent;
     private String username;
     private String userPhotoUrl;
     private String likeUsers;
@@ -110,5 +112,21 @@ public class Comment extends BmobObject{
 
     public void setLastUserId(String lastUserId) {
         this.lastUserId = lastUserId;
+    }
+
+    public String getPostUserId() {
+        return postUserId;
+    }
+
+    public void setPostUserId(String postUserId) {
+        this.postUserId = postUserId;
+    }
+
+    public String getPostContent() {
+        return postContent;
+    }
+
+    public void setPostContent(String postContent) {
+        this.postContent = postContent;
     }
 }

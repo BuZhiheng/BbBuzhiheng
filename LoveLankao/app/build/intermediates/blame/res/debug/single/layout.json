@@ -16,6 +16,10 @@
         "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\layout\\include_slid_img_vertical.xml"
     },
     {
+        "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_user_msg_item.xml",
+        "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\layout\\activity_user_msg_item.xml"
+    },
+    {
         "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
         "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_action_menu_item_layout.xml"
     },
@@ -24,12 +28,12 @@
         "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\layout\\activity_top_item.xml"
     },
     {
-        "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_pic_show.xml",
-        "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\layout\\activity_pic_show.xml"
-    },
-    {
         "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_web_view.xml",
         "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\layout\\activity_web_view.xml"
+    },
+    {
+        "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_pic_show.xml",
+        "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\layout\\activity_pic_show.xml"
     },
     {
         "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_main_header.xml",
@@ -88,12 +92,12 @@
         "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
     },
     {
-        "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media.xml",
-        "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_template_big_media.xml"
-    },
-    {
         "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\bmob_update_dialog.xml",
         "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\layout\\bmob_update_dialog.xml"
+    },
+    {
+        "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media.xml",
+        "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_template_big_media.xml"
     },
     {
         "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_splash.xml",
@@ -140,12 +144,12 @@
         "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\layout\\design_navigation_item_subheader.xml"
     },
     {
-        "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_mine.xml",
-        "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\layout\\fragment_mine.xml"
-    },
-    {
         "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar.xml",
         "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\layout\\design_layout_snackbar.xml"
+    },
+    {
+        "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_mine.xml",
+        "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\layout\\fragment_mine.xml"
     },
     {
         "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\include_viewpager.xml",
@@ -170,6 +174,10 @@
     {
         "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_lknews_item.xml",
         "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\layout\\activity_lknews_item.xml"
+    },
+    {
+        "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_lk_people.xml",
+        "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\layout\\activity_lk_people.xml"
     },
     {
         "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_read_weixin.xml",
@@ -286,6 +294,10 @@
     {
         "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_square_item.xml",
         "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\layout\\activity_square_item.xml"
+    },
+    {
+        "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_user_square_msg.xml",
+        "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\layout\\activity_user_square_msg.xml"
     },
     {
         "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_setting.xml",

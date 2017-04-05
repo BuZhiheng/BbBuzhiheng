@@ -72,6 +72,7 @@
         <activity android:name=".activity.JockActivity" />
         <activity android:name=".activity.LKNewsActivity" />
         <activity android:name=".activity.LKNewsMsgActivity" />
+        <activity android:name=".activity.LKPeopleActivity" />
         <activity android:name=".activity.LBSActivity" />
         <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.MainActivity"
@@ -83,6 +84,7 @@
         <activity android:name=".activity.ReadWeixinActivity" />
         <activity android:name=".activity.SettingActivity" />
         <activity android:name=".activity.SquareActivity" />
+        <activity android:name=".activity.SquareMsgActivity" />
         <activity android:name=".activity.SquareSendActivity" />
         <activity android:name=".activity.ShopLocationActivity" />
         <activity android:name=".activity.TopActivity" />

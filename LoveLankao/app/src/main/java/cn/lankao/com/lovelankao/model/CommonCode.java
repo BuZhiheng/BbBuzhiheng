@@ -27,6 +27,10 @@ public class CommonCode {
     public static int RV_ITEMS_COUT = 10;//recycleView分页加载默认条数
     public static int RV_ITEMS_COUT20 = 20;//recycleView分页加载默认条数
 
+    public static String USER_MSG_POST_INIT = "USER_MSG_INIT";//用户信息初始化
+    public static String USER_MSG_POST_COMMENT = "USER_MSG_POST_COMMENT";//用户信息帖子被评论
+    public static String USER_MSG_POST_RECOMMENT = "USER_MSG_POST_RECOMMENT";//用户信息帖子被回复
+
     public static String USER_VIP_TYPE0 = "1000";//用户VIP类型至尊
     public static String USER_VIP_TYPE1 = "100";//用户VIP类型1
     public static String USER_VIP_TYPE2 = "200";//用户VIP类型2
@@ -62,6 +66,7 @@ public class CommonCode {
     public static final String SP_USER_POINT = "SP_USER_POINT";
     public static final String SP_USER_PHOTO = "SP_USER_PHOTO";
     public static final String SP_USER_USERTYPE = "SP_USER_USERTYPE";
+    public static final String SP_USER_USER_POST_MSG = "SP_USER_USER_POST_MSG";
 
     public static final String SP_REGISTER_CODE_PHONE = "SP_REGISTER_CODE_PHONE";
     public static final String SP_REGISTER_CODE = "SP_REGISTER_CODE";

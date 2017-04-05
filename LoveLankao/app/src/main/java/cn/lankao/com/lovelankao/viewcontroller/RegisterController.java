@@ -219,12 +219,18 @@ public class RegisterController implements View.OnClickListener {
             return;
         }
         String preCode = PrefUtil.getString(CommonCode.SP_REGISTER_CODE,"");
-        String prePhone = PrefUtil.getString(CommonCode.SP_REGISTER_CODE_PHONE,"");
+        String prePhone = PrefUtil.getString(CommonCode.SP_REGISTER_CODE_PHONE, "");
         if (!(phone.equals(prePhone) && preCode.equals(code))){
             ToastUtil.show("验证码有误");
             return;
         }
         MyUser user = new MyUser();
+        float lat = PrefUtil.getFloat(CommonCode.SP_LOCATION_LAT,0);
+        float lng = PrefUtil.getFloat(CommonCode.SP_LOCATION_LNG,0);
+        if (lat != 0){
+            user.setUserLat(lat);
+            user.setUserLng(lng);
+        }
         user.setNickName(nickName);
         user.setMobile(phone);
         user.setPassWord(pwd);
