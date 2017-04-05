@@ -98,17 +98,15 @@ public class SquareActivityController{
         query.findObjects(new FindListener<Comment>() {
             @Override
             public void done(List<Comment> list, BmobException e) {
-                if (e == null) {
+                if (list != null) {
                     listComment = list;
                     setComment();
-                    if (list.size() > 0) {
-                        square.setCommentTimes(list.size());
-                        square.update(new UpdateListener() {
-                            @Override
-                            public void done(BmobException e) {
-                            }
-                        });
-                    }
+                    square.setCommentTimes(list.size());
+                    square.update(new UpdateListener() {
+                        @Override
+                        public void done(BmobException e) {
+                        }
+                    });
                 }
             }
         });

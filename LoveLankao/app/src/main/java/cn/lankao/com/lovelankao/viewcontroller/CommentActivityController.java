@@ -68,7 +68,7 @@ public class CommentActivityController {
                 public void done(BmobException e) {
                 }
             });
-            if (!TextUtil.isNull(comment.getPostUserId())){
+            if (!TextUtil.isNull(comment.getPostUserId()) && !comment.getPostUserId().equals(PrefUtil.getString(CommonCode.SP_USER_USERID,""))){
                 MyUser user = new MyUser();
                 user.setCommentMsg(CommonCode.USER_MSG_POST_COMMENT);
                 user.update(comment.getPostUserId(), new UpdateListener() {
@@ -77,7 +77,7 @@ public class CommentActivityController {
                     }
                 });
             }
-            if (!TextUtil.isNull(comment.getLastUserId())){
+            if (!TextUtil.isNull(comment.getLastUserId()) && !comment.getLastUserId().equals(PrefUtil.getString(CommonCode.SP_USER_USERID,""))){
                 MyUser user = new MyUser();
                 user.setCommentMsg(CommonCode.USER_MSG_POST_COMMENT);
                 user.update(comment.getLastUserId(), new UpdateListener() {

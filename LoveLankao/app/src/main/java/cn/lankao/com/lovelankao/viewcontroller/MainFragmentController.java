@@ -12,7 +12,7 @@ import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
 import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.AdvertDetailActivity;
-import cn.lankao.com.lovelankao.activity.AllBusinessActivity;
+import cn.lankao.com.lovelankao.activity.LBSActivity;
 import cn.lankao.com.lovelankao.adapter.MyAdapter;
 import cn.lankao.com.lovelankao.model.AdvertNormal;
 import cn.lankao.com.lovelankao.model.CommonCode;
@@ -82,7 +82,7 @@ public class MainFragmentController implements View.OnClickListener, SwipeRefres
         switch (id) {
             case R.id.tv_mainfrm_toall:
             case R.id.fl_mainfrm_more:
-                Intent intent = new Intent(context, AllBusinessActivity.class);
+                Intent intent = new Intent(context, LBSActivity.class);
                 context.startActivity(intent);
                 break;
             case R.id.ll_mainfrm_header_mingqi:

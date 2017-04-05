@@ -257,10 +257,10 @@
     <dimen name="notification_subtext_size">12dp</dimen>
     <dimen name="sub_action_button_content_margin">6dp</dimen>
     <dimen name="sub_action_button_size">36dp</dimen>
-    <dimen name="text_common_item_content">12sp</dimen>
-    <dimen name="text_common_item_title">16sp</dimen>
-    <dimen name="text_common_large">36sp</dimen>
-    <dimen name="text_main_title">21sp</dimen>
+    <dimen name="text_common_item_content">12dp</dimen>
+    <dimen name="text_common_item_title">16dp</dimen>
+    <dimen name="text_common_large">30dp</dimen>
+    <dimen name="text_main_title">21dp</dimen>
     <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
     <item name="action_bar_activity_content" type="id"/>
     <item name="action_bar_spinner" type="id"/>
@@ -315,7 +315,7 @@
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="app_keystore_alias">lk</string>
     <string name="app_name">掌上兰考</string>
-    <string name="app_test">掌上兰考掌上兰考</string>
+    <string name="app_test"> </string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="bmob_common_action_cancel">取消</string>
     <string name="bmob_common_action_continue">继续</string>

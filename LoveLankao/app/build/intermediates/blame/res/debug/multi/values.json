@@ -539,14 +539,7 @@
                     "endOffset": 2907
                 },
                 "from": {
-                    "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\colors.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 152,
-                        "endColumn": 50,
-                        "endOffset": 198
-                    }
+                    "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\colors.xml"
                 }
             },
             {
@@ -2574,7 +2567,14 @@
                     "endOffset": 36741
                 },
                 "from": {
-                    "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\dimens.xml"
+                    "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 430,
+                        "endColumn": 55,
+                        "endOffset": 481
+                    }
                 }
             },
             {
@@ -2586,7 +2586,14 @@
                     "endOffset": 36795
                 },
                 "from": {
-                    "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\dimens.xml"
+                    "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 375,
+                        "endColumn": 53,
+                        "endOffset": 424
+                    }
                 }
             },
             {
@@ -2598,7 +2605,14 @@
                     "endOffset": 36844
                 },
                 "from": {
-                    "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\dimens.xml"
+                    "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 487,
+                        "endColumn": 48,
+                        "endOffset": 531
+                    }
                 }
             },
             {
@@ -2610,7 +2624,14 @@
                     "endOffset": 36891
                 },
                 "from": {
-                    "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\dimens.xml"
+                    "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 327,
+                        "endColumn": 46,
+                        "endOffset": 369
+                    }
                 }
             },
             {
@@ -3266,8 +3287,8 @@
                     "startLine": 317,
                     "startColumn": 4,
                     "startOffset": 40040,
-                    "endColumn": 45,
-                    "endOffset": 40081
+                    "endColumn": 38,
+                    "endOffset": 40074
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\strings.xml"
@@ -3277,9 +3298,9 @@
                 "to": {
                     "startLine": 318,
                     "startColumn": 4,
-                    "startOffset": 40086,
+                    "startOffset": 40079,
                     "endColumn": 144,
-                    "endOffset": 40226
+                    "endOffset": 40219
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\values\\values.xml"
@@ -3289,9 +3310,9 @@
                 "to": {
                     "startLine": 319,
                     "startColumn": 4,
-                    "startOffset": 40231,
+                    "startOffset": 40224,
                     "endColumn": 56,
-                    "endOffset": 40283
+                    "endOffset": 40276
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\strings.xml"
@@ -3301,9 +3322,9 @@
                 "to": {
                     "startLine": 320,
                     "startColumn": 4,
-                    "startOffset": 40288,
+                    "startOffset": 40281,
                     "endColumn": 58,
-                    "endOffset": 40342
+                    "endOffset": 40335
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\strings.xml"
@@ -3313,9 +3334,9 @@
                 "to": {
                     "startLine": 321,
                     "startColumn": 4,
-                    "startOffset": 40347,
+                    "startOffset": 40340,
                     "endColumn": 64,
-                    "endOffset": 40407
+                    "endOffset": 40400
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\strings.xml"
@@ -3325,9 +3346,9 @@
                 "to": {
                     "startLine": 322,
                     "startColumn": 4,
-                    "startOffset": 40412,
+                    "startOffset": 40405,
                     "endColumn": 55,
-                    "endOffset": 40463
+                    "endOffset": 40456
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\strings.xml"
@@ -3337,9 +3358,9 @@
                 "to": {
                     "startLine": 323,
                     "startColumn": 4,
-                    "startOffset": 40468,
+                    "startOffset": 40461,
                     "endColumn": 60,
-                    "endOffset": 40524
+                    "endOffset": 40517
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\strings.xml"
@@ -3349,9 +3370,9 @@
                 "to": {
                     "startLine": 324,
                     "startColumn": 4,
-                    "startOffset": 40529,
+                    "startOffset": 40522,
                     "endColumn": 66,
-                    "endOffset": 40591
+                    "endOffset": 40584
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\strings.xml"
@@ -3361,9 +3382,9 @@
                 "to": {
                     "startLine": 325,
                     "startColumn": 4,
-                    "startOffset": 40596,
+                    "startOffset": 40589,
                     "endColumn": 75,
-                    "endOffset": 40667
+                    "endOffset": 40660
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\strings.xml"
@@ -3373,9 +3394,9 @@
                 "to": {
                     "startLine": 326,
                     "startColumn": 4,
-                    "startOffset": 40672,
+                    "startOffset": 40665,
                     "endColumn": 70,
-                    "endOffset": 40738
+                    "endOffset": 40731
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\strings.xml"
@@ -3385,9 +3406,9 @@
                 "to": {
                     "startLine": 327,
                     "startColumn": 4,
-                    "startOffset": 40743,
+                    "startOffset": 40736,
                     "endColumn": 70,
-                    "endOffset": 40809
+                    "endOffset": 40802
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\strings.xml"
@@ -3397,9 +3418,9 @@
                 "to": {
                     "startLine": 328,
                     "startColumn": 4,
-                    "startOffset": 40814,
+                    "startOffset": 40807,
                     "endColumn": 63,
-                    "endOffset": 40873
+                    "endOffset": 40866
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\strings.xml"
@@ -3409,9 +3430,9 @@
                 "to": {
                     "startLine": 329,
                     "startColumn": 4,
-                    "startOffset": 40878,
+                    "startOffset": 40871,
                     "endColumn": 70,
-                    "endOffset": 40944
+                    "endOffset": 40937
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\strings.xml"
@@ -3421,9 +3442,9 @@
                 "to": {
                     "startLine": 330,
                     "startColumn": 4,
-                    "startOffset": 40949,
+                    "startOffset": 40942,
                     "endColumn": 77,
-                    "endOffset": 41022
+                    "endOffset": 41015
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\strings.xml"
@@ -3433,9 +3454,9 @@
                 "to": {
                     "startLine": 331,
                     "startColumn": 4,
-                    "startOffset": 41027,
+                    "startOffset": 41020,
                     "endColumn": 74,
-                    "endOffset": 41097
+                    "endOffset": 41090
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\strings.xml"
@@ -3445,9 +3466,9 @@
                 "to": {
                     "startLine": 332,
                     "startColumn": 4,
-                    "startOffset": 41102,
+                    "startOffset": 41095,
                     "endColumn": 72,
-                    "endOffset": 41170
+                    "endOffset": 41163
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\strings.xml"
@@ -3457,9 +3478,9 @@
                 "to": {
                     "startLine": 333,
                     "startColumn": 4,
-                    "startOffset": 41175,
+                    "startOffset": 41168,
                     "endColumn": 86,
-                    "endOffset": 41257
+                    "endOffset": 41250
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\values\\values.xml"
@@ -3469,9 +3490,9 @@
                 "to": {
                     "startLine": 334,
                     "startColumn": 4,
-                    "startOffset": 41262,
+                    "startOffset": 41255,
                     "endColumn": 41,
-                    "endOffset": 41299
+                    "endOffset": 41292
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\strings.xml"
@@ -3481,9 +3502,9 @@
                 "to": {
                     "startLine": 335,
                     "startColumn": 4,
-                    "startOffset": 41304,
+                    "startOffset": 41297,
                     "endColumn": 39,
-                    "endOffset": 41339
+                    "endOffset": 41332
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\strings.xml"
@@ -3493,9 +3514,9 @@
                 "to": {
                     "startLine": 336,
                     "startColumn": 4,
-                    "startOffset": 41344,
+                    "startOffset": 41337,
                     "endColumn": 40,
-                    "endOffset": 41380
+                    "endOffset": 41373
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\strings.xml"
@@ -3505,9 +3526,9 @@
                 "to": {
                     "startLine": 337,
                     "startColumn": 4,
-                    "startOffset": 41385,
+                    "startOffset": 41378,
                     "endColumn": 40,
-                    "endOffset": 41421
+                    "endOffset": 41414
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\strings.xml"
@@ -3517,9 +3538,9 @@
                 "to": {
                     "startLine": 338,
                     "startColumn": 4,
-                    "startOffset": 41426,
+                    "startOffset": 41419,
                     "endColumn": 70,
-                    "endOffset": 41492
+                    "endOffset": 41485
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -3529,9 +3550,9 @@
                 "to": {
                     "startLine": 339,
                     "startColumn": 4,
-                    "startOffset": 41497,
+                    "startOffset": 41490,
                     "endColumn": 56,
-                    "endOffset": 41549
+                    "endOffset": 41542
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\strings.xml"
@@ -3541,9 +3562,9 @@
                 "to": {
                     "startLine": 340,
                     "startColumn": 4,
-                    "startOffset": 41554,
+                    "startOffset": 41547,
                     "endColumn": 54,
-                    "endOffset": 41604
+                    "endOffset": 41597
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\strings.xml"
@@ -3553,9 +3574,9 @@
                 "to": {
                     "startLine": 341,
                     "startColumn": 4,
-                    "startOffset": 41609,
+                    "startOffset": 41602,
                     "endColumn": 52,
-                    "endOffset": 41657
+                    "endOffset": 41650
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\strings.xml"
@@ -3565,9 +3586,9 @@
                 "to": {
                     "startLine": 342,
                     "startColumn": 4,
-                    "startOffset": 41662,
+                    "startOffset": 41655,
                     "endColumn": 51,
-                    "endOffset": 41709
+                    "endOffset": 41702
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\strings.xml"
@@ -3577,9 +3598,9 @@
                 "to": {
                     "startLine": 343,
                     "startColumn": 4,
-                    "startOffset": 41714,
+                    "startOffset": 41707,
                     "endColumn": 51,
-                    "endOffset": 41761
+                    "endOffset": 41754
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\strings.xml"
@@ -3589,9 +3610,9 @@
                 "to": {
                     "startLine": 344,
                     "startColumn": 4,
-                    "startOffset": 41766,
+                    "startOffset": 41759,
                     "endColumn": 51,
-                    "endOffset": 41813
+                    "endOffset": 41806
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\strings.xml"
@@ -3601,9 +3622,9 @@
                 "to": {
                     "startLine": 345,
                     "startColumn": 4,
-                    "startOffset": 41818,
+                    "startOffset": 41811,
                     "endColumn": 49,
-                    "endOffset": 41863
+                    "endOffset": 41856
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\strings.xml"
@@ -3613,9 +3634,9 @@
                 "to": {
                     "startLine": 346,
                     "startColumn": 4,
-                    "startOffset": 41868,
+                    "startOffset": 41861,
                     "endColumn": 53,
-                    "endOffset": 41917
+                    "endOffset": 41910
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\strings.xml"
@@ -3625,9 +3646,9 @@
                 "to": {
                     "startLine": 347,
                     "startColumn": 4,
-                    "startOffset": 41922,
+                    "startOffset": 41915,
                     "endColumn": 51,
-                    "endOffset": 41969
+                    "endOffset": 41962
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\strings.xml"
@@ -3637,9 +3658,9 @@
                 "to": {
                     "startLine": 348,
                     "startColumn": 4,
-                    "startOffset": 41974,
+                    "startOffset": 41967,
                     "endColumn": 49,
-                    "endOffset": 42019
+                    "endOffset": 42012
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\strings.xml"
@@ -3649,9 +3670,9 @@
                 "to": {
                     "startLine": 349,
                     "startColumn": 4,
-                    "startOffset": 42024,
+                    "startOffset": 42017,
                     "endColumn": 77,
-                    "endOffset": 42097
+                    "endOffset": 42090
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -3661,9 +3682,9 @@
                 "to": {
                     "startLine": 350,
                     "startColumn": 4,
-                    "startOffset": 42102,
+                    "startOffset": 42095,
                     "endColumn": 89,
-                    "endOffset": 42187
+                    "endOffset": 42180
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -3673,9 +3694,9 @@
                 "to": {
                     "startLine": 351,
                     "startColumn": 4,
-                    "startOffset": 42192,
+                    "startOffset": 42185,
                     "endColumn": 87,
-                    "endOffset": 42275
+                    "endOffset": 42268
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -3685,9 +3706,9 @@
                 "to": {
                     "startLine": 352,
                     "startColumn": 4,
-                    "startOffset": 42280,
+                    "startOffset": 42273,
                     "endColumn": 95,
-                    "endOffset": 42371
+                    "endOffset": 42364
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -3697,10 +3718,10 @@
                 "to": {
                     "startLine": 353,
                     "startColumn": 4,
-                    "startOffset": 42376,
+                    "startOffset": 42369,
                     "endLine": 355,
                     "endColumn": 12,
-                    "endOffset": 42504
+                    "endOffset": 42497
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\styles.xml"
@@ -3710,10 +3731,10 @@
                 "to": {
                     "startLine": 356,
                     "startColumn": 4,
-                    "startOffset": 42509,
+                    "startOffset": 42502,
                     "endLine": 362,
                     "endColumn": 12,
-                    "endOffset": 43005
+                    "endOffset": 42998
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -3723,9 +3744,9 @@
                 "to": {
                     "startLine": 363,
                     "startColumn": 4,
-                    "startOffset": 43010,
+                    "startOffset": 43003,
                     "endColumn": 88,
-                    "endOffset": 43094
+                    "endOffset": 43087
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -3735,10 +3756,10 @@
                 "to": {
                     "startLine": 364,
                     "startColumn": 4,
-                    "startOffset": 43099,
+                    "startOffset": 43092,
                     "endLine": 367,
                     "endColumn": 12,
-                    "endOffset": 43341
+                    "endOffset": 43334
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -3748,10 +3769,10 @@
                 "to": {
                     "startLine": 368,
                     "startColumn": 4,
-                    "startOffset": 43346,
+                    "startOffset": 43339,
                     "endLine": 371,
                     "endColumn": 12,
-                    "endOffset": 43622
+                    "endOffset": 43615
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -3761,10 +3782,10 @@
                 "to": {
                     "startLine": 372,
                     "startColumn": 4,
-                    "startOffset": 43627,
+                    "startOffset": 43620,
                     "endLine": 376,
                     "endColumn": 12,
-                    "endOffset": 43907
+                    "endOffset": 43900
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -3774,10 +3795,10 @@
                 "to": {
                     "startLine": 377,
                     "startColumn": 4,
-                    "startOffset": 43912,
+                    "startOffset": 43905,
                     "endLine": 382,
                     "endColumn": 12,
-                    "endOffset": 44300
+                    "endOffset": 44293
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -3787,10 +3808,10 @@
                 "to": {
                     "startLine": 383,
                     "startColumn": 4,
-                    "startOffset": 44305,
+                    "startOffset": 44298,
                     "endLine": 389,
                     "endColumn": 12,
-                    "endOffset": 44777
+                    "endOffset": 44770
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -3800,10 +3821,10 @@
                 "to": {
                     "startLine": 390,
                     "startColumn": 4,
-                    "startOffset": 44782,
+                    "startOffset": 44775,
                     "endLine": 393,
                     "endColumn": 12,
-                    "endOffset": 44999
+                    "endOffset": 44992
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -3813,10 +3834,10 @@
                 "to": {
                     "startLine": 394,
                     "startColumn": 4,
-                    "startOffset": 45004,
+                    "startOffset": 44997,
                     "endLine": 397,
                     "endColumn": 12,
-                    "endOffset": 45221
+                    "endOffset": 45214
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -3826,10 +3847,10 @@
                 "to": {
                     "startLine": 398,
                     "startColumn": 4,
-                    "startOffset": 45226,
+                    "startOffset": 45219,
                     "endLine": 402,
                     "endColumn": 12,
-                    "endOffset": 45489
+                    "endOffset": 45482
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -3839,10 +3860,10 @@
                 "to": {
                     "startLine": 403,
                     "startColumn": 4,
-                    "startOffset": 45494,
+                    "startOffset": 45487,
                     "endLine": 406,
                     "endColumn": 12,
-                    "endOffset": 45716
+                    "endOffset": 45709
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -3852,10 +3873,10 @@
                 "to": {
                     "startLine": 407,
                     "startColumn": 4,
-                    "startOffset": 45721,
+                    "startOffset": 45714,
                     "endLine": 410,
                     "endColumn": 12,
-                    "endOffset": 45946
+                    "endOffset": 45939
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -3865,10 +3886,10 @@
                 "to": {
                     "startLine": 411,
                     "startColumn": 4,
-                    "startOffset": 45951,
+                    "startOffset": 45944,
                     "endLine": 414,
                     "endColumn": 12,
-                    "endOffset": 46176
+                    "endOffset": 46169
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -3878,10 +3899,10 @@
                 "to": {
                     "startLine": 415,
                     "startColumn": 4,
-                    "startOffset": 46181,
+                    "startOffset": 46174,
                     "endLine": 418,
                     "endColumn": 12,
-                    "endOffset": 46406
+                    "endOffset": 46399
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -3891,10 +3912,10 @@
                 "to": {
                     "startLine": 419,
                     "startColumn": 4,
-                    "startOffset": 46411,
+                    "startOffset": 46404,
                     "endLine": 422,
                     "endColumn": 12,
-                    "endOffset": 46636
+                    "endOffset": 46629
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -3904,10 +3925,10 @@
                 "to": {
                     "startLine": 423,
                     "startColumn": 4,
-                    "startOffset": 46641,
+                    "startOffset": 46634,
                     "endLine": 426,
                     "endColumn": 12,
-                    "endOffset": 46863
+                    "endOffset": 46856
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -3917,10 +3938,10 @@
                 "to": {
                     "startLine": 427,
                     "startColumn": 4,
-                    "startOffset": 46868,
+                    "startOffset": 46861,
                     "endLine": 430,
                     "endColumn": 12,
-                    "endOffset": 47102
+                    "endOffset": 47095
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -3930,10 +3951,10 @@
                 "to": {
                     "startLine": 431,
                     "startColumn": 4,
-                    "startOffset": 47107,
+                    "startOffset": 47100,
                     "endLine": 434,
                     "endColumn": 12,
-                    "endOffset": 47328
+                    "endOffset": 47321
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -3943,10 +3964,10 @@
                 "to": {
                     "startLine": 435,
                     "startColumn": 4,
-                    "startOffset": 47333,
+                    "startOffset": 47326,
                     "endLine": 438,
                     "endColumn": 12,
-                    "endOffset": 47573
+                    "endOffset": 47566
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -3956,10 +3977,10 @@
                 "to": {
                     "startLine": 439,
                     "startColumn": 4,
-                    "startOffset": 47578,
+                    "startOffset": 47571,
                     "endLine": 440,
                     "endColumn": 12,
-                    "endOffset": 47703
+                    "endOffset": 47696
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -3969,10 +3990,10 @@
                 "to": {
                     "startLine": 441,
                     "startColumn": 4,
-                    "startOffset": 47708,
+                    "startOffset": 47701,
                     "endLine": 442,
                     "endColumn": 12,
-                    "endOffset": 47833
+                    "endOffset": 47826
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -3982,10 +4003,10 @@
                 "to": {
                     "startLine": 443,
                     "startColumn": 4,
-                    "startOffset": 47838,
+                    "startOffset": 47831,
                     "endLine": 446,
                     "endColumn": 12,
-                    "endOffset": 48063
+                    "endOffset": 48056
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -3995,10 +4016,10 @@
                 "to": {
                     "startLine": 447,
                     "startColumn": 4,
-                    "startOffset": 48068,
+                    "startOffset": 48061,
                     "endLine": 450,
                     "endColumn": 12,
-                    "endOffset": 48311
+                    "endOffset": 48304
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4008,10 +4029,10 @@
                 "to": {
                     "startLine": 451,
                     "startColumn": 4,
-                    "startOffset": 48316,
+                    "startOffset": 48309,
                     "endLine": 454,
                     "endColumn": 12,
-                    "endOffset": 48530
+                    "endOffset": 48523
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4021,10 +4042,10 @@
                 "to": {
                     "startLine": 455,
                     "startColumn": 4,
-                    "startOffset": 48535,
+                    "startOffset": 48528,
                     "endLine": 459,
                     "endColumn": 12,
-                    "endOffset": 48813
+                    "endOffset": 48806
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4034,10 +4055,10 @@
                 "to": {
                     "startLine": 460,
                     "startColumn": 4,
-                    "startOffset": 48818,
+                    "startOffset": 48811,
                     "endLine": 463,
                     "endColumn": 12,
-                    "endOffset": 49021
+                    "endOffset": 49014
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4047,10 +4068,10 @@
                 "to": {
                     "startLine": 464,
                     "startColumn": 4,
-                    "startOffset": 49026,
+                    "startOffset": 49019,
                     "endLine": 466,
                     "endColumn": 12,
-                    "endOffset": 49152
+                    "endOffset": 49145
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4060,10 +4081,10 @@
                 "to": {
                     "startLine": 467,
                     "startColumn": 4,
-                    "startOffset": 49157,
+                    "startOffset": 49150,
                     "endLine": 470,
                     "endColumn": 12,
-                    "endOffset": 49379
+                    "endOffset": 49372
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4073,10 +4094,10 @@
                 "to": {
                     "startLine": 471,
                     "startColumn": 4,
-                    "startOffset": 49384,
+                    "startOffset": 49377,
                     "endLine": 474,
                     "endColumn": 12,
-                    "endOffset": 49625
+                    "endOffset": 49618
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4086,10 +4107,10 @@
                 "to": {
                     "startLine": 475,
                     "startColumn": 4,
-                    "startOffset": 49630,
+                    "startOffset": 49623,
                     "endLine": 478,
                     "endColumn": 12,
-                    "endOffset": 49850
+                    "endOffset": 49843
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4099,10 +4120,10 @@
                 "to": {
                     "startLine": 479,
                     "startColumn": 4,
-                    "startOffset": 49855,
+                    "startOffset": 49848,
                     "endLine": 482,
                     "endColumn": 12,
-                    "endOffset": 50097
+                    "endOffset": 50090
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4112,10 +4133,10 @@
                 "to": {
                     "startLine": 483,
                     "startColumn": 4,
-                    "startOffset": 50102,
+                    "startOffset": 50095,
                     "endLine": 486,
                     "endColumn": 12,
-                    "endOffset": 50318
+                    "endOffset": 50311
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4125,10 +4146,10 @@
                 "to": {
                     "startLine": 487,
                     "startColumn": 4,
-                    "startOffset": 50323,
+                    "startOffset": 50316,
                     "endLine": 490,
                     "endColumn": 12,
-                    "endOffset": 50563
+                    "endOffset": 50556
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4138,10 +4159,10 @@
                 "to": {
                     "startLine": 491,
                     "startColumn": 4,
-                    "startOffset": 50568,
+                    "startOffset": 50561,
                     "endLine": 494,
                     "endColumn": 12,
-                    "endOffset": 50837
+                    "endOffset": 50830
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4151,10 +4172,10 @@
                 "to": {
                     "startLine": 495,
                     "startColumn": 4,
-                    "startOffset": 50842,
+                    "startOffset": 50835,
                     "endLine": 498,
                     "endColumn": 12,
-                    "endOffset": 51138
+                    "endOffset": 51131
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4164,10 +4185,10 @@
                 "to": {
                     "startLine": 499,
                     "startColumn": 4,
-                    "startOffset": 51143,
+                    "startOffset": 51136,
                     "endLine": 502,
                     "endColumn": 12,
-                    "endOffset": 51462
+                    "endOffset": 51455
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4177,10 +4198,10 @@
                 "to": {
                     "startLine": 503,
                     "startColumn": 4,
-                    "startOffset": 51467,
+                    "startOffset": 51460,
                     "endLine": 506,
                     "endColumn": 12,
-                    "endOffset": 51753
+                    "endOffset": 51746
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4190,10 +4211,10 @@
                 "to": {
                     "startLine": 507,
                     "startColumn": 4,
-                    "startOffset": 51758,
+                    "startOffset": 51751,
                     "endLine": 510,
                     "endColumn": 12,
-                    "endOffset": 52067
+                    "endOffset": 52060
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4203,9 +4224,9 @@
                 "to": {
                     "startLine": 511,
                     "startColumn": 4,
-                    "startOffset": 52072,
+                    "startOffset": 52065,
                     "endColumn": 136,
-                    "endOffset": 52204
+                    "endOffset": 52197
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4215,9 +4236,9 @@
                 "to": {
                     "startLine": 512,
                     "startColumn": 4,
-                    "startOffset": 52209,
+                    "startOffset": 52202,
                     "endColumn": 130,
-                    "endOffset": 52335
+                    "endOffset": 52328
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4227,9 +4248,9 @@
                 "to": {
                     "startLine": 513,
                     "startColumn": 4,
-                    "startOffset": 52340,
+                    "startOffset": 52333,
                     "endColumn": 104,
-                    "endOffset": 52440
+                    "endOffset": 52433
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4239,10 +4260,10 @@
                 "to": {
                     "startLine": 514,
                     "startColumn": 4,
-                    "startOffset": 52445,
+                    "startOffset": 52438,
                     "endLine": 516,
                     "endColumn": 12,
-                    "endOffset": 52644
+                    "endOffset": 52637
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4252,10 +4273,10 @@
                 "to": {
                     "startLine": 517,
                     "startColumn": 4,
-                    "startOffset": 52649,
+                    "startOffset": 52642,
                     "endLine": 519,
                     "endColumn": 12,
-                    "endOffset": 52852
+                    "endOffset": 52845
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4265,10 +4286,10 @@
                 "to": {
                     "startLine": 520,
                     "startColumn": 4,
-                    "startOffset": 52857,
+                    "startOffset": 52850,
                     "endLine": 521,
                     "endColumn": 12,
-                    "endOffset": 52976
+                    "endOffset": 52969
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4278,10 +4299,10 @@
                 "to": {
                     "startLine": 522,
                     "startColumn": 4,
-                    "startOffset": 52981,
+                    "startOffset": 52974,
                     "endLine": 523,
                     "endColumn": 12,
-                    "endOffset": 53100
+                    "endOffset": 53093
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4291,9 +4312,9 @@
                 "to": {
                     "startLine": 524,
                     "startColumn": 4,
-                    "startOffset": 53105,
+                    "startOffset": 53098,
                     "endColumn": 104,
-                    "endOffset": 53205
+                    "endOffset": 53198
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4303,9 +4324,9 @@
                 "to": {
                     "startLine": 525,
                     "startColumn": 4,
-                    "startOffset": 53210,
+                    "startOffset": 53203,
                     "endColumn": 116,
-                    "endOffset": 53322
+                    "endOffset": 53315
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4315,10 +4336,10 @@
                 "to": {
                     "startLine": 526,
                     "startColumn": 4,
-                    "startOffset": 53327,
+                    "startOffset": 53320,
                     "endLine": 528,
                     "endColumn": 12,
-                    "endOffset": 53536
+                    "endOffset": 53529
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4328,10 +4349,10 @@
                 "to": {
                     "startLine": 529,
                     "startColumn": 4,
-                    "startOffset": 53541,
+                    "startOffset": 53534,
                     "endLine": 530,
                     "endColumn": 12,
-                    "endOffset": 53682
+                    "endOffset": 53675
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4341,10 +4362,10 @@
                 "to": {
                     "startLine": 531,
                     "startColumn": 4,
-                    "startOffset": 53687,
+                    "startOffset": 53680,
                     "endLine": 532,
                     "endColumn": 12,
-                    "endOffset": 53822
+                    "endOffset": 53815
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4354,10 +4375,10 @@
                 "to": {
                     "startLine": 533,
                     "startColumn": 4,
-                    "startOffset": 53827,
+                    "startOffset": 53820,
                     "endLine": 534,
                     "endColumn": 12,
-                    "endOffset": 53908
+                    "endOffset": 53901
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4367,10 +4388,10 @@
                 "to": {
                     "startLine": 535,
                     "startColumn": 4,
-                    "startOffset": 53913,
+                    "startOffset": 53906,
                     "endLine": 539,
                     "endColumn": 12,
-                    "endOffset": 54256
+                    "endOffset": 54249
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4380,9 +4401,9 @@
                 "to": {
                     "startLine": 540,
                     "startColumn": 4,
-                    "startOffset": 54261,
+                    "startOffset": 54254,
                     "endColumn": 87,
-                    "endOffset": 54344
+                    "endOffset": 54337
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4392,10 +4413,10 @@
                 "to": {
                     "startLine": 541,
                     "startColumn": 4,
-                    "startOffset": 54349,
+                    "startOffset": 54342,
                     "endLine": 544,
                     "endColumn": 12,
-                    "endOffset": 54574
+                    "endOffset": 54567
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4405,10 +4426,10 @@
                 "to": {
                     "startLine": 545,
                     "startColumn": 4,
-                    "startOffset": 54579,
+                    "startOffset": 54572,
                     "endLine": 550,
                     "endColumn": 12,
-                    "endOffset": 54992
+                    "endOffset": 54985
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4418,10 +4439,10 @@
                 "to": {
                     "startLine": 551,
                     "startColumn": 4,
-                    "startOffset": 54997,
+                    "startOffset": 54990,
                     "endLine": 554,
                     "endColumn": 12,
-                    "endOffset": 55225
+                    "endOffset": 55218
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4431,9 +4452,9 @@
                 "to": {
                     "startLine": 555,
                     "startColumn": 4,
-                    "startOffset": 55230,
+                    "startOffset": 55223,
                     "endColumn": 81,
-                    "endOffset": 55307
+                    "endOffset": 55300
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4443,10 +4464,10 @@
                 "to": {
                     "startLine": 556,
                     "startColumn": 4,
-                    "startOffset": 55312,
+                    "startOffset": 55305,
                     "endLine": 557,
                     "endColumn": 12,
-                    "endOffset": 55405
+                    "endOffset": 55398
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4456,10 +4477,10 @@
                 "to": {
                     "startLine": 558,
                     "startColumn": 4,
-                    "startOffset": 55410,
+                    "startOffset": 55403,
                     "endLine": 568,
                     "endColumn": 12,
-                    "endOffset": 56022
+                    "endOffset": 56015
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4469,9 +4490,9 @@
                 "to": {
                     "startLine": 569,
                     "startColumn": 4,
-                    "startOffset": 56027,
+                    "startOffset": 56020,
                     "endColumn": 99,
-                    "endOffset": 56122
+                    "endOffset": 56115
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4481,10 +4502,10 @@
                 "to": {
                     "startLine": 570,
                     "startColumn": 4,
-                    "startOffset": 56127,
+                    "startOffset": 56120,
                     "endLine": 573,
                     "endColumn": 12,
-                    "endOffset": 56358
+                    "endOffset": 56351
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4494,10 +4515,10 @@
                 "to": {
                     "startLine": 574,
                     "startColumn": 4,
-                    "startOffset": 56363,
+                    "startOffset": 56356,
                     "endLine": 579,
                     "endColumn": 12,
-                    "endOffset": 56782
+                    "endOffset": 56775
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4507,10 +4528,10 @@
                 "to": {
                     "startLine": 580,
                     "startColumn": 4,
-                    "startOffset": 56787,
+                    "startOffset": 56780,
                     "endLine": 583,
                     "endColumn": 12,
-                    "endOffset": 57021
+                    "endOffset": 57014
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4520,9 +4541,9 @@
                 "to": {
                     "startLine": 584,
                     "startColumn": 4,
-                    "startOffset": 57026,
+                    "startOffset": 57019,
                     "endColumn": 93,
-                    "endOffset": 57115
+                    "endOffset": 57108
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4532,9 +4553,9 @@
                 "to": {
                     "startLine": 585,
                     "startColumn": 4,
-                    "startOffset": 57120,
+                    "startOffset": 57113,
                     "endColumn": 88,
-                    "endOffset": 57204
+                    "endOffset": 57197
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4544,10 +4565,10 @@
                 "to": {
                     "startLine": 586,
                     "startColumn": 4,
-                    "startOffset": 57209,
+                    "startOffset": 57202,
                     "endLine": 589,
                     "endColumn": 12,
-                    "endOffset": 57441
+                    "endOffset": 57434
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4557,10 +4578,10 @@
                 "to": {
                     "startLine": 590,
                     "startColumn": 4,
-                    "startOffset": 57446,
+                    "startOffset": 57439,
                     "endLine": 615,
                     "endColumn": 12,
-                    "endOffset": 59392
+                    "endOffset": 59385
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4570,10 +4591,10 @@
                 "to": {
                     "startLine": 616,
                     "startColumn": 4,
-                    "startOffset": 59397,
+                    "startOffset": 59390,
                     "endLine": 619,
                     "endColumn": 12,
-                    "endOffset": 59634
+                    "endOffset": 59627
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4583,10 +4604,10 @@
                 "to": {
                     "startLine": 620,
                     "startColumn": 4,
-                    "startOffset": 59639,
+                    "startOffset": 59632,
                     "endLine": 646,
                     "endColumn": 12,
-                    "endOffset": 61716
+                    "endOffset": 61709
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4596,10 +4617,10 @@
                 "to": {
                     "startLine": 647,
                     "startColumn": 4,
-                    "startOffset": 61721,
+                    "startOffset": 61714,
                     "endLine": 799,
                     "endColumn": 12,
-                    "endOffset": 71398
+                    "endOffset": 71391
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4609,10 +4630,10 @@
                 "to": {
                     "startLine": 800,
                     "startColumn": 4,
-                    "startOffset": 71403,
+                    "startOffset": 71396,
                     "endLine": 821,
                     "endColumn": 12,
-                    "endOffset": 72665
+                    "endOffset": 72658
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4622,10 +4643,10 @@
                 "to": {
                     "startLine": 822,
                     "startColumn": 4,
-                    "startOffset": 72670,
+                    "startOffset": 72663,
                     "endLine": 974,
                     "endColumn": 12,
-                    "endOffset": 82457
+                    "endOffset": 82450
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4635,10 +4656,10 @@
                 "to": {
                     "startLine": 975,
                     "startColumn": 4,
-                    "startOffset": 82462,
+                    "startOffset": 82455,
                     "endLine": 996,
                     "endColumn": 12,
-                    "endOffset": 83738
+                    "endOffset": 83731
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4648,10 +4669,10 @@
                 "to": {
                     "startLine": 997,
                     "startColumn": 4,
-                    "startOffset": 83743,
+                    "startOffset": 83736,
                     "endLine": 1003,
                     "endColumn": 12,
-                    "endOffset": 84274
+                    "endOffset": 84267
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4661,10 +4682,10 @@
                 "to": {
                     "startLine": 1004,
                     "startColumn": 4,
-                    "startOffset": 84279,
+                    "startOffset": 84272,
                     "endLine": 1008,
                     "endColumn": 12,
-                    "endOffset": 84604
+                    "endOffset": 84597
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4674,10 +4695,10 @@
                 "to": {
                     "startLine": 1009,
                     "startColumn": 4,
-                    "startOffset": 84609,
+                    "startOffset": 84602,
                     "endLine": 1029,
                     "endColumn": 12,
-                    "endOffset": 85727
+                    "endOffset": 85720
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4687,10 +4708,10 @@
                 "to": {
                     "startLine": 1030,
                     "startColumn": 4,
-                    "startOffset": 85732,
+                    "startOffset": 85725,
                     "endLine": 1034,
                     "endColumn": 12,
-                    "endOffset": 85983
+                    "endOffset": 85976
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4700,10 +4721,10 @@
                 "to": {
                     "startLine": 1035,
                     "startColumn": 4,
-                    "startOffset": 85988,
+                    "startOffset": 85981,
                     "endLine": 1039,
                     "endColumn": 12,
-                    "endOffset": 86219
+                    "endOffset": 86212
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4713,10 +4734,10 @@
                 "to": {
                     "startLine": 1040,
                     "startColumn": 4,
-                    "startOffset": 86224,
+                    "startOffset": 86217,
                     "endLine": 1049,
                     "endColumn": 12,
-                    "endOffset": 86766
+                    "endOffset": 86759
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4726,10 +4747,10 @@
                 "to": {
                     "startLine": 1050,
                     "startColumn": 4,
-                    "startOffset": 86771,
+                    "startOffset": 86764,
                     "endLine": 1058,
                     "endColumn": 12,
-                    "endOffset": 87260
+                    "endOffset": 87253
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4739,10 +4760,10 @@
                 "to": {
                     "startLine": 1059,
                     "startColumn": 4,
-                    "startOffset": 87265,
+                    "startOffset": 87258,
                     "endLine": 1067,
                     "endColumn": 12,
-                    "endOffset": 87865
+                    "endOffset": 87858
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4752,10 +4773,10 @@
                 "to": {
                     "startLine": 1068,
                     "startColumn": 4,
-                    "startOffset": 87870,
+                    "startOffset": 87863,
                     "endLine": 1070,
                     "endColumn": 12,
-                    "endOffset": 88013
+                    "endOffset": 88006
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4765,10 +4786,10 @@
                 "to": {
                     "startLine": 1071,
                     "startColumn": 4,
-                    "startOffset": 88018,
+                    "startOffset": 88011,
                     "endLine": 1077,
                     "endColumn": 12,
-                    "endOffset": 88601
+                    "endOffset": 88594
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4778,10 +4799,10 @@
                 "to": {
                     "startLine": 1078,
                     "startColumn": 4,
-                    "startOffset": 88606,
+                    "startOffset": 88599,
                     "endLine": 1085,
                     "endColumn": 12,
-                    "endOffset": 89165
+                    "endOffset": 89158
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4791,10 +4812,10 @@
                 "to": {
                     "startLine": 1086,
                     "startColumn": 4,
-                    "startOffset": 89170,
+                    "startOffset": 89163,
                     "endLine": 1092,
                     "endColumn": 12,
-                    "endOffset": 89540
+                    "endOffset": 89533
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4804,9 +4825,9 @@
                 "to": {
                     "startLine": 1093,
                     "startColumn": 4,
-                    "startOffset": 89545,
+                    "startOffset": 89538,
                     "endColumn": 117,
-                    "endOffset": 89658
+                    "endOffset": 89651
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4816,10 +4837,10 @@
                 "to": {
                     "startLine": 1094,
                     "startColumn": 4,
-                    "startOffset": 89663,
+                    "startOffset": 89656,
                     "endLine": 1102,
                     "endColumn": 12,
-                    "endOffset": 90196
+                    "endOffset": 90189
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4829,10 +4850,10 @@
                 "to": {
                     "startLine": 1103,
                     "startColumn": 4,
-                    "startOffset": 90201,
+                    "startOffset": 90194,
                     "endLine": 1105,
                     "endColumn": 12,
-                    "endOffset": 90353
+                    "endOffset": 90346
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4842,10 +4863,10 @@
                 "to": {
                     "startLine": 1106,
                     "startColumn": 4,
-                    "startOffset": 90358,
+                    "startOffset": 90351,
                     "endLine": 1108,
                     "endColumn": 12,
-                    "endOffset": 90497
+                    "endOffset": 90490
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4855,10 +4876,10 @@
                 "to": {
                     "startLine": 1109,
                     "startColumn": 4,
-                    "startOffset": 90502,
+                    "startOffset": 90495,
                     "endLine": 1113,
                     "endColumn": 12,
-                    "endOffset": 90817
+                    "endOffset": 90810
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4868,10 +4889,10 @@
                 "to": {
                     "startLine": 1114,
                     "startColumn": 4,
-                    "startOffset": 90822,
+                    "startOffset": 90815,
                     "endLine": 1117,
                     "endColumn": 12,
-                    "endOffset": 91073
+                    "endOffset": 91066
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4881,10 +4902,10 @@
                 "to": {
                     "startLine": 1118,
                     "startColumn": 4,
-                    "startOffset": 91078,
+                    "startOffset": 91071,
                     "endLine": 1121,
                     "endColumn": 12,
-                    "endOffset": 91243
+                    "endOffset": 91236
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4894,10 +4915,10 @@
                 "to": {
                     "startLine": 1122,
                     "startColumn": 4,
-                    "startOffset": 91248,
+                    "startOffset": 91241,
                     "endLine": 1124,
                     "endColumn": 12,
-                    "endOffset": 91384
+                    "endOffset": 91377
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4907,9 +4928,9 @@
                 "to": {
                     "startLine": 1125,
                     "startColumn": 4,
-                    "startOffset": 91389,
+                    "startOffset": 91382,
                     "endColumn": 63,
-                    "endOffset": 91448
+                    "endOffset": 91441
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4919,10 +4940,10 @@
                 "to": {
                     "startLine": 1126,
                     "startColumn": 4,
-                    "startOffset": 91453,
+                    "startOffset": 91446,
                     "endLine": 1129,
                     "endColumn": 12,
-                    "endOffset": 91730
+                    "endOffset": 91723
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4932,10 +4953,10 @@
                 "to": {
                     "startLine": 1130,
                     "startColumn": 4,
-                    "startOffset": 91735,
+                    "startOffset": 91728,
                     "endLine": 1133,
                     "endColumn": 12,
-                    "endOffset": 92016
+                    "endOffset": 92009
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4945,10 +4966,10 @@
                 "to": {
                     "startLine": 1134,
                     "startColumn": 4,
-                    "startOffset": 92021,
+                    "startOffset": 92014,
                     "endLine": 1143,
                     "endColumn": 12,
-                    "endOffset": 92692
+                    "endOffset": 92685
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4958,10 +4979,10 @@
                 "to": {
                     "startLine": 1144,
                     "startColumn": 4,
-                    "startOffset": 92697,
+                    "startOffset": 92690,
                     "endLine": 1148,
                     "endColumn": 12,
-                    "endOffset": 92956
+                    "endOffset": 92949
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4971,10 +4992,10 @@
                 "to": {
                     "startLine": 1149,
                     "startColumn": 4,
-                    "startOffset": 92961,
+                    "startOffset": 92954,
                     "endLine": 1155,
                     "endColumn": 12,
-                    "endOffset": 93294
+                    "endOffset": 93287
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4984,10 +5005,10 @@
                 "to": {
                     "startLine": 1156,
                     "startColumn": 4,
-                    "startOffset": 93299,
+                    "startOffset": 93292,
                     "endLine": 1161,
                     "endColumn": 12,
-                    "endOffset": 93647
+                    "endOffset": 93640
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -4997,9 +5018,9 @@
                 "to": {
                     "startLine": 1162,
                     "startColumn": 4,
-                    "startOffset": 93652,
+                    "startOffset": 93645,
                     "endColumn": 93,
-                    "endOffset": 93741
+                    "endOffset": 93734
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5009,10 +5030,10 @@
                 "to": {
                     "startLine": 1163,
                     "startColumn": 4,
-                    "startOffset": 93746,
+                    "startOffset": 93739,
                     "endLine": 1165,
                     "endColumn": 12,
-                    "endOffset": 93927
+                    "endOffset": 93920
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5022,10 +5043,10 @@
                 "to": {
                     "startLine": 1166,
                     "startColumn": 4,
-                    "startOffset": 93932,
+                    "startOffset": 93925,
                     "endLine": 1169,
                     "endColumn": 12,
-                    "endOffset": 94233
+                    "endOffset": 94226
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5035,10 +5056,10 @@
                 "to": {
                     "startLine": 1170,
                     "startColumn": 4,
-                    "startOffset": 94238,
+                    "startOffset": 94231,
                     "endLine": 1174,
                     "endColumn": 12,
-                    "endOffset": 94495
+                    "endOffset": 94488
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5048,10 +5069,10 @@
                 "to": {
                     "startLine": 1175,
                     "startColumn": 4,
-                    "startOffset": 94500,
+                    "startOffset": 94493,
                     "endLine": 1176,
                     "endColumn": 12,
-                    "endOffset": 94620
+                    "endOffset": 94613
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5061,10 +5082,10 @@
                 "to": {
                     "startLine": 1177,
                     "startColumn": 4,
-                    "startOffset": 94625,
+                    "startOffset": 94618,
                     "endLine": 1178,
                     "endColumn": 12,
-                    "endOffset": 94747
+                    "endOffset": 94740
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5074,10 +5095,10 @@
                 "to": {
                     "startLine": 1179,
                     "startColumn": 4,
-                    "startOffset": 94752,
+                    "startOffset": 94745,
                     "endLine": 1181,
                     "endColumn": 12,
-                    "endOffset": 94986
+                    "endOffset": 94979
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5087,10 +5108,10 @@
                 "to": {
                     "startLine": 1182,
                     "startColumn": 4,
-                    "startOffset": 94991,
+                    "startOffset": 94984,
                     "endLine": 1184,
                     "endColumn": 12,
-                    "endOffset": 95197
+                    "endOffset": 95190
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5100,10 +5121,10 @@
                 "to": {
                     "startLine": 1185,
                     "startColumn": 4,
-                    "startOffset": 95202,
+                    "startOffset": 95195,
                     "endLine": 1186,
                     "endColumn": 12,
-                    "endOffset": 95316
+                    "endOffset": 95309
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5113,10 +5134,10 @@
                 "to": {
                     "startLine": 1187,
                     "startColumn": 4,
-                    "startOffset": 95321,
+                    "startOffset": 95314,
                     "endLine": 1190,
                     "endColumn": 12,
-                    "endOffset": 95509
+                    "endOffset": 95502
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5126,10 +5147,10 @@
                 "to": {
                     "startLine": 1191,
                     "startColumn": 4,
-                    "startOffset": 95514,
+                    "startOffset": 95507,
                     "endLine": 1197,
                     "endColumn": 12,
-                    "endOffset": 95964
+                    "endOffset": 95957
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5139,10 +5160,10 @@
                 "to": {
                     "startLine": 1198,
                     "startColumn": 4,
-                    "startOffset": 95969,
+                    "startOffset": 95962,
                     "endLine": 1200,
                     "endColumn": 12,
-                    "endOffset": 96145
+                    "endOffset": 96138
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5152,10 +5173,10 @@
                 "to": {
                     "startLine": 1201,
                     "startColumn": 4,
-                    "startOffset": 96150,
+                    "startOffset": 96143,
                     "endLine": 1203,
                     "endColumn": 12,
-                    "endOffset": 96267
+                    "endOffset": 96260
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5165,10 +5186,10 @@
                 "to": {
                     "startLine": 1204,
                     "startColumn": 4,
-                    "startOffset": 96272,
+                    "startOffset": 96265,
                     "endLine": 1207,
                     "endColumn": 12,
-                    "endOffset": 96526
+                    "endOffset": 96519
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5178,10 +5199,10 @@
                 "to": {
                     "startLine": 1208,
                     "startColumn": 4,
-                    "startOffset": 96531,
+                    "startOffset": 96524,
                     "endLine": 1209,
                     "endColumn": 12,
-                    "endOffset": 96639
+                    "endOffset": 96632
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5191,10 +5212,10 @@
                 "to": {
                     "startLine": 1210,
                     "startColumn": 4,
-                    "startOffset": 96644,
+                    "startOffset": 96637,
                     "endLine": 1213,
                     "endColumn": 12,
-                    "endOffset": 96826
+                    "endOffset": 96819
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5204,10 +5225,10 @@
                 "to": {
                     "startLine": 1214,
                     "startColumn": 4,
-                    "startOffset": 96831,
+                    "startOffset": 96824,
                     "endLine": 1215,
                     "endColumn": 12,
-                    "endOffset": 96928
+                    "endOffset": 96921
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5217,10 +5238,10 @@
                 "to": {
                     "startLine": 1216,
                     "startColumn": 4,
-                    "startOffset": 96933,
+                    "startOffset": 96926,
                     "endLine": 1221,
                     "endColumn": 12,
-                    "endOffset": 97372
+                    "endOffset": 97365
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5230,10 +5251,10 @@
                 "to": {
                     "startLine": 1222,
                     "startColumn": 4,
-                    "startOffset": 97377,
+                    "startOffset": 97370,
                     "endLine": 1223,
                     "endColumn": 12,
-                    "endOffset": 97496
+                    "endOffset": 97489
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5243,10 +5264,10 @@
                 "to": {
                     "startLine": 1224,
                     "startColumn": 4,
-                    "startOffset": 97501,
+                    "startOffset": 97494,
                     "endLine": 1227,
                     "endColumn": 12,
-                    "endOffset": 97781
+                    "endOffset": 97774
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5256,10 +5277,10 @@
                 "to": {
                     "startLine": 1228,
                     "startColumn": 4,
-                    "startOffset": 97786,
+                    "startOffset": 97779,
                     "endLine": 1239,
                     "endColumn": 12,
-                    "endOffset": 98668
+                    "endOffset": 98661
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5269,10 +5290,10 @@
                 "to": {
                     "startLine": 1240,
                     "startColumn": 4,
-                    "startOffset": 98673,
+                    "startOffset": 98666,
                     "endLine": 1245,
                     "endColumn": 12,
-                    "endOffset": 98962
+                    "endOffset": 98955
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5282,10 +5303,10 @@
                 "to": {
                     "startLine": 1246,
                     "startColumn": 4,
-                    "startOffset": 98967,
+                    "startOffset": 98960,
                     "endLine": 1254,
                     "endColumn": 12,
-                    "endOffset": 99532
+                    "endOffset": 99525
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5295,10 +5316,10 @@
                 "to": {
                     "startLine": 1255,
                     "startColumn": 4,
-                    "startOffset": 99537,
+                    "startOffset": 99530,
                     "endLine": 1265,
                     "endColumn": 12,
-                    "endOffset": 100264
+                    "endOffset": 100257
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5308,10 +5329,10 @@
                 "to": {
                     "startLine": 1266,
                     "startColumn": 4,
-                    "startOffset": 100269,
+                    "startOffset": 100262,
                     "endLine": 1268,
                     "endColumn": 12,
-                    "endOffset": 100436
+                    "endOffset": 100429
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5321,10 +5342,10 @@
                 "to": {
                     "startLine": 1269,
                     "startColumn": 4,
-                    "startOffset": 100441,
+                    "startOffset": 100434,
                     "endLine": 1273,
                     "endColumn": 12,
-                    "endOffset": 100772
+                    "endOffset": 100765
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5334,10 +5355,10 @@
                 "to": {
                     "startLine": 1274,
                     "startColumn": 4,
-                    "startOffset": 100777,
+                    "startOffset": 100770,
                     "endLine": 1285,
                     "endColumn": 12,
-                    "endOffset": 101639
+                    "endOffset": 101632
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5347,10 +5368,10 @@
                 "to": {
                     "startLine": 1286,
                     "startColumn": 4,
-                    "startOffset": 101644,
+                    "startOffset": 101637,
                     "endLine": 1290,
                     "endColumn": 12,
-                    "endOffset": 101917
+                    "endOffset": 101910
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5360,10 +5381,10 @@
                 "to": {
                     "startLine": 1291,
                     "startColumn": 4,
-                    "startOffset": 101922,
+                    "startOffset": 101915,
                     "endLine": 1300,
                     "endColumn": 12,
-                    "endOffset": 102508
+                    "endOffset": 102501
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\values\\values.xml"
@@ -5373,10 +5394,10 @@
                 "to": {
                     "startLine": 1301,
                     "startColumn": 4,
-                    "startOffset": 102513,
+                    "startOffset": 102506,
                     "endLine": 1338,
                     "endColumn": 12,
-                    "endOffset": 105370
+                    "endOffset": 105363
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5386,10 +5407,10 @@
                 "to": {
                     "startLine": 1339,
                     "startColumn": 4,
-                    "startOffset": 105375,
+                    "startOffset": 105368,
                     "endLine": 1377,
                     "endColumn": 12,
-                    "endOffset": 108372
+                    "endOffset": 108365
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5399,9 +5420,9 @@
                 "to": {
                     "startLine": 1378,
                     "startColumn": 4,
-                    "startOffset": 108377,
+                    "startOffset": 108370,
                     "endColumn": 61,
-                    "endOffset": 108434
+                    "endOffset": 108427
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5411,10 +5432,10 @@
                 "to": {
                     "startLine": 1379,
                     "startColumn": 4,
-                    "startOffset": 108439,
+                    "startOffset": 108432,
                     "endLine": 1388,
                     "endColumn": 12,
-                    "endOffset": 109064
+                    "endOffset": 109057
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5424,10 +5445,10 @@
                 "to": {
                     "startLine": 1389,
                     "startColumn": 4,
-                    "startOffset": 109069,
+                    "startOffset": 109062,
                     "endLine": 1397,
                     "endColumn": 12,
-                    "endOffset": 109678
+                    "endOffset": 109671
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5437,9 +5458,9 @@
                 "to": {
                     "startLine": 1398,
                     "startColumn": 4,
-                    "startOffset": 109683,
+                    "startOffset": 109676,
                     "endColumn": 85,
-                    "endOffset": 109764
+                    "endOffset": 109757
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5449,10 +5470,10 @@
                 "to": {
                     "startLine": 1399,
                     "startColumn": 4,
-                    "startOffset": 109769,
+                    "startOffset": 109762,
                     "endLine": 1402,
                     "endColumn": 12,
-                    "endOffset": 110015
+                    "endOffset": 110008
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\values\\styles.xml"
@@ -5462,10 +5483,10 @@
                 "to": {
                     "startLine": 1403,
                     "startColumn": 4,
-                    "startOffset": 110020,
+                    "startOffset": 110013,
                     "endLine": 1404,
                     "endColumn": 12,
-                    "endOffset": 110128
+                    "endOffset": 110121
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5475,10 +5496,10 @@
                 "to": {
                     "startLine": 1405,
                     "startColumn": 4,
-                    "startOffset": 110133,
+                    "startOffset": 110126,
                     "endLine": 1408,
                     "endColumn": 12,
-                    "endOffset": 110357
+                    "endOffset": 110350
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5488,10 +5509,10 @@
                 "to": {
                     "startLine": 1409,
                     "startColumn": 4,
-                    "startOffset": 110362,
+                    "startOffset": 110355,
                     "endLine": 1411,
                     "endColumn": 12,
-                    "endOffset": 110517
+                    "endOffset": 110510
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5501,10 +5522,10 @@
                 "to": {
                     "startLine": 1412,
                     "startColumn": 4,
-                    "startOffset": 110522,
+                    "startOffset": 110515,
                     "endLine": 1414,
                     "endColumn": 12,
-                    "endOffset": 110669
+                    "endOffset": 110662
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5514,10 +5535,10 @@
                 "to": {
                     "startLine": 1415,
                     "startColumn": 4,
-                    "startOffset": 110674,
+                    "startOffset": 110667,
                     "endLine": 1417,
                     "endColumn": 12,
-                    "endOffset": 110840
+                    "endOffset": 110833
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5527,10 +5548,10 @@
                 "to": {
                     "startLine": 1418,
                     "startColumn": 4,
-                    "startOffset": 110845,
+                    "startOffset": 110838,
                     "endLine": 1420,
                     "endColumn": 12,
-                    "endOffset": 111007
+                    "endOffset": 111000
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5540,10 +5561,10 @@
                 "to": {
                     "startLine": 1421,
                     "startColumn": 4,
-                    "startOffset": 111012,
+                    "startOffset": 111005,
                     "endLine": 1424,
                     "endColumn": 12,
-                    "endOffset": 111250
+                    "endOffset": 111243
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5553,10 +5574,10 @@
                 "to": {
                     "startLine": 1425,
                     "startColumn": 4,
-                    "startOffset": 111255,
+                    "startOffset": 111248,
                     "endLine": 1427,
                     "endColumn": 12,
-                    "endOffset": 111420
+                    "endOffset": 111413
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5566,10 +5587,10 @@
                 "to": {
                     "startLine": 1428,
                     "startColumn": 4,
-                    "startOffset": 111425,
+                    "startOffset": 111418,
                     "endLine": 1430,
                     "endColumn": 12,
-                    "endOffset": 111593
+                    "endOffset": 111586
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5579,10 +5600,10 @@
                 "to": {
                     "startLine": 1431,
                     "startColumn": 4,
-                    "startOffset": 111598,
+                    "startOffset": 111591,
                     "endLine": 1433,
                     "endColumn": 12,
-                    "endOffset": 111764
+                    "endOffset": 111757
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5592,10 +5613,10 @@
                 "to": {
                     "startLine": 1434,
                     "startColumn": 4,
-                    "startOffset": 111769,
+                    "startOffset": 111762,
                     "endLine": 1437,
                     "endColumn": 12,
-                    "endOffset": 112038
+                    "endOffset": 112031
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5605,10 +5626,10 @@
                 "to": {
                     "startLine": 1438,
                     "startColumn": 4,
-                    "startOffset": 112043,
+                    "startOffset": 112036,
                     "endLine": 1440,
                     "endColumn": 12,
-                    "endOffset": 112237
+                    "endOffset": 112230
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5618,10 +5639,10 @@
                 "to": {
                     "startLine": 1441,
                     "startColumn": 4,
-                    "startOffset": 112242,
+                    "startOffset": 112235,
                     "endLine": 1444,
                     "endColumn": 12,
-                    "endOffset": 112442
+                    "endOffset": 112435
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5631,10 +5652,10 @@
                 "to": {
                     "startLine": 1445,
                     "startColumn": 4,
-                    "startOffset": 112447,
+                    "startOffset": 112440,
                     "endLine": 1448,
                     "endColumn": 12,
-                    "endOffset": 112772
+                    "endOffset": 112765
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5644,9 +5665,9 @@
                 "to": {
                     "startLine": 1449,
                     "startColumn": 4,
-                    "startOffset": 112777,
+                    "startOffset": 112770,
                     "endColumn": 83,
-                    "endOffset": 112856
+                    "endOffset": 112849
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5656,9 +5677,9 @@
                 "to": {
                     "startLine": 1450,
                     "startColumn": 4,
-                    "startOffset": 112861,
+                    "startOffset": 112854,
                     "endColumn": 95,
-                    "endOffset": 112952
+                    "endOffset": 112945
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5668,9 +5689,9 @@
                 "to": {
                     "startLine": 1451,
                     "startColumn": 4,
-                    "startOffset": 112957,
+                    "startOffset": 112950,
                     "endColumn": 95,
-                    "endOffset": 113048
+                    "endOffset": 113041
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5680,9 +5701,9 @@
                 "to": {
                     "startLine": 1452,
                     "startColumn": 4,
-                    "startOffset": 113053,
+                    "startOffset": 113046,
                     "endColumn": 97,
-                    "endOffset": 113146
+                    "endOffset": 113139
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5692,9 +5713,9 @@
                 "to": {
                     "startLine": 1453,
                     "startColumn": 4,
-                    "startOffset": 113151,
+                    "startOffset": 113144,
                     "endColumn": 99,
-                    "endOffset": 113246
+                    "endOffset": 113239
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5704,9 +5725,9 @@
                 "to": {
                     "startLine": 1454,
                     "startColumn": 4,
-                    "startOffset": 113251,
+                    "startOffset": 113244,
                     "endColumn": 101,
-                    "endOffset": 113348
+                    "endOffset": 113341
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5716,9 +5737,9 @@
                 "to": {
                     "startLine": 1455,
                     "startColumn": 4,
-                    "startOffset": 113353,
+                    "startOffset": 113346,
                     "endColumn": 101,
-                    "endOffset": 113450
+                    "endOffset": 113443
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5728,9 +5749,9 @@
                 "to": {
                     "startLine": 1456,
                     "startColumn": 4,
-                    "startOffset": 113455,
+                    "startOffset": 113448,
                     "endColumn": 101,
-                    "endOffset": 113552
+                    "endOffset": 113545
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5740,9 +5761,9 @@
                 "to": {
                     "startLine": 1457,
                     "startColumn": 4,
-                    "startOffset": 113557,
+                    "startOffset": 113550,
                     "endColumn": 101,
-                    "endOffset": 113654
+                    "endOffset": 113647
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5752,9 +5773,9 @@
                 "to": {
                     "startLine": 1458,
                     "startColumn": 4,
-                    "startOffset": 113659,
+                    "startOffset": 113652,
                     "endColumn": 101,
-                    "endOffset": 113756
+                    "endOffset": 113749
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5764,9 +5785,9 @@
                 "to": {
                     "startLine": 1459,
                     "startColumn": 4,
-                    "startOffset": 113761,
+                    "startOffset": 113754,
                     "endColumn": 99,
-                    "endOffset": 113856
+                    "endOffset": 113849
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5776,9 +5797,9 @@
                 "to": {
                     "startLine": 1460,
                     "startColumn": 4,
-                    "startOffset": 113861,
+                    "startOffset": 113854,
                     "endColumn": 95,
-                    "endOffset": 113952
+                    "endOffset": 113945
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5788,9 +5809,9 @@
                 "to": {
                     "startLine": 1461,
                     "startColumn": 4,
-                    "startOffset": 113957,
+                    "startOffset": 113950,
                     "endColumn": 111,
-                    "endOffset": 114064
+                    "endOffset": 114057
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5800,9 +5821,9 @@
                 "to": {
                     "startLine": 1462,
                     "startColumn": 4,
-                    "startOffset": 114069,
+                    "startOffset": 114062,
                     "endColumn": 128,
-                    "endOffset": 114193
+                    "endOffset": 114186
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5812,9 +5833,9 @@
                 "to": {
                     "startLine": 1463,
                     "startColumn": 4,
-                    "startOffset": 114198,
+                    "startOffset": 114191,
                     "endColumn": 122,
-                    "endOffset": 114316
+                    "endOffset": 114309
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5824,10 +5845,10 @@
                 "to": {
                     "startLine": 1464,
                     "startColumn": 4,
-                    "startOffset": 114321,
+                    "startOffset": 114314,
                     "endLine": 1465,
                     "endColumn": 12,
-                    "endOffset": 114470
+                    "endOffset": 114463
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5837,10 +5858,10 @@
                 "to": {
                     "startLine": 1466,
                     "startColumn": 4,
-                    "startOffset": 114475,
+                    "startOffset": 114468,
                     "endLine": 1467,
                     "endColumn": 12,
-                    "endOffset": 114624
+                    "endOffset": 114617
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5850,9 +5871,9 @@
                 "to": {
                     "startLine": 1468,
                     "startColumn": 4,
-                    "startOffset": 114629,
+                    "startOffset": 114622,
                     "endColumn": 97,
-                    "endOffset": 114722
+                    "endOffset": 114715
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5862,9 +5883,9 @@
                 "to": {
                     "startLine": 1469,
                     "startColumn": 4,
-                    "startOffset": 114727,
+                    "startOffset": 114720,
                     "endColumn": 113,
-                    "endOffset": 114836
+                    "endOffset": 114829
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5874,9 +5895,9 @@
                 "to": {
                     "startLine": 1470,
                     "startColumn": 4,
-                    "startOffset": 114841,
+                    "startOffset": 114834,
                     "endColumn": 93,
-                    "endOffset": 114930
+                    "endOffset": 114923
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5886,10 +5907,10 @@
                 "to": {
                     "startLine": 1471,
                     "startColumn": 4,
-                    "startOffset": 114935,
+                    "startOffset": 114928,
                     "endLine": 1472,
                     "endColumn": 12,
-                    "endOffset": 115070
+                    "endOffset": 115063
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5899,10 +5920,10 @@
                 "to": {
                     "startLine": 1473,
                     "startColumn": 4,
-                    "startOffset": 115075,
+                    "startOffset": 115068,
                     "endLine": 1474,
                     "endColumn": 12,
-                    "endOffset": 115204
+                    "endOffset": 115197
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5912,9 +5933,9 @@
                 "to": {
                     "startLine": 1475,
                     "startColumn": 4,
-                    "startOffset": 115209,
+                    "startOffset": 115202,
                     "endColumn": 95,
-                    "endOffset": 115300
+                    "endOffset": 115293
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5924,9 +5945,9 @@
                 "to": {
                     "startLine": 1476,
                     "startColumn": 4,
-                    "startOffset": 115305,
+                    "startOffset": 115298,
                     "endColumn": 111,
-                    "endOffset": 115412
+                    "endOffset": 115405
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5936,9 +5957,9 @@
                 "to": {
                     "startLine": 1477,
                     "startColumn": 4,
-                    "startOffset": 115417,
+                    "startOffset": 115410,
                     "endColumn": 99,
-                    "endOffset": 115512
+                    "endOffset": 115505
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5948,9 +5969,9 @@
                 "to": {
                     "startLine": 1478,
                     "startColumn": 4,
-                    "startOffset": 115517,
+                    "startOffset": 115510,
                     "endColumn": 115,
-                    "endOffset": 115628
+                    "endOffset": 115621
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5960,9 +5981,9 @@
                 "to": {
                     "startLine": 1479,
                     "startColumn": 4,
-                    "startOffset": 115633,
+                    "startOffset": 115626,
                     "endColumn": 95,
-                    "endOffset": 115724
+                    "endOffset": 115717
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5972,9 +5993,9 @@
                 "to": {
                     "startLine": 1480,
                     "startColumn": 4,
-                    "startOffset": 115729,
+                    "startOffset": 115722,
                     "endColumn": 111,
-                    "endOffset": 115836
+                    "endOffset": 115829
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5984,10 +6005,10 @@
                 "to": {
                     "startLine": 1481,
                     "startColumn": 4,
-                    "startOffset": 115841,
+                    "startOffset": 115834,
                     "endLine": 1482,
                     "endColumn": 12,
-                    "endOffset": 115976
+                    "endOffset": 115969
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -5997,9 +6018,9 @@
                 "to": {
                     "startLine": 1483,
                     "startColumn": 4,
-                    "startOffset": 115981,
+                    "startOffset": 115974,
                     "endColumn": 135,
-                    "endOffset": 116112
+                    "endOffset": 116105
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6009,10 +6030,10 @@
                 "to": {
                     "startLine": 1484,
                     "startColumn": 4,
-                    "startOffset": 116117,
+                    "startOffset": 116110,
                     "endLine": 1485,
                     "endColumn": 12,
-                    "endOffset": 116276
+                    "endOffset": 116269
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6022,9 +6043,9 @@
                 "to": {
                     "startLine": 1486,
                     "startColumn": 4,
-                    "startOffset": 116281,
+                    "startOffset": 116274,
                     "endColumn": 129,
-                    "endOffset": 116406
+                    "endOffset": 116399
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6034,10 +6055,10 @@
                 "to": {
                     "startLine": 1487,
                     "startColumn": 4,
-                    "startOffset": 116411,
+                    "startOffset": 116404,
                     "endLine": 1488,
                     "endColumn": 12,
-                    "endOffset": 116564
+                    "endOffset": 116557
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6047,10 +6068,10 @@
                 "to": {
                     "startLine": 1489,
                     "startColumn": 4,
-                    "startOffset": 116569,
+                    "startOffset": 116562,
                     "endLine": 1490,
                     "endColumn": 12,
-                    "endOffset": 116714
+                    "endOffset": 116707
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6060,9 +6081,9 @@
                 "to": {
                     "startLine": 1491,
                     "startColumn": 4,
-                    "startOffset": 116719,
+                    "startOffset": 116712,
                     "endColumn": 140,
-                    "endOffset": 116855
+                    "endOffset": 116848
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6072,10 +6093,10 @@
                 "to": {
                     "startLine": 1492,
                     "startColumn": 4,
-                    "startOffset": 116860,
+                    "startOffset": 116853,
                     "endLine": 1493,
                     "endColumn": 12,
-                    "endOffset": 116999
+                    "endOffset": 116992
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6085,9 +6106,9 @@
                 "to": {
                     "startLine": 1494,
                     "startColumn": 4,
-                    "startOffset": 117004,
+                    "startOffset": 116997,
                     "endColumn": 134,
-                    "endOffset": 117134
+                    "endOffset": 117127
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6097,9 +6118,9 @@
                 "to": {
                     "startLine": 1495,
                     "startColumn": 4,
-                    "startOffset": 117139,
+                    "startOffset": 117132,
                     "endColumn": 111,
-                    "endOffset": 117246
+                    "endOffset": 117239
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6109,9 +6130,9 @@
                 "to": {
                     "startLine": 1496,
                     "startColumn": 4,
-                    "startOffset": 117251,
+                    "startOffset": 117244,
                     "endColumn": 127,
-                    "endOffset": 117374
+                    "endOffset": 117367
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6121,10 +6142,10 @@
                 "to": {
                     "startLine": 1497,
                     "startColumn": 4,
-                    "startOffset": 117379,
+                    "startOffset": 117372,
                     "endLine": 1498,
                     "endColumn": 12,
-                    "endOffset": 117510
+                    "endOffset": 117503
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6134,10 +6155,10 @@
                 "to": {
                     "startLine": 1499,
                     "startColumn": 4,
-                    "startOffset": 117515,
+                    "startOffset": 117508,
                     "endLine": 1500,
                     "endColumn": 12,
-                    "endOffset": 117652
+                    "endOffset": 117645
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6147,10 +6168,10 @@
                 "to": {
                     "startLine": 1501,
                     "startColumn": 4,
-                    "startOffset": 117657,
+                    "startOffset": 117650,
                     "endLine": 1502,
                     "endColumn": 12,
-                    "endOffset": 117794
+                    "endOffset": 117787
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6160,9 +6181,9 @@
                 "to": {
                     "startLine": 1503,
                     "startColumn": 4,
-                    "startOffset": 117799,
+                    "startOffset": 117792,
                     "endColumn": 111,
-                    "endOffset": 117906
+                    "endOffset": 117899
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6172,9 +6193,9 @@
                 "to": {
                     "startLine": 1504,
                     "startColumn": 4,
-                    "startOffset": 117911,
+                    "startOffset": 117904,
                     "endColumn": 139,
-                    "endOffset": 118046
+                    "endOffset": 118039
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6184,10 +6205,10 @@
                 "to": {
                     "startLine": 1505,
                     "startColumn": 4,
-                    "startOffset": 118051,
+                    "startOffset": 118044,
                     "endLine": 1507,
                     "endColumn": 12,
-                    "endOffset": 118247
+                    "endOffset": 118240
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\values\\values.xml"
@@ -6197,9 +6218,9 @@
                 "to": {
                     "startLine": 1508,
                     "startColumn": 4,
-                    "startOffset": 118252,
+                    "startOffset": 118245,
                     "endColumn": 91,
-                    "endOffset": 118339
+                    "endOffset": 118332
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\values\\values.xml"
@@ -6209,10 +6230,10 @@
                 "to": {
                     "startLine": 1509,
                     "startColumn": 4,
-                    "startOffset": 118344,
+                    "startOffset": 118337,
                     "endLine": 1511,
                     "endColumn": 12,
-                    "endOffset": 118534
+                    "endOffset": 118527
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\values\\values.xml"
@@ -6222,10 +6243,10 @@
                 "to": {
                     "startLine": 1512,
                     "startColumn": 4,
-                    "startOffset": 118539,
+                    "startOffset": 118532,
                     "endLine": 1514,
                     "endColumn": 12,
-                    "endOffset": 118718
+                    "endOffset": 118711
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\values\\values.xml"
@@ -6235,10 +6256,10 @@
                 "to": {
                     "startLine": 1515,
                     "startColumn": 4,
-                    "startOffset": 118723,
+                    "startOffset": 118716,
                     "endLine": 1517,
                     "endColumn": 12,
-                    "endOffset": 118893
+                    "endOffset": 118886
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\values\\values.xml"
@@ -6248,10 +6269,10 @@
                 "to": {
                     "startLine": 1518,
                     "startColumn": 4,
-                    "startOffset": 118898,
+                    "startOffset": 118891,
                     "endLine": 1521,
                     "endColumn": 12,
-                    "endOffset": 119146
+                    "endOffset": 119139
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\values\\values.xml"
@@ -6261,10 +6282,10 @@
                 "to": {
                     "startLine": 1522,
                     "startColumn": 4,
-                    "startOffset": 119151,
+                    "startOffset": 119144,
                     "endLine": 1526,
                     "endColumn": 12,
-                    "endOffset": 119437
+                    "endOffset": 119430
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\values\\values.xml"
@@ -6274,9 +6295,9 @@
                 "to": {
                     "startLine": 1527,
                     "startColumn": 4,
-                    "startOffset": 119442,
+                    "startOffset": 119435,
                     "endColumn": 67,
-                    "endOffset": 119505
+                    "endOffset": 119498
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6286,9 +6307,9 @@
                 "to": {
                     "startLine": 1528,
                     "startColumn": 4,
-                    "startOffset": 119510,
+                    "startOffset": 119503,
                     "endColumn": 72,
-                    "endOffset": 119578
+                    "endOffset": 119571
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6298,9 +6319,9 @@
                 "to": {
                     "startLine": 1529,
                     "startColumn": 4,
-                    "startOffset": 119583,
+                    "startOffset": 119576,
                     "endColumn": 73,
-                    "endOffset": 119652
+                    "endOffset": 119645
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6310,9 +6331,9 @@
                 "to": {
                     "startLine": 1530,
                     "startColumn": 4,
-                    "startOffset": 119657,
+                    "startOffset": 119650,
                     "endColumn": 72,
-                    "endOffset": 119725
+                    "endOffset": 119718
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6322,9 +6343,9 @@
                 "to": {
                     "startLine": 1531,
                     "startColumn": 4,
-                    "startOffset": 119730,
+                    "startOffset": 119723,
                     "endColumn": 73,
-                    "endOffset": 119799
+                    "endOffset": 119792
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6334,10 +6355,10 @@
                 "to": {
                     "startLine": 1532,
                     "startColumn": 4,
-                    "startOffset": 119804,
+                    "startOffset": 119797,
                     "endLine": 1533,
                     "endColumn": 12,
-                    "endOffset": 119945
+                    "endOffset": 119938
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6347,10 +6368,10 @@
                 "to": {
                     "startLine": 1534,
                     "startColumn": 4,
-                    "startOffset": 119950,
+                    "startOffset": 119943,
                     "endLine": 1535,
                     "endColumn": 12,
-                    "endOffset": 120089
+                    "endOffset": 120082
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6360,10 +6381,10 @@
                 "to": {
                     "startLine": 1536,
                     "startColumn": 4,
-                    "startOffset": 120094,
+                    "startOffset": 120087,
                     "endLine": 1537,
                     "endColumn": 12,
-                    "endOffset": 120227
+                    "endOffset": 120220
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6373,9 +6394,9 @@
                 "to": {
                     "startLine": 1538,
                     "startColumn": 4,
-                    "startOffset": 120232,
+                    "startOffset": 120225,
                     "endColumn": 65,
-                    "endOffset": 120293
+                    "endOffset": 120286
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6385,9 +6406,9 @@
                 "to": {
                     "startLine": 1539,
                     "startColumn": 4,
-                    "startOffset": 120298,
+                    "startOffset": 120291,
                     "endColumn": 89,
-                    "endOffset": 120383
+                    "endOffset": 120376
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6397,9 +6418,9 @@
                 "to": {
                     "startLine": 1540,
                     "startColumn": 4,
-                    "startOffset": 120388,
+                    "startOffset": 120381,
                     "endColumn": 79,
-                    "endOffset": 120463
+                    "endOffset": 120456
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6409,9 +6430,9 @@
                 "to": {
                     "startLine": 1541,
                     "startColumn": 4,
-                    "startOffset": 120468,
+                    "startOffset": 120461,
                     "endColumn": 91,
-                    "endOffset": 120555
+                    "endOffset": 120548
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6421,9 +6442,9 @@
                 "to": {
                     "startLine": 1542,
                     "startColumn": 4,
-                    "startOffset": 120560,
+                    "startOffset": 120553,
                     "endColumn": 97,
-                    "endOffset": 120653
+                    "endOffset": 120646
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6433,10 +6454,10 @@
                 "to": {
                     "startLine": 1543,
                     "startColumn": 4,
-                    "startOffset": 120658,
+                    "startOffset": 120651,
                     "endLine": 1544,
                     "endColumn": 12,
-                    "endOffset": 120763
+                    "endOffset": 120756
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6446,9 +6467,9 @@
                 "to": {
                     "startLine": 1545,
                     "startColumn": 4,
-                    "startOffset": 120768,
+                    "startOffset": 120761,
                     "endColumn": 77,
-                    "endOffset": 120841
+                    "endOffset": 120834
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6458,9 +6479,9 @@
                 "to": {
                     "startLine": 1546,
                     "startColumn": 4,
-                    "startOffset": 120846,
+                    "startOffset": 120839,
                     "endColumn": 105,
-                    "endOffset": 120947
+                    "endOffset": 120940
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6470,9 +6491,9 @@
                 "to": {
                     "startLine": 1547,
                     "startColumn": 4,
-                    "startOffset": 120952,
+                    "startOffset": 120945,
                     "endColumn": 91,
-                    "endOffset": 121039
+                    "endOffset": 121032
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6482,9 +6503,9 @@
                 "to": {
                     "startLine": 1548,
                     "startColumn": 4,
-                    "startOffset": 121044,
+                    "startOffset": 121037,
                     "endColumn": 103,
-                    "endOffset": 121143
+                    "endOffset": 121136
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6494,9 +6515,9 @@
                 "to": {
                     "startLine": 1549,
                     "startColumn": 4,
-                    "startOffset": 121148,
+                    "startOffset": 121141,
                     "endColumn": 109,
-                    "endOffset": 121253
+                    "endOffset": 121246
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6506,10 +6527,10 @@
                 "to": {
                     "startLine": 1550,
                     "startColumn": 4,
-                    "startOffset": 121258,
+                    "startOffset": 121251,
                     "endLine": 1551,
                     "endColumn": 12,
-                    "endOffset": 121375
+                    "endOffset": 121368
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6519,10 +6540,10 @@
                 "to": {
                     "startLine": 1552,
                     "startColumn": 4,
-                    "startOffset": 121380,
+                    "startOffset": 121373,
                     "endLine": 1555,
                     "endColumn": 12,
-                    "endOffset": 121538
+                    "endOffset": 121531
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6532,10 +6553,10 @@
                 "to": {
                     "startLine": 1556,
                     "startColumn": 4,
-                    "startOffset": 121543,
+                    "startOffset": 121536,
                     "endLine": 1559,
                     "endColumn": 12,
-                    "endOffset": 121695
+                    "endOffset": 121688
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6545,9 +6566,9 @@
                 "to": {
                     "startLine": 1560,
                     "startColumn": 4,
-                    "startOffset": 121700,
+                    "startOffset": 121693,
                     "endColumn": 79,
-                    "endOffset": 121775
+                    "endOffset": 121768
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6557,9 +6578,9 @@
                 "to": {
                     "startLine": 1561,
                     "startColumn": 4,
-                    "startOffset": 121780,
+                    "startOffset": 121773,
                     "endColumn": 99,
-                    "endOffset": 121875
+                    "endOffset": 121868
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6569,9 +6590,9 @@
                 "to": {
                     "startLine": 1562,
                     "startColumn": 4,
-                    "startOffset": 121880,
+                    "startOffset": 121873,
                     "endColumn": 89,
-                    "endOffset": 121965
+                    "endOffset": 121958
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6581,9 +6602,9 @@
                 "to": {
                     "startLine": 1563,
                     "startColumn": 4,
-                    "startOffset": 121970,
+                    "startOffset": 121963,
                     "endColumn": 109,
-                    "endOffset": 122075
+                    "endOffset": 122068
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6593,9 +6614,9 @@
                 "to": {
                     "startLine": 1564,
                     "startColumn": 4,
-                    "startOffset": 122080,
+                    "startOffset": 122073,
                     "endColumn": 91,
-                    "endOffset": 122167
+                    "endOffset": 122160
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6605,10 +6626,10 @@
                 "to": {
                     "startLine": 1565,
                     "startColumn": 4,
-                    "startOffset": 122172,
+                    "startOffset": 122165,
                     "endLine": 1566,
                     "endColumn": 12,
-                    "endOffset": 122267
+                    "endOffset": 122260
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6618,10 +6639,10 @@
                 "to": {
                     "startLine": 1567,
                     "startColumn": 4,
-                    "startOffset": 122272,
+                    "startOffset": 122265,
                     "endLine": 1568,
                     "endColumn": 12,
-                    "endOffset": 122379
+                    "endOffset": 122372
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6631,10 +6652,10 @@
                 "to": {
                     "startLine": 1569,
                     "startColumn": 4,
-                    "startOffset": 122384,
+                    "startOffset": 122377,
                     "endLine": 1570,
                     "endColumn": 12,
-                    "endOffset": 122493
+                    "endOffset": 122486
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6644,10 +6665,10 @@
                 "to": {
                     "startLine": 1571,
                     "startColumn": 4,
-                    "startOffset": 122498,
+                    "startOffset": 122491,
                     "endLine": 1572,
                     "endColumn": 12,
-                    "endOffset": 122609
+                    "endOffset": 122602
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6657,10 +6678,10 @@
                 "to": {
                     "startLine": 1573,
                     "startColumn": 4,
-                    "startOffset": 122614,
+                    "startOffset": 122607,
                     "endLine": 1574,
                     "endColumn": 12,
-                    "endOffset": 122725
+                    "endOffset": 122718
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6670,9 +6691,9 @@
                 "to": {
                     "startLine": 1575,
                     "startColumn": 4,
-                    "startOffset": 122730,
+                    "startOffset": 122723,
                     "endColumn": 93,
-                    "endOffset": 122819
+                    "endOffset": 122812
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6682,9 +6703,9 @@
                 "to": {
                     "startLine": 1576,
                     "startColumn": 4,
-                    "startOffset": 122824,
+                    "startOffset": 122817,
                     "endColumn": 113,
-                    "endOffset": 122933
+                    "endOffset": 122926
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6694,9 +6715,9 @@
                 "to": {
                     "startLine": 1577,
                     "startColumn": 4,
-                    "startOffset": 122938,
+                    "startOffset": 122931,
                     "endColumn": 111,
-                    "endOffset": 123045
+                    "endOffset": 123038
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6706,10 +6727,10 @@
                 "to": {
                     "startLine": 1578,
                     "startColumn": 4,
-                    "startOffset": 123050,
+                    "startOffset": 123043,
                     "endLine": 1579,
                     "endColumn": 12,
-                    "endOffset": 123147
+                    "endOffset": 123140
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6719,10 +6740,10 @@
                 "to": {
                     "startLine": 1580,
                     "startColumn": 4,
-                    "startOffset": 123152,
+                    "startOffset": 123145,
                     "endLine": 1581,
                     "endColumn": 12,
-                    "endOffset": 123267
+                    "endOffset": 123260
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6732,10 +6753,10 @@
                 "to": {
                     "startLine": 1582,
                     "startColumn": 4,
-                    "startOffset": 123272,
+                    "startOffset": 123265,
                     "endLine": 1583,
                     "endColumn": 12,
-                    "endOffset": 123389
+                    "endOffset": 123382
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6745,9 +6766,9 @@
                 "to": {
                     "startLine": 1584,
                     "startColumn": 4,
-                    "startOffset": 123394,
+                    "startOffset": 123387,
                     "endColumn": 81,
-                    "endOffset": 123471
+                    "endOffset": 123464
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6757,9 +6778,9 @@
                 "to": {
                     "startLine": 1585,
                     "startColumn": 4,
-                    "startOffset": 123476,
+                    "startOffset": 123469,
                     "endColumn": 103,
-                    "endOffset": 123575
+                    "endOffset": 123568
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6769,9 +6790,9 @@
                 "to": {
                     "startLine": 1586,
                     "startColumn": 4,
-                    "startOffset": 123580,
+                    "startOffset": 123573,
                     "endColumn": 119,
-                    "endOffset": 123695
+                    "endOffset": 123688
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6781,9 +6802,9 @@
                 "to": {
                     "startLine": 1587,
                     "startColumn": 4,
-                    "startOffset": 123700,
+                    "startOffset": 123693,
                     "endColumn": 125,
-                    "endOffset": 123821
+                    "endOffset": 123814
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6793,9 +6814,9 @@
                 "to": {
                     "startLine": 1588,
                     "startColumn": 4,
-                    "startOffset": 123826,
+                    "startOffset": 123819,
                     "endColumn": 97,
-                    "endOffset": 123919
+                    "endOffset": 123912
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6805,9 +6826,9 @@
                 "to": {
                     "startLine": 1589,
                     "startColumn": 4,
-                    "startOffset": 123924,
+                    "startOffset": 123917,
                     "endColumn": 93,
-                    "endOffset": 124013
+                    "endOffset": 124006
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6817,9 +6838,9 @@
                 "to": {
                     "startLine": 1590,
                     "startColumn": 4,
-                    "startOffset": 124018,
+                    "startOffset": 124011,
                     "endColumn": 87,
-                    "endOffset": 124101
+                    "endOffset": 124094
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6829,9 +6850,9 @@
                 "to": {
                     "startLine": 1591,
                     "startColumn": 4,
-                    "startOffset": 124106,
+                    "startOffset": 124099,
                     "endColumn": 111,
-                    "endOffset": 124213
+                    "endOffset": 124206
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6841,9 +6862,9 @@
                 "to": {
                     "startLine": 1592,
                     "startColumn": 4,
-                    "startOffset": 124218,
+                    "startOffset": 124211,
                     "endColumn": 115,
-                    "endOffset": 124329
+                    "endOffset": 124322
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6853,9 +6874,9 @@
                 "to": {
                     "startLine": 1593,
                     "startColumn": 4,
-                    "startOffset": 124334,
+                    "startOffset": 124327,
                     "endColumn": 121,
-                    "endOffset": 124451
+                    "endOffset": 124444
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6865,9 +6886,9 @@
                 "to": {
                     "startLine": 1594,
                     "startColumn": 4,
-                    "startOffset": 124456,
+                    "startOffset": 124449,
                     "endColumn": 111,
-                    "endOffset": 124563
+                    "endOffset": 124556
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6877,10 +6898,10 @@
                 "to": {
                     "startLine": 1595,
                     "startColumn": 4,
-                    "startOffset": 124568,
+                    "startOffset": 124561,
                     "endLine": 1597,
                     "endColumn": 12,
-                    "endOffset": 124738
+                    "endOffset": 124731
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6890,9 +6911,9 @@
                 "to": {
                     "startLine": 1598,
                     "startColumn": 4,
-                    "startOffset": 124743,
+                    "startOffset": 124736,
                     "endColumn": 115,
-                    "endOffset": 124854
+                    "endOffset": 124847
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6902,9 +6923,9 @@
                 "to": {
                     "startLine": 1599,
                     "startColumn": 4,
-                    "startOffset": 124859,
+                    "startOffset": 124852,
                     "endColumn": 85,
-                    "endOffset": 124940
+                    "endOffset": 124933
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6914,9 +6935,9 @@
                 "to": {
                     "startLine": 1600,
                     "startColumn": 4,
-                    "startOffset": 124945,
+                    "startOffset": 124938,
                     "endColumn": 91,
-                    "endOffset": 125032
+                    "endOffset": 125025
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6926,10 +6947,10 @@
                 "to": {
                     "startLine": 1601,
                     "startColumn": 4,
-                    "startOffset": 125037,
+                    "startOffset": 125030,
                     "endLine": 1602,
                     "endColumn": 12,
-                    "endOffset": 125144
+                    "endOffset": 125137
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6939,10 +6960,10 @@
                 "to": {
                     "startLine": 1603,
                     "startColumn": 4,
-                    "startOffset": 125149,
+                    "startOffset": 125142,
                     "endLine": 1604,
                     "endColumn": 12,
-                    "endOffset": 125268
+                    "endOffset": 125261
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6952,9 +6973,9 @@
                 "to": {
                     "startLine": 1605,
                     "startColumn": 4,
-                    "startOffset": 125273,
+                    "startOffset": 125266,
                     "endColumn": 66,
-                    "endOffset": 125335
+                    "endOffset": 125328
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6964,10 +6985,10 @@
                 "to": {
                     "startLine": 1606,
                     "startColumn": 4,
-                    "startOffset": 125340,
+                    "startOffset": 125333,
                     "endLine": 1607,
                     "endColumn": 12,
-                    "endOffset": 125461
+                    "endOffset": 125454
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6977,9 +6998,9 @@
                 "to": {
                     "startLine": 1608,
                     "startColumn": 4,
-                    "startOffset": 125466,
+                    "startOffset": 125459,
                     "endColumn": 67,
-                    "endOffset": 125529
+                    "endOffset": 125522
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6989,10 +7010,10 @@
                 "to": {
                     "startLine": 1609,
                     "startColumn": 4,
-                    "startOffset": 125534,
+                    "startOffset": 125527,
                     "endLine": 1610,
                     "endColumn": 12,
-                    "endOffset": 125657
+                    "endOffset": 125650
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7002,10 +7023,10 @@
                 "to": {
                     "startLine": 1611,
                     "startColumn": 4,
-                    "startOffset": 125662,
+                    "startOffset": 125655,
                     "endLine": 1612,
                     "endColumn": 12,
-                    "endOffset": 125801
+                    "endOffset": 125794
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7015,10 +7036,10 @@
                 "to": {
                     "startLine": 1613,
                     "startColumn": 4,
-                    "startOffset": 125806,
+                    "startOffset": 125799,
                     "endLine": 1614,
                     "endColumn": 12,
-                    "endOffset": 125929
+                    "endOffset": 125922
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7028,9 +7049,9 @@
                 "to": {
                     "startLine": 1615,
                     "startColumn": 4,
-                    "startOffset": 125934,
+                    "startOffset": 125927,
                     "endColumn": 68,
-                    "endOffset": 125998
+                    "endOffset": 125991
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7040,9 +7061,9 @@
                 "to": {
                     "startLine": 1616,
                     "startColumn": 4,
-                    "startOffset": 126003,
+                    "startOffset": 125996,
                     "endColumn": 94,
-                    "endOffset": 126093
+                    "endOffset": 126086
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7052,9 +7073,9 @@
                 "to": {
                     "startLine": 1617,
                     "startColumn": 4,
-                    "startOffset": 126098,
+                    "startOffset": 126091,
                     "endColumn": 114,
-                    "endOffset": 126208
+                    "endOffset": 126201
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7064,9 +7085,9 @@
                 "to": {
                     "startLine": 1618,
                     "startColumn": 4,
-                    "startOffset": 126213,
+                    "startOffset": 126206,
                     "endColumn": 112,
-                    "endOffset": 126321
+                    "endOffset": 126314
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7076,9 +7097,9 @@
                 "to": {
                     "startLine": 1619,
                     "startColumn": 4,
-                    "startOffset": 126326,
+                    "startOffset": 126319,
                     "endColumn": 98,
-                    "endOffset": 126420
+                    "endOffset": 126413
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7088,9 +7109,9 @@
                 "to": {
                     "startLine": 1620,
                     "startColumn": 4,
-                    "startOffset": 126425,
+                    "startOffset": 126418,
                     "endColumn": 108,
-                    "endOffset": 126529
+                    "endOffset": 126522
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7100,9 +7121,9 @@
                 "to": {
                     "startLine": 1621,
                     "startColumn": 4,
-                    "startOffset": 126534,
+                    "startOffset": 126527,
                     "endColumn": 110,
-                    "endOffset": 126640
+                    "endOffset": 126633
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7112,9 +7133,9 @@
                 "to": {
                     "startLine": 1622,
                     "startColumn": 4,
-                    "startOffset": 126645,
+                    "startOffset": 126638,
                     "endColumn": 110,
-                    "endOffset": 126751
+                    "endOffset": 126744
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7124,9 +7145,9 @@
                 "to": {
                     "startLine": 1623,
                     "startColumn": 4,
-                    "startOffset": 126756,
+                    "startOffset": 126749,
                     "endColumn": 100,
-                    "endOffset": 126852
+                    "endOffset": 126845
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7136,9 +7157,9 @@
                 "to": {
                     "startLine": 1624,
                     "startColumn": 4,
-                    "startOffset": 126857,
+                    "startOffset": 126850,
                     "endColumn": 104,
-                    "endOffset": 126957
+                    "endOffset": 126950
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7148,10 +7169,10 @@
                 "to": {
                     "startLine": 1625,
                     "startColumn": 4,
-                    "startOffset": 126962,
+                    "startOffset": 126955,
                     "endLine": 1626,
                     "endColumn": 12,
-                    "endOffset": 127069
+                    "endOffset": 127062
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7161,10 +7182,10 @@
                 "to": {
                     "startLine": 1627,
                     "startColumn": 4,
-                    "startOffset": 127074,
+                    "startOffset": 127067,
                     "endLine": 1628,
                     "endColumn": 12,
-                    "endOffset": 127199
+                    "endOffset": 127192
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7174,9 +7195,9 @@
                 "to": {
                     "startLine": 1629,
                     "startColumn": 4,
-                    "startOffset": 127204,
+                    "startOffset": 127197,
                     "endColumn": 90,
-                    "endOffset": 127290
+                    "endOffset": 127283
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7186,9 +7207,9 @@
                 "to": {
                     "startLine": 1630,
                     "startColumn": 4,
-                    "startOffset": 127295,
+                    "startOffset": 127288,
                     "endColumn": 122,
-                    "endOffset": 127413
+                    "endOffset": 127406
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7198,10 +7219,10 @@
                 "to": {
                     "startLine": 1631,
                     "startColumn": 4,
-                    "startOffset": 127418,
+                    "startOffset": 127411,
                     "endLine": 1632,
                     "endColumn": 12,
-                    "endOffset": 127525
+                    "endOffset": 127518
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7211,9 +7232,9 @@
                 "to": {
                     "startLine": 1633,
                     "startColumn": 4,
-                    "startOffset": 127530,
+                    "startOffset": 127523,
                     "endColumn": 85,
-                    "endOffset": 127611
+                    "endOffset": 127604
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7223,9 +7244,9 @@
                 "to": {
                     "startLine": 1634,
                     "startColumn": 4,
-                    "startOffset": 127616,
+                    "startOffset": 127609,
                     "endColumn": 103,
-                    "endOffset": 127715
+                    "endOffset": 127708
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7235,10 +7256,10 @@
                 "to": {
                     "startLine": 1635,
                     "startColumn": 4,
-                    "startOffset": 127720,
+                    "startOffset": 127713,
                     "endLine": 1636,
                     "endColumn": 12,
-                    "endOffset": 127823
+                    "endOffset": 127816
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7248,10 +7269,10 @@
                 "to": {
                     "startLine": 1637,
                     "startColumn": 4,
-                    "startOffset": 127828,
+                    "startOffset": 127821,
                     "endLine": 1638,
                     "endColumn": 12,
-                    "endOffset": 127923
+                    "endOffset": 127916
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7261,10 +7282,10 @@
                 "to": {
                     "startLine": 1639,
                     "startColumn": 4,
-                    "startOffset": 127928,
+                    "startOffset": 127921,
                     "endLine": 1640,
                     "endColumn": 12,
-                    "endOffset": 128041
+                    "endOffset": 128034
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7274,10 +7295,10 @@
                 "to": {
                     "startLine": 1641,
                     "startColumn": 4,
-                    "startOffset": 128046,
+                    "startOffset": 128039,
                     "endLine": 1642,
                     "endColumn": 12,
-                    "endOffset": 128145
+                    "endOffset": 128138
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7287,10 +7308,10 @@
                 "to": {
                     "startLine": 1643,
                     "startColumn": 4,
-                    "startOffset": 128150,
+                    "startOffset": 128143,
                     "endLine": 1644,
                     "endColumn": 12,
-                    "endOffset": 128249
+                    "endOffset": 128242
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7300,10 +7321,10 @@
                 "to": {
                     "startLine": 1645,
                     "startColumn": 4,
-                    "startOffset": 128254,
+                    "startOffset": 128247,
                     "endLine": 1646,
                     "endColumn": 12,
-                    "endOffset": 128375
+                    "endOffset": 128368
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7313,9 +7334,9 @@
                 "to": {
                     "startLine": 1647,
                     "startColumn": 4,
-                    "startOffset": 128380,
+                    "startOffset": 128373,
                     "endColumn": 87,
-                    "endOffset": 128463
+                    "endOffset": 128456
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7325,9 +7346,9 @@
                 "to": {
                     "startLine": 1648,
                     "startColumn": 4,
-                    "startOffset": 128468,
+                    "startOffset": 128461,
                     "endColumn": 89,
-                    "endOffset": 128553
+                    "endOffset": 128546
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7337,9 +7358,9 @@
                 "to": {
                     "startLine": 1649,
                     "startColumn": 4,
-                    "startOffset": 128558,
+                    "startOffset": 128551,
                     "endColumn": 109,
-                    "endOffset": 128663
+                    "endOffset": 128656
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7349,9 +7370,9 @@
                 "to": {
                     "startLine": 1650,
                     "startColumn": 4,
-                    "startOffset": 128668,
+                    "startOffset": 128661,
                     "endColumn": 83,
-                    "endOffset": 128747
+                    "endOffset": 128740
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7361,9 +7382,9 @@
                 "to": {
                     "startLine": 1651,
                     "startColumn": 4,
-                    "startOffset": 128752,
+                    "startOffset": 128745,
                     "endColumn": 83,
-                    "endOffset": 128831
+                    "endOffset": 128824
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7373,9 +7394,9 @@
                 "to": {
                     "startLine": 1652,
                     "startColumn": 4,
-                    "startOffset": 128836,
+                    "startOffset": 128829,
                     "endColumn": 53,
-                    "endOffset": 128885
+                    "endOffset": 128878
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7385,9 +7406,9 @@
                 "to": {
                     "startLine": 1653,
                     "startColumn": 4,
-                    "startOffset": 128890,
+                    "startOffset": 128883,
                     "endColumn": 63,
-                    "endOffset": 128949
+                    "endOffset": 128942
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7397,9 +7418,9 @@
                 "to": {
                     "startLine": 1654,
                     "startColumn": 4,
-                    "startOffset": 128954,
+                    "startOffset": 128947,
                     "endColumn": 105,
-                    "endOffset": 129055
+                    "endOffset": 129048
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7409,9 +7430,9 @@
                 "to": {
                     "startLine": 1655,
                     "startColumn": 4,
-                    "startOffset": 129060,
+                    "startOffset": 129053,
                     "endColumn": 109,
-                    "endOffset": 129165
+                    "endOffset": 129158
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7421,9 +7442,9 @@
                 "to": {
                     "startLine": 1656,
                     "startColumn": 4,
-                    "startOffset": 129170,
+                    "startOffset": 129163,
                     "endColumn": 83,
-                    "endOffset": 129249
+                    "endOffset": 129242
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7433,9 +7454,9 @@
                 "to": {
                     "startLine": 1657,
                     "startColumn": 4,
-                    "startOffset": 129254,
+                    "startOffset": 129247,
                     "endColumn": 119,
-                    "endOffset": 129369
+                    "endOffset": 129362
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7445,10 +7466,10 @@
                 "to": {
                     "startLine": 1658,
                     "startColumn": 4,
-                    "startOffset": 129374,
+                    "startOffset": 129367,
                     "endLine": 1661,
                     "endColumn": 12,
-                    "endOffset": 129587
+                    "endOffset": 129580
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\values\\values.xml"
@@ -7458,10 +7479,10 @@
                 "to": {
                     "startLine": 1662,
                     "startColumn": 4,
-                    "startOffset": 129592,
+                    "startOffset": 129585,
                     "endLine": 1665,
                     "endColumn": 12,
-                    "endOffset": 129794
+                    "endOffset": 129787
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\values\\values.xml"
@@ -7471,10 +7492,10 @@
                 "to": {
                     "startLine": 1666,
                     "startColumn": 4,
-                    "startOffset": 129799,
+                    "startOffset": 129792,
                     "endLine": 1668,
                     "endColumn": 12,
-                    "endOffset": 129953
+                    "endOffset": 129946
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\values\\values.xml"
@@ -7484,10 +7505,10 @@
                 "to": {
                     "startLine": 1669,
                     "startColumn": 4,
-                    "startOffset": 129958,
+                    "startOffset": 129951,
                     "endLine": 1677,
                     "endColumn": 12,
-                    "endOffset": 130520
+                    "endOffset": 130513
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\values\\values.xml"
@@ -7497,10 +7518,10 @@
                 "to": {
                     "startLine": 1678,
                     "startColumn": 4,
-                    "startOffset": 130525,
+                    "startOffset": 130518,
                     "endLine": 1683,
                     "endColumn": 12,
-                    "endOffset": 130881
+                    "endOffset": 130874
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\values\\values.xml"
@@ -7510,10 +7531,10 @@
                 "to": {
                     "startLine": 1684,
                     "startColumn": 4,
-                    "startOffset": 130886,
+                    "startOffset": 130879,
                     "endLine": 1686,
                     "endColumn": 12,
-                    "endOffset": 131010
+                    "endOffset": 131003
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\values\\values.xml"
@@ -7523,10 +7544,10 @@
                 "to": {
                     "startLine": 1687,
                     "startColumn": 4,
-                    "startOffset": 131015,
+                    "startOffset": 131008,
                     "endLine": 1696,
                     "endColumn": 12,
-                    "endOffset": 131754
+                    "endOffset": 131747
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\values\\values.xml"
@@ -7536,10 +7557,10 @@
                 "to": {
                     "startLine": 1697,
                     "startColumn": 4,
-                    "startOffset": 131759,
+                    "startOffset": 131752,
                     "endLine": 1700,
                     "endColumn": 12,
-                    "endOffset": 131934
+                    "endOffset": 131927
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\values\\values.xml"
@@ -7549,10 +7570,10 @@
                 "to": {
                     "startLine": 1701,
                     "startColumn": 4,
-                    "startOffset": 131939,
+                    "startOffset": 131932,
                     "endLine": 1706,
                     "endColumn": 12,
-                    "endOffset": 132375
+                    "endOffset": 132368
                 },
                 "from": {
                     "file": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\values\\values.xml"

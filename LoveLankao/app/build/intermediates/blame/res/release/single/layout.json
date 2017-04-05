@@ -8,6 +8,10 @@
         "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\layout\\fragment_talk.xml"
     },
     {
+        "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_user_square_msg.xml",
+        "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\layout\\activity_user_square_msg.xml"
+    },
+    {
         "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_lbs.xml",
         "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\layout\\activity_lbs.xml"
     },
@@ -358,6 +362,10 @@
     {
         "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_list_menu_item_radio.xml",
         "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_user_msg_item.xml",
+        "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\layout\\activity_user_msg_item.xml"
     },
     {
         "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\layout\\design_navigation_item_subheader.xml",

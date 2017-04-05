@@ -217,7 +217,7 @@
                 <ImageView
                     android:layout_width="15dp"
                     android:layout_height="15dp"
-                    android:src="@drawable/ic_square_clicktimes"/>
+                    android:src="@drawable/ic_square_click"/>
                 <TextView
                     android:id="@+id/tv_square_item_clicktimes"
                     android:layout_width="wrap_content"

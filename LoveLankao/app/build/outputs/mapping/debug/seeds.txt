@@ -7546,6 +7546,7 @@ cn.lankao.com.lovelankao.R$drawable: int ic_share_qzone
 cn.lankao.com.lovelankao.R$drawable: int ic_share_wx
 cn.lankao.com.lovelankao.R$drawable: int ic_share_wxsquare
 cn.lankao.com.lovelankao.R$drawable: int ic_square_camera_c
+cn.lankao.com.lovelankao.R$drawable: int ic_square_click
 cn.lankao.com.lovelankao.R$drawable: int ic_square_clicktimes
 cn.lankao.com.lovelankao.R$drawable: int ic_square_commenttimes
 cn.lankao.com.lovelankao.R$drawable: int ic_square_liketimes
@@ -11045,6 +11046,7 @@ cn.lankao.com.lovelankao.viewcontroller.TalkController: void access$300(cn.lanka
 cn.lankao.com.lovelankao.viewcontroller.TalkController: cn.lankao.com.lovelankao.adapter.SquareAdapter access$400(cn.lankao.com.lovelankao.viewcontroller.TalkController)
 cn.lankao.com.lovelankao.viewcontroller.TalkController: android.support.v4.widget.SwipeRefreshLayout access$500(cn.lankao.com.lovelankao.viewcontroller.TalkController)
 cn.lankao.com.lovelankao.viewcontroller.TalkController: android.content.Context access$600(cn.lankao.com.lovelankao.viewcontroller.TalkController)
+cn.lankao.com.lovelankao.viewcontroller.TalkController: android.widget.TextView access$700(cn.lankao.com.lovelankao.viewcontroller.TalkController)
 cn.lankao.com.lovelankao.viewcontroller.TalkController$1
 cn.lankao.com.lovelankao.viewcontroller.TalkController$1: cn.lankao.com.lovelankao.viewcontroller.TalkController this$0
 cn.lankao.com.lovelankao.viewcontroller.TalkController$1: TalkController$1(cn.lankao.com.lovelankao.viewcontroller.TalkController)
