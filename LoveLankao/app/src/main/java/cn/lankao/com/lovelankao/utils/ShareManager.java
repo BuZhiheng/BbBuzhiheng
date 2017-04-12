@@ -64,7 +64,7 @@ public class ShareManager implements IUiListener {
         } else {
             msg.title = shared.getTitle();
         }
-        Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_share_bmp);
+        Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_launcher_216);
         webpage.webpageUrl = shared.getUrl();
         msg.description = shared.getDesc();
         msg.setThumbImage(bitmap);

@@ -20,12 +20,12 @@
         "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-hdpi\\abc_ic_search_api_mtrl_alpha.png"
     },
     {
-        "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_square_commenttimes.png",
-        "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\drawable-hdpi\\ic_square_commenttimes.png"
-    },
-    {
         "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\bmob_update_btn_check_off_pressed_holo_light.png",
         "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\drawable-hdpi\\bmob_update_btn_check_off_pressed_holo_light.png"
+    },
+    {
+        "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_square_commenttimes.png",
+        "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\drawable-hdpi\\ic_square_commenttimes.png"
     },
     {
         "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_square_click.png",
@@ -96,12 +96,12 @@
         "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-hdpi\\abc_ic_go_search_api_mtrl_alpha.png"
     },
     {
-        "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\bmob_update_btn_check_on_holo_light.png",
-        "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\drawable-hdpi\\bmob_update_btn_check_on_holo_light.png"
-    },
-    {
         "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png",
         "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-hdpi\\abc_textfield_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\bmob_update_btn_check_on_holo_light.png",
+        "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\drawable-hdpi\\bmob_update_btn_check_on_holo_light.png"
     },
     {
         "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png",
@@ -406,10 +406,6 @@
     {
         "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_minefrm_setting.png",
         "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\drawable-hdpi\\ic_minefrm_setting.png"
-    },
-    {
-        "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_share_bmp.png",
-        "source": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\src\\main\\res\\drawable-hdpi\\ic_share_bmp.png"
     },
     {
         "merged": "E:\\GitSpace\\LoveLankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_mainfrm_meishi.png",

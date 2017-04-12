@@ -153,7 +153,7 @@ public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.MyViewHold
                     }
                 });
                 final int click = square.getClickTimes() == null ? 1 : square.getClickTimes() + 1;
-                holder.tvClickTimes.setText(click + "");
+//                holder.tvClickTimes.setText(click + "");
                 square.setClickTimes(click);
                 Intent intent = new Intent(context, SquareActivity.class);
                 intent.putExtra(CommonCode.INTENT_COMMON_STRING, square.getObjectId());

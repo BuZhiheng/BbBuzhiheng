@@ -211,6 +211,7 @@
 
 # onClick res/layout/activity_comment.xml #generated:36
 # onClick res/layout/activity_square_msg.xml #generated:19
+# onClick res/layout/activity_square_msg.xml #generated:28
 # onClick res/layout/activity_square_msg_header.xml #generated:147
 # onClick res/layout/activity_square_msg_header.xml #generated:177
 # onClick res/layout/activity_square_msg_header.xml #generated:208

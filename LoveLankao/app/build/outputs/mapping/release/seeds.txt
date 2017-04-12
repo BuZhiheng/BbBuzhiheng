@@ -7539,7 +7539,6 @@ cn.lankao.com.lovelankao.R$drawable: int ic_minefrm_tuijian
 cn.lankao.com.lovelankao.R$drawable: int ic_quan_camera
 cn.lankao.com.lovelankao.R$drawable: int ic_register_code
 cn.lankao.com.lovelankao.R$drawable: int ic_register_nickname
-cn.lankao.com.lovelankao.R$drawable: int ic_share_bmp
 cn.lankao.com.lovelankao.R$drawable: int ic_share_qq
 cn.lankao.com.lovelankao.R$drawable: int ic_share_qzone
 cn.lankao.com.lovelankao.R$drawable: int ic_share_wx
@@ -7984,6 +7983,7 @@ cn.lankao.com.lovelankao.R$id: int tv_square_item_nickname
 cn.lankao.com.lovelankao.R$id: int tv_square_item_time
 cn.lankao.com.lovelankao.R$id: int tv_square_item_title
 cn.lankao.com.lovelankao.R$id: int tv_square_item_usertype
+cn.lankao.com.lovelankao.R$id: int tv_square_msg_comment
 cn.lankao.com.lovelankao.R$id: int tv_squarefrm_msg
 cn.lankao.com.lovelankao.R$id: int tv_titlebar_title
 cn.lankao.com.lovelankao.R$id: int tv_top_item_desc
@@ -9489,9 +9489,8 @@ cn.lankao.com.lovelankao.adapter.SquareAdapter$1$1: void done(cn.bmob.v3.excepti
 cn.lankao.com.lovelankao.adapter.SquareAdapter$1$1: void done(java.lang.Object)
 cn.lankao.com.lovelankao.adapter.SquareAdapter$2
 cn.lankao.com.lovelankao.adapter.SquareAdapter$2: cn.lankao.com.lovelankao.model.Square val$square
-cn.lankao.com.lovelankao.adapter.SquareAdapter$2: cn.lankao.com.lovelankao.adapter.SquareAdapter$MyViewHolder val$holder
 cn.lankao.com.lovelankao.adapter.SquareAdapter$2: cn.lankao.com.lovelankao.adapter.SquareAdapter this$0
-cn.lankao.com.lovelankao.adapter.SquareAdapter$2: SquareAdapter$2(cn.lankao.com.lovelankao.adapter.SquareAdapter,cn.lankao.com.lovelankao.model.Square,cn.lankao.com.lovelankao.adapter.SquareAdapter$MyViewHolder)
+cn.lankao.com.lovelankao.adapter.SquareAdapter$2: SquareAdapter$2(cn.lankao.com.lovelankao.adapter.SquareAdapter,cn.lankao.com.lovelankao.model.Square)
 cn.lankao.com.lovelankao.adapter.SquareAdapter$2: void onClick(android.view.View)
 cn.lankao.com.lovelankao.adapter.SquareAdapter$2$1
 cn.lankao.com.lovelankao.adapter.SquareAdapter$2$1: cn.lankao.com.lovelankao.adapter.SquareAdapter$2 this$1

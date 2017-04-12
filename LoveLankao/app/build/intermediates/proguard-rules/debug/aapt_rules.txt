@@ -28,7 +28,7 @@
 # view res/layout/activity_square.xml #generated:34
 # view res/layout/activity_top.xml #generated:27
 # view res/layout/fragment_index.xml #generated:29
-# view res/layout/fragment_main.xml #generated:28
+# view res/layout/fragment_main.xml #generated:29
 # view res/layout/fragment_talknew.xml #generated:27
 -keep class android.support.v4.widget.SwipeRefreshLayout { <init>(...); }
 
@@ -86,7 +86,7 @@
 # view res/layout/activity_user_square_msg.xml #generated:8
 # view res/layout/fragment_index.xml #generated:38
 # view res/layout/fragment_index_header.xml #generated:13
-# view res/layout/fragment_main.xml #generated:37
+# view res/layout/fragment_main.xml #generated:38
 # view res/layout/fragment_talknew.xml #generated:33
 -keep class android.support.v7.widget.RecyclerView { <init>(...); }
 
@@ -193,7 +193,7 @@
 -keep class com.baidu.mapapi.map.MapView { <init>(...); }
 
 # view res/layout/fragment_index.xml #generated:44
-# view res/layout/fragment_main.xml #generated:43
+# view res/layout/fragment_main.xml #generated:44
 -keep class com.bartoszlipinski.recyclerviewheader2.RecyclerViewHeader { <init>(...); }
 
 # view res/layout/activity_advert_msg.xml #generated:41
@@ -211,6 +211,7 @@
 
 # onClick res/layout/activity_comment.xml #generated:36
 # onClick res/layout/activity_square_msg.xml #generated:19
+# onClick res/layout/activity_square_msg.xml #generated:28
 # onClick res/layout/activity_square_msg_header.xml #generated:147
 # onClick res/layout/activity_square_msg_header.xml #generated:177
 # onClick res/layout/activity_square_msg_header.xml #generated:208

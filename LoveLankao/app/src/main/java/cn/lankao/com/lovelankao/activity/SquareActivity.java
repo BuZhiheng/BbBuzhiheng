@@ -122,6 +122,7 @@ public class SquareActivity extends AppCompatActivity {
                 finish();
                 break;
             case R.id.tv_square_comment_writecomment:
+            case R.id.tv_square_msg_comment:
             case R.id.ll_square_item_commenttimes:
                 controller.checkComment();
                 break;

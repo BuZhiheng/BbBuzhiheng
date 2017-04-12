@@ -17,10 +17,11 @@
         <TextView
             android:id="@+id/tv_mainfrm_toall"
             android:layout_gravity="right"
-            android:layout_width="@dimen/common_title_height"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/common_margin"
             android:gravity="center"
-            android:text="全部"
+            android:text="兰考图"
             android:textSize="@dimen/text_common_item_title"
             android:textColor="@color/color_bg"
             />

@@ -26,12 +26,12 @@ public class SquareActivity$$ViewBinder<T extends cn.lankao.com.lovelankao.activ
     target.ivPhoto2 = finder.castView(view, 2131427585, "field 'ivPhoto2'");
     view = finder.findRequiredView(source, 2131427586, "field 'ivPhoto3'");
     target.ivPhoto3 = finder.castView(view, 2131427586, "field 'ivPhoto3'");
-    view = finder.findRequiredView(source, 2131427595, "field 'ivPhoto4'");
-    target.ivPhoto4 = finder.castView(view, 2131427595, "field 'ivPhoto4'");
-    view = finder.findRequiredView(source, 2131427596, "field 'ivPhoto5'");
-    target.ivPhoto5 = finder.castView(view, 2131427596, "field 'ivPhoto5'");
-    view = finder.findRequiredView(source, 2131427597, "field 'ivPhoto6'");
-    target.ivPhoto6 = finder.castView(view, 2131427597, "field 'ivPhoto6'");
+    view = finder.findRequiredView(source, 2131427596, "field 'ivPhoto4'");
+    target.ivPhoto4 = finder.castView(view, 2131427596, "field 'ivPhoto4'");
+    view = finder.findRequiredView(source, 2131427597, "field 'ivPhoto5'");
+    target.ivPhoto5 = finder.castView(view, 2131427597, "field 'ivPhoto5'");
+    view = finder.findRequiredView(source, 2131427598, "field 'ivPhoto6'");
+    target.ivPhoto6 = finder.castView(view, 2131427598, "field 'ivPhoto6'");
     view = finder.findRequiredView(source, 2131427590, "field 'ivLikeTimes'");
     target.ivLikeTimes = finder.castView(view, 2131427590, "field 'ivLikeTimes'");
     view = finder.findRequiredView(source, 2131427588, "field 'tvCommentTimes'");
@@ -44,10 +44,10 @@ public class SquareActivity$$ViewBinder<T extends cn.lankao.com.lovelankao.activ
     target.llLikes = finder.castView(view, 2131427589, "field 'llLikes'");
     view = finder.findRequiredView(source, 2131427587, "field 'llComment'");
     target.llComment = finder.castView(view, 2131427587, "field 'llComment'");
-    view = finder.findRequiredView(source, 2131427593, "field 'llPhoto1'");
-    target.llPhoto1 = finder.castView(view, 2131427593, "field 'llPhoto1'");
-    view = finder.findRequiredView(source, 2131427594, "field 'llPhoto2'");
-    target.llPhoto2 = finder.castView(view, 2131427594, "field 'llPhoto2'");
+    view = finder.findRequiredView(source, 2131427594, "field 'llPhoto1'");
+    target.llPhoto1 = finder.castView(view, 2131427594, "field 'llPhoto1'");
+    view = finder.findRequiredView(source, 2131427595, "field 'llPhoto2'");
+    target.llPhoto2 = finder.castView(view, 2131427595, "field 'llPhoto2'");
   }
 
   @Override public void unbind(T target) {

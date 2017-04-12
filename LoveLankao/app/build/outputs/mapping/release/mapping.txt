@@ -16573,7 +16573,6 @@ cn.lankao.com.lovelankao.R$drawable -> cn.lankao.com.lovelankao.R$drawable:
     int ic_quan_camera -> ic_quan_camera
     int ic_register_code -> ic_register_code
     int ic_register_nickname -> ic_register_nickname
-    int ic_share_bmp -> ic_share_bmp
     int ic_share_qq -> ic_share_qq
     int ic_share_qzone -> ic_share_qzone
     int ic_share_wx -> ic_share_wx
@@ -17018,6 +17017,7 @@ cn.lankao.com.lovelankao.R$id -> cn.lankao.com.lovelankao.R$id:
     int tv_square_item_time -> tv_square_item_time
     int tv_square_item_title -> tv_square_item_title
     int tv_square_item_usertype -> tv_square_item_usertype
+    int tv_square_msg_comment -> tv_square_msg_comment
     int tv_squarefrm_msg -> tv_squarefrm_msg
     int tv_titlebar_title -> tv_titlebar_title
     int tv_top_item_desc -> tv_top_item_desc
@@ -18523,9 +18523,8 @@ cn.lankao.com.lovelankao.adapter.SquareAdapter$1$1 -> cn.lankao.com.lovelankao.a
     void done(java.lang.Object) -> done
 cn.lankao.com.lovelankao.adapter.SquareAdapter$2 -> cn.lankao.com.lovelankao.adapter.SquareAdapter$2:
     cn.lankao.com.lovelankao.model.Square val$square -> val$square
-    cn.lankao.com.lovelankao.adapter.SquareAdapter$MyViewHolder val$holder -> val$holder
     cn.lankao.com.lovelankao.adapter.SquareAdapter this$0 -> this$0
-    void <init>(cn.lankao.com.lovelankao.adapter.SquareAdapter,cn.lankao.com.lovelankao.model.Square,cn.lankao.com.lovelankao.adapter.SquareAdapter$MyViewHolder) -> <init>
+    void <init>(cn.lankao.com.lovelankao.adapter.SquareAdapter,cn.lankao.com.lovelankao.model.Square) -> <init>
     void onClick(android.view.View) -> onClick
 cn.lankao.com.lovelankao.adapter.SquareAdapter$2$1 -> cn.lankao.com.lovelankao.adapter.SquareAdapter$2$1:
     cn.lankao.com.lovelankao.adapter.SquareAdapter$2 this$1 -> this$1
