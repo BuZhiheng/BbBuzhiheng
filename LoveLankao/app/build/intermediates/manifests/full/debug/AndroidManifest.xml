@@ -90,7 +90,7 @@
         <activity android:name="cn.lankao.com.lovelankao.activity.JockActivity" />
         <activity android:name="cn.lankao.com.lovelankao.activity.LKNewsActivity" />
         <activity android:name="cn.lankao.com.lovelankao.activity.LKNewsMsgActivity" />
-        <activity android:name="cn.lankao.com.lovelankao.activity.LKPeopleActivity" />
+        <!-- <activity android:name=".activity.LKPeopleActivity" /> -->
         <activity android:name="cn.lankao.com.lovelankao.activity.LBSActivity" />
         <activity android:name="cn.lankao.com.lovelankao.activity.LoginActivity" />
         <activity
@@ -102,7 +102,7 @@
         <activity android:name="cn.lankao.com.lovelankao.activity.ReadWeixinActivity" />
         <activity android:name="cn.lankao.com.lovelankao.activity.SettingActivity" />
         <activity android:name="cn.lankao.com.lovelankao.activity.SquareActivity" />
-        <activity android:name="cn.lankao.com.lovelankao.activity.SquareMsgActivity" />
+        <!-- <activity android:name=".activity.SquareMsgActivity" /> -->
         <activity android:name="cn.lankao.com.lovelankao.activity.SquareSendActivity" />
         <activity android:name="cn.lankao.com.lovelankao.activity.ShopLocationActivity" />
         <activity android:name="cn.lankao.com.lovelankao.activity.TopActivity" />

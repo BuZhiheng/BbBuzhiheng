@@ -83,7 +83,6 @@
 # view res/layout/activity_read_weixin.xml #generated:32
 # view res/layout/activity_square.xml #generated:39
 # view res/layout/activity_top.xml #generated:32
-# view res/layout/activity_user_square_msg.xml #generated:8
 # view res/layout/fragment_index.xml #generated:38
 # view res/layout/fragment_index_header.xml #generated:13
 # view res/layout/fragment_main.xml #generated:38
@@ -136,9 +135,6 @@
 # view AndroidManifest.xml #generated:92
 -keep class cn.lankao.com.lovelankao.activity.LKNewsMsgActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:93
--keep class cn.lankao.com.lovelankao.activity.LKPeopleActivity { <init>(...); }
-
 # view AndroidManifest.xml #generated:95
 -keep class cn.lankao.com.lovelankao.activity.LoginActivity { <init>(...); }
 
@@ -169,9 +165,6 @@
 # view AndroidManifest.xml #generated:104
 -keep class cn.lankao.com.lovelankao.activity.SquareActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:105
--keep class cn.lankao.com.lovelankao.activity.SquareMsgActivity { <init>(...); }
-
 # view AndroidManifest.xml #generated:106
 -keep class cn.lankao.com.lovelankao.activity.SquareSendActivity { <init>(...); }
 
@@ -188,7 +181,6 @@
 -keep class com.baidu.location.f { <init>(...); }
 
 # view res/layout/activity_lbs.xml #generated:6
-# view res/layout/activity_lk_people.xml #generated:6
 # view res/layout/activity_shop_loc.xml #generated:5
 -keep class com.baidu.mapapi.map.MapView { <init>(...); }
 

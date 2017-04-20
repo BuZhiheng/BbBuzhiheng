@@ -17,7 +17,7 @@ import cn.lankao.com.lovelankao.activity.ChatRoomActivity;
 import cn.lankao.com.lovelankao.activity.CookActivity;
 import cn.lankao.com.lovelankao.activity.JockActivity;
 import cn.lankao.com.lovelankao.activity.LKNewsActivity;
-import cn.lankao.com.lovelankao.activity.LKPeopleActivity;
+//import cn.lankao.com.lovelankao.activity.LKPeopleActivity;
 import cn.lankao.com.lovelankao.activity.ReadWeixinActivity;
 import cn.lankao.com.lovelankao.adapter.IndexAdapter;
 import cn.lankao.com.lovelankao.model.CommonCode;
@@ -116,8 +116,8 @@ public class IndexFragmentController implements SwipeRefreshLayout.OnRefreshList
                 context.startActivity(intentJock);
                 break;
             case R.id.tv_indexfrm_lkpeople:
-                Intent intentPeople = new Intent(context, LKPeopleActivity.class);
-                context.startActivity(intentPeople);
+//                Intent intentPeople = new Intent(context, LKPeopleActivity.class);
+//                context.startActivity(intentPeople);
                 break;
             default:
                 break;

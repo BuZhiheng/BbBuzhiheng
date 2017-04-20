@@ -17,7 +17,7 @@ import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
 import cn.bmob.v3.listener.UpdateListener;
 import cn.lankao.com.lovelankao.R;
-import cn.lankao.com.lovelankao.activity.SquareMsgActivity;
+//import cn.lankao.com.lovelankao.activity.SquareMsgActivity;
 import cn.lankao.com.lovelankao.activity.SquareSendActivity;
 import cn.lankao.com.lovelankao.adapter.SquareAdapter;
 import cn.lankao.com.lovelankao.model.MyUser;
@@ -122,9 +122,9 @@ public class TalkController implements View.OnClickListener, SwipeRefreshLayout.
                     @Override
                     public void done(BmobException e) {
                         if (e == null){
-                            Intent intent = new Intent(context, SquareMsgActivity.class);
-                            context.startActivity(intent);
-                            tvMsg.setVisibility(View.GONE);
+//                            Intent intent = new Intent(context, SquareMsgActivity.class);
+//                            context.startActivity(intent);
+//                            tvMsg.setVisibility(View.GONE);
                         }
                     }
                 });

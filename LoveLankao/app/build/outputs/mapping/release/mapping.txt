@@ -16847,12 +16847,10 @@ cn.lankao.com.lovelankao.R$id -> cn.lankao.com.lovelankao.R$id:
     int ll_square_item_photo -> ll_square_item_photo
     int ll_square_item_photo1 -> ll_square_item_photo1
     int ll_square_item_photo2 -> ll_square_item_photo2
-    int ll_user_msg -> ll_user_msg
     int ll_webview_content -> ll_webview_content
     int loPageTurningPoint -> loPageTurningPoint
     int map_activity_shoploc -> map_activity_shoploc
     int map_lbs_act -> map_lbs_act
-    int map_lbs_people -> map_lbs_people
     int media_actions -> media_actions
     int middle -> middle
     int mini -> mini
@@ -16883,7 +16881,6 @@ cn.lankao.com.lovelankao.R$id -> cn.lankao.com.lovelankao.R$id:
     int rv_square_frm -> rv_square_frm
     int rv_square_room -> rv_square_room
     int rv_top_activity -> rv_top_activity
-    int rv_user_msg -> rv_user_msg
     int screen -> screen
     int scroll -> scroll
     int scrollIndicatorDown -> scrollIndicatorDown
@@ -17008,7 +17005,6 @@ cn.lankao.com.lovelankao.R$id -> cn.lankao.com.lovelankao.R$id:
     int tv_square_comment_time -> tv_square_comment_time
     int tv_square_comment_usertype -> tv_square_comment_usertype
     int tv_square_comment_writecomment -> tv_square_comment_writecomment
-    int tv_square_content -> tv_square_content
     int tv_square_item_clicktimes -> tv_square_item_clicktimes
     int tv_square_item_commenttimes -> tv_square_item_commenttimes
     int tv_square_item_content -> tv_square_item_content
@@ -17081,7 +17077,6 @@ cn.lankao.com.lovelankao.R$layout -> cn.lankao.com.lovelankao.R$layout:
     int activity_jock -> activity_jock
     int activity_jock_item -> activity_jock_item
     int activity_lbs -> activity_lbs
-    int activity_lk_people -> activity_lk_people
     int activity_lknews -> activity_lknews
     int activity_lknews_item -> activity_lknews_item
     int activity_lknews_msg -> activity_lknews_msg
@@ -17104,8 +17099,6 @@ cn.lankao.com.lovelankao.R$layout -> cn.lankao.com.lovelankao.R$layout:
     int activity_square_send -> activity_square_send
     int activity_top -> activity_top
     int activity_top_item -> activity_top_item
-    int activity_user_msg_item -> activity_user_msg_item
-    int activity_user_square_msg -> activity_user_square_msg
     int activity_web_view -> activity_web_view
     int bmob_update_dialog -> bmob_update_dialog
     int design_layout_snackbar -> design_layout_snackbar
@@ -18023,26 +18016,6 @@ cn.lankao.com.lovelankao.activity.LKNewsActivity -> cn.lankao.com.lovelankao.act
 cn.lankao.com.lovelankao.activity.LKNewsMsgActivity -> cn.lankao.com.lovelankao.activity.LKNewsMsgActivity:
     void <init>() -> <init>
     void onCreate(android.os.Bundle) -> onCreate
-cn.lankao.com.lovelankao.activity.LKPeopleActivity -> cn.lankao.com.lovelankao.activity.LKPeopleActivity:
-    com.baidu.mapapi.map.MapView mapView -> mapView
-    com.baidu.mapapi.map.BaiduMap map -> map
-    void <init>() -> <init>
-    void onCreate(android.os.Bundle) -> onCreate
-    void initView() -> initView
-    void setMapMarker(java.util.List) -> setMapMarker
-    void onClick(android.view.View) -> onClick
-    void access$000(cn.lankao.com.lovelankao.activity.LKPeopleActivity,java.util.List) -> access$000
-cn.lankao.com.lovelankao.activity.LKPeopleActivity$$ViewBinder -> cn.lankao.com.lovelankao.activity.LKPeopleActivity$$ViewBinder:
-    void <init>() -> <init>
-    void bind(butterknife.ButterKnife$Finder,cn.lankao.com.lovelankao.activity.LKPeopleActivity,java.lang.Object) -> bind
-    void unbind(cn.lankao.com.lovelankao.activity.LKPeopleActivity) -> unbind
-    void unbind(java.lang.Object) -> unbind
-    void bind(butterknife.ButterKnife$Finder,java.lang.Object,java.lang.Object) -> bind
-cn.lankao.com.lovelankao.activity.LKPeopleActivity$1 -> cn.lankao.com.lovelankao.activity.LKPeopleActivity$1:
-    cn.lankao.com.lovelankao.activity.LKPeopleActivity this$0 -> this$0
-    void <init>(cn.lankao.com.lovelankao.activity.LKPeopleActivity) -> <init>
-    void done(java.util.List,cn.bmob.v3.exception.BmobException) -> done
-    void done(java.lang.Object,java.lang.Object) -> done
 cn.lankao.com.lovelankao.activity.LoginActivity -> cn.lankao.com.lovelankao.activity.LoginActivity:
     void <init>() -> <init>
     void onCreate(android.os.Bundle) -> onCreate
@@ -18181,25 +18154,6 @@ cn.lankao.com.lovelankao.activity.SquareActivity$CommentHolder -> cn.lankao.com.
     android.widget.TextView tvUserType -> tvUserType
     cn.lankao.com.lovelankao.activity.SquareActivity this$0 -> this$0
     void <init>(cn.lankao.com.lovelankao.activity.SquareActivity,android.view.View) -> <init>
-cn.lankao.com.lovelankao.activity.SquareMsgActivity -> cn.lankao.com.lovelankao.activity.SquareMsgActivity:
-    android.support.v7.widget.RecyclerView rvMsg -> rvMsg
-    cn.lankao.com.lovelankao.adapter.UserMsgAdapter adapter -> adapter
-    void <init>() -> <init>
-    void onCreate(android.os.Bundle) -> onCreate
-    void initView() -> initView
-    void onClick(android.view.View) -> onClick
-    cn.lankao.com.lovelankao.adapter.UserMsgAdapter access$000(cn.lankao.com.lovelankao.activity.SquareMsgActivity) -> access$000
-cn.lankao.com.lovelankao.activity.SquareMsgActivity$$ViewBinder -> cn.lankao.com.lovelankao.activity.SquareMsgActivity$$ViewBinder:
-    void <init>() -> <init>
-    void bind(butterknife.ButterKnife$Finder,cn.lankao.com.lovelankao.activity.SquareMsgActivity,java.lang.Object) -> bind
-    void unbind(cn.lankao.com.lovelankao.activity.SquareMsgActivity) -> unbind
-    void unbind(java.lang.Object) -> unbind
-    void bind(butterknife.ButterKnife$Finder,java.lang.Object,java.lang.Object) -> bind
-cn.lankao.com.lovelankao.activity.SquareMsgActivity$1 -> cn.lankao.com.lovelankao.activity.SquareMsgActivity$1:
-    cn.lankao.com.lovelankao.activity.SquareMsgActivity this$0 -> this$0
-    void <init>(cn.lankao.com.lovelankao.activity.SquareMsgActivity) -> <init>
-    void done(java.util.List,cn.bmob.v3.exception.BmobException) -> done
-    void done(java.lang.Object,java.lang.Object) -> done
 cn.lankao.com.lovelankao.activity.SquareSendActivity -> cn.lankao.com.lovelankao.activity.SquareSendActivity:
     cn.lankao.com.lovelankao.viewcontroller.SquareSendActivityController controller -> controller
     void <init>() -> <init>
@@ -18597,36 +18551,6 @@ cn.lankao.com.lovelankao.adapter.TopAdapter$MyViewHolder -> cn.lankao.com.lovela
     android.widget.TextView tvFrom -> tvFrom
     cn.lankao.com.lovelankao.adapter.TopAdapter this$0 -> this$0
     void <init>(cn.lankao.com.lovelankao.adapter.TopAdapter,android.view.View) -> <init>
-cn.lankao.com.lovelankao.adapter.UserMsgAdapter -> cn.lankao.com.lovelankao.adapter.UserMsgAdapter:
-    android.content.Context context -> context
-    java.util.List data -> data
-    void <init>(android.content.Context) -> <init>
-    void addData(cn.lankao.com.lovelankao.model.Comment) -> addData
-    void setData(java.util.List) -> setData
-    cn.lankao.com.lovelankao.adapter.UserMsgAdapter$MyViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> onCreateViewHolder
-    int getItemCount() -> getItemCount
-    void onBindViewHolder(cn.lankao.com.lovelankao.adapter.UserMsgAdapter$MyViewHolder,int) -> onBindViewHolder
-    void onBindViewHolder(android.support.v7.widget.RecyclerView$ViewHolder,int) -> onBindViewHolder
-    android.support.v7.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> onCreateViewHolder
-    android.content.Context access$000(cn.lankao.com.lovelankao.adapter.UserMsgAdapter) -> access$000
-    void <clinit>() -> <clinit>
-cn.lankao.com.lovelankao.adapter.UserMsgAdapter$1 -> cn.lankao.com.lovelankao.adapter.UserMsgAdapter$1:
-    cn.lankao.com.lovelankao.model.Comment val$comment -> val$comment
-    cn.lankao.com.lovelankao.adapter.UserMsgAdapter this$0 -> this$0
-    void <init>(cn.lankao.com.lovelankao.adapter.UserMsgAdapter,cn.lankao.com.lovelankao.model.Comment) -> <init>
-    void onClick(android.view.View) -> onClick
-cn.lankao.com.lovelankao.adapter.UserMsgAdapter$MyViewHolder -> cn.lankao.com.lovelankao.adapter.UserMsgAdapter$MyViewHolder:
-    android.widget.LinearLayout ll -> ll
-    android.widget.ImageView ivPhoto -> ivPhoto
-    android.widget.TextView tvToReComment -> tvToReComment
-    android.widget.TextView tvNickname -> tvNickname
-    android.widget.TextView tvTime -> tvTime
-    android.widget.TextView tvReComment -> tvReComment
-    android.widget.TextView tvComment -> tvComment
-    android.widget.TextView tvUserType -> tvUserType
-    android.widget.TextView tvSquareContent -> tvSquareContent
-    cn.lankao.com.lovelankao.adapter.UserMsgAdapter this$0 -> this$0
-    void <init>(cn.lankao.com.lovelankao.adapter.UserMsgAdapter,android.view.View) -> <init>
 cn.lankao.com.lovelankao.fragment.IndexFragment -> cn.lankao.com.lovelankao.fragment.IndexFragment:
     android.view.View view -> view
     void <init>() -> <init>
@@ -20077,8 +20001,6 @@ cn.lankao.com.lovelankao.viewcontroller.TalkController -> cn.lankao.com.lovelank
     void access$300(cn.lankao.com.lovelankao.viewcontroller.TalkController) -> access$300
     cn.lankao.com.lovelankao.adapter.SquareAdapter access$400(cn.lankao.com.lovelankao.viewcontroller.TalkController) -> access$400
     android.support.v4.widget.SwipeRefreshLayout access$500(cn.lankao.com.lovelankao.viewcontroller.TalkController) -> access$500
-    android.content.Context access$600(cn.lankao.com.lovelankao.viewcontroller.TalkController) -> access$600
-    android.widget.TextView access$700(cn.lankao.com.lovelankao.viewcontroller.TalkController) -> access$700
 cn.lankao.com.lovelankao.viewcontroller.TalkController$1 -> cn.lankao.com.lovelankao.viewcontroller.TalkController$1:
     cn.lankao.com.lovelankao.viewcontroller.TalkController this$0 -> this$0
     void <init>(cn.lankao.com.lovelankao.viewcontroller.TalkController) -> <init>

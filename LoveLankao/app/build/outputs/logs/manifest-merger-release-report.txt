@@ -1,329 +1,321 @@
 -- Merging decision tree log ---
 manifest
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:2:1-99:12
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:2:1-99:12
 	package
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:3:5-39
-		INJECTED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml
-		INJECTED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:3:5-39
+		INJECTED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml
+		INJECTED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml
-		INJECTED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml
+		INJECTED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml
+		INJECTED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:2:11-69
 	android:versionCode
-		INJECTED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml
-		INJECTED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml
+		INJECTED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml
+		INJECTED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:4:5-76
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:4:5-76
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:4:22-73
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:4:22-73
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:5:5-79
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:5:5-79
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:5:22-76
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:5:22-76
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:6:5-78
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:6:5-78
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:6:22-76
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:6:22-76
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:7:5-80
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:7:5-80
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:7:22-78
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:7:22-78
 uses-permission#android.permission.BLUETOOTH
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:8:5-67
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:8:5-67
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:8:22-65
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:8:22-65
 uses-permission#android.permission.BLUETOOTH_ADMIN
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:9:5-73
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:9:5-73
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:9:22-71
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:9:22-71
 uses-permission#android.permission.CALL_PHONE
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:10:5-69
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:10:5-69
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:10:22-66
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:10:22-66
 uses-permission#android.permission.CAMERA
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:11:5-64
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:11:5-64
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:11:22-62
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:11:22-62
 uses-permission#android.permission.CHANGE_WIFI_STATE
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:12:5-75
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:12:5-75
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:12:22-73
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:12:22-73
 uses-permission#android.permission.INTERNET
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:13:5-67
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:13:5-67
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:13:22-64
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:13:22-64
 uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:14:5-83
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:14:5-83
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:14:22-81
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:14:22-81
 uses-permission#android.permission.READ_LOGS
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:15:5-68
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:15:5-68
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:15:22-65
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:15:22-65
 uses-permission#android.permission.READ_PHONE_STATE
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:16:5-75
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:16:5-75
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:16:22-72
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:16:22-72
 uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:17:5-81
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:17:5-81
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:17:22-78
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:17:22-78
 uses-permission#android.permission.SYSTEM_ALERT_WINDOW
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:18:5-77
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:18:5-77
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:18:22-75
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:18:22-75
 uses-permission#android.permission.VIBRATE
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:19:5-66
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:19:5-66
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:19:22-63
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:19:22-63
 uses-permission#android.permission.WAKE_LOCK
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:20:5-68
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:20:5-68
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:20:22-65
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:20:22-65
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:21:5-81
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:21:5-81
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:21:22-78
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:21:22-78
 uses-permission#android.permission.WRITE_SETTINGS
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:22:5-73
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:22:5-73
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:22:22-70
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:22:22-70
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:23:5-80
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:23:5-80
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:23:22-77
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:23:22-77
 application
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:25:5-94:19
-MERGED from [com.android.support:appcompat-v7:23.1.1] E:\GitSpace\LoveLankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.1] E:\GitSpace\LoveLankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.1] E:\GitSpace\LoveLankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v13:23.1.1] E:\GitSpace\LoveLankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\support-v13\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.1] E:\GitSpace\LoveLankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:design:23.1.1] E:\GitSpace\LoveLankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\design\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:appcompat-v7:23.1.1] E:\GitSpace\LoveLankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.1] E:\GitSpace\LoveLankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.1] E:\GitSpace\LoveLankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.1] E:\GitSpace\LoveLankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.bm.photoview:library:1.4.1] E:\GitSpace\LoveLankao\LoveLankao\app\build\intermediates\exploded-aar\com.bm.photoview\library\1.4.1\AndroidManifest.xml:11:5-12:19
-MERGED from [cn.bmob.android:bmob-sdk:3.5.3] E:\GitSpace\LoveLankao\LoveLankao\app\build\intermediates\exploded-aar\cn.bmob.android\bmob-sdk\3.5.3\AndroidManifest.xml:11:5-14:19
-MERGED from [org.xutils:xutils:3.3.26] E:\GitSpace\LoveLankao\LoveLankao\app\build\intermediates\exploded-aar\org.xutils\xutils\3.3.26\AndroidManifest.xml:12:5-20
-MERGED from [com.android.support:appcompat-v7:23.1.1] E:\GitSpace\LoveLankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.1] E:\GitSpace\LoveLankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:25:5-94:19
+MERGED from [com.android.support:appcompat-v7:23.1.1] D:\git\lankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.1.1] D:\git\lankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.1.1] D:\git\lankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v13:23.1.1] D:\git\lankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\support-v13\23.1.1\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.1.1] D:\git\lankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:23.1.1] D:\git\lankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\design\23.1.1\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:23.1.1] D:\git\lankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.1.1] D:\git\lankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.1.1] D:\git\lankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.1.1] D:\git\lankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
+MERGED from [com.bm.photoview:library:1.4.1] D:\git\lankao\LoveLankao\app\build\intermediates\exploded-aar\com.bm.photoview\library\1.4.1\AndroidManifest.xml:11:5-12:19
+MERGED from [cn.bmob.android:bmob-sdk:3.5.3] D:\git\lankao\LoveLankao\app\build\intermediates\exploded-aar\cn.bmob.android\bmob-sdk\3.5.3\AndroidManifest.xml:11:5-14:19
+MERGED from [org.xutils:xutils:3.3.26] D:\git\lankao\LoveLankao\app\build\intermediates\exploded-aar\org.xutils\xutils\3.3.26\AndroidManifest.xml:12:5-20
+MERGED from [com.android.support:appcompat-v7:23.1.1] D:\git\lankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.1.1] D:\git\lankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
 	android:label
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:29:9-41
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:29:9-41
 	android:supportsRtl
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:30:9-35
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:30:9-35
 	android:allowBackup
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:27:9-35
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:27:9-35
 	android:icon
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:28:9-45
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:28:9-45
 	android:theme
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:31:9-40
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:31:9-40
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:26:9-37
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:26:9-37
 activity#cn.lankao.com.lovelankao.activity.SplashActivity
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:32:9-38:20
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:32:9-38:20
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:32:19-58
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:32:19-58
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:34:13-37:29
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:34:13-37:29
 action#android.intent.action.MAIN
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:35:17-69
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:35:17-69
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:35:25-66
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:35:25-66
 category#android.intent.category.LAUNCHER
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:36:17-77
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:36:17-77
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:36:27-74
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:36:27-74
 meta-data#com.baidu.lbsapi.API_KEY
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:40:9-42:64
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:40:9-42:64
 	android:value
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:42:13-61
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:42:13-61
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:41:13-52
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:41:13-52
 service#com.baidu.location.f
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:43:9-104
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:43:9-104
 	android:enabled
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:43:54-76
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:43:54-76
 	android:process
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:43:77-102
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:43:77-102
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:43:18-53
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:43:18-53
 activity#cn.bmob.v3.update.UpdateDialogActivity
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:45:9-48:20
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:45:9-48:20
 	android:theme
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:47:13-72
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:47:13-72
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:46:13-66
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:46:13-66
 activity#com.tencent.tauth.AuthActivity
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:50:9-60:20
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:50:9-60:20
 	android:launchMode
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:53:13-44
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:53:13-44
 	android:noHistory
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:52:13-37
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:52:13-37
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:51:13-58
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:51:13-58
 intent-filter#android.intent.action.VIEW+android.intent.category.BROWSABLE+android.intent.category.DEFAULT
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:54:13-59:29
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:54:13-59:29
 action#android.intent.action.VIEW
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:55:17-69
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:55:17-69
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:55:25-66
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:55:25-66
 category#android.intent.category.DEFAULT
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:56:17-76
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:56:17-76
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:56:27-73
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:56:27-73
 category#android.intent.category.BROWSABLE
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:57:17-78
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:57:17-78
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:57:27-75
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:57:27-75
 data
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:58:17-53
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:58:17-53
 	android:scheme
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:58:23-50
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:58:23-50
 activity#com.tencent.connect.common.AssistActivity
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:61:9-64:15
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:61:9-64:15
 	android:configChanges
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:63:13-74
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:63:13-74
 	android:theme
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:62:13-72
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:62:13-72
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:61:19-75
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:61:19-75
 activity#cn.lankao.com.lovelankao.activity.AdvertMsgActivity
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:66:9-64
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:66:9-64
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:66:19-61
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:66:19-61
 activity#cn.lankao.com.lovelankao.activity.AdvertDetailActivity
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:67:9-67
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:67:9-67
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:67:19-64
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:67:19-64
 activity#cn.lankao.com.lovelankao.activity.AllBusinessActivity
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:68:9-66
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:68:9-66
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:68:19-63
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:68:19-63
 activity#cn.lankao.com.lovelankao.activity.ChatRoomActivity
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:69:9-63
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:69:9-63
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:69:19-60
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:69:19-60
 activity#cn.lankao.com.lovelankao.activity.CookActivity
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:70:9-59
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:70:9-59
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:70:19-56
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:70:19-56
 activity#cn.lankao.com.lovelankao.activity.CommentActivity
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:71:9-62
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:71:9-62
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:71:19-59
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:71:19-59
 activity#cn.lankao.com.lovelankao.activity.JockActivity
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:72:9-59
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:72:9-59
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:72:19-56
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:72:19-56
 activity#cn.lankao.com.lovelankao.activity.LKNewsActivity
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:73:9-61
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:73:9-61
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:73:19-58
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:73:19-58
 activity#cn.lankao.com.lovelankao.activity.LKNewsMsgActivity
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:74:9-64
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:74:9-64
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:74:19-61
-activity#cn.lankao.com.lovelankao.activity.LKPeopleActivity
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:75:9-63
-	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:75:19-60
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:74:19-61
 activity#cn.lankao.com.lovelankao.activity.LBSActivity
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:76:9-58
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:76:9-58
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:76:19-55
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:76:19-55
 activity#cn.lankao.com.lovelankao.activity.LoginActivity
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:77:9-60
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:77:9-60
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:77:19-57
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:77:19-57
 activity#cn.lankao.com.lovelankao.activity.MainActivity
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:78:9-80:15
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:78:9-80:15
 	android:launchMode
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:79:13-44
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:79:13-44
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:78:19-56
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:78:19-56
 activity#cn.lankao.com.lovelankao.activity.PicShowActivity
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:81:9-62
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:81:9-62
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:81:19-59
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:81:19-59
 activity#cn.lankao.com.lovelankao.activity.PhotoViewPagerActivity
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:82:9-69
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:82:9-69
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:82:19-66
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:82:19-66
 activity#cn.lankao.com.lovelankao.activity.RegisterActivity
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:83:9-63
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:83:9-63
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:83:19-60
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:83:19-60
 activity#cn.lankao.com.lovelankao.activity.ReadWeixinActivity
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:84:9-65
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:84:9-65
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:84:19-62
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:84:19-62
 activity#cn.lankao.com.lovelankao.activity.SettingActivity
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:85:9-62
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:85:9-62
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:85:19-59
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:85:19-59
 activity#cn.lankao.com.lovelankao.activity.SquareActivity
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:86:9-61
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:86:9-61
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:86:19-58
-activity#cn.lankao.com.lovelankao.activity.SquareMsgActivity
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:87:9-64
-	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:87:19-61
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:86:19-58
 activity#cn.lankao.com.lovelankao.activity.SquareSendActivity
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:88:9-65
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:88:9-65
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:88:19-62
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:88:19-62
 activity#cn.lankao.com.lovelankao.activity.ShopLocationActivity
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:89:9-67
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:89:9-67
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:89:19-64
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:89:19-64
 activity#cn.lankao.com.lovelankao.activity.TopActivity
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:90:9-58
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:90:9-58
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:90:19-55
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:90:19-55
 activity#cn.lankao.com.lovelankao.activity.WebViewActivity
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:91:9-62
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:91:9-62
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:91:19-59
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:91:19-59
 activity#cn.lankao.com.lovelankao.wxapi.WXEntryActivity
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:92:9-93:38
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:92:9-93:38
 	android:exported
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:93:13-36
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:93:13-36
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:92:19-56
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:92:19-56
 permission#getui.permission.GetuiService.cn.lankao.com.lovelankao
-ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:95:5-98:18
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:95:5-98:18
 	android:protectionLevel
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:97:9-41
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:97:9-41
 	android:name
-		ADDED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml:96:9-78
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:96:9-78
 uses-sdk
-INJECTED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support:appcompat-v7:23.1.1] E:\GitSpace\LoveLankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.1.1] E:\GitSpace\LoveLankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.1.1] E:\GitSpace\LoveLankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v13:23.1.1] E:\GitSpace\LoveLankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\support-v13\23.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:23.1.1] E:\GitSpace\LoveLankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:design:23.1.1] E:\GitSpace\LoveLankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\design\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:appcompat-v7:23.1.1] E:\GitSpace\LoveLankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.1.1] E:\GitSpace\LoveLankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:recyclerview-v7:23.1.1] E:\GitSpace\LoveLankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.1.1] E:\GitSpace\LoveLankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.1.1] E:\GitSpace\LoveLankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.bm.photoview:library:1.4.1] E:\GitSpace\LoveLankao\LoveLankao\app\build\intermediates\exploded-aar\com.bm.photoview\library\1.4.1\AndroidManifest.xml:7:5-9:41
-MERGED from [cn.bmob.android:bmob-sdk:3.5.3] E:\GitSpace\LoveLankao\LoveLankao\app\build\intermediates\exploded-aar\cn.bmob.android\bmob-sdk\3.5.3\AndroidManifest.xml:7:5-9:41
-MERGED from [org.xutils:xutils:3.3.26] E:\GitSpace\LoveLankao\LoveLankao\app\build\intermediates\exploded-aar\org.xutils\xutils\3.3.26\AndroidManifest.xml:8:5-10:41
-MERGED from [com.bartoszlipinski:recyclerviewheader2:2.0.1] E:\GitSpace\LoveLankao\LoveLankao\app\build\intermediates\exploded-aar\com.bartoszlipinski\recyclerviewheader2\2.0.1\AndroidManifest.xml:7:5-9:41
-MERGED from [com.oguzdev:CircularFloatingActionMenu:1.0.2] E:\GitSpace\LoveLankao\LoveLankao\app\build\intermediates\exploded-aar\com.oguzdev\CircularFloatingActionMenu\1.0.2\AndroidManifest.xml:7:5-9:41
-MERGED from [com.bigkoo:convenientbanner:2.0.5] E:\GitSpace\LoveLankao\LoveLankao\app\build\intermediates\exploded-aar\com.bigkoo\convenientbanner\2.0.5\AndroidManifest.xml:7:5-44
-MERGED from [com.android.support:appcompat-v7:23.1.1] E:\GitSpace\LoveLankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.1.1] E:\GitSpace\LoveLankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
+INJECTED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support:appcompat-v7:23.1.1] D:\git\lankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.1.1] D:\git\lankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.1.1] D:\git\lankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v13:23.1.1] D:\git\lankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\support-v13\23.1.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:23.1.1] D:\git\lankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:design:23.1.1] D:\git\lankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\design\23.1.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:23.1.1] D:\git\lankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.1.1] D:\git\lankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:23.1.1] D:\git\lankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.1.1] D:\git\lankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.1.1] D:\git\lankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
+MERGED from [com.bm.photoview:library:1.4.1] D:\git\lankao\LoveLankao\app\build\intermediates\exploded-aar\com.bm.photoview\library\1.4.1\AndroidManifest.xml:7:5-9:41
+MERGED from [cn.bmob.android:bmob-sdk:3.5.3] D:\git\lankao\LoveLankao\app\build\intermediates\exploded-aar\cn.bmob.android\bmob-sdk\3.5.3\AndroidManifest.xml:7:5-9:41
+MERGED from [org.xutils:xutils:3.3.26] D:\git\lankao\LoveLankao\app\build\intermediates\exploded-aar\org.xutils\xutils\3.3.26\AndroidManifest.xml:8:5-10:41
+MERGED from [com.bartoszlipinski:recyclerviewheader2:2.0.1] D:\git\lankao\LoveLankao\app\build\intermediates\exploded-aar\com.bartoszlipinski\recyclerviewheader2\2.0.1\AndroidManifest.xml:7:5-9:41
+MERGED from [com.oguzdev:CircularFloatingActionMenu:1.0.2] D:\git\lankao\LoveLankao\app\build\intermediates\exploded-aar\com.oguzdev\CircularFloatingActionMenu\1.0.2\AndroidManifest.xml:7:5-9:41
+MERGED from [com.bigkoo:convenientbanner:2.0.5] D:\git\lankao\LoveLankao\app\build\intermediates\exploded-aar\com.bigkoo\convenientbanner\2.0.5\AndroidManifest.xml:7:5-44
+MERGED from [com.android.support:appcompat-v7:23.1.1] D:\git\lankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.1.1] D:\git\lankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
 	android:targetSdkVersion
-		INJECTED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml
-		INJECTED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml
+		INJECTED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml
+		INJECTED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml
-		INJECTED from E:\GitSpace\LoveLankao\LoveLankao\app\src\main\AndroidManifest.xml
+		INJECTED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml
+		INJECTED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml
