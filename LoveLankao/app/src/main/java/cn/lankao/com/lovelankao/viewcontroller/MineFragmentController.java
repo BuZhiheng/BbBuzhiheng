@@ -16,6 +16,8 @@ import cn.lankao.com.lovelankao.R;
 import cn.lankao.com.lovelankao.activity.AdvertDetailActivity;
 import cn.lankao.com.lovelankao.activity.LoginActivity;
 import cn.lankao.com.lovelankao.activity.SettingActivity;
+import cn.lankao.com.lovelankao.activity.SquareMsgActivity;
+import cn.lankao.com.lovelankao.activity.WZCityActivity;
 import cn.lankao.com.lovelankao.activity.WebViewActivity;
 import cn.lankao.com.lovelankao.model.MyUser;
 import cn.lankao.com.lovelankao.utils.BitmapUtil;
@@ -77,7 +79,8 @@ public class MineFragmentController implements View.OnClickListener {
         view.findViewById(R.id.fl_minefrm_mypartner).setOnClickListener(this);
         view.findViewById(R.id.fl_minefrm_aboutus).setOnClickListener(this);
         view.findViewById(R.id.fl_minefrm_setting).setOnClickListener(this);
-
+        view.findViewById(R.id.fl_minefrm_msg).setOnClickListener(this);
+        view.findViewById(R.id.fl_minefrm_wz).setOnClickListener(this);
         tvNickName = (TextView) view.findViewById(R.id.tv_minefrm_nickname);
         tvPhone = (TextView) view.findViewById(R.id.tv_minefrm_phone);
         tvJifen = (TextView) view.findViewById(R.id.tv_minefrm_jifen);
@@ -94,6 +97,15 @@ public class MineFragmentController implements View.OnClickListener {
                 } else {
                     Intent intent = new Intent(context, SettingActivity.class);
                     context.startActivity(intent);
+                }
+                break;
+            case R.id.fl_minefrm_msg:
+                if (PrefUtil.getString(CommonCode.SP_USER_USERMOBILE, null) == null) {
+                    Intent intent = new Intent(context, LoginActivity.class);
+                    context.startActivity(intent);
+                } else {
+                    Intent intentMsg = new Intent(context, SquareMsgActivity.class);
+                    context.startActivity(intentMsg);
                 }
                 break;
             case R.id.fl_minefrm_needpartner:
@@ -116,6 +128,10 @@ public class MineFragmentController implements View.OnClickListener {
                 }
                 Intent intent = new Intent(context, SettingActivity.class);
                 context.startActivity(intent);
+                break;
+            case R.id.fl_minefrm_wz:
+                Intent intentWz = new Intent(context, WZCityActivity.class);
+                context.startActivity(intentWz);
                 break;
             default:
                 break;

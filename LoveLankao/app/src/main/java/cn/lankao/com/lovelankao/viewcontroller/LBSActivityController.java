@@ -1,13 +1,10 @@
 package cn.lankao.com.lovelankao.viewcontroller;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import com.baidu.mapapi.map.BaiduMap;
 import com.baidu.mapapi.map.BitmapDescriptor;
 import com.baidu.mapapi.map.BitmapDescriptorFactory;
@@ -23,10 +20,8 @@ import com.baidu.mapapi.model.LatLng;
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton;
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionMenu;
 import com.oguzdev.circularfloatingactionmenu.library.SubActionButton;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
@@ -36,7 +31,6 @@ import cn.lankao.com.lovelankao.activity.LBSActivity;
 import cn.lankao.com.lovelankao.model.AdvertNormal;
 import cn.lankao.com.lovelankao.model.CommonCode;
 import cn.lankao.com.lovelankao.utils.ToastUtil;
-
 /**
  * Created by BuZhiheng on 2016/4/1.
  */
@@ -174,7 +168,6 @@ public class LBSActivityController implements View.OnClickListener {
             }
         });
     }
-
     @Override
     public void onClick(View v) {
         if (v == btn1) {

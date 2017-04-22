@@ -315,7 +315,7 @@
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="app_keystore_alias">lk</string>
     <string name="app_name">掌上兰考</string>
-    <string name="app_test"> </string>
+    <string name="app_test"> 掌上兰考掌上兰考</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="bmob_common_action_cancel">取消</string>
     <string name="bmob_common_action_continue">继续</string>

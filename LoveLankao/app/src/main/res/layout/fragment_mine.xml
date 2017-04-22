@@ -95,6 +95,68 @@
             </FrameLayout>
             <include layout="@layout/include_slid_img_marginleft"/>
             <FrameLayout
+                android:id="@+id/fl_minefrm_msg"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/common_ll_bg"
+                android:clickable="true"
+                >
+                <ImageView
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="@dimen/common_margin"
+                    android:src="@drawable/ic_chatroom_newmsg"
+                    />
+                <TextView
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:text="我的消息"
+                    android:textSize="@dimen/text_common_item_title"
+                    android:textColor="@color/color_black_text"
+                    />
+                <ImageView
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="@dimen/common_margin"
+                    android:src="@drawable/ic_common_right_green"/>
+            </FrameLayout>
+            <include layout="@layout/include_slid_img_marginleft"/>
+            <FrameLayout
+                android:id="@+id/fl_minefrm_wz"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/common_ll_bg"
+                android:clickable="true"
+                >
+                <ImageView
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="@dimen/common_margin"
+                    android:src="@drawable/ic_minefrm_wz"
+                    />
+                <TextView
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:text="违章查询"
+                    android:textSize="@dimen/text_common_item_title"
+                    android:textColor="@color/color_black_text"
+                    />
+                <ImageView
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="@dimen/common_margin"
+                    android:src="@drawable/ic_common_right_green"/>
+            </FrameLayout>
+            <include layout="@layout/include_slid_img_height10"/>
+            <FrameLayout
                 android:id="@+id/fl_minefrm_needpartner"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -124,7 +186,7 @@
                     android:layout_marginRight="@dimen/common_margin"
                     android:src="@drawable/ic_common_right_green"/>
             </FrameLayout>
-            <include layout="@layout/include_slid_img_height10"/>
+            <include layout="@layout/include_slid_img_marginleft"/>
             <FrameLayout
                 android:id="@+id/fl_minefrm_tuijian"
                 android:layout_width="match_parent"

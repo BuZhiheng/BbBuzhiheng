@@ -8,6 +8,7 @@ import com.google.gson.JsonElement;
 public class JuheApiResult {
     private String reason;
     private Integer error_code;
+    private String resultcode;
     private JsonElement result;
     private JsonElement tngou;//天狗Top新闻
 
@@ -42,5 +43,19 @@ public class JuheApiResult {
 
     public void setError_code(Integer error_code) {
         this.error_code = error_code;
+    }
+
+    public String getResultcode() {
+        return resultcode;
+    }
+
+    public void setResultcode(String resultcode) {
+        this.resultcode = resultcode;
+    }
+    public boolean success(){
+        if ("200".equals(resultcode)){
+            return true;
+        }
+        return false;
     }
 }
