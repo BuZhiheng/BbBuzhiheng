@@ -90,6 +90,7 @@
         <activity android:name=".activity.TopActivity" />
         <activity android:name=".activity.WebViewActivity" />
         <activity android:name=".activity.WZCityActivity" />
+        <activity android:name=".activity.WZActivity" />
         <activity android:name=".wxapi.WXEntryActivity"
             android:exported="true"/>
     </application>

@@ -192,6 +192,10 @@
         "source": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\layout\\design_navigation_menu.xml"
     },
     {
+        "merged": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_wz_msg_item.xml",
+        "source": "D:\\git\\lankao\\LoveLankao\\app\\src\\main\\res\\layout\\activity_wz_msg_item.xml"
+    },
+    {
         "merged": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_square.xml",
         "source": "D:\\git\\lankao\\LoveLankao\\app\\src\\main\\res\\layout\\activity_square.xml"
     },
@@ -246,6 +250,10 @@
     {
         "merged": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_chatroom_items.xml",
         "source": "D:\\git\\lankao\\LoveLankao\\app\\src\\main\\res\\layout\\activity_chatroom_items.xml"
+    },
+    {
+        "merged": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_wz_msg.xml",
+        "source": "D:\\git\\lankao\\LoveLankao\\app\\src\\main\\res\\layout\\activity_wz_msg.xml"
     },
     {
         "merged": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",

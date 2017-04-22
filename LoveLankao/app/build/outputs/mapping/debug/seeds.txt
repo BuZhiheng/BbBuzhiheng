@@ -7604,6 +7604,7 @@ cn.lankao.com.lovelankao.R$id: int btn_square_send
 cn.lankao.com.lovelankao.R$id: int btn_square_send_camera
 cn.lankao.com.lovelankao.R$id: int btn_square_send_cancel
 cn.lankao.com.lovelankao.R$id: int btn_square_send_photo
+cn.lankao.com.lovelankao.R$id: int btn_wz_sure
 cn.lankao.com.lovelankao.R$id: int buttonPanel
 cn.lankao.com.lovelankao.R$id: int cancel_action
 cn.lankao.com.lovelankao.R$id: int cbLoopViewPager
@@ -7642,6 +7643,9 @@ cn.lankao.com.lovelankao.R$id: int et_register_password_sure
 cn.lankao.com.lovelankao.R$id: int et_register_username
 cn.lankao.com.lovelankao.R$id: int et_square_send_content
 cn.lankao.com.lovelankao.R$id: int et_square_send_title
+cn.lankao.com.lovelankao.R$id: int et_wz_class
+cn.lankao.com.lovelankao.R$id: int et_wz_engine
+cn.lankao.com.lovelankao.R$id: int et_wz_no
 cn.lankao.com.lovelankao.R$id: int exitUntilCollapsed
 cn.lankao.com.lovelankao.R$id: int expand_activities_button
 cn.lankao.com.lovelankao.R$id: int expanded_menu
@@ -7675,6 +7679,8 @@ cn.lankao.com.lovelankao.R$id: int fl_talkfrm_read
 cn.lankao.com.lovelankao.R$id: int fl_talkfrm_square
 cn.lankao.com.lovelankao.R$id: int fl_talkfrm_top
 cn.lankao.com.lovelankao.R$id: int fl_top_content
+cn.lankao.com.lovelankao.R$id: int fl_wz_class
+cn.lankao.com.lovelankao.R$id: int fl_wz_engine
 cn.lankao.com.lovelankao.R$id: int getui_big_bigtext_defaultView
 cn.lankao.com.lovelankao.R$id: int getui_big_bigview_defaultView
 cn.lankao.com.lovelankao.R$id: int getui_big_defaultView
@@ -7855,6 +7861,7 @@ cn.lankao.com.lovelankao.R$id: int rv_square_msg
 cn.lankao.com.lovelankao.R$id: int rv_square_room
 cn.lankao.com.lovelankao.R$id: int rv_top_activity
 cn.lankao.com.lovelankao.R$id: int rv_wz_city
+cn.lankao.com.lovelankao.R$id: int rv_wz_msg
 cn.lankao.com.lovelankao.R$id: int screen
 cn.lankao.com.lovelankao.R$id: int scroll
 cn.lankao.com.lovelankao.R$id: int scrollIndicatorDown
@@ -7996,6 +8003,12 @@ cn.lankao.com.lovelankao.R$id: int tv_top_item_from
 cn.lankao.com.lovelankao.R$id: int tv_top_item_title
 cn.lankao.com.lovelankao.R$id: int tv_webview_title
 cn.lankao.com.lovelankao.R$id: int tv_wz_city
+cn.lankao.com.lovelankao.R$id: int tv_wz_msg_act
+cn.lankao.com.lovelankao.R$id: int tv_wz_msg_area
+cn.lankao.com.lovelankao.R$id: int tv_wz_msg_fen
+cn.lankao.com.lovelankao.R$id: int tv_wz_msg_handled
+cn.lankao.com.lovelankao.R$id: int tv_wz_msg_money
+cn.lankao.com.lovelankao.R$id: int tv_wz_msg_time
 cn.lankao.com.lovelankao.R$id: int up
 cn.lankao.com.lovelankao.R$id: int useLogo
 cn.lankao.com.lovelankao.R$id: int view_offset_helper
@@ -8081,6 +8094,8 @@ cn.lankao.com.lovelankao.R$layout: int activity_top_item
 cn.lankao.com.lovelankao.R$layout: int activity_web_view
 cn.lankao.com.lovelankao.R$layout: int activity_wz_city
 cn.lankao.com.lovelankao.R$layout: int activity_wz_city_item
+cn.lankao.com.lovelankao.R$layout: int activity_wz_msg
+cn.lankao.com.lovelankao.R$layout: int activity_wz_msg_item
 cn.lankao.com.lovelankao.R$layout: int bmob_update_dialog
 cn.lankao.com.lovelankao.R$layout: int design_layout_snackbar
 cn.lankao.com.lovelankao.R$layout: int design_layout_snackbar_include
@@ -9177,6 +9192,29 @@ cn.lankao.com.lovelankao.activity.SquareSendActivity$SquareSendHolder: void onAc
 cn.lankao.com.lovelankao.activity.TopActivity
 cn.lankao.com.lovelankao.activity.TopActivity: TopActivity()
 cn.lankao.com.lovelankao.activity.TopActivity: void onCreate(android.os.Bundle)
+cn.lankao.com.lovelankao.activity.WZActivity
+cn.lankao.com.lovelankao.activity.WZActivity: cn.lankao.com.lovelankao.ipresenter.IWzPresenter presenter
+cn.lankao.com.lovelankao.activity.WZActivity: android.widget.FrameLayout flClass
+cn.lankao.com.lovelankao.activity.WZActivity: android.widget.FrameLayout flEngine
+cn.lankao.com.lovelankao.activity.WZActivity: android.widget.EditText etNo
+cn.lankao.com.lovelankao.activity.WZActivity: android.widget.EditText etClass
+cn.lankao.com.lovelankao.activity.WZActivity: android.widget.EditText etEngine
+cn.lankao.com.lovelankao.activity.WZActivity: android.support.v7.widget.RecyclerView rvWz
+cn.lankao.com.lovelankao.activity.WZActivity: cn.lankao.com.lovelankao.adapter.WzMsgAdapter adapter
+cn.lankao.com.lovelankao.activity.WZActivity: WZActivity()
+cn.lankao.com.lovelankao.activity.WZActivity: void onCreate(android.os.Bundle)
+cn.lankao.com.lovelankao.activity.WZActivity: void initView()
+cn.lankao.com.lovelankao.activity.WZActivity: void onClick(android.view.View)
+cn.lankao.com.lovelankao.activity.WZActivity: void showToast(java.lang.String)
+cn.lankao.com.lovelankao.activity.WZActivity: void setClassShow(java.lang.String)
+cn.lankao.com.lovelankao.activity.WZActivity: void setEngineShow(java.lang.String)
+cn.lankao.com.lovelankao.activity.WZActivity: void setWz(java.util.List)
+cn.lankao.com.lovelankao.activity.WZActivity$$ViewBinder
+cn.lankao.com.lovelankao.activity.WZActivity$$ViewBinder: WZActivity$$ViewBinder()
+cn.lankao.com.lovelankao.activity.WZActivity$$ViewBinder: void bind(butterknife.ButterKnife$Finder,cn.lankao.com.lovelankao.activity.WZActivity,java.lang.Object)
+cn.lankao.com.lovelankao.activity.WZActivity$$ViewBinder: void unbind(cn.lankao.com.lovelankao.activity.WZActivity)
+cn.lankao.com.lovelankao.activity.WZActivity$$ViewBinder: void unbind(java.lang.Object)
+cn.lankao.com.lovelankao.activity.WZActivity$$ViewBinder: void bind(butterknife.ButterKnife$Finder,java.lang.Object,java.lang.Object)
 cn.lankao.com.lovelankao.activity.WZCityActivity
 cn.lankao.com.lovelankao.activity.WZCityActivity: cn.lankao.com.lovelankao.ipresenter.IWzCityPresenter presenter
 cn.lankao.com.lovelankao.activity.WZCityActivity: android.support.v7.widget.RecyclerView rvCity
@@ -9612,7 +9650,6 @@ cn.lankao.com.lovelankao.adapter.TopAdapter$MyViewHolder: TopAdapter$MyViewHolde
 cn.lankao.com.lovelankao.adapter.WzCityAdapter
 cn.lankao.com.lovelankao.adapter.WzCityAdapter: android.content.Context context
 cn.lankao.com.lovelankao.adapter.WzCityAdapter: java.util.List data
-cn.lankao.com.lovelankao.adapter.WzCityAdapter: java.lang.String url
 cn.lankao.com.lovelankao.adapter.WzCityAdapter: WzCityAdapter(android.content.Context)
 cn.lankao.com.lovelankao.adapter.WzCityAdapter: void setData(java.util.List)
 cn.lankao.com.lovelankao.adapter.WzCityAdapter: void addData(java.util.List)
@@ -9621,14 +9658,36 @@ cn.lankao.com.lovelankao.adapter.WzCityAdapter: void onBindViewHolder(cn.lankao.
 cn.lankao.com.lovelankao.adapter.WzCityAdapter: int getItemCount()
 cn.lankao.com.lovelankao.adapter.WzCityAdapter: void onBindViewHolder(android.support.v7.widget.RecyclerView$ViewHolder,int)
 cn.lankao.com.lovelankao.adapter.WzCityAdapter: android.support.v7.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup,int)
+cn.lankao.com.lovelankao.adapter.WzCityAdapter: android.content.Context access$000(cn.lankao.com.lovelankao.adapter.WzCityAdapter)
 cn.lankao.com.lovelankao.adapter.WzCityAdapter$1
+cn.lankao.com.lovelankao.adapter.WzCityAdapter$1: cn.lankao.com.lovelankao.model.JWzCitys val$city
 cn.lankao.com.lovelankao.adapter.WzCityAdapter$1: cn.lankao.com.lovelankao.adapter.WzCityAdapter this$0
-cn.lankao.com.lovelankao.adapter.WzCityAdapter$1: WzCityAdapter$1(cn.lankao.com.lovelankao.adapter.WzCityAdapter)
+cn.lankao.com.lovelankao.adapter.WzCityAdapter$1: WzCityAdapter$1(cn.lankao.com.lovelankao.adapter.WzCityAdapter,cn.lankao.com.lovelankao.model.JWzCitys)
 cn.lankao.com.lovelankao.adapter.WzCityAdapter$1: void onClick(android.view.View)
 cn.lankao.com.lovelankao.adapter.WzCityAdapter$MyViewHolder
 cn.lankao.com.lovelankao.adapter.WzCityAdapter$MyViewHolder: android.widget.TextView tvName
 cn.lankao.com.lovelankao.adapter.WzCityAdapter$MyViewHolder: cn.lankao.com.lovelankao.adapter.WzCityAdapter this$0
 cn.lankao.com.lovelankao.adapter.WzCityAdapter$MyViewHolder: WzCityAdapter$MyViewHolder(cn.lankao.com.lovelankao.adapter.WzCityAdapter,android.view.View)
+cn.lankao.com.lovelankao.adapter.WzMsgAdapter
+cn.lankao.com.lovelankao.adapter.WzMsgAdapter: android.content.Context context
+cn.lankao.com.lovelankao.adapter.WzMsgAdapter: java.util.List data
+cn.lankao.com.lovelankao.adapter.WzMsgAdapter: WzMsgAdapter(android.content.Context)
+cn.lankao.com.lovelankao.adapter.WzMsgAdapter: void setData(java.util.List)
+cn.lankao.com.lovelankao.adapter.WzMsgAdapter: void addData(java.util.List)
+cn.lankao.com.lovelankao.adapter.WzMsgAdapter: cn.lankao.com.lovelankao.adapter.WzMsgAdapter$MyViewHolder onCreateViewHolder(android.view.ViewGroup,int)
+cn.lankao.com.lovelankao.adapter.WzMsgAdapter: void onBindViewHolder(cn.lankao.com.lovelankao.adapter.WzMsgAdapter$MyViewHolder,int)
+cn.lankao.com.lovelankao.adapter.WzMsgAdapter: int getItemCount()
+cn.lankao.com.lovelankao.adapter.WzMsgAdapter: void onBindViewHolder(android.support.v7.widget.RecyclerView$ViewHolder,int)
+cn.lankao.com.lovelankao.adapter.WzMsgAdapter: android.support.v7.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup,int)
+cn.lankao.com.lovelankao.adapter.WzMsgAdapter$MyViewHolder
+cn.lankao.com.lovelankao.adapter.WzMsgAdapter$MyViewHolder: android.widget.TextView tvTime
+cn.lankao.com.lovelankao.adapter.WzMsgAdapter$MyViewHolder: android.widget.TextView tvArea
+cn.lankao.com.lovelankao.adapter.WzMsgAdapter$MyViewHolder: android.widget.TextView tvAct
+cn.lankao.com.lovelankao.adapter.WzMsgAdapter$MyViewHolder: android.widget.TextView tvFen
+cn.lankao.com.lovelankao.adapter.WzMsgAdapter$MyViewHolder: android.widget.TextView tvMoney
+cn.lankao.com.lovelankao.adapter.WzMsgAdapter$MyViewHolder: android.widget.TextView tvHandle
+cn.lankao.com.lovelankao.adapter.WzMsgAdapter$MyViewHolder: cn.lankao.com.lovelankao.adapter.WzMsgAdapter this$0
+cn.lankao.com.lovelankao.adapter.WzMsgAdapter$MyViewHolder: WzMsgAdapter$MyViewHolder(cn.lankao.com.lovelankao.adapter.WzMsgAdapter,android.view.View)
 cn.lankao.com.lovelankao.fragment.IndexFragment
 cn.lankao.com.lovelankao.fragment.IndexFragment: android.view.View view
 cn.lankao.com.lovelankao.fragment.IndexFragment: IndexFragment()
@@ -9686,6 +9745,8 @@ cn.lankao.com.lovelankao.ipresenter.ISquareMsgPresenter
 cn.lankao.com.lovelankao.ipresenter.ISquareMsgPresenter: void getMyMsg()
 cn.lankao.com.lovelankao.ipresenter.IWzCityPresenter
 cn.lankao.com.lovelankao.ipresenter.IWzCityPresenter: void getCitys()
+cn.lankao.com.lovelankao.ipresenter.IWzPresenter
+cn.lankao.com.lovelankao.ipresenter.IWzPresenter: void getWz(android.widget.EditText,android.widget.EditText,android.widget.EditText)
 cn.lankao.com.lovelankao.iview.ILKPeopleView
 cn.lankao.com.lovelankao.iview.ILKPeopleView: void showToast(java.lang.String)
 cn.lankao.com.lovelankao.iview.ILKPeopleView: void setMapMarker(cn.lankao.com.lovelankao.model.MyUser)
@@ -9695,6 +9756,11 @@ cn.lankao.com.lovelankao.iview.ISquareMsgView: void setComment(java.util.List)
 cn.lankao.com.lovelankao.iview.IWzCityView
 cn.lankao.com.lovelankao.iview.IWzCityView: void showToast(java.lang.String)
 cn.lankao.com.lovelankao.iview.IWzCityView: void setCity(java.util.List)
+cn.lankao.com.lovelankao.iview.IWzView
+cn.lankao.com.lovelankao.iview.IWzView: void showToast(java.lang.String)
+cn.lankao.com.lovelankao.iview.IWzView: void setClassShow(java.lang.String)
+cn.lankao.com.lovelankao.iview.IWzView: void setEngineShow(java.lang.String)
+cn.lankao.com.lovelankao.iview.IWzView: void setWz(java.util.List)
 cn.lankao.com.lovelankao.model.AdvertNormal
 cn.lankao.com.lovelankao.model.AdvertNormal: java.lang.String title
 cn.lankao.com.lovelankao.model.AdvertNormal: java.lang.String titleContent
@@ -9936,6 +10002,20 @@ cn.lankao.com.lovelankao.model.JWzCitys: java.lang.String classno
 cn.lankao.com.lovelankao.model.JWzCitys: java.lang.String regist
 cn.lankao.com.lovelankao.model.JWzCitys: java.lang.String registno
 cn.lankao.com.lovelankao.model.JWzCitys: JWzCitys()
+cn.lankao.com.lovelankao.model.JWzMsg
+cn.lankao.com.lovelankao.model.JWzMsg: java.lang.String date
+cn.lankao.com.lovelankao.model.JWzMsg: java.lang.String area
+cn.lankao.com.lovelankao.model.JWzMsg: java.lang.String act
+cn.lankao.com.lovelankao.model.JWzMsg: java.lang.String fen
+cn.lankao.com.lovelankao.model.JWzMsg: java.lang.String money
+cn.lankao.com.lovelankao.model.JWzMsg: java.lang.String handled
+cn.lankao.com.lovelankao.model.JWzMsg: JWzMsg()
+cn.lankao.com.lovelankao.model.JWzMsgList
+cn.lankao.com.lovelankao.model.JWzMsgList: java.lang.String province
+cn.lankao.com.lovelankao.model.JWzMsgList: java.lang.String city
+cn.lankao.com.lovelankao.model.JWzMsgList: java.lang.String hphm
+cn.lankao.com.lovelankao.model.JWzMsgList: com.google.gson.JsonElement lists
+cn.lankao.com.lovelankao.model.JWzMsgList: JWzMsgList()
 cn.lankao.com.lovelankao.model.JWzProvince
 cn.lankao.com.lovelankao.model.JWzProvince: java.lang.String province
 cn.lankao.com.lovelankao.model.JWzProvince: java.lang.String province_code
@@ -11211,6 +11291,20 @@ cn.lankao.com.lovelankao.viewcontroller.WzCityPresenter$1: void onCompleted()
 cn.lankao.com.lovelankao.viewcontroller.WzCityPresenter$1: void onError(java.lang.Throwable)
 cn.lankao.com.lovelankao.viewcontroller.WzCityPresenter$1: void onNext(java.lang.String)
 cn.lankao.com.lovelankao.viewcontroller.WzCityPresenter$1: void onNext(java.lang.Object)
+cn.lankao.com.lovelankao.viewcontroller.WzPresenter
+cn.lankao.com.lovelankao.viewcontroller.WzPresenter: java.lang.String url
+cn.lankao.com.lovelankao.viewcontroller.WzPresenter: cn.lankao.com.lovelankao.iview.IWzView view
+cn.lankao.com.lovelankao.viewcontroller.WzPresenter: cn.lankao.com.lovelankao.model.JWzCitys city
+cn.lankao.com.lovelankao.viewcontroller.WzPresenter: WzPresenter(cn.lankao.com.lovelankao.iview.IWzView,android.content.Intent)
+cn.lankao.com.lovelankao.viewcontroller.WzPresenter: void getWz(android.widget.EditText,android.widget.EditText,android.widget.EditText)
+cn.lankao.com.lovelankao.viewcontroller.WzPresenter: cn.lankao.com.lovelankao.iview.IWzView access$000(cn.lankao.com.lovelankao.viewcontroller.WzPresenter)
+cn.lankao.com.lovelankao.viewcontroller.WzPresenter$1
+cn.lankao.com.lovelankao.viewcontroller.WzPresenter$1: cn.lankao.com.lovelankao.viewcontroller.WzPresenter this$0
+cn.lankao.com.lovelankao.viewcontroller.WzPresenter$1: WzPresenter$1(cn.lankao.com.lovelankao.viewcontroller.WzPresenter)
+cn.lankao.com.lovelankao.viewcontroller.WzPresenter$1: void onCompleted()
+cn.lankao.com.lovelankao.viewcontroller.WzPresenter$1: void onError(java.lang.Throwable)
+cn.lankao.com.lovelankao.viewcontroller.WzPresenter$1: void onNext(java.lang.String)
+cn.lankao.com.lovelankao.viewcontroller.WzPresenter$1: void onNext(java.lang.Object)
 cn.lankao.com.lovelankao.widget.MyDialog
 cn.lankao.com.lovelankao.widget.MyDialog: android.app.ProgressDialog progressDialog
 cn.lankao.com.lovelankao.widget.MyDialog: android.support.v7.app.AlertDialog alertDialog

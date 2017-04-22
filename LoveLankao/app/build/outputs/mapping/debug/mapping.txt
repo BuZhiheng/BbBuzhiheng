@@ -16638,6 +16638,7 @@ cn.lankao.com.lovelankao.R$id -> cn.lankao.com.lovelankao.R$id:
     int btn_square_send_camera -> btn_square_send_camera
     int btn_square_send_cancel -> btn_square_send_cancel
     int btn_square_send_photo -> btn_square_send_photo
+    int btn_wz_sure -> btn_wz_sure
     int buttonPanel -> buttonPanel
     int cancel_action -> cancel_action
     int cbLoopViewPager -> cbLoopViewPager
@@ -16676,6 +16677,9 @@ cn.lankao.com.lovelankao.R$id -> cn.lankao.com.lovelankao.R$id:
     int et_register_username -> et_register_username
     int et_square_send_content -> et_square_send_content
     int et_square_send_title -> et_square_send_title
+    int et_wz_class -> et_wz_class
+    int et_wz_engine -> et_wz_engine
+    int et_wz_no -> et_wz_no
     int exitUntilCollapsed -> exitUntilCollapsed
     int expand_activities_button -> expand_activities_button
     int expanded_menu -> expanded_menu
@@ -16709,6 +16713,8 @@ cn.lankao.com.lovelankao.R$id -> cn.lankao.com.lovelankao.R$id:
     int fl_talkfrm_square -> fl_talkfrm_square
     int fl_talkfrm_top -> fl_talkfrm_top
     int fl_top_content -> fl_top_content
+    int fl_wz_class -> fl_wz_class
+    int fl_wz_engine -> fl_wz_engine
     int getui_big_bigtext_defaultView -> getui_big_bigtext_defaultView
     int getui_big_bigview_defaultView -> getui_big_bigview_defaultView
     int getui_big_defaultView -> getui_big_defaultView
@@ -16889,6 +16895,7 @@ cn.lankao.com.lovelankao.R$id -> cn.lankao.com.lovelankao.R$id:
     int rv_square_room -> rv_square_room
     int rv_top_activity -> rv_top_activity
     int rv_wz_city -> rv_wz_city
+    int rv_wz_msg -> rv_wz_msg
     int screen -> screen
     int scroll -> scroll
     int scrollIndicatorDown -> scrollIndicatorDown
@@ -17030,6 +17037,12 @@ cn.lankao.com.lovelankao.R$id -> cn.lankao.com.lovelankao.R$id:
     int tv_top_item_title -> tv_top_item_title
     int tv_webview_title -> tv_webview_title
     int tv_wz_city -> tv_wz_city
+    int tv_wz_msg_act -> tv_wz_msg_act
+    int tv_wz_msg_area -> tv_wz_msg_area
+    int tv_wz_msg_fen -> tv_wz_msg_fen
+    int tv_wz_msg_handled -> tv_wz_msg_handled
+    int tv_wz_msg_money -> tv_wz_msg_money
+    int tv_wz_msg_time -> tv_wz_msg_time
     int up -> up
     int useLogo -> useLogo
     int view_offset_helper -> view_offset_helper
@@ -17115,6 +17128,8 @@ cn.lankao.com.lovelankao.R$layout -> cn.lankao.com.lovelankao.R$layout:
     int activity_web_view -> activity_web_view
     int activity_wz_city -> activity_wz_city
     int activity_wz_city_item -> activity_wz_city_item
+    int activity_wz_msg -> activity_wz_msg
+    int activity_wz_msg_item -> activity_wz_msg_item
     int bmob_update_dialog -> bmob_update_dialog
     int design_layout_snackbar -> design_layout_snackbar
     int design_layout_snackbar_include -> design_layout_snackbar_include
@@ -18211,6 +18226,29 @@ cn.lankao.com.lovelankao.activity.SquareSendActivity$SquareSendHolder -> cn.lank
 cn.lankao.com.lovelankao.activity.TopActivity -> cn.lankao.com.lovelankao.activity.TopActivity:
     void <init>() -> <init>
     void onCreate(android.os.Bundle) -> onCreate
+cn.lankao.com.lovelankao.activity.WZActivity -> cn.lankao.com.lovelankao.activity.WZActivity:
+    cn.lankao.com.lovelankao.ipresenter.IWzPresenter presenter -> presenter
+    android.widget.FrameLayout flClass -> flClass
+    android.widget.FrameLayout flEngine -> flEngine
+    android.widget.EditText etNo -> etNo
+    android.widget.EditText etClass -> etClass
+    android.widget.EditText etEngine -> etEngine
+    android.support.v7.widget.RecyclerView rvWz -> rvWz
+    cn.lankao.com.lovelankao.adapter.WzMsgAdapter adapter -> adapter
+    void <init>() -> <init>
+    void onCreate(android.os.Bundle) -> onCreate
+    void initView() -> initView
+    void onClick(android.view.View) -> onClick
+    void showToast(java.lang.String) -> showToast
+    void setClassShow(java.lang.String) -> setClassShow
+    void setEngineShow(java.lang.String) -> setEngineShow
+    void setWz(java.util.List) -> setWz
+cn.lankao.com.lovelankao.activity.WZActivity$$ViewBinder -> cn.lankao.com.lovelankao.activity.WZActivity$$ViewBinder:
+    void <init>() -> <init>
+    void bind(butterknife.ButterKnife$Finder,cn.lankao.com.lovelankao.activity.WZActivity,java.lang.Object) -> bind
+    void unbind(cn.lankao.com.lovelankao.activity.WZActivity) -> unbind
+    void unbind(java.lang.Object) -> unbind
+    void bind(butterknife.ButterKnife$Finder,java.lang.Object,java.lang.Object) -> bind
 cn.lankao.com.lovelankao.activity.WZCityActivity -> cn.lankao.com.lovelankao.activity.WZCityActivity:
     cn.lankao.com.lovelankao.ipresenter.IWzCityPresenter presenter -> presenter
     android.support.v7.widget.RecyclerView rvCity -> rvCity
@@ -18646,7 +18684,6 @@ cn.lankao.com.lovelankao.adapter.TopAdapter$MyViewHolder -> cn.lankao.com.lovela
 cn.lankao.com.lovelankao.adapter.WzCityAdapter -> cn.lankao.com.lovelankao.adapter.WzCityAdapter:
     android.content.Context context -> context
     java.util.List data -> data
-    java.lang.String url -> url
     void <init>(android.content.Context) -> <init>
     void setData(java.util.List) -> setData
     void addData(java.util.List) -> addData
@@ -18655,14 +18692,36 @@ cn.lankao.com.lovelankao.adapter.WzCityAdapter -> cn.lankao.com.lovelankao.adapt
     int getItemCount() -> getItemCount
     void onBindViewHolder(android.support.v7.widget.RecyclerView$ViewHolder,int) -> onBindViewHolder
     android.support.v7.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> onCreateViewHolder
+    android.content.Context access$000(cn.lankao.com.lovelankao.adapter.WzCityAdapter) -> access$000
 cn.lankao.com.lovelankao.adapter.WzCityAdapter$1 -> cn.lankao.com.lovelankao.adapter.WzCityAdapter$1:
+    cn.lankao.com.lovelankao.model.JWzCitys val$city -> val$city
     cn.lankao.com.lovelankao.adapter.WzCityAdapter this$0 -> this$0
-    void <init>(cn.lankao.com.lovelankao.adapter.WzCityAdapter) -> <init>
+    void <init>(cn.lankao.com.lovelankao.adapter.WzCityAdapter,cn.lankao.com.lovelankao.model.JWzCitys) -> <init>
     void onClick(android.view.View) -> onClick
 cn.lankao.com.lovelankao.adapter.WzCityAdapter$MyViewHolder -> cn.lankao.com.lovelankao.adapter.WzCityAdapter$MyViewHolder:
     android.widget.TextView tvName -> tvName
     cn.lankao.com.lovelankao.adapter.WzCityAdapter this$0 -> this$0
     void <init>(cn.lankao.com.lovelankao.adapter.WzCityAdapter,android.view.View) -> <init>
+cn.lankao.com.lovelankao.adapter.WzMsgAdapter -> cn.lankao.com.lovelankao.adapter.WzMsgAdapter:
+    android.content.Context context -> context
+    java.util.List data -> data
+    void <init>(android.content.Context) -> <init>
+    void setData(java.util.List) -> setData
+    void addData(java.util.List) -> addData
+    cn.lankao.com.lovelankao.adapter.WzMsgAdapter$MyViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> onCreateViewHolder
+    void onBindViewHolder(cn.lankao.com.lovelankao.adapter.WzMsgAdapter$MyViewHolder,int) -> onBindViewHolder
+    int getItemCount() -> getItemCount
+    void onBindViewHolder(android.support.v7.widget.RecyclerView$ViewHolder,int) -> onBindViewHolder
+    android.support.v7.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> onCreateViewHolder
+cn.lankao.com.lovelankao.adapter.WzMsgAdapter$MyViewHolder -> cn.lankao.com.lovelankao.adapter.WzMsgAdapter$MyViewHolder:
+    android.widget.TextView tvTime -> tvTime
+    android.widget.TextView tvArea -> tvArea
+    android.widget.TextView tvAct -> tvAct
+    android.widget.TextView tvFen -> tvFen
+    android.widget.TextView tvMoney -> tvMoney
+    android.widget.TextView tvHandle -> tvHandle
+    cn.lankao.com.lovelankao.adapter.WzMsgAdapter this$0 -> this$0
+    void <init>(cn.lankao.com.lovelankao.adapter.WzMsgAdapter,android.view.View) -> <init>
 cn.lankao.com.lovelankao.fragment.IndexFragment -> cn.lankao.com.lovelankao.fragment.IndexFragment:
     android.view.View view -> view
     void <init>() -> <init>
@@ -18720,6 +18779,8 @@ cn.lankao.com.lovelankao.ipresenter.ISquareMsgPresenter -> cn.lankao.com.lovelan
     void getMyMsg() -> getMyMsg
 cn.lankao.com.lovelankao.ipresenter.IWzCityPresenter -> cn.lankao.com.lovelankao.ipresenter.IWzCityPresenter:
     void getCitys() -> getCitys
+cn.lankao.com.lovelankao.ipresenter.IWzPresenter -> cn.lankao.com.lovelankao.ipresenter.IWzPresenter:
+    void getWz(android.widget.EditText,android.widget.EditText,android.widget.EditText) -> getWz
 cn.lankao.com.lovelankao.iview.ILKPeopleView -> cn.lankao.com.lovelankao.iview.ILKPeopleView:
     void showToast(java.lang.String) -> showToast
     void setMapMarker(cn.lankao.com.lovelankao.model.MyUser) -> setMapMarker
@@ -18729,6 +18790,11 @@ cn.lankao.com.lovelankao.iview.ISquareMsgView -> cn.lankao.com.lovelankao.iview.
 cn.lankao.com.lovelankao.iview.IWzCityView -> cn.lankao.com.lovelankao.iview.IWzCityView:
     void showToast(java.lang.String) -> showToast
     void setCity(java.util.List) -> setCity
+cn.lankao.com.lovelankao.iview.IWzView -> cn.lankao.com.lovelankao.iview.IWzView:
+    void showToast(java.lang.String) -> showToast
+    void setClassShow(java.lang.String) -> setClassShow
+    void setEngineShow(java.lang.String) -> setEngineShow
+    void setWz(java.util.List) -> setWz
 cn.lankao.com.lovelankao.model.AdvertNormal -> cn.lankao.com.lovelankao.model.AdvertNormal:
     java.lang.String title -> title
     java.lang.String titleContent -> titleContent
@@ -18969,6 +19035,20 @@ cn.lankao.com.lovelankao.model.JWzCitys -> cn.lankao.com.lovelankao.model.JWzCit
     java.lang.String classno -> classno
     java.lang.String regist -> regist
     java.lang.String registno -> registno
+    void <init>() -> <init>
+cn.lankao.com.lovelankao.model.JWzMsg -> cn.lankao.com.lovelankao.model.JWzMsg:
+    java.lang.String date -> date
+    java.lang.String area -> area
+    java.lang.String act -> act
+    java.lang.String fen -> fen
+    java.lang.String money -> money
+    java.lang.String handled -> handled
+    void <init>() -> <init>
+cn.lankao.com.lovelankao.model.JWzMsgList -> cn.lankao.com.lovelankao.model.JWzMsgList:
+    java.lang.String province -> province
+    java.lang.String city -> city
+    java.lang.String hphm -> hphm
+    com.google.gson.JsonElement lists -> lists
     void <init>() -> <init>
 cn.lankao.com.lovelankao.model.JWzProvince -> cn.lankao.com.lovelankao.model.JWzProvince:
     java.lang.String province -> province
@@ -20241,6 +20321,20 @@ cn.lankao.com.lovelankao.viewcontroller.WzCityPresenter -> cn.lankao.com.lovelan
 cn.lankao.com.lovelankao.viewcontroller.WzCityPresenter$1 -> cn.lankao.com.lovelankao.viewcontroller.WzCityPresenter$1:
     cn.lankao.com.lovelankao.viewcontroller.WzCityPresenter this$0 -> this$0
     void <init>(cn.lankao.com.lovelankao.viewcontroller.WzCityPresenter) -> <init>
+    void onCompleted() -> onCompleted
+    void onError(java.lang.Throwable) -> onError
+    void onNext(java.lang.String) -> onNext
+    void onNext(java.lang.Object) -> onNext
+cn.lankao.com.lovelankao.viewcontroller.WzPresenter -> cn.lankao.com.lovelankao.viewcontroller.WzPresenter:
+    java.lang.String url -> url
+    cn.lankao.com.lovelankao.iview.IWzView view -> view
+    cn.lankao.com.lovelankao.model.JWzCitys city -> city
+    void <init>(cn.lankao.com.lovelankao.iview.IWzView,android.content.Intent) -> <init>
+    void getWz(android.widget.EditText,android.widget.EditText,android.widget.EditText) -> getWz
+    cn.lankao.com.lovelankao.iview.IWzView access$000(cn.lankao.com.lovelankao.viewcontroller.WzPresenter) -> access$000
+cn.lankao.com.lovelankao.viewcontroller.WzPresenter$1 -> cn.lankao.com.lovelankao.viewcontroller.WzPresenter$1:
+    cn.lankao.com.lovelankao.viewcontroller.WzPresenter this$0 -> this$0
+    void <init>(cn.lankao.com.lovelankao.viewcontroller.WzPresenter) -> <init>
     void onCompleted() -> onCompleted
     void onError(java.lang.Throwable) -> onError
     void onNext(java.lang.String) -> onNext

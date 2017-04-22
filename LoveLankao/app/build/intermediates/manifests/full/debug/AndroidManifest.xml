@@ -108,6 +108,7 @@
         <activity android:name="cn.lankao.com.lovelankao.activity.TopActivity" />
         <activity android:name="cn.lankao.com.lovelankao.activity.WebViewActivity" />
         <activity android:name="cn.lankao.com.lovelankao.activity.WZCityActivity" />
+        <activity android:name="cn.lankao.com.lovelankao.activity.WZActivity" />
         <activity
             android:name="cn.lankao.com.lovelankao.wxapi.WXEntryActivity"
             android:exported="true" />

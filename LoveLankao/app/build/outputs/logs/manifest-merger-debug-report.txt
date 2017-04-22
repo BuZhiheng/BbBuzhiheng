@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:2:1-100:12
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:2:1-101:12
 	package
 		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:3:5-39
 		INJECTED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml
@@ -94,7 +94,7 @@ ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:23:5-80
 	android:name
 		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:23:22-77
 application
-ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:25:5-95:19
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:25:5-96:19
 MERGED from [com.android.support:appcompat-v7:23.1.1] D:\git\lankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.1.1] D:\git\lankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.1.1] D:\git\lankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
@@ -292,18 +292,22 @@ activity#cn.lankao.com.lovelankao.activity.WZCityActivity
 ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:92:9-61
 	android:name
 		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:92:19-58
+activity#cn.lankao.com.lovelankao.activity.WZActivity
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:93:9-57
+	android:name
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:93:19-54
 activity#cn.lankao.com.lovelankao.wxapi.WXEntryActivity
-ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:93:9-94:38
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:94:9-95:38
 	android:exported
-		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:94:13-36
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:95:13-36
 	android:name
-		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:93:19-56
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:94:19-56
 permission#getui.permission.GetuiService.cn.lankao.com.lovelankao
-ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:96:5-99:18
+ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:97:5-100:18
 	android:protectionLevel
-		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:98:9-41
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:99:9-41
 	android:name
-		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:97:9-78
+		ADDED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml:98:9-78
 uses-sdk
 INJECTED from D:\git\lankao\LoveLankao\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:23.1.1] D:\git\lankao\LoveLankao\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:20:5-43
