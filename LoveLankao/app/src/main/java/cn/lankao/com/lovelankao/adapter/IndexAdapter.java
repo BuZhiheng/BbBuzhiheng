@@ -87,18 +87,18 @@ public class IndexAdapter {
             @Override
             public void done(List<MainService> list, BmobException e) {
                 if (e == null){
-                    if (listener != null){
-                        listener.success();
-                    }
                     adapterService.setData(list);
                     adapterService.notifyDataSetChanged();
+                }
+                if (listener != null){
+                    listener.success();
                 }
             }
         });
         //加载兰考新闻
         BmobQuery<LanKaoNews> queryNews = new BmobQuery<>();
         queryNews.setLimit(CommonCode.RV_ITEMS_COUT20);
-        queryNews.order("-newsTime");
+        queryNews.order("-createdAt");
         queryNews.findObjects(new FindListener<LanKaoNews>() {
             @Override
             public void done(List<LanKaoNews> list, BmobException e) {

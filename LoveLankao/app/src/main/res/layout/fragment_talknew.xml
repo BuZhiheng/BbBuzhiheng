@@ -47,7 +47,7 @@
         android:padding="@dimen/common_margin_little"
         android:text="您有新消息"
         android:textSize="@dimen/text_common_item_title"
-        android:textColor="@color/color_white"
+        android:textColor="@color/color_yellow"
         android:clickable="true"
         android:visibility="gone"
         />

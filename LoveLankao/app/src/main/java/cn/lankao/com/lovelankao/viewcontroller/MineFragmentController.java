@@ -80,7 +80,7 @@ public class MineFragmentController implements View.OnClickListener {
         view.findViewById(R.id.fl_minefrm_aboutus).setOnClickListener(this);
         view.findViewById(R.id.fl_minefrm_setting).setOnClickListener(this);
         view.findViewById(R.id.fl_minefrm_msg).setOnClickListener(this);
-        view.findViewById(R.id.fl_minefrm_wz).setOnClickListener(this);
+//        view.findViewById(R.id.fl_minefrm_wz).setOnClickListener(this);
         tvNickName = (TextView) view.findViewById(R.id.tv_minefrm_nickname);
         tvPhone = (TextView) view.findViewById(R.id.tv_minefrm_phone);
         tvJifen = (TextView) view.findViewById(R.id.tv_minefrm_jifen);
@@ -129,10 +129,10 @@ public class MineFragmentController implements View.OnClickListener {
                 Intent intent = new Intent(context, SettingActivity.class);
                 context.startActivity(intent);
                 break;
-            case R.id.fl_minefrm_wz:
-                Intent intentWz = new Intent(context, WZCityActivity.class);
-                context.startActivity(intentWz);
-                break;
+//            case R.id.fl_minefrm_wz:
+//                Intent intentWz = new Intent(context, WZCityActivity.class);
+//                context.startActivity(intentWz);
+//                break;
             default:
                 break;
         }

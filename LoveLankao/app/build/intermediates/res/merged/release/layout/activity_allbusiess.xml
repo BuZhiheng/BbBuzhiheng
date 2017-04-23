@@ -19,7 +19,7 @@
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="全部商家"
+            android:text="更多商家"
             android:textSize="@dimen/text_main_title"
             android:textColor="@color/color_white"
             />

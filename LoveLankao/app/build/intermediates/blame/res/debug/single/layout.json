@@ -20,12 +20,12 @@
         "source": "D:\\git\\lankao\\LoveLankao\\app\\src\\main\\res\\layout\\activity_jock_item.xml"
     },
     {
-        "merged": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_advert_msg.xml",
-        "source": "D:\\git\\lankao\\LoveLankao\\app\\src\\main\\res\\layout\\activity_advert_msg.xml"
-    },
-    {
         "merged": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
         "source": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_screen_simple.xml"
+    },
+    {
+        "merged": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_advert_msg.xml",
+        "source": "D:\\git\\lankao\\LoveLankao\\app\\src\\main\\res\\layout\\activity_advert_msg.xml"
     },
     {
         "merged": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_lbs.xml",
@@ -88,20 +88,20 @@
         "source": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_action_menu_layout.xml"
     },
     {
-        "merged": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\include_title_bar_common.xml",
-        "source": "D:\\git\\lankao\\LoveLankao\\app\\src\\main\\res\\layout\\include_title_bar_common.xml"
-    },
-    {
         "merged": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_square_msg_header.xml",
         "source": "D:\\git\\lankao\\LoveLankao\\app\\src\\main\\res\\layout\\activity_square_msg_header.xml"
     },
     {
-        "merged": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_advertdetail.xml",
-        "source": "D:\\git\\lankao\\LoveLankao\\app\\src\\main\\res\\layout\\activity_advertdetail.xml"
+        "merged": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\include_title_bar_common.xml",
+        "source": "D:\\git\\lankao\\LoveLankao\\app\\src\\main\\res\\layout\\include_title_bar_common.xml"
     },
     {
         "merged": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_my_msg.xml",
         "source": "D:\\git\\lankao\\LoveLankao\\app\\src\\main\\res\\layout\\activity_my_msg.xml"
+    },
+    {
+        "merged": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_advertdetail.xml",
+        "source": "D:\\git\\lankao\\LoveLankao\\app\\src\\main\\res\\layout\\activity_advertdetail.xml"
     },
     {
         "merged": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
@@ -120,12 +120,12 @@
         "source": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\layout\\design_layout_tab_icon.xml"
     },
     {
-        "merged": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\include_viewpager.xml",
-        "source": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.bigkoo\\convenientbanner\\2.0.5\\res\\layout\\include_viewpager.xml"
-    },
-    {
         "merged": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_square_msg.xml",
         "source": "D:\\git\\lankao\\LoveLankao\\app\\src\\main\\res\\layout\\activity_square_msg.xml"
+    },
+    {
+        "merged": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\include_viewpager.xml",
+        "source": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.bigkoo\\convenientbanner\\2.0.5\\res\\layout\\include_viewpager.xml"
     },
     {
         "merged": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_lknews_msg.xml",

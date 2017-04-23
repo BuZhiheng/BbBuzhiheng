@@ -8,6 +8,10 @@
         "source": "D:\\git\\lankao\\LoveLankao\\app\\src\\main\\res\\layout\\fragment_temp.xml"
     },
     {
+        "merged": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_my_msg.xml",
+        "source": "D:\\git\\lankao\\LoveLankao\\app\\src\\main\\res\\layout\\activity_my_msg.xml"
+    },
+    {
         "merged": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_list_menu_item_icon.xml",
         "source": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_list_menu_item_icon.xml"
     },
@@ -112,6 +116,10 @@
         "source": "D:\\git\\lankao\\LoveLankao\\app\\src\\main\\res\\layout\\activity_square_send.xml"
     },
     {
+        "merged": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_wz_city.xml",
+        "source": "D:\\git\\lankao\\LoveLankao\\app\\src\\main\\res\\layout\\activity_wz_city.xml"
+    },
+    {
         "merged": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\layout\\fragment_index_item.xml",
         "source": "D:\\git\\lankao\\LoveLankao\\app\\src\\main\\res\\layout\\fragment_index_item.xml"
     },
@@ -146,6 +154,10 @@
     {
         "merged": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_list_menu_item_layout.xml",
         "source": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_my_msg_item.xml",
+        "source": "D:\\git\\lankao\\LoveLankao\\app\\src\\main\\res\\layout\\activity_my_msg_item.xml"
     },
     {
         "merged": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_allbusiess.xml",
@@ -224,6 +236,10 @@
         "source": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_media_cancel_action.xml"
     },
     {
+        "merged": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_wz_msg.xml",
+        "source": "D:\\git\\lankao\\LoveLankao\\app\\src\\main\\res\\layout\\activity_wz_msg.xml"
+    },
+    {
         "merged": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_web_view.xml",
         "source": "D:\\git\\lankao\\LoveLankao\\app\\src\\main\\res\\layout\\activity_web_view.xml"
     },
@@ -246,6 +262,14 @@
     {
         "merged": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_login.xml",
         "source": "D:\\git\\lankao\\LoveLankao\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_lkpeople.xml",
+        "source": "D:\\git\\lankao\\LoveLankao\\app\\src\\main\\res\\layout\\activity_lkpeople.xml"
+    },
+    {
+        "merged": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_wz_city_item.xml",
+        "source": "D:\\git\\lankao\\LoveLankao\\app\\src\\main\\res\\layout\\activity_wz_city_item.xml"
     },
     {
         "merged": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_advert_msg.xml",
@@ -422,6 +446,10 @@
     {
         "merged": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\layout\\include_slid_img_vertical_marginbottom.xml",
         "source": "D:\\git\\lankao\\LoveLankao\\app\\src\\main\\res\\layout\\include_slid_img_vertical_marginbottom.xml"
+    },
+    {
+        "merged": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_wz_msg_item.xml",
+        "source": "D:\\git\\lankao\\LoveLankao\\app\\src\\main\\res\\layout\\activity_wz_msg_item.xml"
     },
     {
         "merged": "D:\\git\\lankao\\LoveLankao\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_select_dialog_material.xml",
